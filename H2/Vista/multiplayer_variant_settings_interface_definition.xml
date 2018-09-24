@@ -1,0 +1,1823 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="multiplayer_variant_settings_interface_definition" groupTag="goof" groupTagParent="????" version="1" flags="8">
+	<block name="multiplayer_variant_settings_interface_definition_block" maxCount="1" display="multiplayer_variant_settings_interface_definition" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<multiplayer_variant_settings_interface_definition_block_fields size="472" sizeIdentifer="sizeof(s_multiplayer_variant_settings_interface_definition)" fieldCount="32">
+				<fields>
+					<field type="TagReference" name="">
+						<definition flags="0" groupTag="wgit" />
+					</field>
+					<field type="TagReference" name="">
+						<definition flags="0" groupTag="wgit" />
+					</field>
+					<field type="TagReference" name="">
+						<definition flags="0" groupTag="wgit" />
+					</field>
+					<field type="Block" name="game engine settings">
+						<block name="variant_setting_edit_reference_block" maxCount="40" display="variant_setting_edit_reference_block" flags="0" maxIdentifer="k_maximum_game_setting_blocks" version="1">
+							<versions>
+								<variant_setting_edit_reference_block_fields size="32" sizeIdentifer="sizeof(s_variant_setting_edit_reference)" fieldCount="5">
+									<fields>
+										<field type="LongEnum" name="setting category" isBlockName="True">
+											<definition count="40">
+												<entry>match-ctf</entry>
+												<entry>match-slayer</entry>
+												<entry>match-oddball</entry>
+												<entry>match-king</entry>
+												<entry>match-race</entry>
+												<entry>match-headhunter</entry>
+												<entry>match-juggernaut</entry>
+												<entry>match-territories</entry>
+												<entry>match-assault</entry>
+												<entry>players</entry>
+												<entry>OBSOLETE</entry>
+												<entry>vehicles</entry>
+												<entry>equipment</entry>
+												<entry>game-ctf</entry>
+												<entry>game-slayer</entry>
+												<entry>game-oddball</entry>
+												<entry>game-king</entry>
+												<entry>game-race</entry>
+												<entry>game-headhunter</entry>
+												<entry>game-juggernaut</entry>
+												<entry>game-territories</entry>
+												<entry>game-assault</entry>
+												<entry>quick options-ctf</entry>
+												<entry>quick options-slayer</entry>
+												<entry>quick options-oddball</entry>
+												<entry>quick options-king</entry>
+												<entry>quick options-race</entry>
+												<entry>quick options-headhunter</entry>
+												<entry>quick options-juggernaut</entry>
+												<entry>quick options-territories</entry>
+												<entry>quick options-assault</entry>
+												<entry>team-ctf</entry>
+												<entry>team-slayer</entry>
+												<entry>team-oddball</entry>
+												<entry>team-king</entry>
+												<entry>team-race</entry>
+												<entry>team-headhunter</entry>
+												<entry>team-juggernaut</entry>
+												<entry>team-territories</entry>
+												<entry>team-assault</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="4" />
+										<field type="Block" name="options">
+											<block name="text_value_pair_block" maxCount="32" display="text_value_pair_block" flags="0" maxIdentifer="k_maximum_text_value_pair_blocks" version="1">
+												<versions>
+													<text_value_pair_block_fields size="16" sizeIdentifer="sizeof(s_text_value_pair_tag_reference)" fieldCount="2">
+														<fields>
+															<field type="TagReference" name="value pairs" isBlockName="True">
+																<definition flags="0" groupTag="sily" />
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</text_value_pair_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="">
+											<block name="null_block" maxCount="0" display="null_block" flags="0" maxIdentifer="0" version="1">
+												<versions>
+													<null_block_fields size="0" sizeIdentifer="0" fieldCount="1">
+														<fields>
+															<field type="Terminator" />
+														</fields>
+													</null_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</variant_setting_edit_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="TagReference" name="default variant strings">
+						<definition flags="0" groupTag="unic" />
+					</field>
+					<field type="Block" name="default variants">
+						<block name="g_default_variants_block" maxCount="100" display="g_default_variants_block" flags="0" maxIdentifer="k_maximum_default_variants" version="1">
+							<versions>
+								<g_default_variants_block_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+									<fields>
+										<field type="StringId" name="variant name" isBlockName="True" />
+										<field type="LongEnum" name="variant type">
+											<definition count="7">
+												<entry>slayer</entry>
+												<entry>oddball</entry>
+												<entry>juggernaut</entry>
+												<entry>king</entry>
+												<entry>ctf</entry>
+												<entry>invasion</entry>
+												<entry>territories</entry>
+											</definition>
+										</field>
+										<field type="Block" name="settings">
+											<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+												<versions>
+													<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+														<fields>
+															<field type="LongEnum" name="setting category" isBlockName="True">
+																<definition count="112">
+																	<entry>match round setting</entry>
+																	<entry>match ctf score to win</entry>
+																	<entry>match slayer score to win round</entry>
+																	<entry>match oddball score to win round</entry>
+																	<entry>match king score to win round</entry>
+																	<entry>match race score to win round</entry>
+																	<entry>match headhunter score to win round</entry>
+																	<entry>match juggernaut score to win round</entry>
+																	<entry>match territories score to win round</entry>
+																	<entry>match assault score to win round</entry>
+																	<entry>match round time limit</entry>
+																	<entry>match rounds reset map</entry>
+																	<entry>match tie resolution</entry>
+																	<entry>match observers</entry>
+																	<entry>match join in progress</entry>
+																	<entry>maximum players</entry>
+																	<entry>lives per round</entry>
+																	<entry>respawn time</entry>
+																	<entry>suicide penalty</entry>
+																	<entry>shields</entry>
+																	<entry>motion sensor</entry>
+																	<entry>invisibility</entry>
+																	<entry>team changing</entry>
+																	<entry>team scoring</entry>
+																	<entry>friendly fire</entry>
+																	<entry>team respawn setting</entry>
+																	<entry>betrayal respawn penalty</entry>
+																	<entry>team killer management</entry>
+																	<entry>slayer bonus points</entry>
+																	<entry>slayer suicide point loss</entry>
+																	<entry>slayer death point loss</entry>
+																	<entry>headhunter moving head bin</entry>
+																	<entry>headhunter point multiplier</entry>
+																	<entry>headhunter suicide point loss</entry>
+																	<entry>headhunter death point loss</entry>
+																	<entry>headhunter uncontested bin</entry>
+																	<entry>headhunter speed with heads</entry>
+																	<entry>headhunter max heads carried</entry>
+																	<entry>king uncontested hill</entry>
+																	<entry>king team time multiplier</entry>
+																	<entry>king moving hill</entry>
+																	<entry>king extra damage on hill</entry>
+																	<entry>king dmg resistance on hill</entry>
+																	<entry>oddball ball spawn count</entry>
+																	<entry>oddball ball hit damage</entry>
+																	<entry>oddball speed with ball</entry>
+																	<entry>oddball driving gunning with ball</entry>
+																	<entry>oddball waypoint to ball</entry>
+																	<entry>race random track</entry>
+																	<entry>race uncontested flag</entry>
+																	<entry>ctf game type</entry>
+																	<entry>ctf sudden death</entry>
+																	<entry>ctf flag may be returned</entry>
+																	<entry>ctf flag at home to score</entry>
+																	<entry>ctf flag reset time</entry>
+																	<entry>ctf speed with flag</entry>
+																	<entry>ctf flag hit damage</entry>
+																	<entry>ctf driving gunning with flag</entry>
+																	<entry>ctf waypoint to own flag</entry>
+																	<entry>assault game type</entry>
+																	<entry>assault sudden death</entry>
+																	<entry>assault detonation time</entry>
+																	<entry>assault bomb at home to score</entry>
+																	<entry>assault arming time</entry>
+																	<entry>assault speed with bomb</entry>
+																	<entry>assault bomb hit damage</entry>
+																	<entry>assault driving gunning with bomb</entry>
+																	<entry>assault waypoint to own bomb</entry>
+																	<entry>juggernaut betrayal point loss</entry>
+																	<entry>juggernaut juggy extra damage</entry>
+																	<entry>juggernaut juggy infinite ammo</entry>
+																	<entry>juggernaut juggy overshields</entry>
+																	<entry>juggernaut juggy active camo</entry>
+																	<entry>juggernaut juggy motion sensor</entry>
+																	<entry>territories territory count</entry>
+																	<entry>veh. respawn</entry>
+																	<entry>veh. primary light land</entry>
+																	<entry>veh. secondary light land</entry>
+																	<entry>veh. primary heavy land</entry>
+																	<entry>veh. primary flying</entry>
+																	<entry>veh. secondary heavy land</entry>
+																	<entry>veh. primary turret</entry>
+																	<entry>veh. secondary turret</entry>
+																	<entry>equip. weapons on map</entry>
+																	<entry>equip. overshields on map</entry>
+																	<entry>equip. active camo on map</entry>
+																	<entry>equip. grenades on map</entry>
+																	<entry>equip. weapon respawn times</entry>
+																	<entry>equip. starting grenades</entry>
+																	<entry>equip. primary starting equipment</entry>
+																	<entry>UNS. max. living players</entry>
+																	<entry>UNS. teams enabled</entry>
+																	<entry>UNS. assault bomb may be returned</entry>
+																	<entry>UNS. max. teams</entry>
+																	<entry>UNS. equip. secondary starting equipment</entry>
+																	<entry>UNS. assault fuse time</entry>
+																	<entry>UNS. juggy movement</entry>
+																	<entry>UNS. sticky fuse</entry>
+																	<entry>UNS. terr. contest time</entry>
+																	<entry>UNS. terr. control time</entry>
+																	<entry>UNS. oddb. carr. invis</entry>
+																	<entry>UNS. king invis in hill</entry>
+																	<entry>UNS. ball carr. dmg. resis.</entry>
+																	<entry>UNS. king dmg. res. in hill</entry>
+																	<entry>UNS. players ex. dmg</entry>
+																	<entry>UNS. players dmg. resis.</entry>
+																	<entry>UNS. ctf carr. dmg. resis.</entry>
+																	<entry>UNS. ctf carr. invis.</entry>
+																	<entry>UNS. juggy dmg. resis.</entry>
+																	<entry>UNS. bomb carr. dmg. resis.</entry>
+																	<entry>UNS. bomb carr. invis.</entry>
+																	<entry>UNS. force even teams</entry>
+																</definition>
+															</field>
+															<field type="LongInteger" name="value" />
+															<field type="Terminator" />
+														</fields>
+													</g_default_variant_settings_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="CharInteger" name="description index" />
+										<field type="Pad" name="" definition="3" />
+										<field type="Terminator" />
+									</fields>
+								</g_default_variants_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="create new slayer variant" definition="" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Explanation" name="create new king of the hill variant" definition="" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+					<field type="Explanation" name="create new oddball variant" definition="" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Explanation" name="create new juggernaut variant" definition="" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+					<field type="Explanation" name="create new capture the flag variant" definition="" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Explanation" name="create new assault variant" definition="" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Explanation" name="create new territories variant" definition="" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+					<arrayStart definition="7" />
+					<field type="Struct" name="">
+						<struct name="create_new_variant_struct" groupTag="cnvs">
+							<block name="create_new_variant_struct_block" maxCount="1" display="create_new_variant_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<create_new_variant_struct_fields size="24" sizeIdentifer="sizeof(s_default_variant_definition)" fieldCount="6">
+										<fields>
+											<field type="StringId" name="" />
+											<field type="LongEnum" name="">
+												<definition count="7">
+													<entry>slayer</entry>
+													<entry>oddball</entry>
+													<entry>juggernaut</entry>
+													<entry>king</entry>
+													<entry>ctf</entry>
+													<entry>invasion</entry>
+													<entry>territories</entry>
+												</definition>
+											</field>
+											<field type="Block" name="settings">
+												<block name="g_default_variant_settings_block" maxCount="112" display="g_default_variant_settings_block" flags="0" maxIdentifer="k_number_of_editable_game_variant_parameters" version="1">
+													<versions>
+														<g_default_variant_settings_block_fields size="8" sizeIdentifer="sizeof(s_default_variant_setting)" fieldCount="3">
+															<fields>
+																<field type="LongEnum" name="setting category" isBlockName="True">
+																	<definition count="112">
+																		<entry>match round setting</entry>
+																		<entry>match ctf score to win</entry>
+																		<entry>match slayer score to win round</entry>
+																		<entry>match oddball score to win round</entry>
+																		<entry>match king score to win round</entry>
+																		<entry>match race score to win round</entry>
+																		<entry>match headhunter score to win round</entry>
+																		<entry>match juggernaut score to win round</entry>
+																		<entry>match territories score to win round</entry>
+																		<entry>match assault score to win round</entry>
+																		<entry>match round time limit</entry>
+																		<entry>match rounds reset map</entry>
+																		<entry>match tie resolution</entry>
+																		<entry>match observers</entry>
+																		<entry>match join in progress</entry>
+																		<entry>maximum players</entry>
+																		<entry>lives per round</entry>
+																		<entry>respawn time</entry>
+																		<entry>suicide penalty</entry>
+																		<entry>shields</entry>
+																		<entry>motion sensor</entry>
+																		<entry>invisibility</entry>
+																		<entry>team changing</entry>
+																		<entry>team scoring</entry>
+																		<entry>friendly fire</entry>
+																		<entry>team respawn setting</entry>
+																		<entry>betrayal respawn penalty</entry>
+																		<entry>team killer management</entry>
+																		<entry>slayer bonus points</entry>
+																		<entry>slayer suicide point loss</entry>
+																		<entry>slayer death point loss</entry>
+																		<entry>headhunter moving head bin</entry>
+																		<entry>headhunter point multiplier</entry>
+																		<entry>headhunter suicide point loss</entry>
+																		<entry>headhunter death point loss</entry>
+																		<entry>headhunter uncontested bin</entry>
+																		<entry>headhunter speed with heads</entry>
+																		<entry>headhunter max heads carried</entry>
+																		<entry>king uncontested hill</entry>
+																		<entry>king team time multiplier</entry>
+																		<entry>king moving hill</entry>
+																		<entry>king extra damage on hill</entry>
+																		<entry>king dmg resistance on hill</entry>
+																		<entry>oddball ball spawn count</entry>
+																		<entry>oddball ball hit damage</entry>
+																		<entry>oddball speed with ball</entry>
+																		<entry>oddball driving gunning with ball</entry>
+																		<entry>oddball waypoint to ball</entry>
+																		<entry>race random track</entry>
+																		<entry>race uncontested flag</entry>
+																		<entry>ctf game type</entry>
+																		<entry>ctf sudden death</entry>
+																		<entry>ctf flag may be returned</entry>
+																		<entry>ctf flag at home to score</entry>
+																		<entry>ctf flag reset time</entry>
+																		<entry>ctf speed with flag</entry>
+																		<entry>ctf flag hit damage</entry>
+																		<entry>ctf driving gunning with flag</entry>
+																		<entry>ctf waypoint to own flag</entry>
+																		<entry>assault game type</entry>
+																		<entry>assault sudden death</entry>
+																		<entry>assault detonation time</entry>
+																		<entry>assault bomb at home to score</entry>
+																		<entry>assault arming time</entry>
+																		<entry>assault speed with bomb</entry>
+																		<entry>assault bomb hit damage</entry>
+																		<entry>assault driving gunning with bomb</entry>
+																		<entry>assault waypoint to own bomb</entry>
+																		<entry>juggernaut betrayal point loss</entry>
+																		<entry>juggernaut juggy extra damage</entry>
+																		<entry>juggernaut juggy infinite ammo</entry>
+																		<entry>juggernaut juggy overshields</entry>
+																		<entry>juggernaut juggy active camo</entry>
+																		<entry>juggernaut juggy motion sensor</entry>
+																		<entry>territories territory count</entry>
+																		<entry>veh. respawn</entry>
+																		<entry>veh. primary light land</entry>
+																		<entry>veh. secondary light land</entry>
+																		<entry>veh. primary heavy land</entry>
+																		<entry>veh. primary flying</entry>
+																		<entry>veh. secondary heavy land</entry>
+																		<entry>veh. primary turret</entry>
+																		<entry>veh. secondary turret</entry>
+																		<entry>equip. weapons on map</entry>
+																		<entry>equip. overshields on map</entry>
+																		<entry>equip. active camo on map</entry>
+																		<entry>equip. grenades on map</entry>
+																		<entry>equip. weapon respawn times</entry>
+																		<entry>equip. starting grenades</entry>
+																		<entry>equip. primary starting equipment</entry>
+																		<entry>UNS. max. living players</entry>
+																		<entry>UNS. teams enabled</entry>
+																		<entry>UNS. assault bomb may be returned</entry>
+																		<entry>UNS. max. teams</entry>
+																		<entry>UNS. equip. secondary starting equipment</entry>
+																		<entry>UNS. assault fuse time</entry>
+																		<entry>UNS. juggy movement</entry>
+																		<entry>UNS. sticky fuse</entry>
+																		<entry>UNS. terr. contest time</entry>
+																		<entry>UNS. terr. control time</entry>
+																		<entry>UNS. oddb. carr. invis</entry>
+																		<entry>UNS. king invis in hill</entry>
+																		<entry>UNS. ball carr. dmg. resis.</entry>
+																		<entry>UNS. king dmg. res. in hill</entry>
+																		<entry>UNS. players ex. dmg</entry>
+																		<entry>UNS. players dmg. resis.</entry>
+																		<entry>UNS. ctf carr. dmg. resis.</entry>
+																		<entry>UNS. ctf carr. invis.</entry>
+																		<entry>UNS. juggy dmg. resis.</entry>
+																		<entry>UNS. bomb carr. dmg. resis.</entry>
+																		<entry>UNS. bomb carr. invis.</entry>
+																		<entry>UNS. force even teams</entry>
+																	</definition>
+																</field>
+																<field type="LongInteger" name="value" />
+																<field type="Terminator" />
+															</fields>
+														</g_default_variant_settings_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="CharInteger" name="" />
+											<field type="Pad" name="" definition="3" />
+											<field type="Terminator" />
+										</fields>
+									</create_new_variant_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<arrayEnd />
+					<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+					<field type="Terminator" />
+				</fields>
+			</multiplayer_variant_settings_interface_definition_block_fields>
+		</versions>
+	</block>
+</tagGroup>

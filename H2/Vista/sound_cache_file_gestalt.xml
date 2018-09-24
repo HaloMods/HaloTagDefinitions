@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sound_cache_file_gestalt" groupTag="ugh!" groupTagParent="????" version="1" flags="0">
+	<block name="sound_cache_file_gestalt_block" maxCount="1" display="sound_cache_file_gestalt" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<sound_cache_file_gestalt_block_fields size="132" sizeIdentifer="sizeof(s_sound_cache_file_gestalt_definition)" fieldCount="12">
+				<fields>
+					<field type="Block" name="playbacks">
+						<block name="sound_gestalt_playback_block" maxCount="32767" display="sound_gestalt_playback_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_playback_block_fields size="56" sizeIdentifer="sizeof(s_sound_definition_playback_parameters)" fieldCount="2">
+									<fields>
+										<field type="Struct" name="">
+											<struct name="sound_playback_parameters_struct" groupTag="snpl">
+												<block name="sound_playback_parameters_struct_block" maxCount="1" display="sound_playback_parameters_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<sound_playback_parameters_struct_fields size="56" sizeIdentifer="sizeof(s_sound_definition_playback_parameters)" fieldCount="22">
+															<fields>
+																<field type="Custom" name="Clear distances" attributeGroup="edit" definition="&#x0;I?`" />
+																<field type="Custom" name="Reset distances" attributeGroup="edit" definition="&#x0;I??" />
+																<field type="Real" name="minimum distance" help="the distance below which this sound no longer gets louder" units="world units" />
+																<field type="Real" name="maximum distance" help="the distance beyond which this sound is no longer audible" units="world units" />
+																<field type="RealFraction" name="skip fraction" help="fraction of requests to play this sound that will be ignored (0 means always play.)" />
+																<field type="Real" name="maximum bend per second" units="cents" attributeGroup="cent" />
+																<field type="Explanation" name="randomization" definition="these settings control random variation of volume and pitch.&#xA; the second parameter gets clipped to the first." />
+																<field type="Custom" name="Update gain bounds" attributeGroup="edit" definition="&#x0;I??" />
+																<field type="Real" name="gain base" help="sound's random gain will start here" units="dB" attributeGroup="+dB+" />
+																<field type="Real" name="gain variance" help="sound's gain will be randomly modulated within this range" units="dB" attributeGroup="+dB+" />
+																<field type="ShortIntegerBounds" name="random pitch bounds" help="the sound's pitch will be modulated randomly within this range." units="cents" />
+																<field type="Explanation" name="directional sounds" definition="these settings allow sounds to be directional, fading as they turn away from the listener" />
+																<field type="Angle" name="inner cone angle" help="within the cone defined by this angle and the sound's direction, the sound plays with a gain of 1.0." units="degrees" />
+																<field type="Angle" name="outer cone angle" help="outside the cone defined by this angle and the sound's direction, the sound plays with a gain of OUTER CONE GAIN. (0 means the sound does not attenuate with direction.)" units="degrees" />
+																<field type="Real" name="outer cone gain" help="the gain to use when the sound is directed away from the listener" units="dB" attributeGroup="+dB+" />
+																<field type="Explanation" name="SCRIPTED LOCATION OVERRIDE" definition="NOTE: this will only apply when the sound is started via script&#xA;azimuth:&#xA;    0 =&gt; front&#xA;    90 =&gt; left&#xA;    180 =&gt; back&#xA;    270 =&gt; right&#xA;" />
+																<field type="Custom" name="Update location" attributeGroup="edit" definition="&#x0;I??" />
+																<field type="LongFlags" name="flags">
+																	<definition count="3">
+																		<entry>override azimuth</entry>
+																		<entry>override 3d gain</entry>
+																		<entry>override speaker gain</entry>
+																	</definition>
+																</field>
+																<field type="Angle" name="azimuth" />
+																<field type="Real" name="positional gain" units="dB" />
+																<field type="Real" name="first person gain" units="dB" />
+																<field type="Terminator" />
+															</fields>
+														</sound_playback_parameters_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_playback_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="scales">
+						<block name="sound_gestalt_scale_block" maxCount="32767" display="sound_gestalt_scale_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_scale_block_fields size="20" sizeIdentifer="sizeof(s_sound_definition_scale_modifiers)" fieldCount="2">
+									<fields>
+										<field type="Struct" name="">
+											<struct name="sound_scale_modifiers_struct" groupTag="snsc">
+												<block name="sound_scale_modifiers_struct_block" maxCount="1" display="sound_scale_modifiers_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<sound_scale_modifiers_struct_fields size="20" sizeIdentifer="sizeof(s_sound_definition_scale_modifiers)" fieldCount="5">
+															<fields>
+																<field type="Explanation" name="scale modifiers" definition="as the sound's input scale changes from zero to one, these modifiers move between the two values specified here. the sound will play using the current scale modifier multiplied by the values specified above. (0 values are ignored.)" />
+																<field type="RealBounds" name="gain modifier" units="dB" attributeGroup="+dB+" />
+																<field type="ShortIntegerBounds" name="pitch modifier" units="cents" />
+																<field type="FractionBounds" name="skip fraction modifier" />
+																<field type="Terminator" />
+															</fields>
+														</sound_scale_modifiers_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_scale_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="import names">
+						<block name="sound_gestalt_import_names_block" maxCount="32767" display="sound_gestalt_import_names_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_import_names_block_fields size="4" sizeIdentifer="sizeof(string_id)" fieldCount="2">
+									<fields>
+										<field type="StringId" name="import name" isBlockName="True" />
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_import_names_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="pitch range parameters">
+						<block name="sound_gestalt_pitch_range_parameters_block" maxCount="32767" display="sound_gestalt_pitch_range_parameters_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_pitch_range_parameters_block_fields size="10" sizeIdentifer="sizeof(s_cache_file_sound_pitch_range_parameters)" fieldCount="4">
+									<fields>
+										<field type="ShortInteger" name="natural pitch" units="cents" />
+										<field type="ShortIntegerBounds" name="bend bounds" help="the range of pitches that will be represented using this sample." units="cents" />
+										<field type="ShortIntegerBounds" name="max gain pitch bounds" units="cents" />
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_pitch_range_parameters_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="pitch ranges">
+						<block name="sound_gestalt_pitch_ranges_block" maxCount="32767" display="sound_gestalt_pitch_ranges_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_pitch_ranges_block_fields size="12" sizeIdentifer="sizeof(s_cache_file_sound_pitch_range)" fieldCount="7">
+									<fields>
+										<field type="ShortBlockIndex1" name="name" isBlockName="True" definition="sound_gestalt_import_names_block" />
+										<field type="ShortBlockIndex1" name="parameters" definition="sound_gestalt_pitch_range_parameters_block" />
+										<field type="ShortInteger" name="encoded permutation data" />
+										<field type="ShortInteger" name="first runtime permutation flag index" />
+										<field type="ShortBlockIndex1" name="first permutation" definition="sound_gestalt_permutations_block" />
+										<field type="ShortInteger" name="permutation count" />
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_pitch_ranges_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="permutations">
+						<block name="sound_gestalt_permutations_block" maxCount="32767" display="sound_gestalt_permutations_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_permutations_block_fields size="16" sizeIdentifer="sizeof(s_cache_file_sound_permutation)" fieldCount="9">
+									<fields>
+										<field type="ShortBlockIndex1" name="name" isBlockName="True" definition="sound_gestalt_import_names_block" />
+										<field type="ShortInteger" name="encoded skip fraction" />
+										<field type="CharInteger" name="encoded gain" units="dB" />
+										<field type="CharInteger" name="permutation info index" />
+										<field type="ShortInteger" name="language neutral time" units="ms" />
+										<field type="LongInteger" name="sample size" />
+										<field type="ShortBlockIndex1" name="first chunk" definition="sound_permutation_chunk_block" />
+										<field type="ShortInteger" name="chunk count" />
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_permutations_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="custom playbacks">
+						<block name="sound_gestalt_custom_playback_block" maxCount="32767" display="sound_gestalt_custom_playback_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_custom_playback_block_fields size="72" sizeIdentifer="sizeof(s_platform_sound_playback_definition)" fieldCount="2">
+									<fields>
+										<field type="Struct" name="playback definition">
+											<struct name="simple_platform_sound_playback_struct" groupTag="plsn">
+												<block name="simple_platform_sound_playback_struct_block" maxCount="1" display="simple_platform_sound_playback_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<simple_platform_sound_playback_struct_fields size="72" sizeIdentifer="sizeof(s_platform_sound_playback_definition)" fieldCount="8">
+															<fields>
+																<field type="Block" name="">
+																	<block name="platform_sound_override_mixbins_block" maxCount="8" display="platform_sound_override_mixbins_block" flags="0" maxIdentifer="k_maximum_number_of_override_mixbins" version="1">
+																		<versions>
+																			<platform_sound_override_mixbins_block_fields size="8" sizeIdentifer="sizeof(s_platform_sound_mixbin)" fieldCount="3">
+																				<fields>
+																					<field type="LongEnum" name="mixbin">
+																						<definition count="13">
+																							<entry>front left</entry>
+																							<entry>front right</entry>
+																							<entry>back left</entry>
+																							<entry>back right</entry>
+																							<entry>center</entry>
+																							<entry>low frequency</entry>
+																							<entry>reverb</entry>
+																							<entry>3d front left</entry>
+																							<entry>3d front right</entry>
+																							<entry>3d back left</entry>
+																							<entry>3d back right</entry>
+																							<entry>default left speakers</entry>
+																							<entry>default right speakers</entry>
+																						</definition>
+																					</field>
+																					<field type="Real" name="gain" units="dB" />
+																					<field type="Terminator" />
+																				</fields>
+																			</platform_sound_override_mixbins_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="LongFlags" name="flags">
+																	<definition count="1">
+																		<entry>use 3d radio hack</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="8" />
+																<field type="Block" name="filter">
+																	<block name="platform_sound_filter_block" maxCount="1" display="platform_sound_filter_block" flags="0" maxIdentifer="1" procGenerateDefault="True" version="1">
+																		<versions>
+																			<platform_sound_filter_block_fields size="72" sizeIdentifer="sizeof(s_platform_sound_source_filter)" fieldCount="12">
+																				<fields>
+																					<field type="Explanation" name="parameter description" definition="DLS2 filtering:&#xA;    resonance gain range: [0, 22.5] dB&#xA;&#xA;parametric EQ:&#xA;    gain range: [-64, 14] dB&#xA;&#xA;for mono sounds:&#xA;    the left filter controls the DLS 2 parameters&#xA;    the right filter controls the Parametric EQ parameters&#xA;&#xA;for stereo sounds:&#xA;    both left and right channels must have the same filter&#xA;    i.e., filter type both is invalid" />
+																					<field type="LongEnum" name="filter type">
+																						<definition count="3">
+																							<entry>parametric EQ</entry>
+																							<entry>DLS2</entry>
+																							<entry>both (only valid for mono)</entry>
+																						</definition>
+																					</field>
+																					<field type="LongInteger" name="filter width" units="[0,7]" />
+																					<field type="Explanation" name="left filter frequency" definition="in Hz [0,8000]" />
+																					<field type="Struct" name="left filter frequency">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Explanation" name="left filter gain" definition="in dB" />
+																					<field type="Struct" name="left filter gain">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Explanation" name="right filter frequency" definition="in Hz [0,8000]" />
+																					<field type="Struct" name="right filter frequency">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Explanation" name="right filter gain" definition="in dB" />
+																					<field type="Struct" name="right filter gain">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</platform_sound_filter_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Block" name="pitch lfo">
+																	<block name="platform_sound_pitch_lfo_block" maxCount="1" display="platform_sound_pitch_lfo_block" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<platform_sound_pitch_lfo_block_fields size="48" sizeIdentifer="sizeof(s_platform_sound_source_pitch_lfo)" fieldCount="7">
+																				<fields>
+																					<field type="Explanation" name="delay" definition="seconds" />
+																					<field type="Struct" name="delay">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Explanation" name="frequency" definition="Hz[0,43.7]" />
+																					<field type="Struct" name="frequency">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Explanation" name="pitch modulation" definition="octaves[-1,1]" />
+																					<field type="Struct" name="pitch modulation">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</platform_sound_pitch_lfo_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Block" name="filter lfo">
+																	<block name="platform_sound_filter_lfo_block" maxCount="1" display="platform_sound_filter_lfo_block" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<platform_sound_filter_lfo_block_fields size="64" sizeIdentifer="sizeof(s_platform_sound_source_filter_lfo)" fieldCount="9">
+																				<fields>
+																					<field type="Explanation" name="delay" definition="in seconds" />
+																					<field type="Struct" name="delay">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Explanation" name="frequency" definition="in Hz[0,43.7]" />
+																					<field type="Struct" name="frequency">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Explanation" name="cutoff modulation" definition="octaves[-8,8]" />
+																					<field type="Struct" name="cutoff modulation">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Explanation" name="gain modulation" definition="dB[-16,16]" />
+																					<field type="Struct" name="gain modulation">
+																						<struct name="sound_playback_parameter_definition" groupTag="spl1">
+																							<block name="sound_playback_parameter_definition_block" maxCount="1" display="sound_playback_parameter_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_playback_parameter_definition_fields size="16" sizeIdentifer="sizeof(s_sound_playback_parameter)" fieldCount="3">
+																										<fields>
+																											<field type="RealBounds" name="scale bounds" />
+																											<field type="RealBounds" name="random base and variance" />
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_playback_parameter_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</platform_sound_filter_lfo_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Block" name="sound effect">
+																	<block name="sound_effect_playback_block" maxCount="1" display="sound_effect_playback_block" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<sound_effect_playback_block_fields size="72" sizeIdentifer="sizeof(s_sound_effect_definition)" fieldCount="2">
+																				<fields>
+																					<field type="Struct" name="sound effect struct">
+																						<struct name="sound_effect_struct_definition" groupTag="ssfx">
+																							<block name="sound_effect_struct_definition_block" maxCount="1" display="sound_effect_struct_definition" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<sound_effect_struct_definition_fields size="72" sizeIdentifer="sizeof(s_sound_effect_definition)" fieldCount="7">
+																										<fields>
+																											<field type="Custom" name="sound effect" attributeGroup="tmpl" definition="ssfx" />
+																											<field type="TagReference" name="">
+																												<definition flags="0" groupTag="&lt;fx&gt;" />
+																											</field>
+																											<field type="Block" name="components">
+																												<block name="sound_effect_component_block" maxCount="16" display="sound_effect_component_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_components" version="1">
+																													<versions>
+																														<sound_effect_component_block_fields size="24" sizeIdentifer="sizeof(s_sound_effect_component_definition)" fieldCount="4">
+																															<fields>
+																																<field type="TagReference" name="sound" isBlockName="True">
+																																	<definition flags="0">
+																																		<groupTags>
+																																			<groupTag>lsnd</groupTag>
+																																			<groupTag>snd!</groupTag>
+																																		</groupTags>
+																																	</definition>
+																																</field>
+																																<field type="Real" name="gain" help="additional attenuation to sound" units="dB" attributeGroup="+dB+" />
+																																<field type="LongFlags" name="flags">
+																																	<definition count="6">
+																																		<entry>don't play at start</entry>
+																																		<entry>play on stop</entry>
+																																		<entry />
+																																		<entry>play alternate</entry>
+																																		<entry />
+																																		<entry>sync with origin looping sound</entry>
+																																	</definition>
+																																</field>
+																																<field type="Terminator" />
+																															</fields>
+																														</sound_effect_component_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Block" name="">
+																												<block name="sound_effect_overrides_block" maxCount="128" display="sound_effect_overrides_block" flags="0" maxIdentifer="128" version="1">
+																													<versions>
+																														<sound_effect_overrides_block_fields size="16" sizeIdentifer="sizeof(s_sound_effect_override_collection)" fieldCount="3">
+																															<fields>
+																																<field type="StringId" name="name" />
+																																<field type="Block" name="overrides">
+																																	<block name="sound_effect_override_parameters_block" maxCount="128" display="sound_effect_override_parameters_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_parameters" procGenerateDefault="True" version="2">
+																																		<versions>
+																																			<g_sound_effect_override_parameters_fields_v1 size="12" sizeIdentifer="sizeof(s_sound_effect_override_parameter_v1)" fieldCount="4">
+																																				<fields>
+																																					<field type="StringId" name="name" />
+																																					<field type="LongInteger" name="integer value" />
+																																					<field type="Real" name="real value" />
+																																					<field type="Terminator" />
+																																				</fields>
+																																			</g_sound_effect_override_parameters_fields_v1>
+																																			<g_sound_effect_override_parameters_fields_v2 size="36" sizeIdentifer="sizeof(s_sound_effect_override_parameter)" fieldCount="9">
+																																				<fields>
+																																					<field type="StringId" name="name" />
+																																					<field type="StringId" name="input" attributeGroup="fnin" hasStringEditor="true" />
+																																					<field type="StringId" name="range" attributeGroup="fnir" hasStringEditor="true" />
+																																					<field type="Real" name="time period" units=" seconds" attributeGroup="fn**" />
+																																					<field type="LongInteger" name="integer value" />
+																																					<field type="Real" name="real value" />
+																																					<field type="Custom" name="sound effect value" attributeGroup="fned" definition="&#x0;??4" />
+																																					<field type="Struct" name="function value">
+																																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																																								<versions>
+																																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																																										<fields>
+																																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																											<field type="CharInteger" name="Function Type" />
+																																											<field type="ByteFlags" name="Flags">
+																																												<definition count="8">
+																																													<entry>Range</entry>
+																																													<entry>Unused 0</entry>
+																																													<entry>Unused 1</entry>
+																																													<entry>Unused 2</entry>
+																																													<entry>Color Bit 0</entry>
+																																													<entry>Color Bit 1</entry>
+																																													<entry>Color Bit 2</entry>
+																																													<entry>Color Bit 3</entry>
+																																												</definition>
+																																											</field>
+																																											<field type="CharInteger" name="Function 1" />
+																																											<field type="CharInteger" name="Function 2" />
+																																											<field type="RgbColor" name="Color 0" />
+																																											<field type="RgbColor" name="Color 1" />
+																																											<field type="RgbColor" name="Color 2" />
+																																											<field type="RgbColor" name="Color 3" />
+																																											<field type="Block" name="Values">
+																																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																																													<versions>
+																																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																																															<fields>
+																																																<field type="Real" name="Value" />
+																																																<field type="Terminator" />
+																																															</fields>
+																																														</real_block_fields>
+																																													</versions>
+																																												</block>
+																																											</field>
+																																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																											<field type="Terminator" />
+																																										</fields>
+																																									</function_definition_fields_v1>
+																																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																																										<fields>
+																																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																											<field type="Block" name="data">
+																																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																																													<versions>
+																																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																																															<fields>
+																																																<field type="CharInteger" name="Value" />
+																																																<field type="Terminator" />
+																																															</fields>
+																																														</byte_block_fields>
+																																													</versions>
+																																												</block>
+																																											</field>
+																																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																											<field type="Terminator" />
+																																										</fields>
+																																									</function_definition_fields_v2>
+																																								</versions>
+																																							</block>
+																																						</struct>
+																																					</field>
+																																					<field type="Terminator" />
+																																				</fields>
+																																			</g_sound_effect_override_parameters_fields_v2>
+																																		</versions>
+																																	</block>
+																																</field>
+																																<field type="Terminator" />
+																															</fields>
+																														</sound_effect_overrides_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Data" name="">
+																												<definition name="sound_effect_hardware_format_data_definition" maxSize="1024" alignment="2" flags="0" maxIdentifer="k_maximum_sound_effect_hardware_format_size" />
+																											</field>
+																											<field type="Block" name="">
+																												<block name="platform_sound_effect_collection_block" maxCount="1" display="platform_sound_effect_collection_block" flags="0" maxIdentifer="1" version="1">
+																													<versions>
+																														<platform_sound_effect_collection_block_fields size="28" sizeIdentifer="sizeof(s_platform_sound_effect_collection)" fieldCount="4">
+																															<fields>
+																																<field type="Block" name="sound effects" isReadonly="True">
+																																	<block name="platform_sound_effect_block" maxCount="8" display="platform_sound_effect_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_templates" version="1">
+																																		<versions>
+																																			<platform_sound_effect_block_fields size="40" sizeIdentifer="sizeof(s_platform_sound_effect_definition)" fieldCount="5">
+																																				<fields>
+																																					<field type="Block" name="function inputs">
+																																						<block name="platform_sound_effect_function_block" maxCount="16" display="platform_sound_effect_function_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_inputs" version="1">
+																																							<versions>
+																																								<platform_sound_effect_function_block_fields size="20" sizeIdentifer="sizeof(s_platform_sound_effect_function)" fieldCount="5">
+																																									<fields>
+																																										<field type="Enum" name="input" attributeGroup="fnin">
+																																											<definition count="4">
+																																												<entry>zero</entry>
+																																												<entry>time</entry>
+																																												<entry>scale</entry>
+																																												<entry>rolloff</entry>
+																																											</definition>
+																																										</field>
+																																										<field type="Enum" name="range" attributeGroup="fnir">
+																																											<definition count="4">
+																																												<entry>zero</entry>
+																																												<entry>time</entry>
+																																												<entry>scale</entry>
+																																												<entry>rolloff</entry>
+																																											</definition>
+																																										</field>
+																																										<field type="Struct" name="function">
+																																											<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																																												<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																																													<versions>
+																																														<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																																															<fields>
+																																																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																																<field type="CharInteger" name="Function Type" />
+																																																<field type="ByteFlags" name="Flags">
+																																																	<definition count="8">
+																																																		<entry>Range</entry>
+																																																		<entry>Unused 0</entry>
+																																																		<entry>Unused 1</entry>
+																																																		<entry>Unused 2</entry>
+																																																		<entry>Color Bit 0</entry>
+																																																		<entry>Color Bit 1</entry>
+																																																		<entry>Color Bit 2</entry>
+																																																		<entry>Color Bit 3</entry>
+																																																	</definition>
+																																																</field>
+																																																<field type="CharInteger" name="Function 1" />
+																																																<field type="CharInteger" name="Function 2" />
+																																																<field type="RgbColor" name="Color 0" />
+																																																<field type="RgbColor" name="Color 1" />
+																																																<field type="RgbColor" name="Color 2" />
+																																																<field type="RgbColor" name="Color 3" />
+																																																<field type="Block" name="Values">
+																																																	<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																																																		<versions>
+																																																			<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																																																				<fields>
+																																																					<field type="Real" name="Value" />
+																																																					<field type="Terminator" />
+																																																				</fields>
+																																																			</real_block_fields>
+																																																		</versions>
+																																																	</block>
+																																																</field>
+																																																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																																<field type="Terminator" />
+																																															</fields>
+																																														</function_definition_fields_v1>
+																																														<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																																															<fields>
+																																																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																																<field type="Block" name="data">
+																																																	<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																																																		<versions>
+																																																			<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																																																				<fields>
+																																																					<field type="CharInteger" name="Value" />
+																																																					<field type="Terminator" />
+																																																				</fields>
+																																																			</byte_block_fields>
+																																																		</versions>
+																																																	</block>
+																																																</field>
+																																																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																																<field type="Terminator" />
+																																															</fields>
+																																														</function_definition_fields_v2>
+																																													</versions>
+																																												</block>
+																																											</struct>
+																																										</field>
+																																										<field type="Real" name="time period" units=" seconds" />
+																																										<field type="Terminator" />
+																																									</fields>
+																																								</platform_sound_effect_function_block_fields>
+																																							</versions>
+																																						</block>
+																																					</field>
+																																					<field type="Block" name="constant inputs">
+																																						<block name="platform_sound_effect_constant_block" maxCount="16" display="platform_sound_effect_constant_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_inputs" version="1">
+																																							<versions>
+																																								<platform_sound_effect_constant_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																																									<fields>
+																																										<field type="Real" name="constant value" />
+																																										<field type="Terminator" />
+																																									</fields>
+																																								</platform_sound_effect_constant_block_fields>
+																																							</versions>
+																																						</block>
+																																					</field>
+																																					<field type="Block" name="template override descriptors">
+																																						<block name="platform_sound_effect_override_descriptor_block" maxCount="16" display="platform_sound_effect_override_descriptor_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_inputs" version="1">
+																																							<versions>
+																																								<platform_sound_effect_override_descriptor_block_fields size="1" sizeIdentifer="sizeof(s_platform_sound_effect_override_descriptor)" fieldCount="2">
+																																									<fields>
+																																										<field type="CharInteger" name="override descriptor" />
+																																										<field type="Terminator" />
+																																									</fields>
+																																								</platform_sound_effect_override_descriptor_block_fields>
+																																							</versions>
+																																						</block>
+																																					</field>
+																																					<field type="LongInteger" name="input overrides" />
+																																					<field type="Terminator" />
+																																				</fields>
+																																			</platform_sound_effect_block_fields>
+																																		</versions>
+																																	</block>
+																																</field>
+																																<field type="Block" name="low frequency input" isReadonly="True">
+																																	<block name="platform_sound_effect_function_block" maxCount="16" display="platform_sound_effect_function_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_inputs" version="1">
+																																		<versions>
+																																			<platform_sound_effect_function_block_fields size="20" sizeIdentifer="sizeof(s_platform_sound_effect_function)" fieldCount="5">
+																																				<fields>
+																																					<field type="Enum" name="input" attributeGroup="fnin">
+																																						<definition count="4">
+																																							<entry>zero</entry>
+																																							<entry>time</entry>
+																																							<entry>scale</entry>
+																																							<entry>rolloff</entry>
+																																						</definition>
+																																					</field>
+																																					<field type="Enum" name="range" attributeGroup="fnir">
+																																						<definition count="4">
+																																							<entry>zero</entry>
+																																							<entry>time</entry>
+																																							<entry>scale</entry>
+																																							<entry>rolloff</entry>
+																																						</definition>
+																																					</field>
+																																					<field type="Struct" name="function">
+																																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																																								<versions>
+																																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																																										<fields>
+																																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																											<field type="CharInteger" name="Function Type" />
+																																											<field type="ByteFlags" name="Flags">
+																																												<definition count="8">
+																																													<entry>Range</entry>
+																																													<entry>Unused 0</entry>
+																																													<entry>Unused 1</entry>
+																																													<entry>Unused 2</entry>
+																																													<entry>Color Bit 0</entry>
+																																													<entry>Color Bit 1</entry>
+																																													<entry>Color Bit 2</entry>
+																																													<entry>Color Bit 3</entry>
+																																												</definition>
+																																											</field>
+																																											<field type="CharInteger" name="Function 1" />
+																																											<field type="CharInteger" name="Function 2" />
+																																											<field type="RgbColor" name="Color 0" />
+																																											<field type="RgbColor" name="Color 1" />
+																																											<field type="RgbColor" name="Color 2" />
+																																											<field type="RgbColor" name="Color 3" />
+																																											<field type="Block" name="Values">
+																																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																																													<versions>
+																																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																																															<fields>
+																																																<field type="Real" name="Value" />
+																																																<field type="Terminator" />
+																																															</fields>
+																																														</real_block_fields>
+																																													</versions>
+																																												</block>
+																																											</field>
+																																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																											<field type="Terminator" />
+																																										</fields>
+																																									</function_definition_fields_v1>
+																																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																																										<fields>
+																																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																											<field type="Block" name="data">
+																																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																																													<versions>
+																																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																																															<fields>
+																																																<field type="CharInteger" name="Value" />
+																																																<field type="Terminator" />
+																																															</fields>
+																																														</byte_block_fields>
+																																													</versions>
+																																												</block>
+																																											</field>
+																																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																																											<field type="Terminator" />
+																																										</fields>
+																																									</function_definition_fields_v2>
+																																								</versions>
+																																							</block>
+																																						</struct>
+																																					</field>
+																																					<field type="Real" name="time period" units=" seconds" />
+																																					<field type="Terminator" />
+																																				</fields>
+																																			</platform_sound_effect_function_block_fields>
+																																		</versions>
+																																	</block>
+																																</field>
+																																<field type="LongInteger" name="sound effect overrides" />
+																																<field type="Terminator" />
+																															</fields>
+																														</platform_sound_effect_collection_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Terminator" />
+																										</fields>
+																									</sound_effect_struct_definition_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_effect_playback_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</simple_platform_sound_playback_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_custom_playback_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="runtime permutation flags">
+						<block name="sound_gestalt_runtime_permutation_bit_vector_block" maxCount="32767" display="sound_gestalt_runtime_permutation_bit_vector_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_runtime_permutation_bit_vector_block_fields size="1" sizeIdentifer="sizeof(char)" fieldCount="2">
+									<fields>
+										<field type="CharInteger" name="" />
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_runtime_permutation_bit_vector_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="chunks">
+						<block name="sound_permutation_chunk_block" maxCount="32767" display="sound_permutation_chunk_block" flags="0" maxIdentifer="MAXIMUM_CHUNKS_PER_PERMUTATION" procDispose="True" version="2">
+							<versions>
+								<g_sound_permutation_chunk_fields_v1 size="16" sizeIdentifer="sizeof(s_sound_permutation_chunk_v1)" fieldCount="6">
+									<fields>
+										<field type="LongInteger" name="file offset" isReadonly="True" />
+										<field type="ShortInteger" name="" />
+										<field type="ShortInteger" name="" />
+										<field type="LongInteger" name="" />
+										<field type="LongInteger" name="" />
+										<field type="Terminator" />
+									</fields>
+								</g_sound_permutation_chunk_fields_v1>
+								<g_sound_permutation_chunk_fields_v2 size="12" sizeIdentifer="sizeof(s_sound_permutation_chunk)" fieldCount="4">
+									<fields>
+										<field type="LongInteger" name="file offset" isReadonly="True" />
+										<field type="LongInteger" name="" />
+										<field type="LongInteger" name="" />
+										<field type="Terminator" />
+									</fields>
+								</g_sound_permutation_chunk_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="promotions">
+						<block name="sound_gestalt_promotions_block" maxCount="32767" display="sound_gestalt_promotions_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_promotions_block_fields size="36" sizeIdentifer="sizeof(s_sound_promotion_parameters)" fieldCount="2">
+									<fields>
+										<field type="Struct" name="">
+											<struct name="sound_promotion_parameters_struct" groupTag="snpr">
+												<block name="sound_promotion_parameters_struct_block" maxCount="1" display="sound_promotion_parameters_struct" flags="0" maxIdentifer="1" version="2">
+													<versions>
+														<sound_promotion_parameter_fields_v1 size="28" sizeIdentifer="sizeof(s_old_sound_promotion_parameters)" fieldCount="5">
+															<fields>
+																<field type="TagReference" name="promotion sound">
+																	<definition flags="4" groupTag="snd!" />
+																</field>
+																<field type="ShortInteger" name="promotion count" help="when there are this many instances of the sound, promote to the new sound." />
+																<field type="Pad" name="" definition="2" />
+																<field type="Pad" name="" definition="8" />
+																<field type="Terminator" />
+															</fields>
+														</sound_promotion_parameter_fields_v1>
+														<sound_promotion_parameter_fields_v2 size="36" sizeIdentifer="sizeof(s_sound_promotion_parameters)" fieldCount="4">
+															<fields>
+																<field type="Block" name="promotion rules">
+																	<block name="sound_promotion_rule_block" maxCount="9" display="sound_promotion_rule_block" flags="0" maxIdentifer="k_maximum_promotion_rules_per_sound" version="1">
+																		<versions>
+																			<sound_promotion_rule_block_fields size="16" sizeIdentifer="sizeof(s_sound_promotion_rule)" fieldCount="5">
+																				<fields>
+																					<field type="ShortBlockIndex1" name="pitch range" isBlockName="True" definition="sound_pitch_range_block" />
+																					<field type="ShortInteger" name="maximum playing count" />
+																					<field type="Real" name="suppression time" help="time from when first permutation plays to when another sound from an equal or lower promotion can play" units="seconds" />
+																					<field type="Pad" name="" definition="8" />
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_promotion_rule_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Block" name="">
+																	<block name="sound_promotion_runtime_timer_block" maxCount="9" display="sound_promotion_runtime_timer_block" flags="0" maxIdentifer="k_maximum_promotion_rules_per_sound" version="1">
+																		<versions>
+																			<sound_promotion_runtime_timer_block_fields size="4" sizeIdentifer="sizeof(long)" fieldCount="2">
+																				<fields>
+																					<field type="LongInteger" name="" />
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_promotion_runtime_timer_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Pad" name="" definition="12" />
+																<field type="Terminator" />
+															</fields>
+														</sound_promotion_parameter_fields_v2>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_promotions_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="extra infos">
+						<block name="sound_gestalt_extra_info_block" maxCount="32767" display="sound_gestalt_extra_info_block" flags="0" maxIdentifer="SHORT_MAX" version="1">
+							<versions>
+								<sound_gestalt_extra_info_block_fields size="52" sizeIdentifer="sizeof(s_cache_file_sound_definition_extra_info)" fieldCount="3">
+									<fields>
+										<field type="Block" name="encoded permutation section">
+											<block name="sound_encoded_dialogue_section_block" maxCount="1" display="sound_encoded_dialogue_section_block" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<sound_encoded_dialogue_section_block_fields size="32" sizeIdentifer="sizeof(s_sound_encoded_dialogue_section)" fieldCount="3">
+														<fields>
+															<field type="Data" name="encoded data">
+																<definition name="generic_tag_data" maxSize="301989888" alignment="0" flags="0" maxIdentifer="MAX(MAXIMUM_SOUND_MOUTH_DATA_SIZE, MAXIMUM_SOUND_LIPSYNC_DATA_SIZE)*MAXIMUM_PITCH_RANGES_PER_SOUND*MAXIMUM_PERMUTATIONS_PER_PITCH_RANGE" />
+															</field>
+															<field type="Block" name="sound dialogue info">
+																<block name="sound_permutation_dialogue_info_block" maxCount="288" display="sound_permutation_dialogue_info_block" flags="0" maxIdentifer="MAXIMUM_PITCH_RANGES_PER_SOUND*MAXIMUM_PERMUTATIONS_PER_PITCH_RANGE" version="1">
+																	<versions>
+																		<sound_permutation_dialogue_info_block_fields size="16" sizeIdentifer="sizeof(s_sound_permutation_dialogue_info)" fieldCount="5">
+																			<fields>
+																				<field type="LongInteger" name="mouth data offset" />
+																				<field type="LongInteger" name="mouth data length" />
+																				<field type="LongInteger" name="lipsync data offset" />
+																				<field type="LongInteger" name="lipsync data length" />
+																				<field type="Terminator" />
+																			</fields>
+																		</sound_permutation_dialogue_info_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</sound_encoded_dialogue_section_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Struct" name="geometry block info">
+											<struct name="global_geometry_block_info_struct" groupTag="BLOK">
+												<block name="global_geometry_block_info_struct_block" maxCount="1" display="global_geometry_block_info_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<global_geometry_block_info_struct_fields size="40" sizeIdentifer="sizeof(struct geometry_block_info)" fieldCount="11">
+															<fields>
+																<field type="Explanation" name="BLOCK INFO" definition="" />
+																<field type="LongInteger" name="Block Offset" isReadonly="True" />
+																<field type="LongInteger" name="Block Size" isReadonly="True" />
+																<field type="LongInteger" name="Section Data Size" isReadonly="True" />
+																<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																<field type="Block" name="Resources" isReadonly="True">
+																	<block name="global_geometry_block_resource_block" maxCount="1024" display="block resources" flags="0" maxIdentifer="MAXIMUM_RESOURCES_PER_GEOMETRY_BLOCK" version="1">
+																		<versions>
+																			<global_geometry_block_resource_block_fields size="16" sizeIdentifer="sizeof(struct geometry_block_resource)" fieldCount="7">
+																				<fields>
+																					<field type="CharEnum" name="Type" isReadonly="True">
+																						<definition count="3">
+																							<entry>Tag Block</entry>
+																							<entry>Tag Data</entry>
+																							<entry>Vertex Buffer</entry>
+																						</definition>
+																					</field>
+																					<field type="Pad" name="" definition="3" />
+																					<field type="ShortInteger" name="Primary Locator" isReadonly="True" />
+																					<field type="ShortInteger" name="Secondary Locator" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Offset" isReadonly="True" />
+																					<field type="Terminator" />
+																				</fields>
+																			</global_geometry_block_resource_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Pad" name="" definition="4" />
+																<field type="ShortInteger" name="Owner Tag Section Offset" isReadonly="True" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Pad" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</global_geometry_block_info_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</sound_gestalt_extra_info_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</sound_cache_file_gestalt_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="device_light_fixture" groupTag="lifi" groupTagParent="devi" version="1" flags="9">
+	<block name="device_light_fixture_block" maxCount="1" display="device_light_fixture" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<device_light_fixture_block_fields size="0" sizeIdentifer="k_device_fixture_size" fieldCount="3">
+				<fields>
+					<field type="Explanation" name="$$$ LIGHT FIXTURE $$$" definition="" />
+					<field type="UselessPad" name="" definition="64" />
+					<field type="Terminator" />
+				</fields>
+			</device_light_fixture_block_fields>
+		</versions>
+	</block>
+</tagGroup>

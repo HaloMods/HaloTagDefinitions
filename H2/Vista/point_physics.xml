@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="point_physics" groupTag="pphy" groupTagParent="????" version="1" flags="8">
+	<block name="point_physics_block" maxCount="1" display="point_physics" flags="0" maxIdentifer="1" procPostprocess="True" procInvalidHandler="True" version="1">
+		<versions>
+			<point_physics_block_fields size="64" sizeIdentifer="sizeof(struct point_physics_definition)" fieldCount="10">
+				<fields>
+					<field type="LongFlags" name="flags">
+						<definition count="6">
+							<entry>UNUSED</entry>
+							<entry>collides with structures</entry>
+							<entry>collides with water surface</entry>
+							<entry>uses simple wind#the wind on this point won't have high-frequency variations</entry>
+							<entry>uses damped wind#the wind on this point will be artificially slow</entry>
+							<entry>no gravity#the point is not affected by gravity</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="28" />
+					<field type="Real" name="density" units="g/mL" />
+					<field type="Real" name="air friction" />
+					<field type="Real" name="water friction" />
+					<field type="Real" name="surface friction" help="when hitting the ground or interior, percentage of velocity lost in one collision" />
+					<field type="Real" name="elasticity" help="0.0 is inelastic collisions (no bounce) 1.0 is perfectly elastic (reflected velocity equals incoming velocity)" />
+					<field type="Pad" name="" definition="12" />
+					<field type="Explanation" name="Densities (g/mL)" definition="air        0.0011 (g/mL)&#xA;snow       0.128&#xA;cork       0.24&#xA;cedar      0.43&#xA;oak        0.866&#xA;ice        0.897&#xA;water      1.0&#xA;soil       1.1&#xA;cotton     1.491&#xA;dry earth  1.52&#xA;sand       1.7&#xA;granite    2.4&#xA;glass      2.5&#xA;iron       7.65&#xA;steel      7.77&#xA;lead       11.37&#xA;uranium    18.74&#xA;gold       19.3&#xA;" />
+					<field type="Terminator" />
+				</fields>
+			</point_physics_block_fields>
+		</versions>
+	</block>
+</tagGroup>

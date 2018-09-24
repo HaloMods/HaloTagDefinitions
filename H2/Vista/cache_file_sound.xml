@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="cache_file_sound" groupTag="$#!+" groupTagParent="????" version="1" flags="0">
+	<block name="cache_file_sound_block" maxCount="1" display="cache_file_sound" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<cache_file_sound_block_fields size="20" sizeIdentifer="sizeof(s_cache_file_sound_definition)" fieldCount="14">
+				<fields>
+					<field type="WordFlags" name="flags">
+						<definition count="10">
+							<entry>fit to adpcm blocksize</entry>
+							<entry>split long sound into permutations</entry>
+							<entry>always spatialize#always play as 3d sound, even in first person</entry>
+							<entry>never obstruct#disable occlusion/obstruction for this sound</entry>
+							<entry>internal don't touch</entry>
+							<entry>use huge sound transmission</entry>
+							<entry>link count to owner unit</entry>
+							<entry>pitch range is language</entry>
+							<entry>don't use sound class speaker flag</entry>
+							<entry>don't use lipsync data</entry>
+						</definition>
+					</field>
+					<field type="CharEnum" name="sound class" isReadonly="True">
+						<definition count="54">
+							<entry>projectile_impact</entry>
+							<entry>projectile_detonation</entry>
+							<entry>projectile_flyby</entry>
+							<entry />
+							<entry>weapon_fire</entry>
+							<entry>weapon_ready</entry>
+							<entry>weapon_reload</entry>
+							<entry>weapon_empty</entry>
+							<entry>weapon_charge</entry>
+							<entry>weapon_overheat</entry>
+							<entry>weapon_idle</entry>
+							<entry>weapon_melee</entry>
+							<entry>weapon_animation</entry>
+							<entry>object_impacts</entry>
+							<entry>particle_impacts</entry>
+							<entry />
+							<entry />
+							<entry />
+							<entry>unit_footsteps</entry>
+							<entry>unit_dialog</entry>
+							<entry>unit_animation</entry>
+							<entry />
+							<entry>vehicle_collision</entry>
+							<entry>vehicle_engine</entry>
+							<entry>vehicle_animation</entry>
+							<entry />
+							<entry>device_door</entry>
+							<entry />
+							<entry>device_machinery</entry>
+							<entry>device_stationary</entry>
+							<entry />
+							<entry />
+							<entry>music</entry>
+							<entry>ambient_nature</entry>
+							<entry>ambient_machinery</entry>
+							<entry />
+							<entry>huge_ass</entry>
+							<entry>object_looping</entry>
+							<entry>cinematic_music</entry>
+							<entry />
+							<entry />
+							<entry />
+							<entry />
+							<entry />
+							<entry />
+							<entry>cortana_mission</entry>
+							<entry>cortana_cinematic</entry>
+							<entry>mission_dialog</entry>
+							<entry>cinematic_dialog</entry>
+							<entry>scripted_cinematic_foley</entry>
+							<entry>game_event</entry>
+							<entry>ui</entry>
+							<entry>test</entry>
+							<entry>multilingual_test</entry>
+						</definition>
+					</field>
+					<field type="CharEnum" name="sample rate" isReadonly="True">
+						<definition count="3">
+							<entry>22kHz</entry>
+							<entry>44kHz</entry>
+							<entry>32kHz</entry>
+						</definition>
+					</field>
+					<field type="CharEnum" name="encoding" isReadonly="True">
+						<definition count="3">
+							<entry>mono</entry>
+							<entry>stereo</entry>
+							<entry>codec</entry>
+						</definition>
+					</field>
+					<field type="CharEnum" name="compression" isReadonly="True">
+						<definition count="5">
+							<entry>none (big endian)</entry>
+							<entry>xbox adpcm</entry>
+							<entry>ima adpcm</entry>
+							<entry>none (little endian)</entry>
+							<entry>wma</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="playback index" />
+					<field type="ShortInteger" name="first pitch range index" />
+					<field type="CharInteger" name="pitch range count" />
+					<field type="CharInteger" name="scale index" />
+					<field type="CharInteger" name="promotion index" />
+					<field type="CharInteger" name="custom playback index" />
+					<field type="ShortInteger" name="extra info index" />
+					<field type="LongInteger" name="maximum play time" units="ms" />
+					<field type="Terminator" />
+				</fields>
+			</cache_file_sound_block_fields>
+		</versions>
+	</block>
+</tagGroup>

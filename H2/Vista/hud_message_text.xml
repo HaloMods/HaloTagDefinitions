@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="hud_message_text" groupTag="hmt " groupTagParent="????" version="1" flags="8">
+	<block name="hud_message_text_block" maxCount="1" display="hud_message_text" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<hud_message_text_block_fields size="128" sizeIdentifer="sizeof(struct hud_state_messages)" fieldCount="5">
+				<fields>
+					<field type="Data" name="text data" isReadonly="True">
+						<definition name="string_data_definition" maxSize="65536" alignment="0" flags="2" maxIdentifer="MAXIMUM_MESSAGE_STRING_DATA_SIZE" />
+					</field>
+					<field type="Block" name="message elements" isReadonly="True">
+						<block name="hud_message_elements_block" maxCount="8192" display="hud_message_elements_block" flags="0" maxIdentifer="MAX_STATE_MESSAGES*MAX_STATE_TEXT_PANELS" version="1">
+							<versions>
+								<hud_message_elements_block_fields size="2" sizeIdentifer="sizeof(struct hud_state_message_element)" fieldCount="3">
+									<fields>
+										<field type="CharInteger" name="type" isReadonly="True" />
+										<field type="CharInteger" name="data" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</hud_message_elements_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="messages" isReadonly="True">
+						<block name="hud_messages_block" maxCount="1024" display="hud_messages_block" flags="0" maxIdentifer="MAX_STATE_MESSAGES" version="1">
+							<versions>
+								<hud_messages_block_fields size="64" sizeIdentifer="sizeof(struct hud_state_message_definition)" fieldCount="7">
+									<fields>
+										<field type="String" name="name" isReadonly="True" />
+										<field type="ShortInteger" name="start index into text blob" isReadonly="True" />
+										<field type="ShortInteger" name="start index of message block" isReadonly="True" />
+										<field type="CharInteger" name="panel count" isReadonly="True" />
+										<field type="Pad" name="" definition="3" />
+										<field type="Pad" name="" definition="24" />
+										<field type="Terminator" />
+									</fields>
+								</hud_messages_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="84" />
+					<field type="Terminator" />
+				</fields>
+			</hud_message_text_block_fields>
+		</versions>
+	</block>
+</tagGroup>

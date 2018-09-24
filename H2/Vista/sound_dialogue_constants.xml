@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sound_dialogue_constants" groupTag="spk!" groupTagParent="????" version="1" flags="8">
+	<block name="sound_dialogue_constants_block" maxCount="1" display="sound_dialogue_constants" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<sound_dialogue_constants_block_fields size="40" sizeIdentifer="sizeof(s_sound_dialogue_constants_definition)" fieldCount="7">
+				<fields>
+					<field type="Explanation" name="named playing fractions" definition="these values correspond to the named play fractions in the dialogue editor (It's really skip fractions, but who cares?)" />
+					<field type="Real" name="almost never" />
+					<field type="Real" name="rarely" />
+					<field type="Real" name="somewhat" />
+					<field type="Real" name="often" />
+					<field type="Pad" name="" definition="24" />
+					<field type="Terminator" />
+				</fields>
+			</sound_dialogue_constants_block_fields>
+		</versions>
+	</block>
+</tagGroup>

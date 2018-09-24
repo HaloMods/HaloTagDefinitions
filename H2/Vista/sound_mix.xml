@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sound_mix" groupTag="snmx" groupTagParent="????" version="1" flags="8">
+	<block name="sound_mix_block" maxCount="1" display="sound_mix" flags="0" maxIdentifer="1" procInvalidHandler="True" version="1">
+		<versions>
+			<sound_mix_block_fields size="88" sizeIdentifer="sizeof(s_sound_mix_configuration_definition)" fieldCount="18">
+				<fields>
+					<field type="Explanation" name="first person left side mix" definition="for first person sounds to the left of you" />
+					<field type="Real" name="left stereo gain" units="dB" />
+					<field type="Real" name="right stereo gain" units="dB" />
+					<field type="Explanation" name="first person middle mix" definition="for first person sounds between your ears" />
+					<field type="Real" name="left stereo gain" units="dB" />
+					<field type="Real" name="right stereo gain" units="dB" />
+					<field type="Explanation" name="first person right side mix" definition="for first person sounds to the right of you" />
+					<field type="Real" name="left stereo gain" units="dB" />
+					<field type="Real" name="right stereo gain" units="dB" />
+					<field type="Explanation" name="first person stereo mix" definition="" />
+					<field type="Real" name="front speaker gain" units="dB" />
+					<field type="Real" name="rear speaker gain" units="dB" />
+					<field type="Explanation" name="ambient stereo mix" definition="" />
+					<field type="Real" name="front speaker gain" units="dB" />
+					<field type="Real" name="rear speaker gain" units="dB" />
+					<field type="Explanation" name="global mix" definition="" />
+					<field type="Struct" name="global mix">
+						<struct name="sound_global_mix_struct" groupTag="sngl">
+							<block name="sound_global_mix_struct_block" maxCount="1" display="sound_global_mix_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<sound_global_mix_struct_fields size="48" sizeIdentifer="sizeof(s_sound_global_mix_configuration)" fieldCount="17">
+										<fields>
+											<field type="Real" name="mono unspatialized gain" units="dB" />
+											<field type="Real" name="stereo to 3d gain" units="dB" />
+											<field type="Real" name="rear surround to front stereo gain" units="dB" />
+											<field type="Explanation" name="surround center mix" definition="for sounds that use the center speaker" />
+											<field type="Real" name="front speaker gain" units="dB" />
+											<field type="Real" name="center speaker gain" units="dB" />
+											<field type="Explanation" name="stereo center mix" definition="for sounds that use the center speaker" />
+											<field type="Real" name="front speaker gain" units="dB" />
+											<field type="Real" name="center speaker gain" units="dB" />
+											<field type="Explanation" name="more sound lovin'" definition="for sounds that use the center speaker" />
+											<field type="Real" name="stereo unspatialized gain" units="dB" />
+											<field type="Explanation" name="last minute values" definition="" />
+											<field type="Real" name="solo player fade out delay" units=" seconds" />
+											<field type="Real" name="solo player fade out time" units=" seconds" />
+											<field type="Real" name="solo player fade in time" units=" seconds" />
+											<field type="Real" name="game music fade out time" units=" seconds" />
+											<field type="Terminator" />
+										</fields>
+									</sound_global_mix_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</sound_mix_block_fields>
+		</versions>
+	</block>
+</tagGroup>

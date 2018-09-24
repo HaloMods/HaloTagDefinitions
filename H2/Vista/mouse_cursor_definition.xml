@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="mouse_cursor_definition" groupTag="mcsr" groupTagParent="????" version="1" flags="8">
+	<block name="mouse_cursor_definition_block" maxCount="1" display="mouse_cursor_definition" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<mouse_cursor_definition_block_fields size="16" sizeIdentifer="sizeof(s_mouse_cursor_definition)" fieldCount="4">
+				<fields>
+					<field type="Explanation" name="Mouse Cursor Bitmaps" definition="0 - Normal mouse cursor&#xA;1 - Busy mouse cursor&#xA;2 - Hover mouse cursor&#xA;3 - Text select mouse cursor&#xA;" />
+					<field type="Block" name="mouse cursor bitmaps">
+						<block name="mouse_cursor_bitmap_reference_block" maxCount="4" display="mouse_cursor_bitmap_reference_block" flags="0" maxIdentifer="k_maximum_cursor_bitmaps" version="1">
+							<versions>
+								<mouse_cursor_bitmap_reference_block_fields size="16" sizeIdentifer="sizeof(s_local_bitmap_reference)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="bitmap">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</mouse_cursor_bitmap_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Real" name="animation speed (fps)" />
+					<field type="Terminator" />
+				</fields>
+			</mouse_cursor_definition_block_fields>
+		</versions>
+	</block>
+</tagGroup>

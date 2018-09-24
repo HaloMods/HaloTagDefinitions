@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="user_interface_screen_widget_definition" groupTag="wgit" groupTagParent="????" version="898" flags="8">
+	<block name="user_interface_screen_widget_definition_block" maxCount="1" display="user_interface_screen_widget_definition" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<user_interface_screen_widget_definition_block_fields size="140" sizeIdentifer="sizeof(s_user_interface_screen_widget_definition)" fieldCount="34">
+				<fields>
+					<field type="Explanation" name="Notes on screen widgets" definition="- the widget coordinate system is a left-handed system (+x to the right, +y up, +z into the screen)&#xA;  with the origin centered in the display (regardless of display size)&#xA;- for widget component placement, all coordinates you define in the tag specifiy the object's&#xA;  placement prior to the application of any animation&#xA;- all coordinates you define are local to that object&#xA;- all text specific to objects in the screen comes from the screen's string list tag&#xA;  all of the string indices you may need to specify will refer to the screen's string list tag&#xA;- a pane may contain either buttons OR a list OR a table-view, but never a combination of those&#xA;  (widget won't function correctly if you try that)&#xA;- all text is centered unless you specify otherwise" />
+					<field type="Explanation" name="Flags" definition="Set misc. screen behavior here" />
+					<field type="LongFlags" name="flags">
+						<definition count="6">
+							<entry>1/4 screen dialog</entry>
+							<entry>multiple panes are for list flavor items</entry>
+							<entry>no header text</entry>
+							<entry>1/2 screen dialog</entry>
+							<entry>large dialog</entry>
+							<entry>disable overlay effect</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="screen ID">
+						<definition count="256">
+							<entry>Test #1</entry>
+							<entry>Test #2</entry>
+							<entry>Test #3</entry>
+							<entry>Test #4</entry>
+							<entry>Test #5</entry>
+							<entry>Game Shell Background</entry>
+							<entry>Main Menu</entry>
+							<entry>Error Dialog OK Cancel</entry>
+							<entry>Error Dialog OK</entry>
+							<entry>Press Start Intro</entry>
+							<entry>Player Profile Select</entry>
+							<entry>SP Level Select</entry>
+							<entry>SP Difficulty Select</entry>
+							<entry>Network Squad Browser</entry>
+							<entry>MP Pregame Lobby</entry>
+							<entry>Custom Game Menu</entry>
+							<entry>Postgame Stats</entry>
+							<entry>MP Map Select</entry>
+							<entry>SP Pause Game</entry>
+							<entry>Settings</entry>
+							<entry>Gamertag Select</entry>
+							<entry>Gamertag Passcode Entry</entry>
+							<entry>Multiplayer Protocol</entry>
+							<entry>Squad Settings</entry>
+							<entry>Squad Game Settings</entry>
+							<entry>Squad Privacy Settings</entry>
+							<entry>Y Menu-Gameshell</entry>
+							<entry>Y Menu-Gameshell Collapsed</entry>
+							<entry>Y Menu-InGame</entry>
+							<entry>Y Menu-InGame Collapsed</entry>
+							<entry>4way join screen</entry>
+							<entry>Y Menu-Player Selected Options</entry>
+							<entry>Player Selected Options</entry>
+							<entry>Confirmation Dialog</entry>
+							<entry>Live Feedback Menu Dialog</entry>
+							<entry>Live Message Type Dialog</entry>
+							<entry>Voice Msg Dialog</entry>
+							<entry>Stereo Faceplate</entry>
+							<entry>Player Profile Edit Menu</entry>
+							<entry>PP Controller Settings</entry>
+							<entry>PP Button Settings</entry>
+							<entry>PP Thumbstick Settings</entry>
+							<entry>PP Look Sensitivity Settings</entry>
+							<entry>PP Invert Look Settings</entry>
+							<entry>PP Autolevel Settings</entry>
+							<entry>PP Handicap Settings</entry>
+							<entry>PP High Score Rec Settings</entry>
+							<entry>PP Multiplayer Settings Menu</entry>
+							<entry>PP Profile Delete Confirmation Dlg</entry>
+							<entry>PP Choose Foreground Emblem</entry>
+							<entry>PP Choose Primary Color</entry>
+							<entry>PP Choose Secondary Color</entry>
+							<entry>PP Choose Model</entry>
+							<entry>PP Voice Settings Menu</entry>
+							<entry>PP Choose Voice Mask</entry>
+							<entry>PP Voice thru TV</entry>
+							<entry>PP Edit Rotation List</entry>
+							<entry>PP XBL Status Menu</entry>
+							<entry>PP Appear Offline</entry>
+							<entry>PP Auto-Offline</entry>
+							<entry>Game Engine Category Listing</entry>
+							<entry>Edit Slayer Menu</entry>
+							<entry>Edit KOTH Menu</entry>
+							<entry>Edit Race Menu</entry>
+							<entry>Edit Oddball Menu</entry>
+							<entry>Edit Juggernaut Menu</entry>
+							<entry>Edit Headhunter Menu</entry>
+							<entry>Edit CTF Menu</entry>
+							<entry>Edit Assault Menu</entry>
+							<entry>Edit Slayer Score to Win</entry>
+							<entry>Edit Slayer Time Limit</entry>
+							<entry>Edit Slayer Teams</entry>
+							<entry>Edit Slayer Score 4 Killing</entry>
+							<entry>Edit Slayer Kill in Order</entry>
+							<entry>Edit Slayer Death Pt Loss</entry>
+							<entry>Edit Slayer Suicide Pt Loss</entry>
+							<entry>Edit Slayer Dmg After Kill</entry>
+							<entry>Edit Slayer Dmg After Death</entry>
+							<entry>Edit Slayer Speed After Kill</entry>
+							<entry>Edit Slayer Speed After Death</entry>
+							<entry>Edit KOTH Score to Win</entry>
+							<entry>Edit KOTH Time Limit</entry>
+							<entry>Edit KOTH Teams</entry>
+							<entry>Edit KOTH Moving Hills</entry>
+							<entry>Edit KOTH Uncontesed Control</entry>
+							<entry>Edit KOTH Xtra Dmg</entry>
+							<entry>Edit Race Laps to Win</entry>
+							<entry>Edit Race Time Limit</entry>
+							<entry>Edit Race Teams</entry>
+							<entry>Edit Race Team Scoring</entry>
+							<entry>Edit Race Type</entry>
+							<entry>Edit Race Flag Order</entry>
+							<entry>Edit Race Game End Condition</entry>
+							<entry>Edit Race Dmg with Laps</entry>
+							<entry>Edit Race Speed with Laps</entry>
+							<entry>Edit Oddball Time to Win</entry>
+							<entry>Edit Oddball Time Limit</entry>
+							<entry>Edit Oddball Teams</entry>
+							<entry>Edit Oddball Ball Spawn Count</entry>
+							<entry>Edit Oddball Ball Waypoints</entry>
+							<entry>Edit Oddball Damage with Ball</entry>
+							<entry>Edit Oddball Speed with Ball</entry>
+							<entry>Edit Oddball Invisibility with Ball</entry>
+							<entry>Edit Jug Score to Win</entry>
+							<entry>Edit Jug Time Limit</entry>
+							<entry>Edit Jug Pts for Killing Jugger</entry>
+							<entry>Edit Jug Count</entry>
+							<entry>Edit Jug Species</entry>
+							<entry>Edit Jug Starting Equip</entry>
+							<entry>Edit Jug Damage</entry>
+							<entry>Edit Jug Health</entry>
+							<entry>Edit Jug Speed</entry>
+							<entry>Edit Jug Regeneration</entry>
+							<entry>Edit Jug Waypoints</entry>
+							<entry>Edit HH Score to Win</entry>
+							<entry>Edit HH Time Limit</entry>
+							<entry>Edit HH Teams</entry>
+							<entry>Edit HH Death Pt Loss</entry>
+							<entry>Edit HH Suicide Pt Loss</entry>
+							<entry>Edit HH Speed with Token</entry>
+							<entry>Edit HH Dropped Token Lifetime</entry>
+							<entry>Edit HH Score Multiplier</entry>
+							<entry>Edit CTF Score to Win</entry>
+							<entry>Edit CTF Time Limit</entry>
+							<entry>Edit CTF Tie Resolution</entry>
+							<entry>Edit CTF Single Flag</entry>
+							<entry>Edit CTF Role Swapping</entry>
+							<entry>Edit CTF Flag at Home to Score</entry>
+							<entry>Edit CTF Flag Must Reset</entry>
+							<entry>Edit CTF Dmg with Flag</entry>
+							<entry>Edit CTF Speed with Flag</entry>
+							<entry>Edit Assault Score to Win</entry>
+							<entry>Edit Assault Time Limit</entry>
+							<entry>Edit Assault Tie Resolution</entry>
+							<entry>Edit Assault Single Flag</entry>
+							<entry>Edit Assault Role Swapping</entry>
+							<entry>Edit Assault Enemy Flag at Home to Score</entry>
+							<entry>Edit Assault Flag Must Reset</entry>
+							<entry>Edit Assault Dmg with Flag</entry>
+							<entry>Edit Assault Speed with Flag</entry>
+							<entry>Edit Player Number of Lives</entry>
+							<entry>Edit Player Max Health</entry>
+							<entry>Edit Player Shields</entry>
+							<entry>Edit Player Respawn Time</entry>
+							<entry>Edit Player Count</entry>
+							<entry>Edit Player Invisibility</entry>
+							<entry>Edit Player Suicide Penalty</entry>
+							<entry>Edit Player Friendly Fire</entry>
+							<entry>Edit Item Respawn Grenades</entry>
+							<entry>Edit Item Powerups</entry>
+							<entry>Edit Item Weapon Set</entry>
+							<entry>Edit Item Starting Equipment</entry>
+							<entry>Edit Item Warthogs</entry>
+							<entry>Edit Item Ghosts</entry>
+							<entry>Edit Item Scorpions</entry>
+							<entry>Edit Item Banshees</entry>
+							<entry>Edit Item Mongeese</entry>
+							<entry>Edit Item Shadows</entry>
+							<entry>Edit Item Wraiths</entry>
+							<entry>Edit Indicator Objectives</entry>
+							<entry>Edit Indicator Players on Motion Sensor</entry>
+							<entry>Edit Indicator Invisible Players on Motion Sensor</entry>
+							<entry>Edit Indicator Friends</entry>
+							<entry>Edit Indicator Enemies</entry>
+							<entry>Edit Player Options</entry>
+							<entry>Edit Item Options</entry>
+							<entry>Edit Indicator Options</entry>
+							<entry>Virtual Keyboard</entry>
+							<entry>Custom Game Menu</entry>
+							<entry>Slayer Quick Options</entry>
+							<entry>KOTH Quick Options</entry>
+							<entry>Race Quick Options</entry>
+							<entry>Oddball Quick Options</entry>
+							<entry>Jugger Quick Options</entry>
+							<entry>HH Quick Options</entry>
+							<entry>CTF Quick Options</entry>
+							<entry>Assault Quick Options</entry>
+							<entry>Pick New Squad Leader</entry>
+							<entry>Variant Editing Options Menu</entry>
+							<entry>Playlist List-Settings</entry>
+							<entry>Playlist Contents</entry>
+							<entry>Playlist Selected Options</entry>
+							<entry>Xbox Live Task Progress</entry>
+							<entry>PP Vibration Settings</entry>
+							<entry>Boot Player Dialog</entry>
+							<entry>Postgame Stats-Lobby</entry>
+							<entry>XBox Live Main Menu</entry>
+							<entry>Edit Terries Menu</entry>
+							<entry>Edit Terries Score to Win</entry>
+							<entry>Edit Terries Time Limit</entry>
+							<entry>Edit Terries Teams</entry>
+							<entry>Terries Quick Options</entry>
+							<entry>XBox Live Notification Beeper</entry>
+							<entry>Player Profile Select-Fancy</entry>
+							<entry>Saved Game File Actions Dialog</entry>
+							<entry>MP Start Menu</entry>
+							<entry>MP Start Player Settings</entry>
+							<entry>MP Start Handicap Settings</entry>
+							<entry>MP Start Change Teams</entry>
+							<entry>MP Start Admin Settings</entry>
+							<entry>MP Start Controller Settings</entry>
+							<entry>MP Start Voice Settings</entry>
+							<entry>MP Start Online Status</entry>
+							<entry>MPAlpha Legal Warning</entry>
+							<entry>Squad Join Progress Dialog</entry>
+							<entry>MP Alpha Postgame Legal Warning</entry>
+							<entry>MP Map Select-Lobby</entry>
+							<entry>MP Variant Type-Lobby</entry>
+							<entry>MP Variant List-Lobby</entry>
+							<entry>Loading Progress</entry>
+							<entry>Matchmaking Progress</entry>
+							<entry>Live Message Display</entry>
+							<entry>Fade-in From Black</entry>
+							<entry>Live Player Profile</entry>
+							<entry>Live Clan Profile</entry>
+							<entry>Live Message Send</entry>
+							<entry>Friends Options Dialog</entry>
+							<entry>Clan Options Dialog</entry>
+							<entry>Campaign Options Dialog</entry>
+							<entry>Optimatch Hoppers Fullscreen</entry>
+							<entry>Playlist List-dialog</entry>
+							<entry>Variant Editing Format</entry>
+							<entry>Variant Quick Options Format</entry>
+							<entry>Variant Param Setting Format</entry>
+							<entry>Vehicle Options</entry>
+							<entry>Match Options</entry>
+							<entry>Player Options</entry>
+							<entry>Team Options</entry>
+							<entry>Game Options</entry>
+							<entry>Equipment Options</entry>
+							<entry>Multiple Choice Dialog</entry>
+							<entry>Network Transition Progress</entry>
+							<entry>Xbox Live Stats</entry>
+							<entry>PP Choose Background Emblem</entry>
+							<entry>PP Buttons Qtr</entry>
+							<entry>PP Stix Qtr</entry>
+							<entry>Clan Member Privs</entry>
+							<entry>Optimatch Hoppers Lobby</entry>
+							<entry>Saved game file dialog</entry>
+							<entry>XYZZY</entry>
+							<entry>Error OK Cancel Large</entry>
+							<entry>YZZYX</entry>
+							<entry>Subtitle Display</entry>
+							<entry>PP Keyboard Settings</entry>
+							<entry>PP Keyboard Settings Qtr</entry>
+							<entry>PP Invert Dual Wield</entry>
+							<entry>System Settings</entry>
+							<entry>Bungie News</entry>
+							<entry>Filter Select</entry>
+							<entry>Live Game Browser</entry>
+							<entry>Game Details</entry>
+							<entry>MP Custom Map Select</entry>
+							<entry>MP All Maps Select</entry>
+							<entry>PP Advanced Keyboard Settings</entry>
+							<entry>PP Advanced Keyboard Settings Qtr</entry>
+							<entry>Network Adapter Settings</entry>
+						</definition>
+					</field>
+					<field type="UselessPad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="2" />
+					<field type="Explanation" name="Button Key" definition="The labels here are just a guide; the actual string used comes from the Nth position&#xA;of this button key entry as found in the ui globals button key string list tag" />
+					<field type="Enum" name="button key type">
+						<definition count="23">
+							<entry>NONE</entry>
+							<entry>A=SELECT B=BACK</entry>
+							<entry>A=SELECT B=CANCEL</entry>
+							<entry>A=ENTER B=CANCEL</entry>
+							<entry>Y=XBOX LIVE PLAYERS</entry>
+							<entry>X=FRIENDS OPTIONS</entry>
+							<entry>X=CLAN OPTIONS</entry>
+							<entry>X=RECENT PLAYERS OPTIONS</entry>
+							<entry>X=OPTIONS</entry>
+							<entry>A=SELECT</entry>
+							<entry>X=SETTINGS A=SELECT B=BACK</entry>
+							<entry>X=DELETE A=SELECT B=DONE</entry>
+							<entry>A=ACCEPT</entry>
+							<entry>B=CANCEL</entry>
+							<entry>Y=XBOX_LIVE_PLAYERS A=SELECT B=BACK</entry>
+							<entry>Y=XBOX_LIVE_PLAYERS A=SELECT B=CANCEL</entry>
+							<entry>Y=XBOX_LIVE_PLAYERS A=ENTER B=CANCEL</entry>
+							<entry>Y=XBOX_LIVE_PLAYERS A=SELECT</entry>
+							<entry>Y=XBOX_LIVE_PLAYERS A=SELECT B=DONE</entry>
+							<entry>Y=XBOX_LIVE_PLAYERS A=ACCEPT</entry>
+							<entry>Y=XBOX_LIVE_PLAYERS B=CANCEL</entry>
+							<entry>X=DELETE A=SELECT B=BACK</entry>
+							<entry>A=OK</entry>
+						</definition>
+					</field>
+					<field type="Explanation" name="Default Text Color" definition="Any ui elements that don't explicitly set a text color will use this color" />
+					<field type="RealArgbColor" name="text color" />
+					<field type="Explanation" name="Screen Text" definition="All text specific to this screen" />
+					<field type="TagReference" name="string list tag">
+						<definition flags="0" groupTag="unic" />
+					</field>
+					<field type="Explanation" name="Panes" definition="Define the screen's panes here (normal screens have 1 pane, tab-view screens have 2+ panes)" />
+					<field type="Block" name="panes">
+						<block name="window_pane_reference_block" maxCount="16" display="window_pane_reference_block" flags="0" maxIdentifer="k_maximum_number_of_window_pane_tag_blocks" version="1">
+							<versions>
+								<window_pane_reference_block_fields size="112" sizeIdentifer="sizeof(s_window_pane_reference)" fieldCount="17">
+									<fields>
+										<field type="Pad" name="" definition="2" />
+										<field type="Enum" name="animation index">
+											<definition count="65">
+												<entry>NONE</entry>
+												<entry>00</entry>
+												<entry>01</entry>
+												<entry>02</entry>
+												<entry>03</entry>
+												<entry>04</entry>
+												<entry>05</entry>
+												<entry>06</entry>
+												<entry>07</entry>
+												<entry>08</entry>
+												<entry>09</entry>
+												<entry>10</entry>
+												<entry>11</entry>
+												<entry>12</entry>
+												<entry>13</entry>
+												<entry>14</entry>
+												<entry>15</entry>
+												<entry>16</entry>
+												<entry>17</entry>
+												<entry>18</entry>
+												<entry>19</entry>
+												<entry>20</entry>
+												<entry>21</entry>
+												<entry>22</entry>
+												<entry>23</entry>
+												<entry>24</entry>
+												<entry>25</entry>
+												<entry>26</entry>
+												<entry>27</entry>
+												<entry>28</entry>
+												<entry>29</entry>
+												<entry>30</entry>
+												<entry>31</entry>
+												<entry>32</entry>
+												<entry>33</entry>
+												<entry>34</entry>
+												<entry>35</entry>
+												<entry>36</entry>
+												<entry>37</entry>
+												<entry>38</entry>
+												<entry>39</entry>
+												<entry>40</entry>
+												<entry>41</entry>
+												<entry>42</entry>
+												<entry>43</entry>
+												<entry>44</entry>
+												<entry>45</entry>
+												<entry>46</entry>
+												<entry>47</entry>
+												<entry>48</entry>
+												<entry>49</entry>
+												<entry>50</entry>
+												<entry>51</entry>
+												<entry>52</entry>
+												<entry>53</entry>
+												<entry>54</entry>
+												<entry>55</entry>
+												<entry>56</entry>
+												<entry>57</entry>
+												<entry>58</entry>
+												<entry>59</entry>
+												<entry>60</entry>
+												<entry>61</entry>
+												<entry>62</entry>
+												<entry>63</entry>
+											</definition>
+										</field>
+										<field type="Explanation" name="Button Definitions" definition="If the pane contains buttons, define them here" />
+										<field type="Block" name="buttons">
+											<block name="button_widget_reference_block" maxCount="64" display="button_widget_reference_block" flags="0" maxIdentifer="k_maximum_number_of_button_widget_blocks" version="1">
+												<versions>
+													<button_widget_reference_block_fields size="68" sizeIdentifer="sizeof(s_button_widget_reference)" fieldCount="14">
+														<fields>
+															<field type="LongFlags" name="text flags">
+																<definition count="5">
+																	<entry>left justify text</entry>
+																	<entry>right justify text</entry>
+																	<entry>pulsating text</entry>
+																	<entry>callout text</entry>
+																	<entry>small (31 char) buffer</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Enum" name="custom font">
+																<definition count="12">
+																	<entry>terminal</entry>
+																	<entry>body text</entry>
+																	<entry>title</entry>
+																	<entry>super large font</entry>
+																	<entry>large body text</entry>
+																	<entry>split screen hud message</entry>
+																	<entry>full screen hud message</entry>
+																	<entry>english body text</entry>
+																	<entry>HUD number text</entry>
+																	<entry>subtitle font</entry>
+																	<entry>main menu font</entry>
+																	<entry>text chat font</entry>
+																</definition>
+															</field>
+															<field type="RealArgbColor" name="text color" />
+															<field type="Rectangle2D" name="bounds" />
+															<field type="TagReference" name="bitmap">
+																<definition flags="0" groupTag="bitm" />
+															</field>
+															<field type="Point2D" name="bitmap offset" help="from top-left" />
+															<field type="StringId" name="string id" />
+															<field type="ShortInteger" name="render depth bias" />
+															<field type="ShortInteger" name="mouse region top offset" />
+															<field type="LongFlags" name="button flags">
+																<definition count="2">
+																	<entry>DOESN'T tab vertically</entry>
+																	<entry>DOESN'T tab horizontally</entry>
+																</definition>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</button_widget_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="List Definition" definition="If the pane contains a list, define it here" />
+										<field type="Block" name="list block">
+											<block name="list_reference_block" maxCount="1" display="list_reference_block" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<list_reference_block_fields size="28" sizeIdentifer="sizeof(s_list_reference)" fieldCount="9">
+														<fields>
+															<field type="LongFlags" name="flags">
+																<definition count="2">
+																	<entry>list wraps</entry>
+																	<entry>interactive</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="skin index">
+																<definition count="32">
+																	<entry>default</entry>
+																	<entry>squad lobby player list</entry>
+																	<entry>settings list</entry>
+																	<entry>playlist entry list</entry>
+																	<entry>variants</entry>
+																	<entry>game browser</entry>
+																	<entry>online player menu</entry>
+																	<entry>game setup menu</entry>
+																	<entry>playlist contents display</entry>
+																	<entry>player profile picker</entry>
+																	<entry>mp map selection</entry>
+																	<entry>main menu list</entry>
+																	<entry>color picker</entry>
+																	<entry>profile picker</entry>
+																	<entry>y menu recent list</entry>
+																	<entry>pcr team stats</entry>
+																	<entry>pcr player stats</entry>
+																	<entry>pcr kill stats</entry>
+																	<entry>pcr pvp stats</entry>
+																	<entry>pcr medal stats</entry>
+																	<entry>matchmaking progress</entry>
+																	<entry>default 5</entry>
+																	<entry>default 6</entry>
+																	<entry>advanced settings list</entry>
+																	<entry>live game browser</entry>
+																	<entry>default wide</entry>
+																	<entry>unused26</entry>
+																	<entry>unused27</entry>
+																	<entry>unused28</entry>
+																	<entry>unused29</entry>
+																	<entry>unused30</entry>
+																	<entry>unused31</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="num. visible items" />
+															<field type="Point2D" name="bottom left" />
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="Explanation" name="UNUSED" definition="This is unused" />
+															<field type="Block" name="UNUSED">
+																<block name="s_text_value_pair_reference_block_UNUSED" maxCount="100" display="s_text_value_pair_reference_block_UNUSED" flags="0" maxIdentifer="k_maximum_text_value_pairs_per_block" version="1">
+																	<versions>
+																		<s_text_value_pair_reference_block_UNUSED_fields size="20" sizeIdentifer="sizeof(s_text_value_pair_reference_UNUSED)" fieldCount="10">
+																			<fields>
+																				<field type="Explanation" name="OBSOLETE" definition="this is all obsolete" />
+																				<field type="Enum" name="value type">
+																					<definition count="4">
+																						<entry>integer number</entry>
+																						<entry>floating point number</entry>
+																						<entry>boolean</entry>
+																						<entry>text string</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Value" definition="Enter the value in the box corresponding to the value type you specified above" />
+																				<field type="Enum" name="boolean value">
+																					<definition count="2">
+																						<entry>FALSE</entry>
+																						<entry>TRUE</entry>
+																					</definition>
+																				</field>
+																				<field type="LongInteger" name="integer value" />
+																				<field type="Real" name="fp value" />
+																				<field type="StringId" name="text value string_id" />
+																				<field type="Explanation" name="Text Label" definition="This is text string associated with data when it has the value specified above.&#xA;The string comes from the screen's string list tag." />
+																				<field type="StringId" name="text label string_id" />
+																				<field type="Terminator" />
+																			</fields>
+																		</s_text_value_pair_reference_block_UNUSED_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</list_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="OBSOLETE Table View Definition" definition="If the pane contains a table-view, define it here" />
+										<field type="Block" name="table view">
+											<block name="table_view_list_reference_block" maxCount="1" display="table_view_list_reference_block" flags="0" maxIdentifer="k_maximum_number_of_table_view_list_blocks" version="1">
+												<versions>
+													<table_view_list_reference_block_fields size="44" sizeIdentifer="sizeof(s_table_view_list_reference_OBSOLETE)" fieldCount="9">
+														<fields>
+															<field type="LongFlags" name="flags">
+																<definition count="1">
+																	<entry>unused</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="Enum" name="custom font">
+																<definition count="12">
+																	<entry>terminal</entry>
+																	<entry>body text</entry>
+																	<entry>title</entry>
+																	<entry>super large font</entry>
+																	<entry>large body text</entry>
+																	<entry>split screen hud message</entry>
+																	<entry>full screen hud message</entry>
+																	<entry>english body text</entry>
+																	<entry>HUD number text</entry>
+																	<entry>subtitle font</entry>
+																	<entry>main menu font</entry>
+																	<entry>text chat font</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="RealArgbColor" name="text color" />
+															<field type="Point2D" name="top-left" />
+															<field type="Block" name="table rows">
+																<block name="table_view_list_row_reference_block" maxCount="16" display="table_view_list_row_reference_block" flags="0" maxIdentifer="k_maximum_number_of_table_view_list_row_blocks" version="1">
+																	<versions>
+																		<table_view_list_row_reference_block_fields size="20" sizeIdentifer="sizeof(s_table_view_list_row_reference_OBSOLETE)" fieldCount="5">
+																			<fields>
+																				<field type="LongFlags" name="flags">
+																					<definition count="1">
+																						<entry>unused</entry>
+																					</definition>
+																				</field>
+																				<field type="ShortInteger" name="row height" />
+																				<field type="Pad" name="" definition="2" />
+																				<field type="Block" name="row cells">
+																					<block name="table_view_list_item_reference_block" maxCount="8" display="table_view_list_item_reference_block" flags="0" maxIdentifer="k_maximum_number_of_table_view_list_cell_blocks" version="1">
+																						<versions>
+																							<table_view_list_item_reference_block_fields size="36" sizeIdentifer="sizeof(s_table_view_list_cell_reference_OBSOLETE)" fieldCount="9">
+																								<fields>
+																									<field type="LongFlags" name="text flags">
+																										<definition count="5">
+																											<entry>left justify text</entry>
+																											<entry>right justify text</entry>
+																											<entry>pulsating text</entry>
+																											<entry>callout text</entry>
+																											<entry>small (31 char) buffer</entry>
+																										</definition>
+																									</field>
+																									<field type="ShortInteger" name="cell width" />
+																									<field type="Pad" name="" definition="2" />
+																									<field type="Point2D" name="bitmap top-left" units="if there is a bitmap" />
+																									<field type="TagReference" name="bitmap tag">
+																										<definition flags="0" groupTag="bitm" />
+																									</field>
+																									<field type="StringId" name="string id" />
+																									<field type="ShortInteger" name="render depth bias" />
+																									<field type="Pad" name="" definition="2" />
+																									<field type="Terminator" />
+																								</fields>
+																							</table_view_list_item_reference_block_fields>
+																						</versions>
+																					</block>
+																				</field>
+																				<field type="Terminator" />
+																			</fields>
+																		</table_view_list_row_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</table_view_list_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="Flavor Item Blocks" definition="Define additional flavor items here" />
+										<field type="Block" name="text blocks">
+											<block name="text_block_reference_block" maxCount="64" display="text_block_reference_block" flags="0" maxIdentifer="k_maximum_number_of_text_blocks" version="1">
+												<versions>
+													<text_block_reference_block_fields size="44" sizeIdentifer="sizeof(s_text_block_reference)" fieldCount="11">
+														<fields>
+															<field type="LongFlags" name="text flags">
+																<definition count="5">
+																	<entry>left justify text</entry>
+																	<entry>right justify text</entry>
+																	<entry>pulsating text</entry>
+																	<entry>callout text</entry>
+																	<entry>small (31 char) buffer</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Enum" name="custom font">
+																<definition count="12">
+																	<entry>terminal</entry>
+																	<entry>body text</entry>
+																	<entry>title</entry>
+																	<entry>super large font</entry>
+																	<entry>large body text</entry>
+																	<entry>split screen hud message</entry>
+																	<entry>full screen hud message</entry>
+																	<entry>english body text</entry>
+																	<entry>HUD number text</entry>
+																	<entry>subtitle font</entry>
+																	<entry>main menu font</entry>
+																	<entry>text chat font</entry>
+																</definition>
+															</field>
+															<field type="RealArgbColor" name="text color" />
+															<field type="Rectangle2D" name="text bounds" />
+															<field type="StringId" name="string id" />
+															<field type="ShortInteger" name="render depth bias" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</text_block_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="bitmap blocks">
+											<block name="bitmap_block_reference_block" maxCount="64" display="bitmap_block_reference_block" flags="0" maxIdentifer="k_maximum_number_of_bitmap_blocks" version="1">
+												<versions>
+													<bitmap_block_reference_block_fields size="64" sizeIdentifer="sizeof(s_bitmap_block_reference)" fieldCount="20">
+														<fields>
+															<field type="LongFlags" name="flags">
+																<definition count="3">
+																	<entry>ignore for list skin size calculation</entry>
+																	<entry>swap on relative list position</entry>
+																	<entry>render as progress bar</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="Enum" name="bitmap blend method">
+																<definition count="3">
+																	<entry>standard</entry>
+																	<entry>multiply</entry>
+																	<entry>UNUSED</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="initial sprite frame" />
+															<field type="Point2D" name="top-left" />
+															<field type="Real" name="horiz texture wraps/second" />
+															<field type="Real" name="vert texture wraps/second" />
+															<field type="TagReference" name="bitmap tag">
+																<definition flags="0" groupTag="bitm" />
+															</field>
+															<field type="ShortInteger" name="render depth bias" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Real" name="sprite animation speed fps" />
+															<field type="Point2D" name="progress bottom-left" />
+															<field type="StringId" name="string identifier" />
+															<field type="UselessPad" name="" definition="12" />
+															<field type="UselessPad" name="" definition="12" />
+															<field type="RealVector2D" name="progress scale" />
+															<field type="UselessPad" name="" definition="4" />
+															<field type="UselessPad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</bitmap_block_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="model scene blocks">
+											<block name="ui_model_scene_reference_block" maxCount="32" display="ui_model_scene_reference_block" flags="0" maxIdentifer="k_maximum_object_scenes_per_screen" version="1">
+												<versions>
+													<ui_model_scene_reference_block_fields size="84" sizeIdentifer="sizeof(s_ui_model_scene_reference)" fieldCount="17">
+														<fields>
+															<field type="Explanation" name="NOTE on coordinate systems" definition="Halo y-axis=ui z-axis, and Halo z-axis=ui y-axis.&#xA;As a convention, let's always place objects in the ui scenario such that&#xA;they are facing in the '-y' direction, and the camera such that is is&#xA;facing the '+y' direction. This way the ui animation for models (which&#xA;gets applied to the camera) will always be consisitent." />
+															<field type="LongFlags" name="flags">
+																<definition count="1">
+																	<entry>unused</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="ShortInteger" name="render depth bias" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Block" name="objects">
+																<block name="ui_object_reference_block" maxCount="32" display="ui_object_reference_block" flags="0" maxIdentifer="k_maximum_objects_per_ui_scene" version="1">
+																	<versions>
+																		<ui_object_reference_block_fields size="32" sizeIdentifer="sizeof(s_ui_object_reference)" fieldCount="2">
+																			<fields>
+																				<field type="String" name="name" />
+																				<field type="Terminator" />
+																			</fields>
+																		</ui_object_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="lights">
+																<block name="ui_light_reference_block" maxCount="8" display="ui_light_reference_block" flags="0" maxIdentifer="k_maximum_lights_per_ui_scene" version="1">
+																	<versions>
+																		<ui_light_reference_block_fields size="32" sizeIdentifer="sizeof(s_ui_light_reference)" fieldCount="2">
+																			<fields>
+																				<field type="String" name="name" />
+																				<field type="Terminator" />
+																			</fields>
+																		</ui_light_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="RealVector3D" name="animation scale factor" />
+															<field type="RealPoint3D" name="camera position" />
+															<field type="UselessPad" name="" definition="24" />
+															<field type="Real" name="fov degress" />
+															<field type="Rectangle2D" name="ui viewport" />
+															<field type="StringId" name="UNUSED intro anim" />
+															<field type="StringId" name="UNUSED outro anim" />
+															<field type="StringId" name="UNUSED ambient anim" />
+															<field type="Terminator" />
+														</fields>
+													</ui_model_scene_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="UNUSED" definition="these are all OBSOLETE" />
+										<field type="Block" name="text-value blocks">
+											<block name="s_text_value_pair_blocks_block_UNUSED" maxCount="100" display="s_text_value_pair_blocks_block_UNUSED" flags="0" maxIdentifer="k_maximum_text_value_pairs_per_block" version="1">
+												<versions>
+													<s_text_value_pair_blocks_block_UNUSED_fields size="44" sizeIdentifer="sizeof(s_text_value_pair_block_UNUSED)" fieldCount="4">
+														<fields>
+															<field type="Explanation" name="OBSOLETE" definition="this is all obsolete" />
+															<field type="String" name="name" />
+															<field type="Block" name="text value pairs">
+																<block name="s_text_value_pair_reference_block_UNUSED" maxCount="100" display="s_text_value_pair_reference_block_UNUSED" flags="0" maxIdentifer="k_maximum_text_value_pairs_per_block" version="1">
+																	<versions>
+																		<s_text_value_pair_reference_block_UNUSED_fields size="20" sizeIdentifer="sizeof(s_text_value_pair_reference_UNUSED)" fieldCount="10">
+																			<fields>
+																				<field type="Explanation" name="OBSOLETE" definition="this is all obsolete" />
+																				<field type="Enum" name="value type">
+																					<definition count="4">
+																						<entry>integer number</entry>
+																						<entry>floating point number</entry>
+																						<entry>boolean</entry>
+																						<entry>text string</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Value" definition="Enter the value in the box corresponding to the value type you specified above" />
+																				<field type="Enum" name="boolean value">
+																					<definition count="2">
+																						<entry>FALSE</entry>
+																						<entry>TRUE</entry>
+																					</definition>
+																				</field>
+																				<field type="LongInteger" name="integer value" />
+																				<field type="Real" name="fp value" />
+																				<field type="StringId" name="text value string_id" />
+																				<field type="Explanation" name="Text Label" definition="This is text string associated with data when it has the value specified above.&#xA;The string comes from the screen's string list tag." />
+																				<field type="StringId" name="text label string_id" />
+																				<field type="Terminator" />
+																			</fields>
+																		</s_text_value_pair_reference_block_UNUSED_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</s_text_value_pair_blocks_block_UNUSED_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="hud blocks">
+											<block name="hud_block_reference_block" maxCount="64" display="hud_block_reference_block" flags="0" maxIdentifer="k_maximum_number_of_hud_blocks" version="1">
+												<versions>
+													<hud_block_reference_block_fields size="52" sizeIdentifer="sizeof(s_hud_block_reference)" fieldCount="9">
+														<fields>
+															<field type="LongFlags" name="flags">
+																<definition count="2">
+																	<entry>ignore for list skin size</entry>
+																	<entry>needs valid rank</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="ShortInteger" name="render depth bias" />
+															<field type="ShortInteger" name="starting bitmap sequence index" />
+															<field type="TagReference" name="bitmap">
+																<definition flags="0" groupTag="bitm" />
+															</field>
+															<field type="TagReference" name="shader">
+																<definition flags="0" groupTag="shad" />
+															</field>
+															<field type="Rectangle2D" name="bounds" />
+															<field type="Terminator" />
+														</fields>
+													</hud_block_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="player blocks">
+											<block name="player_block_reference_block" maxCount="64" display="player_block_reference_block" flags="0" maxIdentifer="k_maximum_number_of_player_blocks" version="1">
+												<versions>
+													<player_block_reference_block_fields size="32" sizeIdentifer="sizeof(s_player_block_reference)" fieldCount="10">
+														<fields>
+															<field type="Pad" name="" definition="4" />
+															<field type="TagReference" name="skin">
+																<definition flags="0" groupTag="skin" />
+															</field>
+															<field type="Point2D" name="bottom-left" />
+															<field type="CharEnum" name="table order">
+																<definition count="2">
+																	<entry>row major</entry>
+																	<entry>column major</entry>
+																</definition>
+															</field>
+															<field type="CharInteger" name="maximum player count" />
+															<field type="CharInteger" name="row count" />
+															<field type="CharInteger" name="column count" />
+															<field type="ShortInteger" name="row height" />
+															<field type="ShortInteger" name="column width" />
+															<field type="Terminator" />
+														</fields>
+													</player_block_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</window_pane_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="Shape Group" definition="If the screen is to have a shape group, specify it here (references group in user interface globals tag)" />
+					<field type="Enum" name="shape group">
+						<definition count="33">
+							<entry>NONE</entry>
+							<entry>00</entry>
+							<entry>01</entry>
+							<entry>02</entry>
+							<entry>03</entry>
+							<entry>04</entry>
+							<entry>05</entry>
+							<entry>06</entry>
+							<entry>07</entry>
+							<entry>08</entry>
+							<entry>09</entry>
+							<entry>10</entry>
+							<entry>11</entry>
+							<entry>12</entry>
+							<entry>13</entry>
+							<entry>14</entry>
+							<entry>15</entry>
+							<entry>16</entry>
+							<entry>17</entry>
+							<entry>18</entry>
+							<entry>19</entry>
+							<entry>20</entry>
+							<entry>21</entry>
+							<entry>22</entry>
+							<entry>23</entry>
+							<entry>24</entry>
+							<entry>25</entry>
+							<entry>26</entry>
+							<entry>27</entry>
+							<entry>28</entry>
+							<entry>29</entry>
+							<entry>30</entry>
+							<entry>31</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Explanation" name="More Screen Parameters" definition="These are down here because they got added on later. Have a nice day." />
+					<field type="StringId" name="header string id" />
+					<field type="Explanation" name="Local strings" definition="String IDs here allow defining new string ids that are visible only to this screen." />
+					<field type="Block" name="local strings">
+						<block name="local_string_id_list_section_reference_block" maxCount="16" display="local_string_id_list_section_reference_block" flags="0" maxIdentifer="k_maximum_number_of_local_string_id_sections" version="1">
+							<versions>
+								<local_string_id_list_section_reference_block_fields size="16" sizeIdentifer="sizeof(s_local_string_id_list_section_reference)" fieldCount="3">
+									<fields>
+										<field type="StringId" name="section name" isBlockName="True" />
+										<field type="Block" name="local string section references">
+											<block name="local_string_id_list_string_reference_block" maxCount="64" display="local_string_id_list_string_reference_block" flags="0" maxIdentifer="k_maximum_number_of_local_string_ids" version="1">
+												<versions>
+													<local_string_id_list_string_reference_block_fields size="4" sizeIdentifer="sizeof(s_local_string_id_list_reference)" fieldCount="2">
+														<fields>
+															<field type="StringId" name="string id" />
+															<field type="Terminator" />
+														</fields>
+													</local_string_id_list_string_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</local_string_id_list_section_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="Local bitmaps" definition="Bitmaps here allow adding a bitmap that's accessible in code for use in this screen." />
+					<field type="Block" name="local bitmaps">
+						<block name="local_bitmap_reference_block" maxCount="16" display="local_bitmap_reference_block" flags="0" maxIdentifer="k_maximum_number_of_local_bitmaps" version="1">
+							<versions>
+								<local_bitmap_reference_block_fields size="16" sizeIdentifer="sizeof(s_local_bitmap_reference)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="bitmap">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</local_bitmap_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="LEVEL LOAD PROGRESS FIELDS" definition="These are used only for level load progress bitmaps" />
+					<field type="RealRgbColor" name="source color" />
+					<field type="RealRgbColor" name="destination color" />
+					<field type="Real" name="accumulate zoom scale x" />
+					<field type="Real" name="accumulate zoom scale y" />
+					<field type="Real" name="refraction scale x" />
+					<field type="Real" name="refraction scale y" />
+					<field type="Explanation" name="Mouse cursors" definition="The mouse cursor definition for this screen." />
+					<field type="TagReference" name="mouse cursor definition">
+						<definition flags="0" groupTag="mcsr" />
+					</field>
+					<field type="UselessPad" name="" definition="40" />
+					<field type="Terminator" />
+				</fields>
+			</user_interface_screen_widget_definition_block_fields>
+		</versions>
+	</block>
+</tagGroup>

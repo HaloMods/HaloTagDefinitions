@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="colony" groupTag="coln" groupTagParent="????" version="4" flags="8" procPostprocess="True">
+	<block name="colony_block" maxCount="1" display="colony" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<colony_block_fields size="76" sizeIdentifer="sizeof(struct colony_definition)" fieldCount="9">
+				<fields>
+					<field type="WordFlags" name="flags">
+						<definition count="1">
+							<entry>unused</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="4" />
+					<field type="RealBounds" name="radius" />
+					<field type="Pad" name="" definition="12" />
+					<field type="RealArgbColor" name="debug color" />
+					<field type="TagReference" name="base map">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="TagReference" name="detail map">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</colony_block_fields>
+		</versions>
+	</block>
+</tagGroup>

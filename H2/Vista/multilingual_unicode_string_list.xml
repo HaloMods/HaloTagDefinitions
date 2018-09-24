@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="multilingual_unicode_string_list" groupTag="unic" groupTagParent="????" version="2" flags="8">
+	<block name="multilingual_unicode_string_list_block" maxCount="1" display="multilingual_unicode_string_list" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<multilingual_unicode_string_list_block_fields size="68" sizeIdentifer="sizeof(s_multilingual_unicode_string_list_group_header)" fieldCount="4">
+				<fields>
+					<field type="Block" name="string references">
+						<block name="multilingual_unicode_string_reference_block" maxCount="9216" display="multilingual_unicode_string_reference_block" flags="0" maxIdentifer="k_maximum_multilingual_unicode_strings_per_string_list" version="1">
+							<versions>
+								<multilingual_unicode_string_reference_block_fields size="40" sizeIdentifer="sizeof(s_multilingual_unicode_string_reference)" fieldCount="11">
+									<fields>
+										<field type="StringId" name="string id" />
+										<field type="LongInteger" name="english offset" />
+										<field type="LongInteger" name="japanese offset" />
+										<field type="LongInteger" name="german offset" />
+										<field type="LongInteger" name="french offset" />
+										<field type="LongInteger" name="spanish offset" />
+										<field type="LongInteger" name="italian offset" />
+										<field type="LongInteger" name="korean offset" />
+										<field type="LongInteger" name="chinese offset" />
+										<field type="LongInteger" name="portuguese offset" />
+										<field type="Terminator" />
+									</fields>
+								</multilingual_unicode_string_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Data" name="string data utf8">
+						<definition name="utf8_string_data" maxSize="18874368" alignment="0" flags="2" maxIdentifer="k_maximum_multilingual_unicode_strings_per_string_list * k_normal_text_count * 4" />
+					</field>
+					<field type="Pad" name="" definition="36" />
+					<field type="Terminator" />
+				</fields>
+			</multilingual_unicode_string_list_block_fields>
+		</versions>
+	</block>
+</tagGroup>

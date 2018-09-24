@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="material_physics" groupTag="mpdt" groupTagParent="????" version="0" flags="8">
+	<block name="material_physics_block" maxCount="1" display="material_physics" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<material_physics_block_fields size="20" sizeIdentifer="sizeof(s_material_physics_definition)" fieldCount="7">
+				<fields>
+					<field type="Explanation" name="vehicle terrain parameters" definition="the following fields modify the way a vehicle drives over terrain of this material type." />
+					<field type="Real" name="ground friction scale" help="fraction of original velocity parallel to the ground after one tick" />
+					<field type="Real" name="ground friction normal k1 scale" help="cosine of angle at which friction falls off" />
+					<field type="Real" name="ground friction normal k0 scale" help="cosine of angle at which friction is zero" />
+					<field type="Real" name="ground depth scale" help="depth a point mass rests in the ground" />
+					<field type="Real" name="ground damp fraction scale" help="fraction of original velocity perpendicular to the ground after one tick" />
+					<field type="Terminator" />
+				</fields>
+			</material_physics_block_fields>
+		</versions>
+	</block>
+</tagGroup>

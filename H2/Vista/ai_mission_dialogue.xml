@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="ai_mission_dialogue" groupTag="mdlg" groupTagParent="????" version="1" flags="8">
+	<block name="ai_mission_dialogue_block" maxCount="1" display="ai_mission_dialogue" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<ai_mission_dialogue_block_fields size="12" sizeIdentifer="sizeof(struct ai_mission_dialogue)" fieldCount="2">
+				<fields>
+					<field type="Block" name="lines">
+						<block name="mission_dialogue_lines_block" maxCount="500" display="mission_dialogue_lines_block" flags="0" maxIdentifer="k_max_lines_per_scenario" version="1">
+							<versions>
+								<mission_dialogue_lines_block_fields size="20" sizeIdentifer="sizeof(struct mission_dialogue_line)" fieldCount="4">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="Block" name="variants">
+											<block name="mission_dialogue_variants_block" maxCount="10" display="mission_dialogue_variants_block" flags="0" maxIdentifer="k_max_variants_per_line" version="1">
+												<versions>
+													<mission_dialogue_variants_block_fields size="24" sizeIdentifer="sizeof(struct mission_dialogue_variant)" fieldCount="4">
+														<fields>
+															<field type="StringId" name="variant designation" help="3-letter designation for the character" isBlockName="True" />
+															<field type="TagReference" name="sound">
+																<definition flags="4" groupTag="snd!" />
+															</field>
+															<field type="StringId" name="sound effect" />
+															<field type="Terminator" />
+														</fields>
+													</mission_dialogue_variants_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="StringId" name="default sound effect" />
+										<field type="Terminator" />
+									</fields>
+								</mission_dialogue_lines_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</ai_mission_dialogue_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sound_effect_template" groupTag="&lt;fx&gt;" groupTagParent="????" version="1" flags="8" procPostprocess="True">
+	<block name="sound_effect_template_block" maxCount="1" display="sound_effect_template" flags="0" maxIdentifer="1" version="2">
+		<versions>
+			<g_sound_effect_template_fields size="44" sizeIdentifer="sizeof(s_sound_effect_template_definition)" fieldCount="8">
+				<fields>
+					<field type="StringId" name="dsp effect" />
+					<field type="Explanation" name="WARNING" definition="DON'T MODIFY THIS TAG UNLESS YOU KNOW WHAT YOU ARE DOING" />
+					<field type="Data" name="explanation">
+						<definition name="sound_effect_template_explanation" maxSize="65536" alignment="0" flags="6" maxIdentifer="64*k_kilo" />
+					</field>
+					<field type="LongFlags" name="flags">
+						<definition count="2">
+							<entry>use high level parameters</entry>
+							<entry>custom parameters</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="" />
+					<field type="ShortInteger" name="" />
+					<field type="Block" name="parameters">
+						<block name="sound_effect_template_parameter_block" maxCount="128" display="sound_effect_template_parameter_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_parameters" procGenerateDefault="True" version="1">
+							<versions>
+								<sound_effect_template_parameter_block_fields size="40" sizeIdentifer="sizeof(s_sound_effect_template_parameter_definition)" fieldCount="11">
+									<fields>
+										<field type="StringId" name="name" />
+										<field type="Enum" name="type">
+											<definition count="3">
+												<entry>integer</entry>
+												<entry>real</entry>
+												<entry>filter type</entry>
+											</definition>
+										</field>
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>expose as function</entry>
+											</definition>
+										</field>
+										<field type="LongInteger" name="hardware offset" />
+										<field type="LongInteger" name="default enum integer value" />
+										<field type="Real" name="default scalar value" />
+										<field type="Custom" name="default function" attributeGroup="fned" definition="&#x0;?.?" />
+										<field type="Struct" name="default function">
+											<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+												<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+													<versions>
+														<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="CharInteger" name="Function Type" />
+																<field type="ByteFlags" name="Flags">
+																	<definition count="8">
+																		<entry>Range</entry>
+																		<entry>Unused 0</entry>
+																		<entry>Unused 1</entry>
+																		<entry>Unused 2</entry>
+																		<entry>Color Bit 0</entry>
+																		<entry>Color Bit 1</entry>
+																		<entry>Color Bit 2</entry>
+																		<entry>Color Bit 3</entry>
+																	</definition>
+																</field>
+																<field type="CharInteger" name="Function 1" />
+																<field type="CharInteger" name="Function 2" />
+																<field type="RgbColor" name="Color 0" />
+																<field type="RgbColor" name="Color 1" />
+																<field type="RgbColor" name="Color 2" />
+																<field type="RgbColor" name="Color 3" />
+																<field type="Block" name="Values">
+																	<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																		<versions>
+																			<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																				<fields>
+																					<field type="Real" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</real_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v1>
+														<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Block" name="data">
+																	<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																		<versions>
+																			<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																				<fields>
+																					<field type="CharInteger" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</byte_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v2>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Real" name="minimum scalar value" />
+										<field type="Real" name="maximum scalar value" />
+										<field type="Terminator" />
+									</fields>
+								</sound_effect_template_parameter_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</g_sound_effect_template_fields>
+			<g_sound_effect_template_collection_fields size="40" sizeIdentifer="sizeof(struct s_sound_effect_template_collection)" fieldCount="5">
+				<fields>
+					<field type="Block" name="template collection">
+						<block name="sound_effect_templates_block" maxCount="8" display="sound_effect_templates_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_templates" version="1">
+							<versions>
+								<g_sound_effect_template_fields size="44" sizeIdentifer="sizeof(s_sound_effect_template_definition)" fieldCount="8">
+									<fields>
+										<field type="StringId" name="dsp effect" />
+										<field type="Explanation" name="WARNING" definition="DON'T MODIFY THIS TAG UNLESS YOU KNOW WHAT YOU ARE DOING" />
+										<field type="Data" name="explanation">
+											<definition name="sound_effect_template_explanation" maxSize="65536" alignment="0" flags="6" maxIdentifer="64*k_kilo" />
+										</field>
+										<field type="LongFlags" name="flags">
+											<definition count="2">
+												<entry>use high level parameters</entry>
+												<entry>custom parameters</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="" />
+										<field type="ShortInteger" name="" />
+										<field type="Block" name="parameters">
+											<block name="sound_effect_template_parameter_block" maxCount="128" display="sound_effect_template_parameter_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_parameters" procGenerateDefault="True" version="1">
+												<versions>
+													<sound_effect_template_parameter_block_fields size="40" sizeIdentifer="sizeof(s_sound_effect_template_parameter_definition)" fieldCount="11">
+														<fields>
+															<field type="StringId" name="name" />
+															<field type="Enum" name="type">
+																<definition count="3">
+																	<entry>integer</entry>
+																	<entry>real</entry>
+																	<entry>filter type</entry>
+																</definition>
+															</field>
+															<field type="WordFlags" name="flags">
+																<definition count="1">
+																	<entry>expose as function</entry>
+																</definition>
+															</field>
+															<field type="LongInteger" name="hardware offset" />
+															<field type="LongInteger" name="default enum integer value" />
+															<field type="Real" name="default scalar value" />
+															<field type="Custom" name="default function" attributeGroup="fned" definition="&#x0;?.?" />
+															<field type="Struct" name="default function">
+																<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																	<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																		<versions>
+																			<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																				<fields>
+																					<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																					<field type="CharInteger" name="Function Type" />
+																					<field type="ByteFlags" name="Flags">
+																						<definition count="8">
+																							<entry>Range</entry>
+																							<entry>Unused 0</entry>
+																							<entry>Unused 1</entry>
+																							<entry>Unused 2</entry>
+																							<entry>Color Bit 0</entry>
+																							<entry>Color Bit 1</entry>
+																							<entry>Color Bit 2</entry>
+																							<entry>Color Bit 3</entry>
+																						</definition>
+																					</field>
+																					<field type="CharInteger" name="Function 1" />
+																					<field type="CharInteger" name="Function 2" />
+																					<field type="RgbColor" name="Color 0" />
+																					<field type="RgbColor" name="Color 1" />
+																					<field type="RgbColor" name="Color 2" />
+																					<field type="RgbColor" name="Color 3" />
+																					<field type="Block" name="Values">
+																						<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																							<versions>
+																								<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																									<fields>
+																										<field type="Real" name="Value" />
+																										<field type="Terminator" />
+																									</fields>
+																								</real_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																					<field type="Terminator" />
+																				</fields>
+																			</function_definition_fields_v1>
+																			<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																				<fields>
+																					<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																					<field type="Block" name="data">
+																						<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																							<versions>
+																								<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																									<fields>
+																										<field type="CharInteger" name="Value" />
+																										<field type="Terminator" />
+																									</fields>
+																								</byte_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																					<field type="Terminator" />
+																				</fields>
+																			</function_definition_fields_v2>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Real" name="minimum scalar value" />
+															<field type="Real" name="maximum scalar value" />
+															<field type="Terminator" />
+														</fields>
+													</sound_effect_template_parameter_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</g_sound_effect_template_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="StringId" name="input effect name" />
+					<field type="Block" name="additional sound inputs">
+						<block name="sound_effect_template_additional_sound_input_block" maxCount="1" display="sound_effect_template_additional_sound_input_block" flags="0" maxIdentifer="1" procGenerateDefault="True" version="1">
+							<versions>
+								<sound_effect_template_additional_sound_input_block_fields size="20" sizeIdentifer="sizeof(s_sound_effect_template_sound_input_definition)" fieldCount="5">
+									<fields>
+										<field type="StringId" name="dsp effect" />
+										<field type="Custom" name="low frequency sound" attributeGroup="fned" definition="&#x0;???" />
+										<field type="Struct" name="low frequency sound">
+											<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+												<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+													<versions>
+														<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="CharInteger" name="Function Type" />
+																<field type="ByteFlags" name="Flags">
+																	<definition count="8">
+																		<entry>Range</entry>
+																		<entry>Unused 0</entry>
+																		<entry>Unused 1</entry>
+																		<entry>Unused 2</entry>
+																		<entry>Color Bit 0</entry>
+																		<entry>Color Bit 1</entry>
+																		<entry>Color Bit 2</entry>
+																		<entry>Color Bit 3</entry>
+																	</definition>
+																</field>
+																<field type="CharInteger" name="Function 1" />
+																<field type="CharInteger" name="Function 2" />
+																<field type="RgbColor" name="Color 0" />
+																<field type="RgbColor" name="Color 1" />
+																<field type="RgbColor" name="Color 2" />
+																<field type="RgbColor" name="Color 3" />
+																<field type="Block" name="Values">
+																	<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																		<versions>
+																			<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																				<fields>
+																					<field type="Real" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</real_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v1>
+														<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Block" name="data">
+																	<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																		<versions>
+																			<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																				<fields>
+																					<field type="CharInteger" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</byte_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v2>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Real" name="time period" units=" seconds" attributeGroup="fn**" />
+										<field type="Terminator" />
+									</fields>
+								</sound_effect_template_additional_sound_input_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="">
+						<block name="platform_sound_effect_template_collection_block" maxCount="1" display="platform_sound_effect_template_collection_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<platform_sound_effect_template_collection_block_fields size="16" sizeIdentifer="sizeof(s_platform_sound_effect_template_collection)" fieldCount="3">
+									<fields>
+										<field type="Block" name="platform effect templates">
+											<block name="platform_sound_effect_template_block" maxCount="8" display="platform_sound_effect_template_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_templates" version="1">
+												<versions>
+													<platform_sound_effect_template_block_fields size="28" sizeIdentifer="sizeof(s_platform_sound_effect_template)" fieldCount="4">
+														<fields>
+															<field type="StringId" name="input dsp effect name" />
+															<field type="Pad" name="" definition="12" />
+															<field type="Block" name="components">
+																<block name="platform_sound_effect_template_component_block" maxCount="16" display="platform_sound_effect_template_component_block" flags="0" maxIdentifer="k_maximum_number_of_sound_effect_components" version="1">
+																	<versions>
+																		<platform_sound_effect_template_component_block_fields size="16" sizeIdentifer="sizeof(s_platform_sound_effect_template_component)" fieldCount="5">
+																			<fields>
+																				<field type="LongEnum" name="value type">
+																					<definition count="4">
+																						<entry>zero</entry>
+																						<entry>time</entry>
+																						<entry>scale</entry>
+																						<entry>rolloff</entry>
+																					</definition>
+																				</field>
+																				<field type="Real" name="default value" />
+																				<field type="Real" name="minimum value" />
+																				<field type="Real" name="maximum value" />
+																				<field type="Terminator" />
+																			</fields>
+																		</platform_sound_effect_template_component_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</platform_sound_effect_template_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="StringId" name="input dsp effect name" />
+										<field type="Terminator" />
+									</fields>
+								</platform_sound_effect_template_collection_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</g_sound_effect_template_collection_fields>
+		</versions>
+	</block>
+</tagGroup>

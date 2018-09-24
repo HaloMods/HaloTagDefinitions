@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="cellular_automata" groupTag="devo" groupTagParent="????" version="2" flags="32">
+	<block name="cellular_automata_block" maxCount="1" display="cellular_automata" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<cellular_automata_block_fields size="564" sizeIdentifer="sizeof(struct ca_definition)" fieldCount="39">
+				<fields>
+					<field type="Explanation" name="parameters" definition="" />
+					<field type="ShortInteger" name="updates per second" units="Hz" />
+					<field type="ShortInteger" name="x (width)" units="cells" />
+					<field type="ShortInteger" name="y (depth)" units="cells" />
+					<field type="ShortInteger" name="z (height)" units="cells" />
+					<field type="Real" name="x (width)" units="world units" />
+					<field type="Real" name="y (depth)" units="world units" />
+					<field type="Real" name="z (height)" units="world units" />
+					<field type="Pad" name="" definition="32" />
+					<field type="OldStringId" name="marker" />
+					<field type="Explanation" name="cell birth" definition="" />
+					<field type="RealFraction" name="cell birth chance" units="[0,1]" />
+					<field type="Pad" name="" definition="32" />
+					<field type="Explanation" name="gene mutation" definition="" />
+					<field type="LongInteger" name="cell gene mutates 1 in" units="times" />
+					<field type="LongInteger" name="virus gene mutations 1 in" units="times" />
+					<field type="Pad" name="" definition="32" />
+					<field type="Explanation" name="cell infection" definition="" />
+					<field type="ShortIntegerBounds" name="infected cell lifespan" help="the lifespan of a cell once infected" units="updates" />
+					<field type="ShortInteger" name="minimum infection age" help="no cell can be infected before it has been alive this number of updates" units="updates" />
+					<field type="Pad" name="" definition="2" />
+					<field type="RealFraction" name="cell infection chance" units="[0,1]" />
+					<field type="RealFraction" name="infection threshold" help="0.0 is most difficult for the virus, 1.0 means any virus can infect any cell" units="[0,1]" />
+					<field type="Pad" name="" definition="32" />
+					<field type="Explanation" name="initial state" definition="" />
+					<field type="RealFraction" name="new cell filled chance" units="[0,1]" />
+					<field type="RealFraction" name="new cell infected chance" units="[0,1]" />
+					<field type="Pad" name="" definition="32" />
+					<field type="Explanation" name="detail texture" definition="" />
+					<field type="RealFraction" name="detail texture change chance" units="[0,1]" />
+					<field type="Pad" name="" definition="32" />
+					<field type="ShortInteger" name="detail texture width" help="the number of cells repeating across the detail texture in both dimensions" units="cells" />
+					<field type="Pad" name="" definition="2" />
+					<field type="TagReference" name="detail texture">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Explanation" name="mask texture" definition="" />
+					<field type="Pad" name="" definition="32" />
+					<field type="TagReference" name="mask bitmap">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Pad" name="" definition="240" />
+					<field type="Terminator" />
+				</fields>
+			</cellular_automata_block_fields>
+		</versions>
+	</block>
+</tagGroup>

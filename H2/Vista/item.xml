@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="item" groupTag="item" groupTagParent="obje" version="2" flags="9" procPostprocess="True">
+	<block name="item_block" maxCount="1" display="item" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<item_block_fields size="156" sizeIdentifer="sizeof(struct _item_definition)" fieldCount="27">
+				<fields>
+					<field type="Explanation" name="$$$ ITEM $$$" definition="" />
+					<field type="LongFlags" name="flags">
+						<definition count="3">
+							<entry>always maintains z up</entry>
+							<entry>destroyed by explosions</entry>
+							<entry>unaffected by gravity</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="OLD message index" />
+					<field type="ShortInteger" name="sort order" />
+					<field type="Real" name="multiplayer on-ground scale" />
+					<field type="Real" name="campaign on-ground scale" />
+					<field type="Explanation" name="NEW hud messages" definition="everything you need to display stuff" />
+					<field type="StringId" name="pickup message" />
+					<field type="StringId" name="swap message" />
+					<field type="StringId" name="pickup or dual msg" />
+					<field type="StringId" name="swap or dual msg" />
+					<field type="StringId" name="dual-only msg" />
+					<field type="StringId" name="picked up msg" />
+					<field type="StringId" name="singluar quantity msg" />
+					<field type="StringId" name="plural quantity msg" />
+					<field type="StringId" name="switch-to msg" />
+					<field type="StringId" name="switch-to from ai msg" />
+					<field type="UselessPad" name="" definition="148" />
+					<field type="TagReference" name="UNUSED" isReadonly="True">
+						<definition flags="0" groupTag="foot" />
+					</field>
+					<field type="TagReference" name="collision sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Block" name="predicted bitmaps">
+						<block name="predicted_bitmaps_block" maxCount="8" display="predicted_bitmaps_block" flags="0" maxIdentifer="8" version="1">
+							<versions>
+								<predicted_bitmaps_block_fields size="16" sizeIdentifer="sizeof(struct tag_reference)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="bitmap">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</predicted_bitmaps_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="UselessPad" name="" definition="92" />
+					<field type="TagReference" name="detonation damage effect">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="RealBounds" name="detonation delay" units="seconds" />
+					<field type="TagReference" name="detonating effect">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="TagReference" name="detonation effect">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</item_block_fields>
+		</versions>
+	</block>
+</tagGroup>

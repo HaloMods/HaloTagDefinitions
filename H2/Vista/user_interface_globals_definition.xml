@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="user_interface_globals_definition" groupTag="wgtz" groupTagParent="????" version="3" flags="8">
+	<block name="user_interface_globals_definition_block" maxCount="1" display="user_interface_globals_definition" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<user_interface_globals_definition_block_fields size="60" sizeIdentifer="sizeof(s_user_interface_tag_globals)" fieldCount="9">
+				<fields>
+					<field type="Explanation" name="Shared Globals" definition="This is a reference to the ui shared globals tag" />
+					<field type="TagReference" name="shared globals">
+						<definition flags="0" groupTag="wigl" />
+					</field>
+					<field type="Explanation" name="Screen Widgets" definition="These are the screen widgets" />
+					<field type="Block" name="screen widgets">
+						<block name="user_interface_widget_reference_block" maxCount="256" display="user_interface_widget_reference_block" flags="0" maxIdentifer="k_maximum_number_of_screen_widgets" version="1">
+							<versions>
+								<user_interface_widget_reference_block_fields size="16" sizeIdentifer="sizeof(s_user_interface_widget_reference)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="widget tag">
+											<definition flags="0" groupTag="wgit" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</user_interface_widget_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="Multiplayer Variant Settings Interface" definition="This blob defines the ui for setting multiplayer game variant parameters" />
+					<field type="TagReference" name="mp variant settings ui">
+						<definition flags="0" groupTag="goof" />
+					</field>
+					<field type="Explanation" name="Game Hopper Localization Strings" definition="This is for the loc game hopper strings" />
+					<field type="TagReference" name="game hopper descriptions">
+						<definition flags="0" groupTag="unic" />
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</user_interface_globals_definition_block_fields>
+		</versions>
+	</block>
+</tagGroup>

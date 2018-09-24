@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="stereo_system" groupTag="BooM" groupTagParent="????" version="1" flags="8">
+	<block name="stereo_system_block" maxCount="1" display="stereo_system" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<stereo_system_block_fields size="4" sizeIdentifer="sizeof(struct stereo_system_definition)" fieldCount="2">
+				<fields>
+					<field type="LongInteger" name="unused" />
+					<field type="Terminator" />
+				</fields>
+			</stereo_system_block_fields>
+		</versions>
+	</block>
+</tagGroup>

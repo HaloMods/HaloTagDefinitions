@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="antenna" groupTag="ant!" groupTagParent="????" version="1" flags="8">
+	<block name="antenna_block" maxCount="1" display="antenna" flags="0" maxIdentifer="1" procPostprocess="True" version="1">
+		<versions>
+			<antenna_block_fields size="180" sizeIdentifer="sizeof(struct antenna_definition)" fieldCount="10">
+				<fields>
+					<field type="OldStringId" name="attachment marker name" help="the marker name where the antenna should be attached" />
+					<field type="TagReference" name="bitmaps">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="TagReference" name="physics">
+						<definition flags="0" groupTag="pphy" />
+					</field>
+					<field type="Pad" name="" definition="80" />
+					<field type="RealFraction" name="spring strength coefficient" help="strength of the spring (larger values make the spring stronger)" />
+					<field type="Real" name="falloff pixels" />
+					<field type="Real" name="cutoff pixels" />
+					<field type="Pad" name="" definition="40" />
+					<field type="Block" name="vertices">
+						<block name="antenna_vertex_block" maxCount="20" display="antenna_vertex_block" flags="0" maxIdentifer="MAXIMUM_NUMBER_OF_ANTENNA_VERTICES" procPostprocess="True" version="1">
+							<versions>
+								<antenna_vertex_block_fields size="128" sizeIdentifer="sizeof(struct antenna_vertex)" fieldCount="11">
+									<fields>
+										<field type="RealFraction" name="spring strength coefficient" help="strength of the spring (larger values make the spring stronger)" />
+										<field type="Pad" name="" definition="24" />
+										<field type="RealEulerAngles2D" name="angles" help="direction toward next vertex" />
+										<field type="Real" name="length" help="distance between this vertex and the next" units="world units" />
+										<field type="ShortInteger" name="sequence index" help="bitmap group sequence index for this vertex's texture" />
+										<field type="Pad" name="" definition="2" />
+										<field type="RealArgbColor" name="color" help="color at this vertex" />
+										<field type="RealArgbColor" name="LOD color" help="color at this vertex for the low-LOD line primitives" />
+										<field type="Pad" name="" definition="40" />
+										<field type="Pad" name="" definition="12" />
+										<field type="Terminator" />
+									</fields>
+								</antenna_vertex_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</antenna_block_fields>
+		</versions>
+	</block>
+</tagGroup>

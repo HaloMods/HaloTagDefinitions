@@ -1,0 +1,2036 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="model" groupTag="hlmt" groupTagParent="????" version="1" flags="9" procPostprocess="True">
+	<block name="model_block" maxCount="1" display="model" flags="0" maxIdentifer="1" version="2">
+		<versions>
+			<model_group_tags_v1 size="200" sizeIdentifer="sizeof(struct s_model_definition_v1)" fieldCount="25">
+				<fields>
+					<field type="Explanation" name="MODEL" definition="" />
+					<field type="TagReference" name="render model">
+						<definition flags="0" groupTag="mode" />
+					</field>
+					<field type="TagReference" name="collision model">
+						<definition flags="0" groupTag="coll" />
+					</field>
+					<field type="TagReference" name="animation">
+						<definition flags="0" groupTag="jmad" />
+					</field>
+					<field type="TagReference" name="physics">
+						<definition flags="0" groupTag="phys" />
+					</field>
+					<field type="TagReference" name="physics model">
+						<definition flags="0" groupTag="phmo" />
+					</field>
+					<field type="Explanation" name="level of detail" definition="If a model is further away than the LOD reduction distance, it will be reduced to that LOD.&#xA;So the L1 reduction distance should be really long and the L5 reduction distance should be really short.&#xA;This means distances should be in descending order, e.g. 5 4 3 2 1.&#xA;&#xA;Note that if we run out of memory or too many models are on screen at once, the engine may reduce&#xA;models to a lower LOD BEFORE they reach the reduction distance for that LOD.&#xA;&#xA;If a model has a max draw distance, it will disappear when it reaches that distance. The max draw distance&#xA;should be greater than all of the LOD reduction distances.&#xA;" />
+					<field type="Real" name="max draw distance" units="world units" />
+					<field type="Real" name="reduce to L1" units="world units (super low)" />
+					<field type="Real" name="reduce to L2" units="world units (low)" />
+					<field type="Real" name="reduce to L3" units="world units (medium)" />
+					<field type="Real" name="reduce to L4" units="world units (high)" />
+					<field type="Real" name="reduce to L5" units="world units (super high)" />
+					<field type="Skip" name="" definition="4" />
+					<field type="Enum" name="shadow fade distance">
+						<definition count="6">
+							<entry>fade at super high detail level</entry>
+							<entry>fade at high detail level</entry>
+							<entry>fade at medium detail level</entry>
+							<entry>fade at low detail level</entry>
+							<entry>fade at super low detail level</entry>
+							<entry>fade never</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Block" name="variants">
+						<block name="model_variant_block" maxCount="64" display="variant" flags="0" maxIdentifer="k_maximum_variants_per_model" version="1">
+							<versions>
+								<model_variant_block_fields size="72" sizeIdentifer="sizeof(s_model_variant)" fieldCount="8">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Block" name="regions">
+											<block name="model_variant_region_block" maxCount="16" display="region" flags="0" maxIdentifer="MAXIMUM_REGIONS_PER_MODEL" version="1">
+												<versions>
+													<model_variant_region_block_fields size="24" sizeIdentifer="sizeof(s_model_variant_region)" fieldCount="8">
+														<fields>
+															<field type="StringId" name="region name" units="must match region name in render_model" isBlockName="True" />
+															<field type="Pad" name="" definition="1" />
+															<field type="Pad" name="" definition="1" />
+															<field type="ShortBlockIndex1" name="parent variant" definition="model_variant_block" />
+															<field type="Block" name="permutations">
+																<block name="model_variant_permutation_block" maxCount="32" display="permutation" flags="0" maxIdentifer="MAXIMUM_PERMUTATIONS_PER_MODEL_REGION" version="1">
+																	<versions>
+																		<model_variant_permutation_block_fields size="36" sizeIdentifer="sizeof(s_model_variant_permutation)" fieldCount="9">
+																			<fields>
+																				<field type="StringId" name="permutation name" isBlockName="True" />
+																				<field type="Pad" name="" definition="1" />
+																				<field type="ByteFlags" name="flags">
+																					<definition count="1">
+																						<entry>copy states to all permutations</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="Real" name="probability" units="(0,+inf)" />
+																				<field type="Block" name="states">
+																					<block name="model_variant_state_block" maxCount="10" display="model_variant_state_block" flags="0" maxIdentifer="MAXIMUM_STATES_PER_MODEL_PERMUTATION" version="2">
+																						<versions>
+																							<model_variant_state_fields_v1 size="8" sizeIdentifer="sizeof(s_model_variant_state_v1)" fieldCount="4">
+																								<fields>
+																									<field type="StringId" name="permutation name" />
+																									<field type="Pad" name="" definition="2" />
+																									<field type="Enum" name="state" isBlockName="True">
+																										<definition count="9">
+																											<entry>default</entry>
+																											<entry>minor damage</entry>
+																											<entry>medium damage</entry>
+																											<entry>major damage</entry>
+																											<entry>destroyed</entry>
+																											<entry>blurred (DEPRECIATED)</entry>
+																											<entry>very blurred (DEPRECIATED)</entry>
+																											<entry>shield active (DEPRECIATED)</entry>
+																											<entry>shield inactive (DEPRECIATED)</entry>
+																										</definition>
+																									</field>
+																									<field type="Terminator" />
+																								</fields>
+																							</model_variant_state_fields_v1>
+																							<model_variant_state_fields_v2 size="32" sizeIdentifer="sizeof(s_model_variant_state)" fieldCount="8">
+																								<fields>
+																									<field type="StringId" name="permutation name" />
+																									<field type="Pad" name="" definition="1" />
+																									<field type="ByteFlags" name="property flags">
+																										<definition count="3">
+																											<entry>blurred</entry>
+																											<entry>hella blurred</entry>
+																											<entry>shielded</entry>
+																										</definition>
+																									</field>
+																									<field type="Enum" name="state" isBlockName="True">
+																										<definition count="5">
+																											<entry>default</entry>
+																											<entry>minor damage</entry>
+																											<entry>medium damage</entry>
+																											<entry>major damage</entry>
+																											<entry>destroyed</entry>
+																										</definition>
+																									</field>
+																									<field type="TagReference" name="looping effect" help="played while the model is in this state">
+																										<definition flags="0" groupTag="effe" />
+																									</field>
+																									<field type="StringId" name="looping effect marker name" />
+																									<field type="RealFraction" name="initial probability" />
+																									<field type="Terminator" />
+																								</fields>
+																							</model_variant_state_fields_v2>
+																						</versions>
+																					</block>
+																				</field>
+																				<field type="Pad" name="" definition="5" />
+																				<field type="Pad" name="" definition="7" />
+																				<field type="Terminator" />
+																			</fields>
+																		</model_variant_permutation_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Enum" name="sort order" help="negative values mean closer to the camera">
+																<definition count="12">
+																	<entry>no sorting</entry>
+																	<entry>-5 (closest)</entry>
+																	<entry>-4</entry>
+																	<entry>-3</entry>
+																	<entry>-2</entry>
+																	<entry>-1</entry>
+																	<entry>0 (same as model)</entry>
+																	<entry>1</entry>
+																	<entry>2</entry>
+																	<entry>3</entry>
+																	<entry>4</entry>
+																	<entry>5 (farthest)</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</model_variant_region_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="objects">
+											<block name="model_variant_object_block" maxCount="16" display="object" flags="0" maxIdentifer="k_maximum_objects_per_model_variant" version="1">
+												<versions>
+													<model_variant_object_block_fields size="24" sizeIdentifer="sizeof(s_model_variant_object)" fieldCount="4">
+														<fields>
+															<field type="StringId" name="parent marker" isBlockName="True" />
+															<field type="StringId" name="child marker" />
+															<field type="TagReference" name="child object">
+																<definition flags="2" groupTag="obje" />
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</model_variant_object_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="8" />
+										<field type="StringId" name="dialogue sound effect" />
+										<field type="TagReference" name="dialogue">
+											<definition flags="2" groupTag="udlg" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</model_variant_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="materials">
+						<block name="model_material_block" maxCount="32" display="material" flags="0" maxIdentifer="MAXIMUM_MATERIALS_PER_MODEL" procFormat="True" version="1">
+							<versions>
+								<model_material_block_fields size="20" sizeIdentifer="sizeof(s_model_material)" fieldCount="8">
+									<fields>
+										<field type="StringId" name="material name" />
+										<field type="Enum" name="material type">
+											<definition count="33">
+												<entry>dirt</entry>
+												<entry>sand</entry>
+												<entry>stone</entry>
+												<entry>snow</entry>
+												<entry>wood</entry>
+												<entry>metal (hollow)</entry>
+												<entry>metal (thin)</entry>
+												<entry>metal (thick)</entry>
+												<entry>rubber</entry>
+												<entry>glass</entry>
+												<entry>force field</entry>
+												<entry>grunt</entry>
+												<entry>hunter armor</entry>
+												<entry>hunter skin</entry>
+												<entry>elite</entry>
+												<entry>jackal</entry>
+												<entry>jackal energy shield</entry>
+												<entry>engineer skin</entry>
+												<entry>engineer force field</entry>
+												<entry>flood combat form</entry>
+												<entry>flood carrier form</entry>
+												<entry>cyborg armor</entry>
+												<entry>cyborg energy shield</entry>
+												<entry>human armor</entry>
+												<entry>human skin</entry>
+												<entry>sentinel</entry>
+												<entry>monitor</entry>
+												<entry>plastic</entry>
+												<entry>water</entry>
+												<entry>leaves</entry>
+												<entry>elite energy shield</entry>
+												<entry>ice</entry>
+												<entry>hunter shield</entry>
+											</definition>
+										</field>
+										<field type="ShortBlockIndex2" name="damage section" definition="3??|$&#x8;?e?" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="2" />
+										<field type="StringId" name="global material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</model_material_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="new damage info">
+						<block name="global_damage_info_block" maxCount="1" display="global_damage_info_block" flags="0" maxIdentifer="1" version="2">
+							<versions>
+								<global_damage_info_block_fields_v1 size="216" sizeIdentifer="sizeof(s_model_damage_info_v1)" fieldCount="28">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="9">
+												<entry>takes shield damage for children</entry>
+												<entry>takes body damage for children</entry>
+												<entry>always shields friendly damage</entry>
+												<entry>passes area damage to children</entry>
+												<entry>parent never takes body damage for us</entry>
+												<entry>only damaged by explosives</entry>
+												<entry>parent never takes shield damage for us</entry>
+												<entry>cannot die from damage</entry>
+												<entry>passes attached damage to riders</entry>
+											</definition>
+										</field>
+										<field type="StringId" name="global indirect material name" help="absorbes AOE or child damage" />
+										<field type="Real" name="maximum vitality" />
+										<field type="Real" name="body system shock" help="anything that kills us (body depleted) doing more than this amount of damage also destroys us" />
+										<field type="RealFraction" name="friendly damage resistance" help="the fraction of damage caused by friendly units ignored by this object (zero means full damage)" units="[0,1]" />
+										<field type="TagReference" name="localized damage effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Real" name="area damage effect threshold" units="[0,1]" />
+										<field type="TagReference" name="area damage effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Real" name="body damaged threshold" help="when passing this vitality the 'body damaged' effect, below, is created" />
+										<field type="TagReference" name="body damaged effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="body depleted effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Real" name="body destroyed threshold" help="when passing this vitality (usually negative) the object is deleted" />
+										<field type="TagReference" name="body destroyed effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Real" name="maximum shield vitality" help="the default initial and maximum shield vitality of this object" />
+										<field type="StringId" name="global shield material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="Real" name="minimum stun damage" help="the minimum damage required to stun this object's shields" />
+										<field type="Real" name="stun time" help="the length of time the shields stay stunned (do not recharge) after taking damage" units="seconds" />
+										<field type="Real" name="recharge time" help="the length of time it would take for the shields to fully recharge after being completely depleted" units="seconds" />
+										<field type="Real" name="shield damaged threshold" />
+										<field type="TagReference" name="shield damaged effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="shield depleted effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="shield recharging effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Block" name="damage sections">
+											<block name="global_damage_section_block" maxCount="16" display="global_damage_section_block" flags="0" maxIdentifer="MAXIMUM_DAMAGE_SECTIONS_PER_MODEL" version="1">
+												<versions>
+													<global_damage_section_block_fields size="68" sizeIdentifer="sizeof(s_model_damage_section)" fieldCount="13">
+														<fields>
+															<field type="StringId" name="name" isBlockName="True" />
+															<field type="Explanation" name="damage section flags" definition="* absorbs body damage: damage to this section does not count against body vitality&#xA;* headshottable: takes extra headshot damage when shot&#xA;* ignores shields: damage to this section bypasses shields" />
+															<field type="LongFlags" name="flags">
+																<definition count="9">
+																	<entry>absorbs body damage</entry>
+																	<entry>takes full dmg when object dies</entry>
+																	<entry>cannot die with riders</entry>
+																	<entry>takes full dmg when obj dstryd</entry>
+																	<entry>restored on ressurection</entry>
+																	<entry>unused</entry>
+																	<entry>unused</entry>
+																	<entry>heatshottable</entry>
+																	<entry>ignores shields</entry>
+																</definition>
+															</field>
+															<field type="RealFraction" name="vitality percentage" help="percentage of total object vitality" units="[0.1]" />
+															<field type="Block" name="instant responses">
+																<block name="instantaneous_damage_repsonse_block" maxCount="16" display="instantaneous_damage_repsonse_block" flags="0" maxIdentifer="MAXIMUM_RESPONSES_PER_DAMAGE_SECTION" procFormat="True" version="1">
+																	<versions>
+																		<instantaneous_damage_repsonse_block_fields size="104" sizeIdentifer="sizeof(s_instantaneous_damage_response)" fieldCount="28">
+																			<fields>
+																				<field type="Enum" name="response type">
+																					<definition count="3">
+																						<entry>receives all damage</entry>
+																						<entry>receives area effect damage</entry>
+																						<entry>receives local damage</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Constraint damage type" definition="* if you specify a constraint group name (see lower section of this block)&#xA;  you can specify a constraint damage&#xA;* loosening a constraint takes it out of the rigid state - activates it&#xA;* destroying a constraint sets the attached body free" />
+																				<field type="Enum" name="constraint damage type">
+																					<definition count="5">
+																						<entry>none</entry>
+																						<entry>destroy one of group</entry>
+																						<entry>destroy entire group</entry>
+																						<entry>loosen one of group</entry>
+																						<entry>loosen entire group</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Damage response flags" definition="* kills object: when the response fires the object dies regardless of its current health&#xA;* inhibits &lt;x&gt;: from halo 1 - disallows basic behaviors for a unit&#xA;* forces drop weapon: from halo 1 - makes the unit drop its current weapon&#xA;* kills weapon &lt;x&gt; trigger: destroys the &lt;x&gt; trigger on the unit's current weapon&#xA;* destroys object: when the response fires the object is destroyed" />
+																				<field type="LongFlags" name="flags">
+																					<definition count="25">
+																						<entry>kills object</entry>
+																						<entry>inhibits melee attack</entry>
+																						<entry>inhibits weapon attack</entry>
+																						<entry>inhibits walking</entry>
+																						<entry>forces drop weapon</entry>
+																						<entry>kills weapon primary trigger</entry>
+																						<entry>kills weapon secondary trigger</entry>
+																						<entry>destroys object</entry>
+																						<entry>damages weapon primary trigger</entry>
+																						<entry>damages weapon secondary trigger</entry>
+																						<entry>light damage left turn</entry>
+																						<entry>major damage left turn</entry>
+																						<entry>light damage right turn</entry>
+																						<entry>major damage right turn</entry>
+																						<entry>light damage engine</entry>
+																						<entry>major damage engine</entry>
+																						<entry>kills object (no player solo)</entry>
+																						<entry>causes detonation</entry>
+																						<entry>destroy all group constraints</entry>
+																						<entry>kills variant objects</entry>
+																						<entry>force unattached effects</entry>
+																						<entry>fires under threshold</entry>
+																						<entry>triggers special death</entry>
+																						<entry>only on special death</entry>
+																						<entry>only NOT on special death</entry>
+																					</definition>
+																				</field>
+																				<field type="Real" name="damage threshold" help="repsonse fires after crossing this threshold.  1=full health" />
+																				<field type="TagReference" name="transition effect">
+																					<definition flags="0" groupTag="effe" />
+																				</field>
+																				<field type="Struct" name="damage effect">
+																					<struct name="instantaneous_response_damage_effect_struct" groupTag="ires">
+																						<block name="instantaneous_response_damage_effect_struct_block" maxCount="1" display="instantaneous_response_damage_effect_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<instantaneous_response_damage_effect_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_fields_v1>
+																								<instantaneous_response_damage_effect_fields_v2 size="16" sizeIdentifer="sizeof(struct tag_reference)" fieldCount="2">
+																									<fields>
+																										<field type="TagReference" name="transition damage effect">
+																											<definition flags="0" groupTag="jpt!" />
+																										</field>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="StringId" name="region" />
+																				<field type="Enum" name="new state">
+																					<definition count="5">
+																						<entry>default</entry>
+																						<entry>minor damage</entry>
+																						<entry>medium damage</entry>
+																						<entry>major damage</entry>
+																						<entry>destroyed</entry>
+																					</definition>
+																				</field>
+																				<field type="ShortInteger" name="runtime region index" isReadonly="True" />
+																				<field type="StringId" name="effect marker name" />
+																				<field type="Struct" name="damage effect marker">
+																					<struct name="instantaneous_response_damage_effect_marker_struct" groupTag="irem">
+																						<block name="instantaneous_response_damage_effect_marker_struct_block" maxCount="1" display="instantaneous_response_damage_effect_marker_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<instantaneous_response_damage_effect_marker_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_marker_fields_v1>
+																								<instantaneous_response_damage_effect_marker_fields_v2 size="4" sizeIdentifer="sizeof(string_id)" fieldCount="2">
+																									<fields>
+																										<field type="StringId" name="damage effect marker name" />
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_marker_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Explanation" name="Response delay" definition="If desired, you can specify a delay until the response fires.This delay is pre-empted if another timed response for the same section fires.The delay effect plays while the timer is counting down" />
+																				<field type="Real" name="response delay" help="in seconds" />
+																				<field type="TagReference" name="delay effect">
+																					<definition flags="0" groupTag="effe" />
+																				</field>
+																				<field type="StringId" name="delay effect marker name" />
+																				<field type="Explanation" name="Constraint destruction" definition="- a response can destroy a single constraint by naming it explicitly.&#xA;- alternatively it can randomly destroy a single constraint from a specified group if the &quot;destroy one group constraint&quot; flag is set&#xA;- also it can destroy all constraints in a specified group if the &quot;destroy all group constraints&quot; flag is set&#xA;" />
+																				<field type="StringId" name="constraint/group name" />
+																				<field type="Explanation" name="seat ejaculation" definition="" />
+																				<field type="StringId" name="ejecting seat label" />
+																				<field type="Explanation" name="skip fraction" definition="0.0 always fires, 1.0 never fires" />
+																				<field type="RealFraction" name="skip fraction" />
+																				<field type="Explanation" name="destroyed child object marker name" definition="when this response fires, any children objects created at the supplied marker name will be destroyed" />
+																				<field type="StringId" name="destroyed child object marker name" />
+																				<field type="Explanation" name="total damage threshold" definition="scale on total damage section vitality" />
+																				<field type="RealFraction" name="total damage threshold" />
+																				<field type="Terminator" />
+																			</fields>
+																		</instantaneous_damage_repsonse_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="">
+																<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+																	<versions>
+																		<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+																			<fields>
+																				<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+																				<field type="Terminator" />
+																			</fields>
+																		</g_null_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="">
+																<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+																	<versions>
+																		<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+																			<fields>
+																				<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+																				<field type="Terminator" />
+																			</fields>
+																		</g_null_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Real" name="stun time" units="seconds" />
+															<field type="Real" name="recharge time" units="seconds" />
+															<field type="Pad" name="" definition="4" />
+															<field type="StringId" name="resurrection restored region name" />
+															<field type="Pad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</global_damage_section_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="nodes" isReadonly="True">
+											<block name="global_damage_nodes_block" maxCount="255" display="global_damage_nodes_block" flags="0" maxIdentifer="MAXIMUM_NODES_PER_MODEL" version="1">
+												<versions>
+													<global_damage_nodes_block_fields size="16" sizeIdentifer="sizeof(s_damage_node)" fieldCount="4">
+														<fields>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="12" />
+															<field type="Terminator" />
+														</fields>
+													</global_damage_nodes_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</global_damage_info_block_fields_v1>
+								<global_damage_info_block_fields_v2 size="320" sizeIdentifer="sizeof(s_model_damage_info)" fieldCount="40">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="9">
+												<entry>takes shield damage for children</entry>
+												<entry>takes body damage for children</entry>
+												<entry>always shields friendly damage</entry>
+												<entry>passes area damage to children</entry>
+												<entry>parent never takes body damage for us</entry>
+												<entry>only damaged by explosives</entry>
+												<entry>parent never takes shield damage for us</entry>
+												<entry>cannot die from damage</entry>
+												<entry>passes attached damage to riders</entry>
+											</definition>
+										</field>
+										<field type="StringId" name="global indirect material name" help="absorbes AOE or child damage" />
+										<field type="ShortBlockIndex2" name="indirect damage section" help="absorbes AOE or child damage" definition="3??|$&#x8;?e?" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="4" />
+										<field type="CharEnum" name="collision damage reporting type">
+											<definition count="42">
+												<entry>teh guardians!!1!!1!</entry>
+												<entry>falling damage</entry>
+												<entry>generic collision damage</entry>
+												<entry>generic melee damage</entry>
+												<entry>generic explosion</entry>
+												<entry>magnum pistol</entry>
+												<entry>plasma pistol</entry>
+												<entry>needler</entry>
+												<entry>smg</entry>
+												<entry>plasma rifle</entry>
+												<entry>battle rifle</entry>
+												<entry>carbine</entry>
+												<entry>shotgun</entry>
+												<entry>sniper rifle</entry>
+												<entry>beam rifle</entry>
+												<entry>rocket launcher</entry>
+												<entry>flak cannon</entry>
+												<entry>brute shot</entry>
+												<entry>disintegrator</entry>
+												<entry>brute plasma rifle</entry>
+												<entry>energy sword</entry>
+												<entry>frag grenade</entry>
+												<entry>plasma grenade</entry>
+												<entry>flag melee damage</entry>
+												<entry>bomb melee damage</entry>
+												<entry>bomb explosion damage</entry>
+												<entry>ball melee damage</entry>
+												<entry>human turret</entry>
+												<entry>plasma turret</entry>
+												<entry>banshee</entry>
+												<entry>ghost</entry>
+												<entry>mongoose</entry>
+												<entry>scorpion</entry>
+												<entry>spectre driver</entry>
+												<entry>spectre gunner</entry>
+												<entry>warthog driver</entry>
+												<entry>warthog gunner</entry>
+												<entry>wraith</entry>
+												<entry>tank</entry>
+												<entry>sentinel beam</entry>
+												<entry>sentinel rpg</entry>
+												<entry>teleporter</entry>
+											</definition>
+										</field>
+										<field type="CharEnum" name="response damage reporting type">
+											<definition count="42">
+												<entry>teh guardians!!1!!1!</entry>
+												<entry>falling damage</entry>
+												<entry>generic collision damage</entry>
+												<entry>generic melee damage</entry>
+												<entry>generic explosion</entry>
+												<entry>magnum pistol</entry>
+												<entry>plasma pistol</entry>
+												<entry>needler</entry>
+												<entry>smg</entry>
+												<entry>plasma rifle</entry>
+												<entry>battle rifle</entry>
+												<entry>carbine</entry>
+												<entry>shotgun</entry>
+												<entry>sniper rifle</entry>
+												<entry>beam rifle</entry>
+												<entry>rocket launcher</entry>
+												<entry>flak cannon</entry>
+												<entry>brute shot</entry>
+												<entry>disintegrator</entry>
+												<entry>brute plasma rifle</entry>
+												<entry>energy sword</entry>
+												<entry>frag grenade</entry>
+												<entry>plasma grenade</entry>
+												<entry>flag melee damage</entry>
+												<entry>bomb melee damage</entry>
+												<entry>bomb explosion damage</entry>
+												<entry>ball melee damage</entry>
+												<entry>human turret</entry>
+												<entry>plasma turret</entry>
+												<entry>banshee</entry>
+												<entry>ghost</entry>
+												<entry>mongoose</entry>
+												<entry>scorpion</entry>
+												<entry>spectre driver</entry>
+												<entry>spectre gunner</entry>
+												<entry>warthog driver</entry>
+												<entry>warthog gunner</entry>
+												<entry>wraith</entry>
+												<entry>tank</entry>
+												<entry>sentinel beam</entry>
+												<entry>sentinel rpg</entry>
+												<entry>teleporter</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="20" />
+										<field type="Explanation" name="body" definition="" />
+										<field type="Real" name="maximum vitality" />
+										<field type="Real" name="minimum stun damage" help="the minimum damage required to stun this object's health" />
+										<field type="Real" name="stun time" help="the length of time the health stay stunned (do not recharge) after taking damage" units="seconds" />
+										<field type="Real" name="recharge time" help="the length of time it would take for the shields to fully recharge after being completely depleted" units="seconds" />
+										<field type="RealFraction" name="recharge fraction" help="0 defaults to 1 - to what maximum level the body health will be allowed to recharge" />
+										<field type="Pad" name="" definition="64" />
+										<field type="Explanation" name="shield" definition="" />
+										<field type="TagReference" name="shield damaged first person shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="TagReference" name="shield damaged shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="Real" name="maximum shield vitality" help="the default initial and maximum shield vitality of this object" />
+										<field type="StringId" name="global shield material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="Real" name="minimum stun damage" help="the minimum damage required to stun this object's shields" />
+										<field type="Real" name="stun time" help="the length of time the shields stay stunned (do not recharge) after taking damage" units="seconds" />
+										<field type="Real" name="recharge time" help="the length of time it would take for the shields to fully recharge after being completely depleted" units="seconds" />
+										<field type="Real" name="shield damaged threshold" />
+										<field type="TagReference" name="shield damaged effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="shield depleted effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="shield recharging effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Block" name="damage sections">
+											<block name="global_damage_section_block" maxCount="16" display="global_damage_section_block" flags="0" maxIdentifer="MAXIMUM_DAMAGE_SECTIONS_PER_MODEL" version="1">
+												<versions>
+													<global_damage_section_block_fields size="68" sizeIdentifer="sizeof(s_model_damage_section)" fieldCount="13">
+														<fields>
+															<field type="StringId" name="name" isBlockName="True" />
+															<field type="Explanation" name="damage section flags" definition="* absorbs body damage: damage to this section does not count against body vitality&#xA;* headshottable: takes extra headshot damage when shot&#xA;* ignores shields: damage to this section bypasses shields" />
+															<field type="LongFlags" name="flags">
+																<definition count="9">
+																	<entry>absorbs body damage</entry>
+																	<entry>takes full dmg when object dies</entry>
+																	<entry>cannot die with riders</entry>
+																	<entry>takes full dmg when obj dstryd</entry>
+																	<entry>restored on ressurection</entry>
+																	<entry>unused</entry>
+																	<entry>unused</entry>
+																	<entry>heatshottable</entry>
+																	<entry>ignores shields</entry>
+																</definition>
+															</field>
+															<field type="RealFraction" name="vitality percentage" help="percentage of total object vitality" units="[0.1]" />
+															<field type="Block" name="instant responses">
+																<block name="instantaneous_damage_repsonse_block" maxCount="16" display="instantaneous_damage_repsonse_block" flags="0" maxIdentifer="MAXIMUM_RESPONSES_PER_DAMAGE_SECTION" procFormat="True" version="1">
+																	<versions>
+																		<instantaneous_damage_repsonse_block_fields size="104" sizeIdentifer="sizeof(s_instantaneous_damage_response)" fieldCount="28">
+																			<fields>
+																				<field type="Enum" name="response type">
+																					<definition count="3">
+																						<entry>receives all damage</entry>
+																						<entry>receives area effect damage</entry>
+																						<entry>receives local damage</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Constraint damage type" definition="* if you specify a constraint group name (see lower section of this block)&#xA;  you can specify a constraint damage&#xA;* loosening a constraint takes it out of the rigid state - activates it&#xA;* destroying a constraint sets the attached body free" />
+																				<field type="Enum" name="constraint damage type">
+																					<definition count="5">
+																						<entry>none</entry>
+																						<entry>destroy one of group</entry>
+																						<entry>destroy entire group</entry>
+																						<entry>loosen one of group</entry>
+																						<entry>loosen entire group</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Damage response flags" definition="* kills object: when the response fires the object dies regardless of its current health&#xA;* inhibits &lt;x&gt;: from halo 1 - disallows basic behaviors for a unit&#xA;* forces drop weapon: from halo 1 - makes the unit drop its current weapon&#xA;* kills weapon &lt;x&gt; trigger: destroys the &lt;x&gt; trigger on the unit's current weapon&#xA;* destroys object: when the response fires the object is destroyed" />
+																				<field type="LongFlags" name="flags">
+																					<definition count="25">
+																						<entry>kills object</entry>
+																						<entry>inhibits melee attack</entry>
+																						<entry>inhibits weapon attack</entry>
+																						<entry>inhibits walking</entry>
+																						<entry>forces drop weapon</entry>
+																						<entry>kills weapon primary trigger</entry>
+																						<entry>kills weapon secondary trigger</entry>
+																						<entry>destroys object</entry>
+																						<entry>damages weapon primary trigger</entry>
+																						<entry>damages weapon secondary trigger</entry>
+																						<entry>light damage left turn</entry>
+																						<entry>major damage left turn</entry>
+																						<entry>light damage right turn</entry>
+																						<entry>major damage right turn</entry>
+																						<entry>light damage engine</entry>
+																						<entry>major damage engine</entry>
+																						<entry>kills object (no player solo)</entry>
+																						<entry>causes detonation</entry>
+																						<entry>destroy all group constraints</entry>
+																						<entry>kills variant objects</entry>
+																						<entry>force unattached effects</entry>
+																						<entry>fires under threshold</entry>
+																						<entry>triggers special death</entry>
+																						<entry>only on special death</entry>
+																						<entry>only NOT on special death</entry>
+																					</definition>
+																				</field>
+																				<field type="Real" name="damage threshold" help="repsonse fires after crossing this threshold.  1=full health" />
+																				<field type="TagReference" name="transition effect">
+																					<definition flags="0" groupTag="effe" />
+																				</field>
+																				<field type="Struct" name="damage effect">
+																					<struct name="instantaneous_response_damage_effect_struct" groupTag="ires">
+																						<block name="instantaneous_response_damage_effect_struct_block" maxCount="1" display="instantaneous_response_damage_effect_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<instantaneous_response_damage_effect_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_fields_v1>
+																								<instantaneous_response_damage_effect_fields_v2 size="16" sizeIdentifer="sizeof(struct tag_reference)" fieldCount="2">
+																									<fields>
+																										<field type="TagReference" name="transition damage effect">
+																											<definition flags="0" groupTag="jpt!" />
+																										</field>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="StringId" name="region" />
+																				<field type="Enum" name="new state">
+																					<definition count="5">
+																						<entry>default</entry>
+																						<entry>minor damage</entry>
+																						<entry>medium damage</entry>
+																						<entry>major damage</entry>
+																						<entry>destroyed</entry>
+																					</definition>
+																				</field>
+																				<field type="ShortInteger" name="runtime region index" isReadonly="True" />
+																				<field type="StringId" name="effect marker name" />
+																				<field type="Struct" name="damage effect marker">
+																					<struct name="instantaneous_response_damage_effect_marker_struct" groupTag="irem">
+																						<block name="instantaneous_response_damage_effect_marker_struct_block" maxCount="1" display="instantaneous_response_damage_effect_marker_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<instantaneous_response_damage_effect_marker_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_marker_fields_v1>
+																								<instantaneous_response_damage_effect_marker_fields_v2 size="4" sizeIdentifer="sizeof(string_id)" fieldCount="2">
+																									<fields>
+																										<field type="StringId" name="damage effect marker name" />
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_marker_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Explanation" name="Response delay" definition="If desired, you can specify a delay until the response fires.This delay is pre-empted if another timed response for the same section fires.The delay effect plays while the timer is counting down" />
+																				<field type="Real" name="response delay" help="in seconds" />
+																				<field type="TagReference" name="delay effect">
+																					<definition flags="0" groupTag="effe" />
+																				</field>
+																				<field type="StringId" name="delay effect marker name" />
+																				<field type="Explanation" name="Constraint destruction" definition="- a response can destroy a single constraint by naming it explicitly.&#xA;- alternatively it can randomly destroy a single constraint from a specified group if the &quot;destroy one group constraint&quot; flag is set&#xA;- also it can destroy all constraints in a specified group if the &quot;destroy all group constraints&quot; flag is set&#xA;" />
+																				<field type="StringId" name="constraint/group name" />
+																				<field type="Explanation" name="seat ejaculation" definition="" />
+																				<field type="StringId" name="ejecting seat label" />
+																				<field type="Explanation" name="skip fraction" definition="0.0 always fires, 1.0 never fires" />
+																				<field type="RealFraction" name="skip fraction" />
+																				<field type="Explanation" name="destroyed child object marker name" definition="when this response fires, any children objects created at the supplied marker name will be destroyed" />
+																				<field type="StringId" name="destroyed child object marker name" />
+																				<field type="Explanation" name="total damage threshold" definition="scale on total damage section vitality" />
+																				<field type="RealFraction" name="total damage threshold" />
+																				<field type="Terminator" />
+																			</fields>
+																		</instantaneous_damage_repsonse_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="">
+																<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+																	<versions>
+																		<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+																			<fields>
+																				<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+																				<field type="Terminator" />
+																			</fields>
+																		</g_null_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="">
+																<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+																	<versions>
+																		<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+																			<fields>
+																				<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+																				<field type="Terminator" />
+																			</fields>
+																		</g_null_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Real" name="stun time" units="seconds" />
+															<field type="Real" name="recharge time" units="seconds" />
+															<field type="Pad" name="" definition="4" />
+															<field type="StringId" name="resurrection restored region name" />
+															<field type="Pad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</global_damage_section_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="nodes" isReadonly="True">
+											<block name="global_damage_nodes_block" maxCount="255" display="global_damage_nodes_block" flags="0" maxIdentifer="MAXIMUM_NODES_PER_MODEL" version="1">
+												<versions>
+													<global_damage_nodes_block_fields size="16" sizeIdentifer="sizeof(s_damage_node)" fieldCount="4">
+														<fields>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="12" />
+															<field type="Terminator" />
+														</fields>
+													</global_damage_nodes_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Block" name="damage seats">
+											<block name="damage_seat_info_block" maxCount="16" display="damage_seat_info_block" flags="0" maxIdentifer="MAXIMUM_DAMAGE_SEAT_INFOS_PER_MODEL" version="1">
+												<versions>
+													<damage_seat_info_block_fields size="20" sizeIdentifer="sizeof(s_damage_seat_info)" fieldCount="6">
+														<fields>
+															<field type="StringId" name="seat label" isBlockName="True" />
+															<field type="RealFraction" name="direct damage scale" help="0==no damage, 1==full damage" />
+															<field type="Real" name="damage transfer fall-off radius" />
+															<field type="Real" name="maximum transfer damage scale" />
+															<field type="Real" name="minimum transfer damage scale" />
+															<field type="Terminator" />
+														</fields>
+													</damage_seat_info_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="damage constraints">
+											<block name="damage_constraint_info_block" maxCount="16" display="damage_constraint_info_block" flags="0" maxIdentifer="MAXIMUM_DAMAGE_CONSTRAINT_INFOS_PER_MODEL" version="1">
+												<versions>
+													<damage_constraint_info_block_fields size="20" sizeIdentifer="sizeof(s_damage_constraint_info)" fieldCount="6">
+														<fields>
+															<field type="StringId" name="physics model constraint name" />
+															<field type="StringId" name="damage constraint name" />
+															<field type="StringId" name="damage constraint group name" />
+															<field type="Real" name="group probability scale" />
+															<field type="Pad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</damage_constraint_info_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="overshield" definition="" />
+										<field type="TagReference" name="overshield first person shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="TagReference" name="overshield shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</global_damage_info_block_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="12" />
+					<field type="Block" name="">
+						<block name="model_region_block" maxCount="16" display="model_region_block" flags="0" maxIdentifer="MAXIMUM_REGIONS_PER_MODEL" version="1">
+							<versions>
+								<model_region_block_fields size="20" sizeIdentifer="sizeof(s_model_region)" fieldCount="6">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+										<field type="CharInteger" name="collision region index" isReadonly="True" />
+										<field type="CharInteger" name="physics region index" isReadonly="True" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Block" name="permutations" isReadonly="True">
+											<block name="model_permutation_block" maxCount="32" display="model_permutation_block" flags="0" maxIdentifer="MAXIMUM_PERMUTATIONS_PER_MODEL_REGION" version="1">
+												<versions>
+													<model_permutation_block_fields size="8" sizeIdentifer="sizeof(s_model_permutation)" fieldCount="5">
+														<fields>
+															<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+															<field type="ByteFlags" name="flags" isReadonly="True">
+																<definition count="1">
+																	<entry>cannot be chosen randomly</entry>
+																</definition>
+															</field>
+															<field type="CharInteger" name="collision permutation index" isReadonly="True" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</model_permutation_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</model_region_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="">
+						<block name="model_node_block" maxCount="255" display="model_node_block" flags="0" maxIdentifer="MAXIMUM_NODES_PER_MODEL" version="1">
+							<versions>
+								<model_node_block_fields size="92" sizeIdentifer="sizeof(s_model_node)" fieldCount="13">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+										<field type="ShortBlockIndex1" name="parent node" isReadonly="True" definition="model_node_block" />
+										<field type="ShortBlockIndex1" name="first child node" isReadonly="True" definition="model_node_block" />
+										<field type="ShortBlockIndex1" name="next sibling node" isReadonly="True" definition="model_node_block" />
+										<field type="Pad" name="" definition="2" />
+										<field type="RealPoint3D" name="default translation" isReadonly="True" />
+										<field type="RealQuaternion" name="default rotation" isReadonly="True" />
+										<field type="Real" name="default inverse scale" isReadonly="True" />
+										<field type="RealVector3D" name="default inverse forward" isReadonly="True" />
+										<field type="RealVector3D" name="default inverse left" isReadonly="True" />
+										<field type="RealVector3D" name="default inverse up" isReadonly="True" />
+										<field type="RealPoint3D" name="default inverse position" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</model_node_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="4" />
+					<field type="Block" name="model object data">
+						<block name="model_object_data_block" maxCount="1" display="model_object_data_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<model_object_data_block_fields size="20" sizeIdentifer="sizeof(s_model_object_data)" fieldCount="5">
+									<fields>
+										<field type="Enum" name="type" isReadonly="True">
+											<definition count="3">
+												<entry>not set</entry>
+												<entry>user defined</entry>
+												<entry>auto generated</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="RealPoint3D" name="offset" isReadonly="True" />
+										<field type="Real" name="radius" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</model_object_data_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</model_group_tags_v1>
+			<model_group_tags_v2 size="348" sizeIdentifer="sizeof(struct s_model_definition)" fieldCount="44">
+				<fields>
+					<field type="Explanation" name="MODEL" definition="" />
+					<field type="Custom" name="" attributeGroup="hlmt" definition="&#x0;&#x0;&#x0;&#x0;" />
+					<field type="TagReference" name="render model">
+						<definition flags="0" groupTag="mode" />
+					</field>
+					<field type="TagReference" name="collision model">
+						<definition flags="0" groupTag="coll" />
+					</field>
+					<field type="TagReference" name="animation">
+						<definition flags="0" groupTag="jmad" />
+					</field>
+					<field type="TagReference" name="physics">
+						<definition flags="0" groupTag="phys" />
+					</field>
+					<field type="TagReference" name="physics_model">
+						<definition flags="0" groupTag="phmo" />
+					</field>
+					<field type="Explanation" name="level of detail" definition="If a model is further away than the LOD reduction distance, it will be reduced to that LOD.&#xA;So the L1 reduction distance should be really long and the L5 reduction distance should be really short.&#xA;This means distances should be in descending order, e.g. 5 4 3 2 1.&#xA;&#xA;Note that if we run out of memory or too many models are on screen at once, the engine may reduce&#xA;models to a lower LOD BEFORE they reach the reduction distance for that LOD.&#xA;&#xA;If a model has a begin fade distance and disappear distance, it will begin fading out at that distance,&#xA;reaching zero alpha and disappearing at the disappear distance. These distances should be greater than all&#xA;of the LOD reduction distances.&#xA;" />
+					<field type="Real" name="disappear distance" units="world units" />
+					<field type="Real" name="begin fade distance" units="world units" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Real" name="reduce to L1" units="world units (super low)" />
+					<field type="Real" name="reduce to L2" units="world units (low)" />
+					<field type="Real" name="reduce to L3" units="world units (medium)" />
+					<field type="Real" name="reduce to L4" units="world units (high)" />
+					<field type="Real" name="reduce to L5" units="world units (super high)" />
+					<field type="Skip" name="" definition="4" />
+					<field type="Enum" name="shadow fade distance">
+						<definition count="6">
+							<entry>fade at super high detail level</entry>
+							<entry>fade at high detail level</entry>
+							<entry>fade at medium detail level</entry>
+							<entry>fade at low detail level</entry>
+							<entry>fade at super low detail level</entry>
+							<entry>fade never</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Block" name="variants">
+						<block name="model_variant_block" maxCount="64" display="variant" flags="0" maxIdentifer="k_maximum_variants_per_model" version="1">
+							<versions>
+								<model_variant_block_fields size="72" sizeIdentifer="sizeof(s_model_variant)" fieldCount="8">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Block" name="regions">
+											<block name="model_variant_region_block" maxCount="16" display="region" flags="0" maxIdentifer="MAXIMUM_REGIONS_PER_MODEL" version="1">
+												<versions>
+													<model_variant_region_block_fields size="24" sizeIdentifer="sizeof(s_model_variant_region)" fieldCount="8">
+														<fields>
+															<field type="StringId" name="region name" units="must match region name in render_model" isBlockName="True" />
+															<field type="Pad" name="" definition="1" />
+															<field type="Pad" name="" definition="1" />
+															<field type="ShortBlockIndex1" name="parent variant" definition="model_variant_block" />
+															<field type="Block" name="permutations">
+																<block name="model_variant_permutation_block" maxCount="32" display="permutation" flags="0" maxIdentifer="MAXIMUM_PERMUTATIONS_PER_MODEL_REGION" version="1">
+																	<versions>
+																		<model_variant_permutation_block_fields size="36" sizeIdentifer="sizeof(s_model_variant_permutation)" fieldCount="9">
+																			<fields>
+																				<field type="StringId" name="permutation name" isBlockName="True" />
+																				<field type="Pad" name="" definition="1" />
+																				<field type="ByteFlags" name="flags">
+																					<definition count="1">
+																						<entry>copy states to all permutations</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="Real" name="probability" units="(0,+inf)" />
+																				<field type="Block" name="states">
+																					<block name="model_variant_state_block" maxCount="10" display="model_variant_state_block" flags="0" maxIdentifer="MAXIMUM_STATES_PER_MODEL_PERMUTATION" version="2">
+																						<versions>
+																							<model_variant_state_fields_v1 size="8" sizeIdentifer="sizeof(s_model_variant_state_v1)" fieldCount="4">
+																								<fields>
+																									<field type="StringId" name="permutation name" />
+																									<field type="Pad" name="" definition="2" />
+																									<field type="Enum" name="state" isBlockName="True">
+																										<definition count="9">
+																											<entry>default</entry>
+																											<entry>minor damage</entry>
+																											<entry>medium damage</entry>
+																											<entry>major damage</entry>
+																											<entry>destroyed</entry>
+																											<entry>blurred (DEPRECIATED)</entry>
+																											<entry>very blurred (DEPRECIATED)</entry>
+																											<entry>shield active (DEPRECIATED)</entry>
+																											<entry>shield inactive (DEPRECIATED)</entry>
+																										</definition>
+																									</field>
+																									<field type="Terminator" />
+																								</fields>
+																							</model_variant_state_fields_v1>
+																							<model_variant_state_fields_v2 size="32" sizeIdentifer="sizeof(s_model_variant_state)" fieldCount="8">
+																								<fields>
+																									<field type="StringId" name="permutation name" />
+																									<field type="Pad" name="" definition="1" />
+																									<field type="ByteFlags" name="property flags">
+																										<definition count="3">
+																											<entry>blurred</entry>
+																											<entry>hella blurred</entry>
+																											<entry>shielded</entry>
+																										</definition>
+																									</field>
+																									<field type="Enum" name="state" isBlockName="True">
+																										<definition count="5">
+																											<entry>default</entry>
+																											<entry>minor damage</entry>
+																											<entry>medium damage</entry>
+																											<entry>major damage</entry>
+																											<entry>destroyed</entry>
+																										</definition>
+																									</field>
+																									<field type="TagReference" name="looping effect" help="played while the model is in this state">
+																										<definition flags="0" groupTag="effe" />
+																									</field>
+																									<field type="StringId" name="looping effect marker name" />
+																									<field type="RealFraction" name="initial probability" />
+																									<field type="Terminator" />
+																								</fields>
+																							</model_variant_state_fields_v2>
+																						</versions>
+																					</block>
+																				</field>
+																				<field type="Pad" name="" definition="5" />
+																				<field type="Pad" name="" definition="7" />
+																				<field type="Terminator" />
+																			</fields>
+																		</model_variant_permutation_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Enum" name="sort order" help="negative values mean closer to the camera">
+																<definition count="12">
+																	<entry>no sorting</entry>
+																	<entry>-5 (closest)</entry>
+																	<entry>-4</entry>
+																	<entry>-3</entry>
+																	<entry>-2</entry>
+																	<entry>-1</entry>
+																	<entry>0 (same as model)</entry>
+																	<entry>1</entry>
+																	<entry>2</entry>
+																	<entry>3</entry>
+																	<entry>4</entry>
+																	<entry>5 (farthest)</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</model_variant_region_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="objects">
+											<block name="model_variant_object_block" maxCount="16" display="object" flags="0" maxIdentifer="k_maximum_objects_per_model_variant" version="1">
+												<versions>
+													<model_variant_object_block_fields size="24" sizeIdentifer="sizeof(s_model_variant_object)" fieldCount="4">
+														<fields>
+															<field type="StringId" name="parent marker" isBlockName="True" />
+															<field type="StringId" name="child marker" />
+															<field type="TagReference" name="child object">
+																<definition flags="2" groupTag="obje" />
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</model_variant_object_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="8" />
+										<field type="StringId" name="dialogue sound effect" />
+										<field type="TagReference" name="dialogue">
+											<definition flags="2" groupTag="udlg" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</model_variant_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="materials">
+						<block name="model_material_block" maxCount="32" display="material" flags="0" maxIdentifer="MAXIMUM_MATERIALS_PER_MODEL" procFormat="True" version="1">
+							<versions>
+								<model_material_block_fields size="20" sizeIdentifer="sizeof(s_model_material)" fieldCount="8">
+									<fields>
+										<field type="StringId" name="material name" />
+										<field type="Enum" name="material type">
+											<definition count="33">
+												<entry>dirt</entry>
+												<entry>sand</entry>
+												<entry>stone</entry>
+												<entry>snow</entry>
+												<entry>wood</entry>
+												<entry>metal (hollow)</entry>
+												<entry>metal (thin)</entry>
+												<entry>metal (thick)</entry>
+												<entry>rubber</entry>
+												<entry>glass</entry>
+												<entry>force field</entry>
+												<entry>grunt</entry>
+												<entry>hunter armor</entry>
+												<entry>hunter skin</entry>
+												<entry>elite</entry>
+												<entry>jackal</entry>
+												<entry>jackal energy shield</entry>
+												<entry>engineer skin</entry>
+												<entry>engineer force field</entry>
+												<entry>flood combat form</entry>
+												<entry>flood carrier form</entry>
+												<entry>cyborg armor</entry>
+												<entry>cyborg energy shield</entry>
+												<entry>human armor</entry>
+												<entry>human skin</entry>
+												<entry>sentinel</entry>
+												<entry>monitor</entry>
+												<entry>plastic</entry>
+												<entry>water</entry>
+												<entry>leaves</entry>
+												<entry>elite energy shield</entry>
+												<entry>ice</entry>
+												<entry>hunter shield</entry>
+											</definition>
+										</field>
+										<field type="ShortBlockIndex2" name="damage section" definition="3??|$&#x8;?e?" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="2" />
+										<field type="StringId" name="global material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</model_material_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="new damage info">
+						<block name="global_damage_info_block" maxCount="1" display="global_damage_info_block" flags="0" maxIdentifer="1" version="2">
+							<versions>
+								<global_damage_info_block_fields_v1 size="216" sizeIdentifer="sizeof(s_model_damage_info_v1)" fieldCount="28">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="9">
+												<entry>takes shield damage for children</entry>
+												<entry>takes body damage for children</entry>
+												<entry>always shields friendly damage</entry>
+												<entry>passes area damage to children</entry>
+												<entry>parent never takes body damage for us</entry>
+												<entry>only damaged by explosives</entry>
+												<entry>parent never takes shield damage for us</entry>
+												<entry>cannot die from damage</entry>
+												<entry>passes attached damage to riders</entry>
+											</definition>
+										</field>
+										<field type="StringId" name="global indirect material name" help="absorbes AOE or child damage" />
+										<field type="Real" name="maximum vitality" />
+										<field type="Real" name="body system shock" help="anything that kills us (body depleted) doing more than this amount of damage also destroys us" />
+										<field type="RealFraction" name="friendly damage resistance" help="the fraction of damage caused by friendly units ignored by this object (zero means full damage)" units="[0,1]" />
+										<field type="TagReference" name="localized damage effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Real" name="area damage effect threshold" units="[0,1]" />
+										<field type="TagReference" name="area damage effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Real" name="body damaged threshold" help="when passing this vitality the 'body damaged' effect, below, is created" />
+										<field type="TagReference" name="body damaged effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="body depleted effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Real" name="body destroyed threshold" help="when passing this vitality (usually negative) the object is deleted" />
+										<field type="TagReference" name="body destroyed effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Real" name="maximum shield vitality" help="the default initial and maximum shield vitality of this object" />
+										<field type="StringId" name="global shield material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="Real" name="minimum stun damage" help="the minimum damage required to stun this object's shields" />
+										<field type="Real" name="stun time" help="the length of time the shields stay stunned (do not recharge) after taking damage" units="seconds" />
+										<field type="Real" name="recharge time" help="the length of time it would take for the shields to fully recharge after being completely depleted" units="seconds" />
+										<field type="Real" name="shield damaged threshold" />
+										<field type="TagReference" name="shield damaged effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="shield depleted effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="shield recharging effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Block" name="damage sections">
+											<block name="global_damage_section_block" maxCount="16" display="global_damage_section_block" flags="0" maxIdentifer="MAXIMUM_DAMAGE_SECTIONS_PER_MODEL" version="1">
+												<versions>
+													<global_damage_section_block_fields size="68" sizeIdentifer="sizeof(s_model_damage_section)" fieldCount="13">
+														<fields>
+															<field type="StringId" name="name" isBlockName="True" />
+															<field type="Explanation" name="damage section flags" definition="* absorbs body damage: damage to this section does not count against body vitality&#xA;* headshottable: takes extra headshot damage when shot&#xA;* ignores shields: damage to this section bypasses shields" />
+															<field type="LongFlags" name="flags">
+																<definition count="9">
+																	<entry>absorbs body damage</entry>
+																	<entry>takes full dmg when object dies</entry>
+																	<entry>cannot die with riders</entry>
+																	<entry>takes full dmg when obj dstryd</entry>
+																	<entry>restored on ressurection</entry>
+																	<entry>unused</entry>
+																	<entry>unused</entry>
+																	<entry>heatshottable</entry>
+																	<entry>ignores shields</entry>
+																</definition>
+															</field>
+															<field type="RealFraction" name="vitality percentage" help="percentage of total object vitality" units="[0.1]" />
+															<field type="Block" name="instant responses">
+																<block name="instantaneous_damage_repsonse_block" maxCount="16" display="instantaneous_damage_repsonse_block" flags="0" maxIdentifer="MAXIMUM_RESPONSES_PER_DAMAGE_SECTION" procFormat="True" version="1">
+																	<versions>
+																		<instantaneous_damage_repsonse_block_fields size="104" sizeIdentifer="sizeof(s_instantaneous_damage_response)" fieldCount="28">
+																			<fields>
+																				<field type="Enum" name="response type">
+																					<definition count="3">
+																						<entry>receives all damage</entry>
+																						<entry>receives area effect damage</entry>
+																						<entry>receives local damage</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Constraint damage type" definition="* if you specify a constraint group name (see lower section of this block)&#xA;  you can specify a constraint damage&#xA;* loosening a constraint takes it out of the rigid state - activates it&#xA;* destroying a constraint sets the attached body free" />
+																				<field type="Enum" name="constraint damage type">
+																					<definition count="5">
+																						<entry>none</entry>
+																						<entry>destroy one of group</entry>
+																						<entry>destroy entire group</entry>
+																						<entry>loosen one of group</entry>
+																						<entry>loosen entire group</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Damage response flags" definition="* kills object: when the response fires the object dies regardless of its current health&#xA;* inhibits &lt;x&gt;: from halo 1 - disallows basic behaviors for a unit&#xA;* forces drop weapon: from halo 1 - makes the unit drop its current weapon&#xA;* kills weapon &lt;x&gt; trigger: destroys the &lt;x&gt; trigger on the unit's current weapon&#xA;* destroys object: when the response fires the object is destroyed" />
+																				<field type="LongFlags" name="flags">
+																					<definition count="25">
+																						<entry>kills object</entry>
+																						<entry>inhibits melee attack</entry>
+																						<entry>inhibits weapon attack</entry>
+																						<entry>inhibits walking</entry>
+																						<entry>forces drop weapon</entry>
+																						<entry>kills weapon primary trigger</entry>
+																						<entry>kills weapon secondary trigger</entry>
+																						<entry>destroys object</entry>
+																						<entry>damages weapon primary trigger</entry>
+																						<entry>damages weapon secondary trigger</entry>
+																						<entry>light damage left turn</entry>
+																						<entry>major damage left turn</entry>
+																						<entry>light damage right turn</entry>
+																						<entry>major damage right turn</entry>
+																						<entry>light damage engine</entry>
+																						<entry>major damage engine</entry>
+																						<entry>kills object (no player solo)</entry>
+																						<entry>causes detonation</entry>
+																						<entry>destroy all group constraints</entry>
+																						<entry>kills variant objects</entry>
+																						<entry>force unattached effects</entry>
+																						<entry>fires under threshold</entry>
+																						<entry>triggers special death</entry>
+																						<entry>only on special death</entry>
+																						<entry>only NOT on special death</entry>
+																					</definition>
+																				</field>
+																				<field type="Real" name="damage threshold" help="repsonse fires after crossing this threshold.  1=full health" />
+																				<field type="TagReference" name="transition effect">
+																					<definition flags="0" groupTag="effe" />
+																				</field>
+																				<field type="Struct" name="damage effect">
+																					<struct name="instantaneous_response_damage_effect_struct" groupTag="ires">
+																						<block name="instantaneous_response_damage_effect_struct_block" maxCount="1" display="instantaneous_response_damage_effect_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<instantaneous_response_damage_effect_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_fields_v1>
+																								<instantaneous_response_damage_effect_fields_v2 size="16" sizeIdentifer="sizeof(struct tag_reference)" fieldCount="2">
+																									<fields>
+																										<field type="TagReference" name="transition damage effect">
+																											<definition flags="0" groupTag="jpt!" />
+																										</field>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="StringId" name="region" />
+																				<field type="Enum" name="new state">
+																					<definition count="5">
+																						<entry>default</entry>
+																						<entry>minor damage</entry>
+																						<entry>medium damage</entry>
+																						<entry>major damage</entry>
+																						<entry>destroyed</entry>
+																					</definition>
+																				</field>
+																				<field type="ShortInteger" name="runtime region index" isReadonly="True" />
+																				<field type="StringId" name="effect marker name" />
+																				<field type="Struct" name="damage effect marker">
+																					<struct name="instantaneous_response_damage_effect_marker_struct" groupTag="irem">
+																						<block name="instantaneous_response_damage_effect_marker_struct_block" maxCount="1" display="instantaneous_response_damage_effect_marker_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<instantaneous_response_damage_effect_marker_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_marker_fields_v1>
+																								<instantaneous_response_damage_effect_marker_fields_v2 size="4" sizeIdentifer="sizeof(string_id)" fieldCount="2">
+																									<fields>
+																										<field type="StringId" name="damage effect marker name" />
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_marker_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Explanation" name="Response delay" definition="If desired, you can specify a delay until the response fires.This delay is pre-empted if another timed response for the same section fires.The delay effect plays while the timer is counting down" />
+																				<field type="Real" name="response delay" help="in seconds" />
+																				<field type="TagReference" name="delay effect">
+																					<definition flags="0" groupTag="effe" />
+																				</field>
+																				<field type="StringId" name="delay effect marker name" />
+																				<field type="Explanation" name="Constraint destruction" definition="- a response can destroy a single constraint by naming it explicitly.&#xA;- alternatively it can randomly destroy a single constraint from a specified group if the &quot;destroy one group constraint&quot; flag is set&#xA;- also it can destroy all constraints in a specified group if the &quot;destroy all group constraints&quot; flag is set&#xA;" />
+																				<field type="StringId" name="constraint/group name" />
+																				<field type="Explanation" name="seat ejaculation" definition="" />
+																				<field type="StringId" name="ejecting seat label" />
+																				<field type="Explanation" name="skip fraction" definition="0.0 always fires, 1.0 never fires" />
+																				<field type="RealFraction" name="skip fraction" />
+																				<field type="Explanation" name="destroyed child object marker name" definition="when this response fires, any children objects created at the supplied marker name will be destroyed" />
+																				<field type="StringId" name="destroyed child object marker name" />
+																				<field type="Explanation" name="total damage threshold" definition="scale on total damage section vitality" />
+																				<field type="RealFraction" name="total damage threshold" />
+																				<field type="Terminator" />
+																			</fields>
+																		</instantaneous_damage_repsonse_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="">
+																<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+																	<versions>
+																		<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+																			<fields>
+																				<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+																				<field type="Terminator" />
+																			</fields>
+																		</g_null_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="">
+																<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+																	<versions>
+																		<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+																			<fields>
+																				<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+																				<field type="Terminator" />
+																			</fields>
+																		</g_null_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Real" name="stun time" units="seconds" />
+															<field type="Real" name="recharge time" units="seconds" />
+															<field type="Pad" name="" definition="4" />
+															<field type="StringId" name="resurrection restored region name" />
+															<field type="Pad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</global_damage_section_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="nodes" isReadonly="True">
+											<block name="global_damage_nodes_block" maxCount="255" display="global_damage_nodes_block" flags="0" maxIdentifer="MAXIMUM_NODES_PER_MODEL" version="1">
+												<versions>
+													<global_damage_nodes_block_fields size="16" sizeIdentifer="sizeof(s_damage_node)" fieldCount="4">
+														<fields>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="12" />
+															<field type="Terminator" />
+														</fields>
+													</global_damage_nodes_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</global_damage_info_block_fields_v1>
+								<global_damage_info_block_fields_v2 size="320" sizeIdentifer="sizeof(s_model_damage_info)" fieldCount="40">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="9">
+												<entry>takes shield damage for children</entry>
+												<entry>takes body damage for children</entry>
+												<entry>always shields friendly damage</entry>
+												<entry>passes area damage to children</entry>
+												<entry>parent never takes body damage for us</entry>
+												<entry>only damaged by explosives</entry>
+												<entry>parent never takes shield damage for us</entry>
+												<entry>cannot die from damage</entry>
+												<entry>passes attached damage to riders</entry>
+											</definition>
+										</field>
+										<field type="StringId" name="global indirect material name" help="absorbes AOE or child damage" />
+										<field type="ShortBlockIndex2" name="indirect damage section" help="absorbes AOE or child damage" definition="3??|$&#x8;?e?" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="4" />
+										<field type="CharEnum" name="collision damage reporting type">
+											<definition count="42">
+												<entry>teh guardians!!1!!1!</entry>
+												<entry>falling damage</entry>
+												<entry>generic collision damage</entry>
+												<entry>generic melee damage</entry>
+												<entry>generic explosion</entry>
+												<entry>magnum pistol</entry>
+												<entry>plasma pistol</entry>
+												<entry>needler</entry>
+												<entry>smg</entry>
+												<entry>plasma rifle</entry>
+												<entry>battle rifle</entry>
+												<entry>carbine</entry>
+												<entry>shotgun</entry>
+												<entry>sniper rifle</entry>
+												<entry>beam rifle</entry>
+												<entry>rocket launcher</entry>
+												<entry>flak cannon</entry>
+												<entry>brute shot</entry>
+												<entry>disintegrator</entry>
+												<entry>brute plasma rifle</entry>
+												<entry>energy sword</entry>
+												<entry>frag grenade</entry>
+												<entry>plasma grenade</entry>
+												<entry>flag melee damage</entry>
+												<entry>bomb melee damage</entry>
+												<entry>bomb explosion damage</entry>
+												<entry>ball melee damage</entry>
+												<entry>human turret</entry>
+												<entry>plasma turret</entry>
+												<entry>banshee</entry>
+												<entry>ghost</entry>
+												<entry>mongoose</entry>
+												<entry>scorpion</entry>
+												<entry>spectre driver</entry>
+												<entry>spectre gunner</entry>
+												<entry>warthog driver</entry>
+												<entry>warthog gunner</entry>
+												<entry>wraith</entry>
+												<entry>tank</entry>
+												<entry>sentinel beam</entry>
+												<entry>sentinel rpg</entry>
+												<entry>teleporter</entry>
+											</definition>
+										</field>
+										<field type="CharEnum" name="response damage reporting type">
+											<definition count="42">
+												<entry>teh guardians!!1!!1!</entry>
+												<entry>falling damage</entry>
+												<entry>generic collision damage</entry>
+												<entry>generic melee damage</entry>
+												<entry>generic explosion</entry>
+												<entry>magnum pistol</entry>
+												<entry>plasma pistol</entry>
+												<entry>needler</entry>
+												<entry>smg</entry>
+												<entry>plasma rifle</entry>
+												<entry>battle rifle</entry>
+												<entry>carbine</entry>
+												<entry>shotgun</entry>
+												<entry>sniper rifle</entry>
+												<entry>beam rifle</entry>
+												<entry>rocket launcher</entry>
+												<entry>flak cannon</entry>
+												<entry>brute shot</entry>
+												<entry>disintegrator</entry>
+												<entry>brute plasma rifle</entry>
+												<entry>energy sword</entry>
+												<entry>frag grenade</entry>
+												<entry>plasma grenade</entry>
+												<entry>flag melee damage</entry>
+												<entry>bomb melee damage</entry>
+												<entry>bomb explosion damage</entry>
+												<entry>ball melee damage</entry>
+												<entry>human turret</entry>
+												<entry>plasma turret</entry>
+												<entry>banshee</entry>
+												<entry>ghost</entry>
+												<entry>mongoose</entry>
+												<entry>scorpion</entry>
+												<entry>spectre driver</entry>
+												<entry>spectre gunner</entry>
+												<entry>warthog driver</entry>
+												<entry>warthog gunner</entry>
+												<entry>wraith</entry>
+												<entry>tank</entry>
+												<entry>sentinel beam</entry>
+												<entry>sentinel rpg</entry>
+												<entry>teleporter</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="20" />
+										<field type="Explanation" name="body" definition="" />
+										<field type="Real" name="maximum vitality" />
+										<field type="Real" name="minimum stun damage" help="the minimum damage required to stun this object's health" />
+										<field type="Real" name="stun time" help="the length of time the health stay stunned (do not recharge) after taking damage" units="seconds" />
+										<field type="Real" name="recharge time" help="the length of time it would take for the shields to fully recharge after being completely depleted" units="seconds" />
+										<field type="RealFraction" name="recharge fraction" help="0 defaults to 1 - to what maximum level the body health will be allowed to recharge" />
+										<field type="Pad" name="" definition="64" />
+										<field type="Explanation" name="shield" definition="" />
+										<field type="TagReference" name="shield damaged first person shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="TagReference" name="shield damaged shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="Real" name="maximum shield vitality" help="the default initial and maximum shield vitality of this object" />
+										<field type="StringId" name="global shield material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="Real" name="minimum stun damage" help="the minimum damage required to stun this object's shields" />
+										<field type="Real" name="stun time" help="the length of time the shields stay stunned (do not recharge) after taking damage" units="seconds" />
+										<field type="Real" name="recharge time" help="the length of time it would take for the shields to fully recharge after being completely depleted" units="seconds" />
+										<field type="Real" name="shield damaged threshold" />
+										<field type="TagReference" name="shield damaged effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="shield depleted effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="TagReference" name="shield recharging effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Block" name="damage sections">
+											<block name="global_damage_section_block" maxCount="16" display="global_damage_section_block" flags="0" maxIdentifer="MAXIMUM_DAMAGE_SECTIONS_PER_MODEL" version="1">
+												<versions>
+													<global_damage_section_block_fields size="68" sizeIdentifer="sizeof(s_model_damage_section)" fieldCount="13">
+														<fields>
+															<field type="StringId" name="name" isBlockName="True" />
+															<field type="Explanation" name="damage section flags" definition="* absorbs body damage: damage to this section does not count against body vitality&#xA;* headshottable: takes extra headshot damage when shot&#xA;* ignores shields: damage to this section bypasses shields" />
+															<field type="LongFlags" name="flags">
+																<definition count="9">
+																	<entry>absorbs body damage</entry>
+																	<entry>takes full dmg when object dies</entry>
+																	<entry>cannot die with riders</entry>
+																	<entry>takes full dmg when obj dstryd</entry>
+																	<entry>restored on ressurection</entry>
+																	<entry>unused</entry>
+																	<entry>unused</entry>
+																	<entry>heatshottable</entry>
+																	<entry>ignores shields</entry>
+																</definition>
+															</field>
+															<field type="RealFraction" name="vitality percentage" help="percentage of total object vitality" units="[0.1]" />
+															<field type="Block" name="instant responses">
+																<block name="instantaneous_damage_repsonse_block" maxCount="16" display="instantaneous_damage_repsonse_block" flags="0" maxIdentifer="MAXIMUM_RESPONSES_PER_DAMAGE_SECTION" procFormat="True" version="1">
+																	<versions>
+																		<instantaneous_damage_repsonse_block_fields size="104" sizeIdentifer="sizeof(s_instantaneous_damage_response)" fieldCount="28">
+																			<fields>
+																				<field type="Enum" name="response type">
+																					<definition count="3">
+																						<entry>receives all damage</entry>
+																						<entry>receives area effect damage</entry>
+																						<entry>receives local damage</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Constraint damage type" definition="* if you specify a constraint group name (see lower section of this block)&#xA;  you can specify a constraint damage&#xA;* loosening a constraint takes it out of the rigid state - activates it&#xA;* destroying a constraint sets the attached body free" />
+																				<field type="Enum" name="constraint damage type">
+																					<definition count="5">
+																						<entry>none</entry>
+																						<entry>destroy one of group</entry>
+																						<entry>destroy entire group</entry>
+																						<entry>loosen one of group</entry>
+																						<entry>loosen entire group</entry>
+																					</definition>
+																				</field>
+																				<field type="Explanation" name="Damage response flags" definition="* kills object: when the response fires the object dies regardless of its current health&#xA;* inhibits &lt;x&gt;: from halo 1 - disallows basic behaviors for a unit&#xA;* forces drop weapon: from halo 1 - makes the unit drop its current weapon&#xA;* kills weapon &lt;x&gt; trigger: destroys the &lt;x&gt; trigger on the unit's current weapon&#xA;* destroys object: when the response fires the object is destroyed" />
+																				<field type="LongFlags" name="flags">
+																					<definition count="25">
+																						<entry>kills object</entry>
+																						<entry>inhibits melee attack</entry>
+																						<entry>inhibits weapon attack</entry>
+																						<entry>inhibits walking</entry>
+																						<entry>forces drop weapon</entry>
+																						<entry>kills weapon primary trigger</entry>
+																						<entry>kills weapon secondary trigger</entry>
+																						<entry>destroys object</entry>
+																						<entry>damages weapon primary trigger</entry>
+																						<entry>damages weapon secondary trigger</entry>
+																						<entry>light damage left turn</entry>
+																						<entry>major damage left turn</entry>
+																						<entry>light damage right turn</entry>
+																						<entry>major damage right turn</entry>
+																						<entry>light damage engine</entry>
+																						<entry>major damage engine</entry>
+																						<entry>kills object (no player solo)</entry>
+																						<entry>causes detonation</entry>
+																						<entry>destroy all group constraints</entry>
+																						<entry>kills variant objects</entry>
+																						<entry>force unattached effects</entry>
+																						<entry>fires under threshold</entry>
+																						<entry>triggers special death</entry>
+																						<entry>only on special death</entry>
+																						<entry>only NOT on special death</entry>
+																					</definition>
+																				</field>
+																				<field type="Real" name="damage threshold" help="repsonse fires after crossing this threshold.  1=full health" />
+																				<field type="TagReference" name="transition effect">
+																					<definition flags="0" groupTag="effe" />
+																				</field>
+																				<field type="Struct" name="damage effect">
+																					<struct name="instantaneous_response_damage_effect_struct" groupTag="ires">
+																						<block name="instantaneous_response_damage_effect_struct_block" maxCount="1" display="instantaneous_response_damage_effect_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<instantaneous_response_damage_effect_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_fields_v1>
+																								<instantaneous_response_damage_effect_fields_v2 size="16" sizeIdentifer="sizeof(struct tag_reference)" fieldCount="2">
+																									<fields>
+																										<field type="TagReference" name="transition damage effect">
+																											<definition flags="0" groupTag="jpt!" />
+																										</field>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="StringId" name="region" />
+																				<field type="Enum" name="new state">
+																					<definition count="5">
+																						<entry>default</entry>
+																						<entry>minor damage</entry>
+																						<entry>medium damage</entry>
+																						<entry>major damage</entry>
+																						<entry>destroyed</entry>
+																					</definition>
+																				</field>
+																				<field type="ShortInteger" name="runtime region index" isReadonly="True" />
+																				<field type="StringId" name="effect marker name" />
+																				<field type="Struct" name="damage effect marker">
+																					<struct name="instantaneous_response_damage_effect_marker_struct" groupTag="irem">
+																						<block name="instantaneous_response_damage_effect_marker_struct_block" maxCount="1" display="instantaneous_response_damage_effect_marker_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<instantaneous_response_damage_effect_marker_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_marker_fields_v1>
+																								<instantaneous_response_damage_effect_marker_fields_v2 size="4" sizeIdentifer="sizeof(string_id)" fieldCount="2">
+																									<fields>
+																										<field type="StringId" name="damage effect marker name" />
+																										<field type="Terminator" />
+																									</fields>
+																								</instantaneous_response_damage_effect_marker_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Explanation" name="Response delay" definition="If desired, you can specify a delay until the response fires.This delay is pre-empted if another timed response for the same section fires.The delay effect plays while the timer is counting down" />
+																				<field type="Real" name="response delay" help="in seconds" />
+																				<field type="TagReference" name="delay effect">
+																					<definition flags="0" groupTag="effe" />
+																				</field>
+																				<field type="StringId" name="delay effect marker name" />
+																				<field type="Explanation" name="Constraint destruction" definition="- a response can destroy a single constraint by naming it explicitly.&#xA;- alternatively it can randomly destroy a single constraint from a specified group if the &quot;destroy one group constraint&quot; flag is set&#xA;- also it can destroy all constraints in a specified group if the &quot;destroy all group constraints&quot; flag is set&#xA;" />
+																				<field type="StringId" name="constraint/group name" />
+																				<field type="Explanation" name="seat ejaculation" definition="" />
+																				<field type="StringId" name="ejecting seat label" />
+																				<field type="Explanation" name="skip fraction" definition="0.0 always fires, 1.0 never fires" />
+																				<field type="RealFraction" name="skip fraction" />
+																				<field type="Explanation" name="destroyed child object marker name" definition="when this response fires, any children objects created at the supplied marker name will be destroyed" />
+																				<field type="StringId" name="destroyed child object marker name" />
+																				<field type="Explanation" name="total damage threshold" definition="scale on total damage section vitality" />
+																				<field type="RealFraction" name="total damage threshold" />
+																				<field type="Terminator" />
+																			</fields>
+																		</instantaneous_damage_repsonse_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="">
+																<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+																	<versions>
+																		<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+																			<fields>
+																				<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+																				<field type="Terminator" />
+																			</fields>
+																		</g_null_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="">
+																<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+																	<versions>
+																		<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+																			<fields>
+																				<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+																				<field type="Terminator" />
+																			</fields>
+																		</g_null_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Real" name="stun time" units="seconds" />
+															<field type="Real" name="recharge time" units="seconds" />
+															<field type="Pad" name="" definition="4" />
+															<field type="StringId" name="resurrection restored region name" />
+															<field type="Pad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</global_damage_section_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="nodes" isReadonly="True">
+											<block name="global_damage_nodes_block" maxCount="255" display="global_damage_nodes_block" flags="0" maxIdentifer="MAXIMUM_NODES_PER_MODEL" version="1">
+												<versions>
+													<global_damage_nodes_block_fields size="16" sizeIdentifer="sizeof(s_damage_node)" fieldCount="4">
+														<fields>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="12" />
+															<field type="Terminator" />
+														</fields>
+													</global_damage_nodes_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Block" name="damage seats">
+											<block name="damage_seat_info_block" maxCount="16" display="damage_seat_info_block" flags="0" maxIdentifer="MAXIMUM_DAMAGE_SEAT_INFOS_PER_MODEL" version="1">
+												<versions>
+													<damage_seat_info_block_fields size="20" sizeIdentifer="sizeof(s_damage_seat_info)" fieldCount="6">
+														<fields>
+															<field type="StringId" name="seat label" isBlockName="True" />
+															<field type="RealFraction" name="direct damage scale" help="0==no damage, 1==full damage" />
+															<field type="Real" name="damage transfer fall-off radius" />
+															<field type="Real" name="maximum transfer damage scale" />
+															<field type="Real" name="minimum transfer damage scale" />
+															<field type="Terminator" />
+														</fields>
+													</damage_seat_info_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="damage constraints">
+											<block name="damage_constraint_info_block" maxCount="16" display="damage_constraint_info_block" flags="0" maxIdentifer="MAXIMUM_DAMAGE_CONSTRAINT_INFOS_PER_MODEL" version="1">
+												<versions>
+													<damage_constraint_info_block_fields size="20" sizeIdentifer="sizeof(s_damage_constraint_info)" fieldCount="6">
+														<fields>
+															<field type="StringId" name="physics model constraint name" />
+															<field type="StringId" name="damage constraint name" />
+															<field type="StringId" name="damage constraint group name" />
+															<field type="Real" name="group probability scale" />
+															<field type="Pad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</damage_constraint_info_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="overshield" definition="" />
+										<field type="TagReference" name="overshield first person shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="TagReference" name="overshield shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</global_damage_info_block_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="targets">
+						<block name="model_target_block" maxCount="32" display="model_target_block" flags="0" maxIdentifer="MAXIMUM_MODEL_TARGETS_PER_MODEL" version="1">
+							<versions>
+								<model_target_block_fields size="28" sizeIdentifer="sizeof(s_model_target)" fieldCount="8">
+									<fields>
+										<field type="StringId" name="marker name" help="multiple markers become multiple spheres of the same radius" isBlockName="True" />
+										<field type="Real" name="size" help="sphere radius" />
+										<field type="Angle" name="cone angle" help="the target is only visible when viewed within this angle of the marker's x axis" />
+										<field type="ShortBlockIndex2" name="damage section" help="the target is associated with this damage section" definition="3??|$&#x8;?e?" />
+										<field type="ShortBlockIndex1" name="variant" help="the target will only appear with this variant" definition="model_variant_block" />
+										<field type="RealFraction" name="targeting relevance" help="higher relevances turn into stronger magnetisms" />
+										<field type="Struct" name="lock-on data">
+											<struct name="model_target_lock_on_data_struct" groupTag="MTLO">
+												<block name="model_target_lock_on_data_struct_block" maxCount="1" display="model_target_lock_on_data_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<model_target_lock_on_data_struct_fields size="8" sizeIdentifer="sizeof(struct s_model_target_lock_on_data)" fieldCount="4">
+															<fields>
+																<field type="Explanation" name="lock-on fields" definition="" />
+																<field type="LongFlags" name="flags">
+																	<definition count="5">
+																		<entry>locked by human tracking</entry>
+																		<entry>locked by plasma tracking</entry>
+																		<entry>headshot</entry>
+																		<entry>vulnerable</entry>
+																		<entry>alwas locked by plasma tracking</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="lock on distance" />
+																<field type="Terminator" />
+															</fields>
+														</model_target_lock_on_data_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</model_target_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="">
+						<block name="model_region_block" maxCount="16" display="model_region_block" flags="0" maxIdentifer="MAXIMUM_REGIONS_PER_MODEL" version="1">
+							<versions>
+								<model_region_block_fields size="20" sizeIdentifer="sizeof(s_model_region)" fieldCount="6">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+										<field type="CharInteger" name="collision region index" isReadonly="True" />
+										<field type="CharInteger" name="physics region index" isReadonly="True" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Block" name="permutations" isReadonly="True">
+											<block name="model_permutation_block" maxCount="32" display="model_permutation_block" flags="0" maxIdentifer="MAXIMUM_PERMUTATIONS_PER_MODEL_REGION" version="1">
+												<versions>
+													<model_permutation_block_fields size="8" sizeIdentifer="sizeof(s_model_permutation)" fieldCount="5">
+														<fields>
+															<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+															<field type="ByteFlags" name="flags" isReadonly="True">
+																<definition count="1">
+																	<entry>cannot be chosen randomly</entry>
+																</definition>
+															</field>
+															<field type="CharInteger" name="collision permutation index" isReadonly="True" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</model_permutation_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</model_region_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="">
+						<block name="model_node_block" maxCount="255" display="model_node_block" flags="0" maxIdentifer="MAXIMUM_NODES_PER_MODEL" version="1">
+							<versions>
+								<model_node_block_fields size="92" sizeIdentifer="sizeof(s_model_node)" fieldCount="13">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+										<field type="ShortBlockIndex1" name="parent node" isReadonly="True" definition="model_node_block" />
+										<field type="ShortBlockIndex1" name="first child node" isReadonly="True" definition="model_node_block" />
+										<field type="ShortBlockIndex1" name="next sibling node" isReadonly="True" definition="model_node_block" />
+										<field type="Pad" name="" definition="2" />
+										<field type="RealPoint3D" name="default translation" isReadonly="True" />
+										<field type="RealQuaternion" name="default rotation" isReadonly="True" />
+										<field type="Real" name="default inverse scale" isReadonly="True" />
+										<field type="RealVector3D" name="default inverse forward" isReadonly="True" />
+										<field type="RealVector3D" name="default inverse left" isReadonly="True" />
+										<field type="RealVector3D" name="default inverse up" isReadonly="True" />
+										<field type="RealPoint3D" name="default inverse position" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</model_node_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="4" />
+					<field type="Block" name="model object data">
+						<block name="model_object_data_block" maxCount="1" display="model_object_data_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<model_object_data_block_fields size="20" sizeIdentifer="sizeof(s_model_object_data)" fieldCount="5">
+									<fields>
+										<field type="Enum" name="type" isReadonly="True">
+											<definition count="3">
+												<entry>not set</entry>
+												<entry>user defined</entry>
+												<entry>auto generated</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="RealPoint3D" name="offset" isReadonly="True" />
+										<field type="Real" name="radius" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</model_object_data_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="more stuff" definition="" />
+					<field type="TagReference" name="default dialogue" help="The default dialogue tag for this model (overriden by variants)">
+						<definition flags="2" groupTag="udlg" />
+					</field>
+					<field type="TagReference" name="UNUSED" isReadonly="True">
+						<definition flags="0" groupTag="shad" />
+					</field>
+					<field type="LongFlags" name="flags">
+						<definition count="3">
+							<entry>active camo always on</entry>
+							<entry>active camo always merge</entry>
+							<entry>active camo never merge</entry>
+						</definition>
+					</field>
+					<field type="StringId" name="default dialogue effect" help="The default dialogue tag for this model (overriden by variants)" />
+					<arrayStart definition="32" />
+					<field type="CharInteger" name="" />
+					<arrayEnd />
+					<arrayStart definition="32" />
+					<field type="CharInteger" name="" />
+					<arrayEnd />
+					<field type="LongFlags" name="runtime flags" isReadonly="True">
+						<definition count="1">
+							<entry>contains run-time nodes</entry>
+						</definition>
+					</field>
+					<field type="Block" name="scenario load parameters">
+						<block name="global_scenario_load_parameters_block" maxCount="32" display="scenario load parameters" flags="0" maxIdentifer="k_scenario_load_maximum_parameter_blocks" version="1">
+							<versions>
+								<global_scenario_load_parameters_block_fields size="68" sizeIdentifer="sizeof(struct s_scenario_load_parameters)" fieldCount="5">
+									<fields>
+										<field type="Explanation" name="SCENARIO LOAD PARAMETERS" definition="strip-variant &lt;variant-name&gt;&#xA;strips a given variant out of the model tag&#xA;strip-dialogue&#xA;strips all the dialogue for this model i.e. cinematic only" />
+										<field type="TagReference" name="scenario" isBlockName="True">
+											<definition flags="2" groupTag="scnr" />
+										</field>
+										<field type="Data" name="parameters">
+											<definition name="parameters_text_definition" maxSize="65535" alignment="0" flags="6" maxIdentifer="UNSIGNED_SHORT_MAX" />
+										</field>
+										<field type="Pad" name="" definition="32" />
+										<field type="Terminator" />
+									</fields>
+								</global_scenario_load_parameters_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="HOLOGRAM" definition="hologram shader is applied whenever the control function from it's object is non-zero" />
+					<field type="TagReference" name="hologram shader">
+						<definition flags="0" groupTag="shad" />
+					</field>
+					<field type="StringId" name="hologram control function" />
+					<field type="Terminator" />
+				</fields>
+			</model_group_tags_v2>
+		</versions>
+	</block>
+</tagGroup>

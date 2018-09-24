@@ -1,0 +1,2167 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="globals" groupTag="matg" groupTagParent="????" version="3" flags="16" procPostprocess="True">
+	<block name="globals_block" maxCount="1" display="globals" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<globals_block_fields size="760" sizeIdentifer="sizeof(s_game_globals)" fieldCount="32">
+				<fields>
+					<field type="Pad" name="" definition="172" />
+					<field type="LongEnum" name="language">
+						<definition count="9">
+							<entry>english</entry>
+							<entry>japanese</entry>
+							<entry>german</entry>
+							<entry>french</entry>
+							<entry>spanish</entry>
+							<entry>italian</entry>
+							<entry>korean</entry>
+							<entry>chinese</entry>
+							<entry>portuguese</entry>
+						</definition>
+					</field>
+					<field type="Block" name="havok cleanup resources">
+						<block name="havok_cleanup_resources_block" maxCount="1" display="havok_cleanup_resources_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<havok_cleanup_resources_block_fields size="16" sizeIdentifer="sizeof(s_game_globals_havok_cleanup_resources)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="object cleanup effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</havok_cleanup_resources_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="collision damage">
+						<block name="collision_damage_block" maxCount="1" display="collision_damage_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<collision_damage_block_fields size="80" sizeIdentifer="sizeof(s_game_globals_collision_damage)" fieldCount="11">
+									<fields>
+										<field type="TagReference" name="collision damage">
+											<definition flags="0" groupTag="jpt!" />
+										</field>
+										<field type="Real" name="min game acc (default)" help="0-oo" />
+										<field type="Real" name="max game acc (default)" help="0-oo" />
+										<field type="Real" name="min game scale (default)" help="0-1" />
+										<field type="Real" name="max game scale (default)" help="0-1" />
+										<field type="Real" name="min abs acc (default)" help="0-oo" />
+										<field type="Real" name="max abs acc (default)" help="0-oo" />
+										<field type="Real" name="min abs scale (default)" help="0-1" />
+										<field type="Real" name="max abs scale (default)" help="0-1" />
+										<field type="Pad" name="" definition="32" />
+										<field type="Terminator" />
+									</fields>
+								</collision_damage_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="sound globals">
+						<block name="sound_globals_block" maxCount="1" display="sound_globals_block" flags="0" maxIdentifer="1" version="2">
+							<versions>
+								<sound_globals_fields_v1 size="72" sizeIdentifer="sizeof(s_sound_globals_definition_v1)" fieldCount="18">
+									<fields>
+										<field type="TagReference" name="sound classes">
+											<definition flags="0" groupTag="sncl" />
+										</field>
+										<field type="TagReference" name="sound effects">
+											<definition flags="0" groupTag="sfx+" />
+										</field>
+										<field type="Explanation" name="first person left side mix" definition="for first person sounds to the left of you" />
+										<field type="Real" name="left stereo gain" units="dB" />
+										<field type="Real" name="right stereo gain" units="dB" />
+										<field type="Explanation" name="first person middle mix" definition="for first person sounds between your ears" />
+										<field type="Real" name="left stereo gain" units="dB" />
+										<field type="Real" name="right stereo gain" units="dB" />
+										<field type="Explanation" name="first person right side mix" definition="for first person sounds to the right of you" />
+										<field type="Real" name="left stereo gain" units="dB" />
+										<field type="Real" name="right stereo gain" units="dB" />
+										<field type="Explanation" name="first person stereo mix" definition="" />
+										<field type="Real" name="front speaker gain" units="dB" />
+										<field type="Real" name="rear speaker gain" units="dB" />
+										<field type="Explanation" name="ambient stereo mix" definition="" />
+										<field type="Real" name="front speaker gain" units="dB" />
+										<field type="Real" name="rear speaker gain" units="dB" />
+										<field type="Terminator" />
+									</fields>
+								</sound_globals_fields_v1>
+								<sound_globals_fields_v2 size="68" sizeIdentifer="sizeof(s_sound_globals_definition)" fieldCount="6">
+									<fields>
+										<field type="TagReference" name="sound classes">
+											<definition flags="0" groupTag="sncl" />
+										</field>
+										<field type="TagReference" name="sound effects">
+											<definition flags="0" groupTag="sfx+" />
+										</field>
+										<field type="TagReference" name="sound mix">
+											<definition flags="0" groupTag="snmx" />
+										</field>
+										<field type="TagReference" name="sound combat dialogue constants">
+											<definition flags="0" groupTag="spk!" />
+										</field>
+										<field type="LongInteger" name="" />
+										<field type="Terminator" />
+									</fields>
+								</sound_globals_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="ai globals">
+						<block name="ai_globals_block" maxCount="1" display="ai_globals_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<ai_globals_block_fields size="372" sizeIdentifer="sizeof(s_ai_globals_definition)" fieldCount="42">
+									<fields>
+										<field type="Real" name="danger broadly facing" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Real" name="danger shooting near" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Real" name="danger shooting at" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Real" name="danger extremely close" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Real" name="danger shield damage" />
+										<field type="Real" name="danger exetended shield damage" />
+										<field type="Real" name="danger body damage" />
+										<field type="Real" name="danger extended body damage" />
+										<field type="Pad" name="" definition="48" />
+										<field type="TagReference" name="global dialogue tag">
+											<definition flags="0" groupTag="adlg" />
+										</field>
+										<field type="StringId" name="default mission dialogue sound effect" />
+										<field type="Pad" name="" definition="20" />
+										<field type="Real" name="jump down" units="wu/tick" />
+										<field type="Real" name="jump step" units="wu/tick" />
+										<field type="Real" name="jump crouch" units="wu/tick" />
+										<field type="Real" name="jump stand" units="wu/tick" />
+										<field type="Real" name="jump storey" units="wu/tick" />
+										<field type="Real" name="jump tower" units="wu/tick" />
+										<field type="Real" name="max jump down height down" units="wu" />
+										<field type="Real" name="max jump down height step" units="wu" />
+										<field type="Real" name="max jump down height crouch" units="wu" />
+										<field type="Real" name="max jump down height stand" units="wu" />
+										<field type="Real" name="max jump down height storey" units="wu" />
+										<field type="Real" name="max jump down height tower" units="wu" />
+										<field type="RealBounds" name="hoist step" units="wus" />
+										<field type="RealBounds" name="hoist crouch" units="wus" />
+										<field type="RealBounds" name="hoist stand" units="wus" />
+										<field type="Pad" name="" definition="24" />
+										<field type="RealBounds" name="vault step" units="wus" />
+										<field type="RealBounds" name="vault crouch" units="wus" />
+										<field type="Pad" name="" definition="48" />
+										<field type="Block" name="gravemind properties">
+											<block name="ai_globals_gravemind_block" maxCount="1" display="ai_globals_gravemind_block" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<ai_globals_gravemind_block_fields size="12" sizeIdentifer="sizeof(s_ai_globals_gravemind_definition)" fieldCount="4">
+														<fields>
+															<field type="Real" name="min retreat time" units="secs" />
+															<field type="Real" name="ideal retreat time" units="secs" />
+															<field type="Real" name="max retreat time" units="secs" />
+															<field type="Terminator" />
+														</fields>
+													</ai_globals_gravemind_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="48" />
+										<field type="Real" name="scary target threhold" help="A target of this scariness is offically considered scary (by combat dialogue, etc.)" />
+										<field type="Real" name="scary weapon threhold" help="A weapon of this scariness is offically considered scary (by combat dialogue, etc.)" />
+										<field type="Real" name="player scariness" />
+										<field type="Real" name="berserking actor scariness" />
+										<field type="Terminator" />
+									</fields>
+								</ai_globals_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="damage table">
+						<block name="game_globals_damage_block" maxCount="1" display="game_globals_damage_block" flags="0" maxIdentifer="1" procPostprocess="True" version="1">
+							<versions>
+								<game_globals_damage_block_fields size="12" sizeIdentifer="sizeof(s_damage_globals_definition)" fieldCount="2">
+									<fields>
+										<field type="Block" name="damage groups">
+											<block name="damage_group_block" maxCount="2147483647" display="damage_group_block" flags="0" maxIdentifer="LONG_MAX" procPostprocess="True" version="1">
+												<versions>
+													<damage_group_block_fields size="16" sizeIdentifer="sizeof(s_damage_group_definition)" fieldCount="3">
+														<fields>
+															<field type="StringId" name="name" isBlockName="True" />
+															<field type="Block" name="armor modifiers">
+																<block name="armor_modifier_block" maxCount="2147483647" display="armor_modifier_block" flags="0" maxIdentifer="LONG_MAX" version="1">
+																	<versions>
+																		<armor_modifier_block_fields size="8" sizeIdentifer="sizeof(s_armor_modifier_definition)" fieldCount="3">
+																			<fields>
+																				<field type="StringId" name="name" isBlockName="True" />
+																				<field type="Real" name="damage multiplier" />
+																				<field type="Terminator" />
+																			</fields>
+																		</armor_modifier_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</damage_group_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</game_globals_damage_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="">
+						<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+							<versions>
+								<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+									<fields>
+										<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+										<field type="Terminator" />
+									</fields>
+								</g_null_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="sounds">
+						<block name="sound_block" maxCount="2" display="sound_block" flags="0" maxIdentifer="NUMBER_OF_GLOBAL_SOUNDS" procFormat="True" version="1">
+							<versions>
+								<sound_block_fields size="16" sizeIdentifer="sizeof(struct tag_reference)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="sound (OBSOLETE)">
+											<definition flags="0" groupTag="????" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</sound_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="camera">
+						<block name="camera_block" maxCount="1" display="camera_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<camera_block_fields size="28" sizeIdentifer="sizeof(s_game_globals_camera)" fieldCount="5">
+									<fields>
+										<field type="TagReference" name="default unit camera track">
+											<definition flags="0" groupTag="trak" />
+										</field>
+										<field type="Real" name="default change pause" />
+										<field type="Real" name="first person change pause" />
+										<field type="Real" name="following camera change pause" />
+										<field type="Terminator" />
+									</fields>
+								</camera_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="player control">
+						<block name="player_control_block" maxCount="1" display="player_control_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<player_control_block_fields size="132" sizeIdentifer="sizeof(s_game_globals_player_control)" fieldCount="31">
+									<fields>
+										<field type="RealFraction" name="magnetism friction" help="how much the crosshair slows over enemies" />
+										<field type="RealFraction" name="magnetism adhesion" help="how much the crosshair sticks to enemies" />
+										<field type="RealFraction" name="inconsequential target scale" help="scales magnetism level for inconsequential targets like infection forms" />
+										<field type="Pad" name="" definition="12" />
+										<field type="Explanation" name="crosshair" definition="" />
+										<field type="RealPoint2D" name="crosshair location" help="-1..1, 0 is middle of the screen" />
+										<field type="Explanation" name="sprinting" definition="" />
+										<field type="Real" name="seconds to start" help="how long you must be pegged before you start sprinting" />
+										<field type="Real" name="seconds to full speed" help="how long you must sprint before you reach top speed" />
+										<field type="Real" name="decay rate" help="how fast being unpegged decays the timer (seconds per second)" />
+										<field type="Real" name="full speed multiplier" help="how much faster we actually go when at full sprint" />
+										<field type="Real" name="pegged magnitude" help="how far the stick needs to be pressed before being considered pegged" />
+										<field type="Real" name="pegged angular threshold" help="how far off straight up (in degrees) we consider pegged" />
+										<field type="Pad" name="" definition="8" />
+										<field type="Explanation" name="looking" definition="" />
+										<field type="Real" name="look default pitch rate" units="degrees" />
+										<field type="Real" name="look default yaw rate" units="degrees" />
+										<field type="RealFraction" name="look peg threshold [0,1]" help="magnitude of yaw for pegged acceleration to kick in" />
+										<field type="Real" name="look yaw acceleration time" help="time for a pegged look to reach maximum effect" units="seconds" />
+										<field type="Real" name="look yaw acceleration scale" help="maximum effect of a pegged look (scales last value in the look function below)" />
+										<field type="Real" name="look pitch acceleration time" help="time for a pegged look to reach maximum effect" units="seconds" />
+										<field type="Real" name="look pitch acceleration scale" help="maximum effect of a pegged look (scales last value in the look function below)" />
+										<field type="Real" name="look autolevelling scale" help="1 is fast, 0 is none, &gt;1 will probably be really fast" />
+										<field type="Pad" name="" definition="8" />
+										<field type="Real" name="gravity_scale" />
+										<field type="Pad" name="" definition="2" />
+										<field type="ShortInteger" name="minimum autolevelling ticks" help="amount of time player needs to move and not look up or down for autolevelling to kick in" />
+										<field type="Angle" name="minimum angle for vehicle flipping" help="0 means the vehicle's up vector is along the ground, 90 means the up vector is pointing straight up" units="degrees" />
+										<field type="Block" name="look function">
+											<block name="look_function_block" maxCount="16" display="look_function_block" flags="0" maxIdentifer="16" procFormat="True" version="1">
+												<versions>
+													<look_function_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+														<fields>
+															<field type="Real" name="scale" />
+															<field type="Terminator" />
+														</fields>
+													</look_function_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Real" name="minimum action hold time" help="time that player needs to press ACTION to register as a HOLD" units="seconds" />
+										<field type="Terminator" />
+									</fields>
+								</player_control_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="difficulty">
+						<block name="difficulty_block" maxCount="1" display="difficulty_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<difficulty_block_fields size="644" sizeIdentifer="sizeof(s_game_globals_difficulty_information)" fieldCount="123">
+									<fields>
+										<field type="Explanation" name="health" definition="scale values for enemy health and damage settings" />
+										<field type="Real" name="easy enemy damage" help="enemy damage multiplier on easy difficulty" />
+										<field type="Real" name="normal enemy damage" help="enemy damage multiplier on normal difficulty" />
+										<field type="Real" name="hard enemy damage" help="enemy damage multiplier on hard difficulty" />
+										<field type="Real" name="imposs. enemy damage" help="enemy damage multiplier on impossible difficulty" />
+										<field type="Real" name="easy enemy vitality" help="enemy maximum body vitality scale on easy difficulty" />
+										<field type="Real" name="normal enemy vitality" help="enemy maximum body vitality scale on normal difficulty" />
+										<field type="Real" name="hard enemy vitality" help="enemy maximum body vitality scale on hard difficulty" />
+										<field type="Real" name="imposs. enemy vitality" help="enemy maximum body vitality scale on impossible difficulty" />
+										<field type="Real" name="easy enemy shield" help="enemy maximum shield vitality scale on easy difficulty" />
+										<field type="Real" name="normal enemy shield" help="enemy maximum shield vitality scale on normal difficulty" />
+										<field type="Real" name="hard enemy shield" help="enemy maximum shield vitality scale on hard difficulty" />
+										<field type="Real" name="imposs. enemy shield" help="enemy maximum shield vitality scale on impossible difficulty" />
+										<field type="Real" name="easy enemy recharge" help="enemy shield recharge scale on easy difficulty" />
+										<field type="Real" name="normal enemy recharge" help="enemy shield recharge scale on normal difficulty" />
+										<field type="Real" name="hard enemy recharge" help="enemy shield recharge scale on hard difficulty" />
+										<field type="Real" name="imposs. enemy recharge" help="enemy shield recharge scale on impossible difficulty" />
+										<field type="Real" name="easy friend damage" help="friend damage multiplier on easy difficulty" />
+										<field type="Real" name="normal friend damage" help="friend damage multiplier on normal difficulty" />
+										<field type="Real" name="hard friend damage" help="friend damage multiplier on hard difficulty" />
+										<field type="Real" name="imposs. friend damage" help="friend damage multiplier on impossible difficulty" />
+										<field type="Real" name="easy friend vitality" help="friend maximum body vitality scale on easy difficulty" />
+										<field type="Real" name="normal friend vitality" help="friend maximum body vitality scale on normal difficulty" />
+										<field type="Real" name="hard friend vitality" help="friend maximum body vitality scale on hard difficulty" />
+										<field type="Real" name="imposs. friend vitality" help="friend maximum body vitality scale on impossible difficulty" />
+										<field type="Real" name="easy friend shield" help="friend maximum shield vitality scale on easy difficulty" />
+										<field type="Real" name="normal friend shield" help="friend maximum shield vitality scale on normal difficulty" />
+										<field type="Real" name="hard friend shield" help="friend maximum shield vitality scale on hard difficulty" />
+										<field type="Real" name="imposs. friend shield" help="friend maximum shield vitality scale on impossible difficulty" />
+										<field type="Real" name="easy friend recharge" help="friend shield recharge scale on easy difficulty" />
+										<field type="Real" name="normal friend recharge" help="friend shield recharge scale on normal difficulty" />
+										<field type="Real" name="hard friend recharge" help="friend shield recharge scale on hard difficulty" />
+										<field type="Real" name="imposs. friend recharge" help="friend shield recharge scale on impossible difficulty" />
+										<field type="Real" name="easy infection forms" help="toughness of infection forms (may be negative) on easy difficulty" />
+										<field type="Real" name="normal infection forms" help="toughness of infection forms (may be negative) on normal difficulty" />
+										<field type="Real" name="hard infection forms" help="toughness of infection forms (may be negative) on hard difficulty" />
+										<field type="Real" name="imposs. infection forms" help="toughness of infection forms (may be negative) on impossible difficulty" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Explanation" name="ranged fire" definition="difficulty-affecting values for enemy ranged combat settings" />
+										<field type="Real" name="easy rate of fire" help="enemy rate of fire scale on easy difficulty" />
+										<field type="Real" name="normal rate of fire" help="enemy rate of fire scale on normal difficulty" />
+										<field type="Real" name="hard rate of fire" help="enemy rate of fire scale on hard difficulty" />
+										<field type="Real" name="imposs. rate of fire" help="enemy rate of fire scale on impossible difficulty" />
+										<field type="Real" name="easy projectile error" help="enemy projectile error scale, as a fraction of their base firing error. on easy difficulty" />
+										<field type="Real" name="normal projectile error" help="enemy projectile error scale, as a fraction of their base firing error. on normal difficulty" />
+										<field type="Real" name="hard projectile error" help="enemy projectile error scale, as a fraction of their base firing error. on hard difficulty" />
+										<field type="Real" name="imposs. projectile error" help="enemy projectile error scale, as a fraction of their base firing error. on impossible difficulty" />
+										<field type="Real" name="easy burst error" help="enemy burst error scale; reduces intra-burst shot distance. on easy difficulty" />
+										<field type="Real" name="normal burst error" help="enemy burst error scale; reduces intra-burst shot distance. on normal difficulty" />
+										<field type="Real" name="hard burst error" help="enemy burst error scale; reduces intra-burst shot distance. on hard difficulty" />
+										<field type="Real" name="imposs. burst error" help="enemy burst error scale; reduces intra-burst shot distance. on impossible difficulty" />
+										<field type="Real" name="easy new target delay" help="enemy new-target delay scale factor. on easy difficulty" />
+										<field type="Real" name="normal new target delay" help="enemy new-target delay scale factor. on normal difficulty" />
+										<field type="Real" name="hard new target delay" help="enemy new-target delay scale factor. on hard difficulty" />
+										<field type="Real" name="imposs. new target delay" help="enemy new-target delay scale factor. on impossible difficulty" />
+										<field type="Real" name="easy burst separation" help="delay time between bursts scale factor for enemies. on easy difficulty" />
+										<field type="Real" name="normal burst separation" help="delay time between bursts scale factor for enemies. on normal difficulty" />
+										<field type="Real" name="hard burst separation" help="delay time between bursts scale factor for enemies. on hard difficulty" />
+										<field type="Real" name="imposs. burst separation" help="delay time between bursts scale factor for enemies. on impossible difficulty" />
+										<field type="Real" name="easy target tracking" help="additional target tracking fraction for enemies. on easy difficulty" />
+										<field type="Real" name="normal target tracking" help="additional target tracking fraction for enemies. on normal difficulty" />
+										<field type="Real" name="hard target tracking" help="additional target tracking fraction for enemies. on hard difficulty" />
+										<field type="Real" name="imposs. target tracking" help="additional target tracking fraction for enemies. on impossible difficulty" />
+										<field type="Real" name="easy target leading" help="additional target leading fraction for enemies. on easy difficulty" />
+										<field type="Real" name="normal target leading" help="additional target leading fraction for enemies. on normal difficulty" />
+										<field type="Real" name="hard target leading" help="additional target leading fraction for enemies. on hard difficulty" />
+										<field type="Real" name="imposs. target leading" help="additional target leading fraction for enemies. on impossible difficulty" />
+										<field type="Real" name="easy overcharge chance" help="overcharge chance scale factor for enemies. on easy difficulty" />
+										<field type="Real" name="normal overcharge chance" help="overcharge chance scale factor for enemies. on normal difficulty" />
+										<field type="Real" name="hard overcharge chance" help="overcharge chance scale factor for enemies. on hard difficulty" />
+										<field type="Real" name="imposs. overcharge chance" help="overcharge chance scale factor for enemies. on impossible difficulty" />
+										<field type="Real" name="easy special fire delay" help="delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on easy difficulty" />
+										<field type="Real" name="normal special fire delay" help="delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on normal difficulty" />
+										<field type="Real" name="hard special fire delay" help="delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on hard difficulty" />
+										<field type="Real" name="imposs. special fire delay" help="delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies. on impossible difficulty" />
+										<field type="Real" name="easy guidance vs player" help="guidance velocity scale factor for all projectiles targeted on a player. on easy difficulty" />
+										<field type="Real" name="normal guidance vs player" help="guidance velocity scale factor for all projectiles targeted on a player. on normal difficulty" />
+										<field type="Real" name="hard guidance vs player" help="guidance velocity scale factor for all projectiles targeted on a player. on hard difficulty" />
+										<field type="Real" name="imposs. guidance vs player" help="guidance velocity scale factor for all projectiles targeted on a player. on impossible difficulty" />
+										<field type="Real" name="easy melee delay base" help="delay period added to all melee attacks, even when berserk. on easy difficulty" />
+										<field type="Real" name="normal melee delay base" help="delay period added to all melee attacks, even when berserk. on normal difficulty" />
+										<field type="Real" name="hard melee delay base" help="delay period added to all melee attacks, even when berserk. on hard difficulty" />
+										<field type="Real" name="imposs. melee delay base" help="delay period added to all melee attacks, even when berserk. on impossible difficulty" />
+										<field type="Real" name="easy melee delay scale" help="multiplier for all existing non-berserk melee delay times. on easy difficulty" />
+										<field type="Real" name="normal melee delay scale" help="multiplier for all existing non-berserk melee delay times. on normal difficulty" />
+										<field type="Real" name="hard melee delay scale" help="multiplier for all existing non-berserk melee delay times. on hard difficulty" />
+										<field type="Real" name="imposs. melee delay scale" help="multiplier for all existing non-berserk melee delay times. on impossible difficulty" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Explanation" name="grenades" definition="difficulty-affecting values for enemy grenade behavior" />
+										<field type="Real" name="easy grenade chance scale" help="scale factor affecting the desicions to throw a grenade. on easy difficulty" />
+										<field type="Real" name="normal grenade chance scale" help="scale factor affecting the desicions to throw a grenade. on normal difficulty" />
+										<field type="Real" name="hard grenade chance scale" help="scale factor affecting the desicions to throw a grenade. on hard difficulty" />
+										<field type="Real" name="imposs. grenade chance scale" help="scale factor affecting the desicions to throw a grenade. on impossible difficulty" />
+										<field type="Real" name="easy grenade timer scale" help="scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on easy difficulty" />
+										<field type="Real" name="normal grenade timer scale" help="scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on normal difficulty" />
+										<field type="Real" name="hard grenade timer scale" help="scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on hard difficulty" />
+										<field type="Real" name="imposs. grenade timer scale" help="scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often). on impossible difficulty" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Explanation" name="placement" definition="difficulty-affecting values for enemy placement" />
+										<field type="Real" name="easy major upgrade (normal)" help="fraction of actors upgraded to their major variant. on easy difficulty" />
+										<field type="Real" name="normal major upgrade (normal)" help="fraction of actors upgraded to their major variant. on normal difficulty" />
+										<field type="Real" name="hard major upgrade (normal)" help="fraction of actors upgraded to their major variant. on hard difficulty" />
+										<field type="Real" name="imposs. major upgrade (normal)" help="fraction of actors upgraded to their major variant. on impossible difficulty" />
+										<field type="Real" name="easy major upgrade (few)" help="fraction of actors upgraded to their major variant when mix = normal. on easy difficulty" />
+										<field type="Real" name="normal major upgrade (few)" help="fraction of actors upgraded to their major variant when mix = normal. on normal difficulty" />
+										<field type="Real" name="hard major upgrade (few)" help="fraction of actors upgraded to their major variant when mix = normal. on hard difficulty" />
+										<field type="Real" name="imposs. major upgrade (few)" help="fraction of actors upgraded to their major variant when mix = normal. on impossible difficulty" />
+										<field type="Real" name="easy major upgrade (many)" help="fraction of actors upgraded to their major variant when mix = many. on easy difficulty" />
+										<field type="Real" name="normal major upgrade (many)" help="fraction of actors upgraded to their major variant when mix = many. on normal difficulty" />
+										<field type="Real" name="hard major upgrade (many)" help="fraction of actors upgraded to their major variant when mix = many. on hard difficulty" />
+										<field type="Real" name="imposs. major upgrade (many)" help="fraction of actors upgraded to their major variant when mix = many. on impossible difficulty" />
+										<field type="Explanation" name="vehicles" definition="difficulty-affecting values for vehicle driving/combat" />
+										<field type="Real" name="easy player vehicle ram chance" help="Chance of deciding to ram the player in a vehicle on easy difficulty" />
+										<field type="Real" name="normal player vehicle ram chance" help="Chance of deciding to ram the player in a vehicle on normal difficulty" />
+										<field type="Real" name="hard player vehicle ram chance" help="Chance of deciding to ram the player in a vehicle on hard difficulty" />
+										<field type="Real" name="imposs. player vehicle ram chance" help="Chance of deciding to ram the player in a vehicle on impossible difficulty" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Pad" name="" definition="84" />
+										<field type="Terminator" />
+									</fields>
+								</difficulty_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="grenades">
+						<block name="grenades_block" maxCount="2" display="grenades_block" flags="0" maxIdentifer="k_unit_grenade_types_count" procFormat="True" version="1">
+							<versions>
+								<grenades_block_fields size="68" sizeIdentifer="sizeof(s_game_globals_grenade)" fieldCount="7">
+									<fields>
+										<field type="ShortInteger" name="maximum count" />
+										<field type="Pad" name="" definition="2" />
+										<field type="TagReference" name="throwing effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="Pad" name="" definition="16" />
+										<field type="TagReference" name="equipment">
+											<definition flags="0" groupTag="eqip" />
+										</field>
+										<field type="TagReference" name="projectile">
+											<definition flags="0" groupTag="proj" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</grenades_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="rasterizer data">
+						<block name="rasterizer_data_block" maxCount="1" display="rasterizer_data_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<rasterizer_data_block_fields size="428" sizeIdentifer="sizeof(s_game_globals_rasterizer_data)" fieldCount="39">
+									<fields>
+										<field type="Explanation" name="function textures" definition="Used internally by the rasterizer. (Do not change unless you know what you're doing!)" />
+										<field type="TagReference" name="distance attenuation">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="vector normalization">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="gradients">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="glow">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Pad" name="" definition="16" />
+										<field type="Block" name="global vertex shaders">
+											<block name="vertex_shader_reference_block" maxCount="32" display="vertex_shader_reference_block" flags="0" maxIdentifer="k_global_vertex_shader_count" procFormat="True" version="1">
+												<versions>
+													<vertex_shader_reference_block_fields size="16" sizeIdentifer="sizeof(s_vertex_shader_reference)" fieldCount="2">
+														<fields>
+															<field type="TagReference" name="vertex shader">
+																<definition flags="0" groupTag="vrtx" />
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</vertex_shader_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="default textures" definition="Used internally by the rasterizer - additive, multiplicative, detail, vector. (Do not change ever, period.)" />
+										<field type="TagReference" name="default 2D">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="default 3D">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="default cube map">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Explanation" name="experimental textures" definition="Used internally by the rasterizer. (Used by Bernie's experimental shaders.)" />
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Explanation" name="video effect textures" definition="Used in cinematics." />
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Pad" name="" definition="36" />
+										<field type="Explanation" name="global shader" definition="Used for layers that need to do something for other layers to work correctly if the layer is disabled, also used for active-camo, etc." />
+										<field type="TagReference" name="global shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="Explanation" name="active camouflage" definition="" />
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>tint edge density</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Real" name="refraction amount" units="pixels" />
+										<field type="Real" name="distance falloff" />
+										<field type="RealRgbColor" name="tint color" />
+										<field type="Real" name="hyper-stealth refraction" units="pixels" />
+										<field type="Real" name="hyper-stealth distance falloff" />
+										<field type="RealRgbColor" name="hyper-stealth tint color" />
+										<field type="Explanation" name="PC textures" definition="The PC can't use 3D textures, so we use this instead." />
+										<field type="TagReference" name="UNUSED">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</rasterizer_data_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="interface tags">
+						<block name="interface_tag_references" maxCount="1" display="interface_tag_references" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<interface_tag_references_fields size="304" sizeIdentifer="sizeof(s_game_globals_interface_tag_references)" fieldCount="20">
+									<fields>
+										<field type="TagReference" name="obsolete1">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="obsolete2">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="screen color table">
+											<definition flags="0" groupTag="colo" />
+										</field>
+										<field type="TagReference" name="hud color table">
+											<definition flags="0" groupTag="colo" />
+										</field>
+										<field type="TagReference" name="editor color table">
+											<definition flags="0" groupTag="colo" />
+										</field>
+										<field type="TagReference" name="dialog color table">
+											<definition flags="0" groupTag="colo" />
+										</field>
+										<field type="TagReference" name="hud globals">
+											<definition flags="0" groupTag="hudg" />
+										</field>
+										<field type="TagReference" name="motion sensor sweep bitmap">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="motion sensor sweep bitmap mask">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="multiplayer hud bitmap">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="">
+											<definition flags="0" groupTag="????" />
+										</field>
+										<field type="TagReference" name="hud digits definition">
+											<definition flags="0" groupTag="hud#" />
+										</field>
+										<field type="TagReference" name="motion sensor blip bitmap">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="interface goo map1">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="interface goo map2">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="interface goo map3">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="mainmenu ui globals">
+											<definition flags="0" groupTag="wgtz" />
+										</field>
+										<field type="TagReference" name="singleplayer ui globals">
+											<definition flags="0" groupTag="wgtz" />
+										</field>
+										<field type="TagReference" name="multiplayer ui globals">
+											<definition flags="0" groupTag="wgtz" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</interface_tag_references_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="@weapon list (update _weapon_list enum in game_globals.h)">
+						<block name="cheat_weapons_block" maxCount="20" display="cheat_weapons_block" flags="0" maxIdentifer="20" version="1">
+							<versions>
+								<cheat_weapons_block_fields size="16" sizeIdentifer="sizeof(s_game_globals_tag_reference)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="weapon" isBlockName="True">
+											<definition flags="0" groupTag="item" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</cheat_weapons_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="@cheat powerups">
+						<block name="cheat_powerups_block" maxCount="20" display="cheat_powerups_block" flags="0" maxIdentifer="20" version="1">
+							<versions>
+								<cheat_powerups_block_fields size="16" sizeIdentifer="sizeof(s_game_globals_tag_reference)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="powerup" isBlockName="True">
+											<definition flags="0" groupTag="eqip" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</cheat_powerups_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="@multiplayer information">
+						<block name="multiplayer_information_block" maxCount="1" display="multiplayer_information_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<multiplayer_information_block_fields size="232" sizeIdentifer="sizeof(s_game_globals_multiplayer_information)" fieldCount="16">
+									<fields>
+										<field type="TagReference" name="flag">
+											<definition flags="0" groupTag="item" />
+										</field>
+										<field type="TagReference" name="unit">
+											<definition flags="0" groupTag="unit" />
+										</field>
+										<field type="Block" name="vehicles">
+											<block name="vehicles_block" maxCount="20" display="vehicles_block" flags="0" maxIdentifer="20" version="1">
+												<versions>
+													<vehicles_block_fields size="16" sizeIdentifer="sizeof(s_game_globals_tag_reference)" fieldCount="2">
+														<fields>
+															<field type="TagReference" name="vehicle" isBlockName="True">
+																<definition flags="0" groupTag="vehi" />
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</vehicles_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="TagReference" name="hill shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="TagReference" name="flag shader">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="TagReference" name="ball">
+											<definition flags="0" groupTag="item" />
+										</field>
+										<field type="Block" name="sounds">
+											<block name="sounds_block" maxCount="60" display="sounds_block" flags="0" maxIdentifer="60" version="1">
+												<versions>
+													<sounds_block_fields size="16" sizeIdentifer="sizeof(s_game_globals_tag_reference)" fieldCount="2">
+														<fields>
+															<field type="TagReference" name="sound" isBlockName="True">
+																<definition flags="4" groupTag="snd!" />
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</sounds_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="TagReference" name="in game text">
+											<definition flags="0" groupTag="unic" />
+										</field>
+										<field type="Pad" name="" definition="40" />
+										<field type="Block" name="general events">
+											<block name="game_engine_general_event_block" maxCount="128" display="game_engine_general_event_block" flags="0" maxIdentifer="k_maximum_game_engine_event_responses_per_type" procPostprocess="True" procFormat="True" version="1">
+												<versions>
+													<game_engine_general_event_block_fields size="244" sizeIdentifer="sizeof(struct s_multiplayer_event_response_definition)" fieldCount="22">
+														<fields>
+															<field type="WordFlags" name="flags">
+																<definition count="1">
+																	<entry>quantity message</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Enum" name="event" isBlockName="True">
+																<definition count="49">
+																	<entry>kill</entry>
+																	<entry>suicide</entry>
+																	<entry>kill teammate</entry>
+																	<entry>victory</entry>
+																	<entry>team victory</entry>
+																	<entry>unused1</entry>
+																	<entry>unused2</entry>
+																	<entry>1 min to win</entry>
+																	<entry>team 1 min to win</entry>
+																	<entry>30 secs to win</entry>
+																	<entry>team 30 secs to win</entry>
+																	<entry>player quit</entry>
+																	<entry>player joined</entry>
+																	<entry>killed by unknown</entry>
+																	<entry>30 minutes left</entry>
+																	<entry>15 minutes left</entry>
+																	<entry>5 minutes left</entry>
+																	<entry>1 minute left</entry>
+																	<entry>time expired</entry>
+																	<entry>game over</entry>
+																	<entry>respawn tick</entry>
+																	<entry>last respawn tick</entry>
+																	<entry>teleporter used</entry>
+																	<entry>player changed team</entry>
+																	<entry>player rejoined</entry>
+																	<entry>gained lead</entry>
+																	<entry>gained team lead</entry>
+																	<entry>lost lead</entry>
+																	<entry>lost team lead</entry>
+																	<entry>tied leader</entry>
+																	<entry>tied team leader</entry>
+																	<entry>round over</entry>
+																	<entry>30 seconds left</entry>
+																	<entry>10 seconds left</entry>
+																	<entry>kill (falling)</entry>
+																	<entry>kill (collision)</entry>
+																	<entry>kill (melee)</entry>
+																	<entry>sudden death</entry>
+																	<entry>player booted player</entry>
+																	<entry>kill (flag carrier)</entry>
+																	<entry>kill (bomb carrier)</entry>
+																	<entry>kill (sticky grenade)</entry>
+																	<entry>kill (sniper)</entry>
+																	<entry>kill (st. melee)</entry>
+																	<entry>boarded vehicle</entry>
+																	<entry>start team noti.</entry>
+																	<entry>telefrag</entry>
+																	<entry>10 secs to win</entry>
+																	<entry>team 10 secs to win</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="audience" isBlockName="True">
+																<definition count="5">
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																	<entry>all</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="2" />
+															<field type="StringId" name="display string" />
+															<field type="Enum" name="required field">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="excluded audience">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="StringId" name="primary string" />
+															<field type="LongInteger" name="primary string duration" units="seconds" />
+															<field type="StringId" name="plural display string" />
+															<field type="Pad" name="" definition="28" />
+															<field type="Real" name="sound delay (announcer only)" />
+															<field type="WordFlags" name="sound flags">
+																<definition count="1">
+																	<entry>announcer sound</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="TagReference" name="sound" isBlockName="True">
+																<definition flags="4" groupTag="snd!" />
+															</field>
+															<field type="Struct" name="extra sounds">
+																<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																	<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																		<versions>
+																			<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																				<fields>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v1>
+																			<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																				<fields>
+																					<field type="TagReference" name="japanese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="german sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="french sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="spanish sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="italian sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="korean sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="chinese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="portuguese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v2>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Pad" name="" definition="4" />
+															<field type="Pad" name="" definition="16" />
+															<field type="Block" name="sound permutations">
+																<block name="sound_response_definition_block" maxCount="10" display="sound_response_definition_block" flags="0" maxIdentifer="10" version="1">
+																	<versions>
+																		<sound_response_definition_block_fields size="152" sizeIdentifer="sizeof(s_multiplayer_event_sound_response_definition)" fieldCount="6">
+																			<fields>
+																				<field type="WordFlags" name="sound flags">
+																					<definition count="1">
+																						<entry>announcer sound</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="TagReference" name="english sound" isBlockName="True">
+																					<definition flags="4" groupTag="snd!" />
+																				</field>
+																				<field type="Struct" name="extra sounds">
+																					<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																						<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v1>
+																								<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																									<fields>
+																										<field type="TagReference" name="japanese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="german sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="french sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="spanish sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="italian sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="korean sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="chinese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="portuguese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Real" name="probability" />
+																				<field type="Terminator" />
+																			</fields>
+																		</sound_response_definition_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</game_engine_general_event_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="slayer events">
+											<block name="game_engine_slayer_event_block" maxCount="128" display="game_engine_slayer_event_block" flags="0" maxIdentifer="k_maximum_game_engine_event_responses_per_type" procPostprocess="True" procFormat="True" version="1">
+												<versions>
+													<game_engine_slayer_event_block_fields size="244" sizeIdentifer="sizeof(struct s_multiplayer_event_response_definition)" fieldCount="22">
+														<fields>
+															<field type="WordFlags" name="flags">
+																<definition count="1">
+																	<entry>quantity message</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Enum" name="event" isBlockName="True">
+																<definition count="2">
+																	<entry>game start</entry>
+																	<entry>new target</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="audience" isBlockName="True">
+																<definition count="5">
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																	<entry>all</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="2" />
+															<field type="StringId" name="display string" />
+															<field type="Enum" name="required field">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="excluded audience">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="StringId" name="primary string" />
+															<field type="LongInteger" name="primary string duration" units="seconds" />
+															<field type="StringId" name="plural display string" />
+															<field type="Pad" name="" definition="28" />
+															<field type="Real" name="sound delay (announcer only)" />
+															<field type="WordFlags" name="sound flags">
+																<definition count="1">
+																	<entry>announcer sound</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="TagReference" name="sound" isBlockName="True">
+																<definition flags="4" groupTag="snd!" />
+															</field>
+															<field type="Struct" name="extra sounds">
+																<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																	<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																		<versions>
+																			<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																				<fields>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v1>
+																			<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																				<fields>
+																					<field type="TagReference" name="japanese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="german sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="french sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="spanish sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="italian sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="korean sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="chinese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="portuguese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v2>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Pad" name="" definition="4" />
+															<field type="Pad" name="" definition="16" />
+															<field type="Block" name="sound permutations">
+																<block name="sound_response_definition_block" maxCount="10" display="sound_response_definition_block" flags="0" maxIdentifer="10" version="1">
+																	<versions>
+																		<sound_response_definition_block_fields size="152" sizeIdentifer="sizeof(s_multiplayer_event_sound_response_definition)" fieldCount="6">
+																			<fields>
+																				<field type="WordFlags" name="sound flags">
+																					<definition count="1">
+																						<entry>announcer sound</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="TagReference" name="english sound" isBlockName="True">
+																					<definition flags="4" groupTag="snd!" />
+																				</field>
+																				<field type="Struct" name="extra sounds">
+																					<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																						<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v1>
+																								<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																									<fields>
+																										<field type="TagReference" name="japanese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="german sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="french sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="spanish sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="italian sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="korean sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="chinese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="portuguese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Real" name="probability" />
+																				<field type="Terminator" />
+																			</fields>
+																		</sound_response_definition_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</game_engine_slayer_event_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="ctf events">
+											<block name="game_engine_ctf_event_block" maxCount="128" display="game_engine_ctf_event_block" flags="0" maxIdentifer="k_maximum_game_engine_event_responses_per_type" procPostprocess="True" procFormat="True" version="1">
+												<versions>
+													<game_engine_ctf_event_block_fields size="244" sizeIdentifer="sizeof(struct s_multiplayer_event_response_definition)" fieldCount="22">
+														<fields>
+															<field type="WordFlags" name="flags">
+																<definition count="1">
+																	<entry>quantity message</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Enum" name="event" isBlockName="True">
+																<definition count="14">
+																	<entry>game start</entry>
+																	<entry>flag taken</entry>
+																	<entry>flag dropped</entry>
+																	<entry>flag returned by player</entry>
+																	<entry>flag returned by timeout</entry>
+																	<entry>flag captured</entry>
+																	<entry>flag new defensive team</entry>
+																	<entry>flag return faliure</entry>
+																	<entry>side switch tick</entry>
+																	<entry>side switch final tick</entry>
+																	<entry>side switch 30 seconds</entry>
+																	<entry>side switch 10 seconds</entry>
+																	<entry>flag contested</entry>
+																	<entry>flag capture faliure</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="audience" isBlockName="True">
+																<definition count="5">
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																	<entry>all</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="2" />
+															<field type="StringId" name="display string" />
+															<field type="Enum" name="required field">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="excluded audience">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="StringId" name="primary string" />
+															<field type="LongInteger" name="primary string duration" units="seconds" />
+															<field type="StringId" name="plural display string" />
+															<field type="Pad" name="" definition="28" />
+															<field type="Real" name="sound delay (announcer only)" />
+															<field type="WordFlags" name="sound flags">
+																<definition count="1">
+																	<entry>announcer sound</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="TagReference" name="sound" isBlockName="True">
+																<definition flags="4" groupTag="snd!" />
+															</field>
+															<field type="Struct" name="extra sounds">
+																<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																	<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																		<versions>
+																			<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																				<fields>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v1>
+																			<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																				<fields>
+																					<field type="TagReference" name="japanese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="german sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="french sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="spanish sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="italian sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="korean sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="chinese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="portuguese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v2>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Pad" name="" definition="4" />
+															<field type="Pad" name="" definition="16" />
+															<field type="Block" name="sound permutations">
+																<block name="sound_response_definition_block" maxCount="10" display="sound_response_definition_block" flags="0" maxIdentifer="10" version="1">
+																	<versions>
+																		<sound_response_definition_block_fields size="152" sizeIdentifer="sizeof(s_multiplayer_event_sound_response_definition)" fieldCount="6">
+																			<fields>
+																				<field type="WordFlags" name="sound flags">
+																					<definition count="1">
+																						<entry>announcer sound</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="TagReference" name="english sound" isBlockName="True">
+																					<definition flags="4" groupTag="snd!" />
+																				</field>
+																				<field type="Struct" name="extra sounds">
+																					<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																						<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v1>
+																								<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																									<fields>
+																										<field type="TagReference" name="japanese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="german sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="french sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="spanish sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="italian sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="korean sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="chinese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="portuguese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Real" name="probability" />
+																				<field type="Terminator" />
+																			</fields>
+																		</sound_response_definition_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</game_engine_ctf_event_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="oddball events">
+											<block name="game_engine_oddball_event_block" maxCount="128" display="game_engine_oddball_event_block" flags="0" maxIdentifer="k_maximum_game_engine_event_responses_per_type" procPostprocess="True" procFormat="True" version="1">
+												<versions>
+													<game_engine_oddball_event_block_fields size="244" sizeIdentifer="sizeof(struct s_multiplayer_event_response_definition)" fieldCount="22">
+														<fields>
+															<field type="WordFlags" name="flags">
+																<definition count="1">
+																	<entry>quantity message</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Enum" name="event" isBlockName="True">
+																<definition count="6">
+																	<entry>game start</entry>
+																	<entry>ball spawned</entry>
+																	<entry>ball picked up</entry>
+																	<entry>ball dropped</entry>
+																	<entry>ball reset</entry>
+																	<entry>ball tick</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="audience" isBlockName="True">
+																<definition count="5">
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																	<entry>all</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="2" />
+															<field type="StringId" name="display string" />
+															<field type="Enum" name="required field">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="excluded audience">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="StringId" name="primary string" />
+															<field type="LongInteger" name="primary string duration" units="seconds" />
+															<field type="StringId" name="plural display string" />
+															<field type="Pad" name="" definition="28" />
+															<field type="Real" name="sound delay (announcer only)" />
+															<field type="WordFlags" name="sound flags">
+																<definition count="1">
+																	<entry>announcer sound</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="TagReference" name="sound" isBlockName="True">
+																<definition flags="4" groupTag="snd!" />
+															</field>
+															<field type="Struct" name="extra sounds">
+																<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																	<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																		<versions>
+																			<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																				<fields>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v1>
+																			<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																				<fields>
+																					<field type="TagReference" name="japanese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="german sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="french sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="spanish sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="italian sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="korean sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="chinese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="portuguese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v2>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Pad" name="" definition="4" />
+															<field type="Pad" name="" definition="16" />
+															<field type="Block" name="sound permutations">
+																<block name="sound_response_definition_block" maxCount="10" display="sound_response_definition_block" flags="0" maxIdentifer="10" version="1">
+																	<versions>
+																		<sound_response_definition_block_fields size="152" sizeIdentifer="sizeof(s_multiplayer_event_sound_response_definition)" fieldCount="6">
+																			<fields>
+																				<field type="WordFlags" name="sound flags">
+																					<definition count="1">
+																						<entry>announcer sound</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="TagReference" name="english sound" isBlockName="True">
+																					<definition flags="4" groupTag="snd!" />
+																				</field>
+																				<field type="Struct" name="extra sounds">
+																					<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																						<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v1>
+																								<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																									<fields>
+																										<field type="TagReference" name="japanese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="german sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="french sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="spanish sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="italian sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="korean sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="chinese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="portuguese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Real" name="probability" />
+																				<field type="Terminator" />
+																			</fields>
+																		</sound_response_definition_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</game_engine_oddball_event_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="">
+											<block name="g_null_block" maxCount="0" display="g_null_block" flags="0" maxIdentifer="0" version="1">
+												<versions>
+													<g_null_block_fields size="0" sizeIdentifer="0" fieldCount="2">
+														<fields>
+															<field type="Custom" name="" attributeGroup="????" definition="&#x0;&#x0;&#x0;&#x0;" />
+															<field type="Terminator" />
+														</fields>
+													</g_null_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="king events">
+											<block name="game_engine_king_event_block" maxCount="128" display="game_engine_king_event_block" flags="0" maxIdentifer="k_maximum_game_engine_event_responses_per_type" procPostprocess="True" procFormat="True" version="1">
+												<versions>
+													<game_engine_king_event_block_fields size="244" sizeIdentifer="sizeof(struct s_multiplayer_event_response_definition)" fieldCount="22">
+														<fields>
+															<field type="WordFlags" name="flags">
+																<definition count="1">
+																	<entry>quantity message</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Enum" name="event" isBlockName="True">
+																<definition count="7">
+																	<entry>game start</entry>
+																	<entry>hill controlled</entry>
+																	<entry>hill contested</entry>
+																	<entry>hill tick</entry>
+																	<entry>hill move</entry>
+																	<entry>hill controlled team</entry>
+																	<entry>hill contested team</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="audience" isBlockName="True">
+																<definition count="5">
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																	<entry>all</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="2" />
+															<field type="StringId" name="display string" />
+															<field type="Enum" name="required field">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="excluded audience">
+																<definition count="5">
+																	<entry>NONE</entry>
+																	<entry>cause player</entry>
+																	<entry>cause team</entry>
+																	<entry>effect player</entry>
+																	<entry>effect team</entry>
+																</definition>
+															</field>
+															<field type="StringId" name="primary string" />
+															<field type="LongInteger" name="primary string duration" units="seconds" />
+															<field type="StringId" name="plural display string" />
+															<field type="Pad" name="" definition="28" />
+															<field type="Real" name="sound delay (announcer only)" />
+															<field type="WordFlags" name="sound flags">
+																<definition count="1">
+																	<entry>announcer sound</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="TagReference" name="sound" isBlockName="True">
+																<definition flags="4" groupTag="snd!" />
+															</field>
+															<field type="Struct" name="extra sounds">
+																<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																	<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																		<versions>
+																			<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																				<fields>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v1>
+																			<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																				<fields>
+																					<field type="TagReference" name="japanese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="german sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="french sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="spanish sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="italian sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="korean sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="chinese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="TagReference" name="portuguese sound">
+																						<definition flags="4" groupTag="snd!" />
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</sound_response_extra_sounds_fields_v2>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Pad" name="" definition="4" />
+															<field type="Pad" name="" definition="16" />
+															<field type="Block" name="sound permutations">
+																<block name="sound_response_definition_block" maxCount="10" display="sound_response_definition_block" flags="0" maxIdentifer="10" version="1">
+																	<versions>
+																		<sound_response_definition_block_fields size="152" sizeIdentifer="sizeof(s_multiplayer_event_sound_response_definition)" fieldCount="6">
+																			<fields>
+																				<field type="WordFlags" name="sound flags">
+																					<definition count="1">
+																						<entry>announcer sound</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="TagReference" name="english sound" isBlockName="True">
+																					<definition flags="4" groupTag="snd!" />
+																				</field>
+																				<field type="Struct" name="extra sounds">
+																					<struct name="sound_response_extra_sounds_struct" groupTag="masd">
+																						<block name="sound_response_extra_sounds_struct_block" maxCount="1" display="sound_response_extra_sounds_struct" flags="0" maxIdentifer="1" version="2">
+																							<versions>
+																								<sound_response_extra_sounds_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+																									<fields>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v1>
+																								<sound_response_extra_sounds_fields_v2 size="128" sizeIdentifer="sizeof(struct tag_reference)*(k_language_count - 1)" fieldCount="9">
+																									<fields>
+																										<field type="TagReference" name="japanese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="german sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="french sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="spanish sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="italian sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="korean sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="chinese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="TagReference" name="portuguese sound">
+																											<definition flags="4" groupTag="snd!" />
+																										</field>
+																										<field type="Terminator" />
+																									</fields>
+																								</sound_response_extra_sounds_fields_v2>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Real" name="probability" />
+																				<field type="Terminator" />
+																			</fields>
+																		</sound_response_definition_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</game_engine_king_event_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</multiplayer_information_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="@player information">
+						<block name="player_information_block" maxCount="1" display="player_information_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<player_information_block_fields size="372" sizeIdentifer="sizeof(s_game_globals_player_information)" fieldCount="39">
+									<fields>
+										<field type="TagReference" name="unused">
+											<definition flags="0" groupTag="unit" />
+										</field>
+										<field type="Pad" name="" definition="28" />
+										<field type="Real" name="walking speed" units="world units per second" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Real" name="run forward" units="world units per second" />
+										<field type="Real" name="run backward" units="world units per second" />
+										<field type="Real" name="run sideways" units="world units per second" />
+										<field type="Real" name="run acceleration" units="world units per second squared" />
+										<field type="Real" name="sneak forward" units="world units per second" />
+										<field type="Real" name="sneak backward" units="world units per second" />
+										<field type="Real" name="sneak sideways" units="world units per second" />
+										<field type="Real" name="sneak acceleration" units="world units per second squared" />
+										<field type="Real" name="airborne acceleration" units="world units per second squared" />
+										<field type="Pad" name="" definition="16" />
+										<field type="RealPoint3D" name="grenade origin" />
+										<field type="Pad" name="" definition="12" />
+										<field type="Real" name="stun movement penalty" help="1.0 prevents moving while stunned" units="[0,1]" />
+										<field type="Real" name="stun turning penalty" help="1.0 prevents turning while stunned" units="[0,1]" />
+										<field type="Real" name="stun jumping penalty" help="1.0 prevents jumping while stunned" units="[0,1]" />
+										<field type="Real" name="minimum stun time" help="all stunning damage will last for at least this long" units="seconds" />
+										<field type="Real" name="maximum stun time" help="no stunning damage will last for longer than this" units="seconds" />
+										<field type="Pad" name="" definition="8" />
+										<field type="RealBounds" name="first person idle time" units="seconds" />
+										<field type="RealFraction" name="first person skip fraction" units="[0,1]" />
+										<field type="Pad" name="" definition="16" />
+										<field type="TagReference" name="coop respawn effect">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="LongInteger" name="binoculars zoom count" />
+										<field type="RealBounds" name="binoculars zoom range" />
+										<field type="TagReference" name="binoculars zoom in sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="binoculars zoom out sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Pad" name="" definition="16" />
+										<field type="TagReference" name="active camouflage on">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="active camouflage off">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="active camouflage error">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="active camouflage ready">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="flashlight on">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="flashlight off">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="ice cream">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</player_information_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="@player representation">
+						<block name="player_representation_block" maxCount="4" display="player_representation_block" flags="0" maxIdentifer="k_player_character_type_count" procFormat="True" version="1">
+							<versions>
+								<player_representation_block_fields size="212" sizeIdentifer="sizeof(s_game_globals_player_representation)" fieldCount="7">
+									<fields>
+										<field type="TagReference" name="first person hands">
+											<definition flags="0" groupTag="mode" />
+										</field>
+										<field type="TagReference" name="first person body">
+											<definition flags="0" groupTag="mode" />
+										</field>
+										<field type="Pad" name="" definition="40" />
+										<field type="Pad" name="" definition="120" />
+										<field type="TagReference" name="third person unit">
+											<definition flags="0" groupTag="unit" />
+										</field>
+										<field type="StringId" name="third person variant" />
+										<field type="Terminator" />
+									</fields>
+								</player_representation_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="falling damage">
+						<block name="falling_damage_block" maxCount="1" display="falling_damage_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<falling_damage_block_fields size="152" sizeIdentifer="sizeof(s_game_globals_falling_damage)" fieldCount="12">
+									<fields>
+										<field type="Pad" name="" definition="8" />
+										<field type="RealBounds" name="harmful falling distance" units="world units" />
+										<field type="TagReference" name="falling damage">
+											<definition flags="0" groupTag="jpt!" />
+										</field>
+										<field type="Pad" name="" definition="8" />
+										<field type="Real" name="maximum falling distance" units="world units" />
+										<field type="TagReference" name="distance damage">
+											<definition flags="0" groupTag="jpt!" />
+										</field>
+										<field type="TagReference" name="vehicle environemtn collision damage effect">
+											<definition flags="0" groupTag="jpt!" />
+										</field>
+										<field type="TagReference" name="vehicle killed unit damage effect">
+											<definition flags="0" groupTag="jpt!" />
+										</field>
+										<field type="TagReference" name="vehicle collision damage">
+											<definition flags="0" groupTag="jpt!" />
+										</field>
+										<field type="TagReference" name="flaming death damage">
+											<definition flags="0" groupTag="jpt!" />
+										</field>
+										<field type="Pad" name="" definition="28" />
+										<field type="Terminator" />
+									</fields>
+								</falling_damage_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="old materials">
+						<block name="old_materials_block" maxCount="33" display="old_materials_block" flags="0" maxIdentifer="NUMBER_OF_MATERIAL_TYPES" procFormat="True" version="1">
+							<versions>
+								<old_materials_block_fields size="44" sizeIdentifer="sizeof(struct material_definition)" fieldCount="15">
+									<fields>
+										<field type="UselessPad" name="" definition="4" />
+										<field type="StringId" name="new material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="StringId" name="new general material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="UselessPad" name="" definition="88" />
+										<field type="UselessPad" name="" definition="48" />
+										<field type="Explanation" name="vehicle terrain parameters" definition="the following fields modify the way a vehicle drives over terrain of this material type." />
+										<field type="Real" name="ground friction scale" help="fraction of original velocity parallel to the ground after one tick" />
+										<field type="Real" name="ground friction normal k1 scale" help="cosine of angle at which friction falls off" />
+										<field type="Real" name="ground friction normal k0 scale" help="cosine of angle at which friction is zero" />
+										<field type="Real" name="ground depth scale" help="depth a point mass rests in the ground" />
+										<field type="Real" name="ground damp fraction scale" help="fraction of original velocity perpendicular to the ground after one tick" />
+										<field type="UselessPad" name="" definition="76" />
+										<field type="UselessPad" name="" definition="624" />
+										<field type="TagReference" name="melee hit sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</old_materials_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="materials" attributeGroup="sort">
+						<block name="materials_block" maxCount="256" display="materials_block" flags="0" maxIdentifer="k_maximum_material_types" procPostprocess="True" version="1">
+							<versions>
+								<materials_block_fields size="316" sizeIdentifer="sizeof(s_global_material_definition)" fieldCount="14">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="StringId" name="parent name" />
+										<field type="Pad" name="" definition="2" />
+										<field type="WordFlags" name="flags">
+											<definition count="2">
+												<entry>flammable</entry>
+												<entry>biomass</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="old material type">
+											<definition count="33">
+												<entry>dirt</entry>
+												<entry>sand</entry>
+												<entry>stone</entry>
+												<entry>snow</entry>
+												<entry>wood</entry>
+												<entry>metal (hollow)</entry>
+												<entry>metal (thin)</entry>
+												<entry>metal (thick)</entry>
+												<entry>rubber</entry>
+												<entry>glass</entry>
+												<entry>force field</entry>
+												<entry>grunt</entry>
+												<entry>hunter armor</entry>
+												<entry>hunter skin</entry>
+												<entry>elite</entry>
+												<entry>jackal</entry>
+												<entry>jackal energy shield</entry>
+												<entry>engineer skin</entry>
+												<entry>engineer force field</entry>
+												<entry>flood combat form</entry>
+												<entry>flood carrier form</entry>
+												<entry>cyborg armor</entry>
+												<entry>cyborg energy shield</entry>
+												<entry>human armor</entry>
+												<entry>human skin</entry>
+												<entry>sentinel</entry>
+												<entry>monitor</entry>
+												<entry>plastic</entry>
+												<entry>water</entry>
+												<entry>leaves</entry>
+												<entry>elite energy shield</entry>
+												<entry>ice</entry>
+												<entry>hunter shield</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="StringId" name="general armor" />
+										<field type="StringId" name="specific armor" />
+										<field type="Struct" name="physics properties">
+											<struct name="material_physics_properties_struct" groupTag="mphp" display="physics properties">
+												<block name="material_physics_properties_struct_block" maxCount="1" display="material_physics_properties_struct" flags="0" maxIdentifer="1" version="2">
+													<versions>
+														<material_physics_properties_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+															<fields>
+																<field type="Terminator" />
+															</fields>
+														</material_physics_properties_fields_v1>
+														<material_physics_properties_fields size="16" sizeIdentifer="sizeof(s_material_physics_properties)" fieldCount="5">
+															<fields>
+																<field type="Pad" name="" definition="4" />
+																<field type="Real" name="friction" />
+																<field type="RealFraction" name="restitution" />
+																<field type="Real" name="density" units="kg/m" isBlockName="True" />
+																<field type="Terminator" />
+															</fields>
+														</material_physics_properties_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="TagReference" name="old material physics">
+											<definition flags="0" groupTag="mpdt" />
+										</field>
+										<field type="TagReference" name="breakable surface">
+											<definition flags="0" groupTag="bsdt" />
+										</field>
+										<field type="Struct" name="sweeteners">
+											<struct name="materials_sweeteners_struct" groupTag="msst" display="sweet, sweetening, sweeteners!">
+												<block name="materials_sweeteners_struct_block" maxCount="1" display="materials_sweeteners_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<materials_sweeteners_struct_fields size="228" sizeOverride="48" sizeIdentifer="sizeof(s_global_material_sweeteners_definition)" fieldCount="17">
+															<fields>
+																<field type="TagReference" name="sound sweetener (small)">
+																	<definition flags="4" groupTag="snd!" />
+																</field>
+																<field type="TagReference" name="sound sweetener (medium)">
+																	<definition flags="4" groupTag="snd!" />
+																</field>
+																<field type="TagReference" name="sound sweetener (large)">
+																	<definition flags="4" groupTag="snd!" />
+																</field>
+																<field type="TagReference" name="sound sweetener rolling">
+																	<definition flags="4" groupTag="lsnd" />
+																</field>
+																<field type="TagReference" name="sound sweetener grinding">
+																	<definition flags="4" groupTag="lsnd" />
+																</field>
+																<field type="TagReference" name="sound sweetener (melee)">
+																	<definition flags="4" groupTag="snd!" />
+																</field>
+																<field type="TagReference" name="">
+																	<definition flags="0" groupTag="????" />
+																</field>
+																<field type="TagReference" name="effect sweetener (small)">
+																	<definition flags="0" groupTag="effe" />
+																</field>
+																<field type="TagReference" name="effect sweetener (medium)">
+																	<definition flags="0" groupTag="effe" />
+																</field>
+																<field type="TagReference" name="effect sweetener (large)">
+																	<definition flags="0" groupTag="effe" />
+																</field>
+																<field type="TagReference" name="effect sweetener rolling">
+																	<definition flags="0" groupTag="effe" />
+																</field>
+																<field type="TagReference" name="effect sweetener grinding">
+																	<definition flags="0" groupTag="effe" />
+																</field>
+																<field type="TagReference" name="effect sweetener (melee)">
+																	<definition flags="0" groupTag="effe" />
+																</field>
+																<field type="TagReference" name="">
+																	<definition flags="0" groupTag="????" />
+																</field>
+																<field type="Explanation" name="sweetener inheritance flags" definition="when a sweetener inheritance flag is set the sound\effect is not inherited from the parent material.  If you leave the sweetener blank and set the flag than no effect\sound will play" />
+																<field type="LongFlags" name="sweetener inheritance flags">
+																	<definition count="14">
+																		<entry>sound_small</entry>
+																		<entry>sound_medium</entry>
+																		<entry>sound_large</entry>
+																		<entry>sound_rolling</entry>
+																		<entry>sound_grinding</entry>
+																		<entry>sound_melee</entry>
+																		<entry />
+																		<entry>effect_small</entry>
+																		<entry>effect_medium</entry>
+																		<entry>effect_large</entry>
+																		<entry>effect_rolling</entry>
+																		<entry>effect_grinding</entry>
+																		<entry>effect_melee</entry>
+																		<entry />
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</materials_sweeteners_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="TagReference" name="material effects">
+											<definition flags="0" groupTag="foot" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</materials_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="multiplayer UI">
+						<block name="multiplayer_ui_block" maxCount="1" display="multiplayer_ui_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<multiplayer_ui_block_fields size="56" sizeIdentifer="sizeof(s_game_globals_multiplayer_ui)" fieldCount="5">
+									<fields>
+										<field type="TagReference" name="random player names">
+											<definition flags="0" groupTag="unic" />
+										</field>
+										<field type="Block" name="obsolete profile colors">
+											<block name="multiplayer_color_block" maxCount="32" display="multiplayer_color_block" flags="0" maxIdentifer="k_game_globals_maximum_multiplayer_colors" version="1">
+												<versions>
+													<multiplayer_color_block_fields size="12" sizeIdentifer="sizeof(real_rgb_color)" fieldCount="2">
+														<fields>
+															<field type="RealRgbColor" name="color" />
+															<field type="Terminator" />
+														</fields>
+													</multiplayer_color_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="team colors">
+											<block name="multiplayer_color_block" maxCount="32" display="multiplayer_color_block" flags="0" maxIdentifer="k_game_globals_maximum_multiplayer_colors" version="1">
+												<versions>
+													<multiplayer_color_block_fields size="12" sizeIdentifer="sizeof(real_rgb_color)" fieldCount="2">
+														<fields>
+															<field type="RealRgbColor" name="color" />
+															<field type="Terminator" />
+														</fields>
+													</multiplayer_color_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="TagReference" name="team names">
+											<definition flags="0" groupTag="unic" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</multiplayer_ui_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="profile colors">
+						<block name="multiplayer_color_block" maxCount="32" display="multiplayer_color_block" flags="0" maxIdentifer="k_game_globals_maximum_multiplayer_colors" version="1">
+							<versions>
+								<multiplayer_color_block_fields size="12" sizeIdentifer="sizeof(real_rgb_color)" fieldCount="2">
+									<fields>
+										<field type="RealRgbColor" name="color" />
+										<field type="Terminator" />
+									</fields>
+								</multiplayer_color_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="TagReference" name="multiplayer globals">
+						<definition flags="0" groupTag="mulg" />
+					</field>
+					<field type="Block" name="runtime level data">
+						<block name="runtime_levels_definition_block" maxCount="1" display="runtime_levels_definition_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<runtime_levels_definition_block_fields size="12" sizeIdentifer="sizeof(struct s_runtime_levels_definition)" fieldCount="2">
+									<fields>
+										<field type="Block" name="Campaign Levels">
+											<block name="runtime_campaign_level_block" maxCount="20" display="runtime_campaign_level_block" flags="0" maxIdentifer="k_maximum_number_of_campaign_maps" version="1">
+												<versions>
+													<runtime_campaign_level_block_fields size="264" sizeIdentifer="sizeof(s_campaign_runtime_level_definition)" fieldCount="4">
+														<fields>
+															<field type="LongInteger" name="Campaign ID" />
+															<field type="LongInteger" name="Map ID" />
+															<field type="LongString" name="Path" />
+															<field type="Terminator" />
+														</fields>
+													</runtime_campaign_level_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</runtime_levels_definition_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="ui level data">
+						<block name="ui_levels_definition_block" maxCount="1" display="ui_levels_definition_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<ui_levels_definition_block_fields size="36" sizeIdentifer="sizeof(struct s_ui_levels_definition)" fieldCount="4">
+									<fields>
+										<field type="Block" name="Campaigns">
+											<block name="ui_campaign_block" maxCount="4" display="ui_campaign_block" flags="0" maxIdentifer="k_maximum_number_of_campaigns" version="1">
+												<versions>
+													<ui_campaign_block_fields size="2884" sizeIdentifer="sizeof(s_campaign_definition)" fieldCount="4">
+														<fields>
+															<field type="LongInteger" name="Campaign ID" />
+															<field type="Skip" name="" definition="576" />
+															<field type="Skip" name="" definition="2304" />
+															<field type="Terminator" />
+														</fields>
+													</ui_campaign_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="Campaign Levels">
+											<block name="global_ui_campaign_level_block" maxCount="20" display="global_ui_campaign_level_block" flags="0" maxIdentifer="k_maximum_number_of_campaign_maps" version="1">
+												<versions>
+													<global_ui_campaign_level_block_fields size="2904" sizeIdentifer="sizeof(s_campaign_ui_level_definition)" fieldCount="6">
+														<fields>
+															<field type="LongInteger" name="Campaign ID" />
+															<field type="LongInteger" name="Map ID" />
+															<field type="TagReference" name="Bitmap">
+																<definition flags="0" groupTag="bitm" />
+															</field>
+															<field type="Skip" name="" definition="576" />
+															<field type="Skip" name="" definition="2304" />
+															<field type="Terminator" />
+														</fields>
+													</global_ui_campaign_level_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="Multiplayer Levels">
+											<block name="global_ui_multiplayer_level_block" maxCount="50" display="global_ui_multiplayer_level_block" flags="0" maxIdentifer="k_maximum_number_of_multiplayer_maps" version="1">
+												<versions>
+													<global_ui_multiplayer_level_block_fields size="3180" sizeIdentifer="sizeof(s_multiplayer_ui_level_definition)" fieldCount="25">
+														<fields>
+															<field type="LongInteger" name="Map ID" />
+															<field type="TagReference" name="Bitmap">
+																<definition flags="0" groupTag="bitm" />
+															</field>
+															<field type="Skip" name="" definition="576" />
+															<field type="Skip" name="" definition="2304" />
+															<field type="LongString" name="Path" />
+															<field type="LongInteger" name="Sort Order" />
+															<field type="ByteFlags" name="Flags">
+																<definition count="1">
+																	<entry>Unlockable</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="3" />
+															<field type="CharInteger" name="Max Teams None" />
+															<field type="CharInteger" name="Max Teams CTF" />
+															<field type="CharInteger" name="Max Teams Slayer" />
+															<field type="CharInteger" name="Max Teams Oddball" />
+															<field type="CharInteger" name="Max Teams KOTH" />
+															<field type="CharInteger" name="Max Teams Race" />
+															<field type="CharInteger" name="Max Teams Headhunter" />
+															<field type="CharInteger" name="Max Teams Juggernaut" />
+															<field type="CharInteger" name="Max Teams Territories" />
+															<field type="CharInteger" name="Max Teams Assault" />
+															<field type="CharInteger" name="Max Teams Stub 10" />
+															<field type="CharInteger" name="Max Teams Stub 11" />
+															<field type="CharInteger" name="Max Teams Stub 12" />
+															<field type="CharInteger" name="Max Teams Stub 13" />
+															<field type="CharInteger" name="Max Teams Stub 14" />
+															<field type="CharInteger" name="Max Teams Stub 15" />
+															<field type="Terminator" />
+														</fields>
+													</global_ui_multiplayer_level_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</ui_levels_definition_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="Default global lighting" definition="" />
+					<field type="TagReference" name="default global lighting">
+						<definition flags="0" groupTag="gldf" />
+					</field>
+					<field type="Pad" name="" definition="252" />
+					<field type="Terminator" />
+				</fields>
+			</globals_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="scenery" groupTag="scen" groupTagParent="obje" version="1" flags="9" procPostprocess="True">
+	<block name="scenery_block" maxCount="1" display="scenery" flags="0" maxIdentifer="1" procInvalidHandler="True" version="3">
+		<versions>
+			<scenery_fields_v1 size="8" sizeIdentifer="sizeof(_scenery_definition)" fieldCount="6">
+				<fields>
+					<field type="Enum" name="pathfinding policy">
+						<definition count="4">
+							<entry>Pathfinding DYNAMIC</entry>
+							<entry>Pathfinding CUT-OUT</entry>
+							<entry>Pathfinding STATIC</entry>
+							<entry>Pathfinding NONE</entry>
+						</definition>
+					</field>
+					<field type="WordFlags" name="flags">
+						<definition count="1">
+							<entry>physically simulates#stimulates?</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="lightmapping policy">
+						<definition count="2">
+							<entry>Dynamic</entry>
+							<entry>Per-Vertex</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="120" />
+					<field type="Terminator" />
+				</fields>
+			</scenery_fields_v1>
+			<scenery_fields_v2 size="8" sizeIdentifer="sizeof(_scenery_definition)" fieldCount="8">
+				<fields>
+					<field type="Explanation" name="Pathfinding" definition="Indicate whether, by default, we should create pathfinding data for this type of scenery" />
+					<field type="Enum" name="pathfinding policy">
+						<definition count="4">
+							<entry>Pathfinding DYNAMIC</entry>
+							<entry>Pathfinding CUT-OUT</entry>
+							<entry>Pathfinding STATIC</entry>
+							<entry>Pathfinding NONE</entry>
+						</definition>
+					</field>
+					<field type="WordFlags" name="flags">
+						<definition count="1">
+							<entry>physically simulates#stimulates?</entry>
+						</definition>
+					</field>
+					<field type="Explanation" name="Lightmapping" definition="Indicate whether, by default, how we should lightmap this type of scenery" />
+					<field type="Enum" name="lightmapping policy">
+						<definition count="3">
+							<entry>Per-Vertex</entry>
+							<entry>Per-Pixel (not implemented)</entry>
+							<entry>Dynamic</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="120" />
+					<field type="Terminator" />
+				</fields>
+			</scenery_fields_v2>
+			<scenery_fields_v3 size="8" sizeIdentifer="sizeof(_scenery_definition)" fieldCount="8">
+				<fields>
+					<field type="Explanation" name="Pathfinding" definition="Indicate whether, by default, we should create pathfinding data for this type of scenery" />
+					<field type="Enum" name="pathfinding policy">
+						<definition count="4">
+							<entry>Pathfinding CUT-OUT</entry>
+							<entry>Pathfinding STATIC</entry>
+							<entry>Pathfinding DYNAMIC</entry>
+							<entry>Pathfinding NONE</entry>
+						</definition>
+					</field>
+					<field type="WordFlags" name="flags">
+						<definition count="1">
+							<entry>physically simulates#stimulates?</entry>
+						</definition>
+					</field>
+					<field type="Explanation" name="Lightmapping" definition="Indicate whether, by default, how we should lightmap this type of scenery" />
+					<field type="Enum" name="lightmapping policy">
+						<definition count="3">
+							<entry>Per-Vertex</entry>
+							<entry>Per-Pixel (not implemented)</entry>
+							<entry>Dynamic</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="120" />
+					<field type="Terminator" />
+				</fields>
+			</scenery_fields_v3>
+		</versions>
+	</block>
+</tagGroup>

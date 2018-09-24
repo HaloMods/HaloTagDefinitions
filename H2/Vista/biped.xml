@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="biped" groupTag="bipd" groupTagParent="unit" version="3" flags="9" procPostprocess="True">
+	<block name="biped_block" maxCount="1" display="biped" flags="0" maxIdentifer="1" version="2">
+		<versions>
+			<biped_definition_tags_v1 size="528" sizeIdentifer="sizeof(struct _biped_definition_v1)" fieldCount="68">
+				<fields>
+					<field type="Explanation" name="$$$ BIPED $$$" definition="" />
+					<field type="Angle" name="moving turning speed" units="degrees per second" />
+					<field type="Skip" name="" definition="4" />
+					<field type="Angle" name="stationary turning threshold" />
+					<field type="Pad" name="" definition="16" />
+					<field type="Enum" name="old obsolete A in">
+						<definition count="2">
+							<entry>none</entry>
+							<entry>flying velocity</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="old obsolete B in">
+						<definition count="2">
+							<entry>none</entry>
+							<entry>flying velocity</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="old obsolete C in">
+						<definition count="2">
+							<entry>none</entry>
+							<entry>flying velocity</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="old obsolete D in">
+						<definition count="2">
+							<entry>none</entry>
+							<entry>flying velocity</entry>
+						</definition>
+					</field>
+					<field type="TagReference" name="DON'T USE">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="Explanation" name="flying" definition="" />
+					<field type="Angle" name="bank angle" help="angle at which we bank left/right when sidestepping or turning while moving forwards" units="degrees" />
+					<field type="Real" name="bank apply time" help="time it takes us to apply a bank" units="seconds" />
+					<field type="Real" name="bank decay time" help="time it takes us to recover from a bank" units="seconds" />
+					<field type="Real" name="pitch ratio" help="amount that we pitch up/down when moving up or down" />
+					<field type="Real" name="max velocity" help="max velocity when not crouching" units="world units per second" />
+					<field type="Real" name="max sidestep velocity" help="max sideways or up/down velocity when not crouching" units="world units per second" />
+					<field type="Real" name="acceleration" units="world units per second squared" />
+					<field type="Real" name="deceleration" units="world units per second squared" />
+					<field type="Angle" name="angular velocity maximum" help="turn rate" units="degrees per second" />
+					<field type="Angle" name="angular acceleration maximum" help="turn acceleration rate" units="degrees per second squared" />
+					<field type="Real" name="crouch velocity modifier" help="how much slower we fly if crouching (zero = same speed)" units="[0,1]" />
+					<field type="Pad" name="" definition="8" />
+					<field type="Explanation" name="movement" definition="" />
+					<field type="Angle" name="maximum slope angle" units="degrees" />
+					<field type="Angle" name="downhill falloff angle" units="degrees" />
+					<field type="Angle" name="downhill cutoff angle" units="degrees" />
+					<field type="Real" name="downhill velocity scale" />
+					<field type="Angle" name="uphill falloff angle" units="degrees" />
+					<field type="Angle" name="uphill cutoff angle" units="degrees" />
+					<field type="Real" name="uphill velocity scale" />
+					<field type="Pad" name="" definition="24" />
+					<field type="TagReference" name="UNUSED" isReadonly="True">
+						<definition flags="0" groupTag="foot" />
+					</field>
+					<field type="Pad" name="" definition="24" />
+					<field type="Explanation" name="jumping and landing" definition="" />
+					<field type="Real" name="jump velocity" units="world units per second" />
+					<field type="Pad" name="" definition="28" />
+					<field type="Real" name="maximum soft landing time" help="the longest amount of time the biped can take to recover from a soft landing" units="seconds" />
+					<field type="Real" name="maximum hard landing time" help="the longest amount of time the biped can take to recover from a hard landing" units="seconds" />
+					<field type="Real" name="minimum soft landing velocity" help="below this velocity the biped does not react when landing" units="world units per second" />
+					<field type="Real" name="minimum hard landing velocity" help="below this velocity the biped will not do a soft landing when returning to the ground" units="world units per second" />
+					<field type="Real" name="maximum hard landing velocity" help="the velocity corresponding to the maximum landing time" units="world units per second" />
+					<field type="Real" name="death hard landing velocity" help="the maximum velocity with which a character can strike the ground and live" units="world units per second" />
+					<field type="Pad" name="" definition="20" />
+					<field type="Explanation" name="camera, collision, and autoaim" definition="" />
+					<field type="Real" name="standing camera height" units="world units" />
+					<field type="Real" name="crouching camera height" units="world units" />
+					<field type="Real" name="crouch transition time" units="seconds" />
+					<field type="Angle" name="camera interpolation start" help="looking-downward angle that starts camera interpolation to fp position" units="degrees" />
+					<field type="Angle" name="camera interpolation end" help="looking-downward angle at which camera interpolation to fp position is complete" units="degrees" />
+					<field type="Real" name="camera forward movement scale" help="amount of fp camera movement forward and back (1.0 is full)" />
+					<field type="Real" name="camera side movement scale" help="amount of fp camera movement side-to-side (1.0 is full)" />
+					<field type="Real" name="camera vertical movement scale" help="amount of fp camera movement vertically (1.0 is full)" />
+					<field type="Real" name="camera exclusion distance" help="fp camera must always be at least this far out from root node" units="world units" />
+					<field type="Real" name="standing collision height" units="world units" />
+					<field type="Real" name="crouching collision height" units="world units" />
+					<field type="Real" name="collision radius" units="world units" />
+					<field type="Real" name="collision mass" units="world mass units" />
+					<field type="StringId" name="collision global material name" help="collision material used when biped is alive" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="2" />
+					<field type="StringId" name="dead collision global material name" help="collision material used when biped is dead" />
+					<field type="Pad" name="" definition="24" />
+					<field type="Real" name="autoaim width" units="world units" />
+					<field type="Pad" name="" definition="140" />
+					<field type="Block" name="contact points" help="these are the points where the biped touches the ground">
+						<block name="contact_point_block_v1" maxCount="3" display="contact_point_block_v1" flags="0" maxIdentifer="3" version="1">
+							<versions>
+								<contact_point_block_v1_fields size="36" sizeIdentifer="sizeof(struct biped_contact_point_v1)" fieldCount="3">
+									<fields>
+										<field type="Pad" name="" definition="32" />
+										<field type="OldStringId" name="marker name" isBlockName="True" />
+										<field type="Terminator" />
+									</fields>
+								</contact_point_block_v1_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="pill shapes" help="No point editing these.  They get filled out at map load.">
+						<block name="pills_block" maxCount="1024" display="pills_block" flags="0" maxIdentifer="k_maximum_shapes_per_physics_model" version="1">
+							<versions>
+								<pills_block_fields size="80" sizeIdentifer="sizeof(s_physics_model_pill)" alignment="4" fieldCount="20">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+										<field type="ShortBlockIndex1" name="material" isReadonly="True" definition="materials_block" />
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>unused</entry>
+											</definition>
+										</field>
+										<field type="Real" name="relative mass scale" />
+										<field type="RealFraction" name="friction" />
+										<field type="RealFraction" name="restitution" />
+										<field type="Real" name="volume " isReadonly="True" />
+										<field type="Real" name="mass" isReadonly="True" />
+										<field type="Skip" name="" definition="2" />
+										<field type="ShortBlockIndex1" name="phantom" isReadonly="True" definition="phantoms_block" />
+										<field type="Skip" name="" definition="4" />
+										<field type="ShortInteger" name="size" isReadonly="True" />
+										<field type="ShortInteger" name="count" isReadonly="True" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Real" name="radius" isReadonly="True" />
+										<field type="RealVector3D" name="bottom" isReadonly="True" />
+										<field type="Skip" name="" definition="4" />
+										<field type="RealVector3D" name="top" isReadonly="True" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</pills_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</biped_definition_tags_v1>
+			<biped_definition_tags_v2 size="336" sizeIdentifer="sizeof(struct _biped_definition)" fieldCount="40">
+				<fields>
+					<field type="Explanation" name="$$$ BIPED $$$" definition="" />
+					<field type="Angle" name="moving turning speed" units="degrees per second" />
+					<field type="LongFlags" name="flags">
+						<definition count="12">
+							<entry>turns without animating</entry>
+							<entry>passes through other bipeds</entry>
+							<entry>immune to falling damage</entry>
+							<entry>rotate while airborne</entry>
+							<entry>uses limp body physics</entry>
+							<entry>unused</entry>
+							<entry>random speed increase</entry>
+							<entry>unused</entry>
+							<entry>spawn death children on destroy</entry>
+							<entry>stunned by emp damage</entry>
+							<entry>dead physics when stunned</entry>
+							<entry>always ragdoll when dead</entry>
+						</definition>
+					</field>
+					<field type="Angle" name="stationary turning threshold" />
+					<field type="UselessPad" name="" definition="16" />
+					<field type="UselessPad" name="" definition="32" />
+					<field type="Explanation" name="jumping and landing" definition="" />
+					<field type="Real" name="jump velocity" units="world units per second" />
+					<field type="UselessPad" name="" definition="28" />
+					<field type="Real" name="maximum soft landing time" help="the longest amount of time the biped can take to recover from a soft landing" units="seconds" />
+					<field type="Real" name="maximum hard landing time" help="the longest amount of time the biped can take to recover from a hard landing" units="seconds" />
+					<field type="Real" name="minimum soft landing velocity" help="below this velocity the biped does not react when landing" units="world units per second" />
+					<field type="Real" name="minimum hard landing velocity" help="below this velocity the biped will not do a soft landing when returning to the ground" units="world units per second" />
+					<field type="Real" name="maximum hard landing velocity" help="the velocity corresponding to the maximum landing time" units="world units per second" />
+					<field type="Real" name="death hard landing velocity" help="the maximum velocity with which a character can strike the ground and live" units="world units per second" />
+					<field type="UselessPad" name="" definition="16" />
+					<field type="Real" name="stun duration" help="0 is the default.  Bipeds are stuned when damaged by vehicle collisions, also some are when they take emp damage" />
+					<field type="Explanation" name="camera, collision, and autoaim" definition="" />
+					<field type="Real" name="standing camera height" units="world units" />
+					<field type="Real" name="crouching camera height" units="world units" />
+					<field type="Real" name="crouch transition time" units="seconds" />
+					<field type="Angle" name="camera interpolation start" help="looking-downward angle that starts camera interpolation to fp position" units="degrees" />
+					<field type="Angle" name="camera interpolation end" help="looking-downward angle at which camera interpolation to fp position is complete" units="degrees" />
+					<field type="Real" name="camera forward movement scale" help="amount of fp camera movement forward and back (1.0 is full)" />
+					<field type="Real" name="camera side movement scale" help="amount of fp camera movement side-to-side (1.0 is full)" />
+					<field type="Real" name="camera vertical movement scale" help="amount of fp camera movement vertically (1.0 is full)" />
+					<field type="Real" name="camera exclusion distance" help="fp camera must always be at least this far out from root node" units="world units" />
+					<field type="Real" name="autoaim width" units="world units" />
+					<field type="Struct" name="lock-on data">
+						<struct name="biped_lock_on_data_struct" groupTag="blod">
+							<block name="biped_lock_on_data_struct_block" maxCount="1" display="biped_lock_on_data_struct" flags="0" maxIdentifer="1" version="2">
+								<versions>
+									<biped_lock_on_data_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+										<fields>
+											<field type="Terminator" />
+										</fields>
+									</biped_lock_on_data_fields_v1>
+									<biped_lock_on_data_fields_v2 size="8" sizeIdentifer="sizeof(s_biped_lock_on_data)" fieldCount="4">
+										<fields>
+											<field type="Explanation" name="lock-on fields" definition="" />
+											<field type="LongFlags" name="flags">
+												<definition count="3">
+													<entry>locked by human targeting</entry>
+													<entry>locked by plasma targeting</entry>
+													<entry>always locked by plasma targeting</entry>
+												</definition>
+											</field>
+											<field type="Real" name="lock on distance" />
+											<field type="Terminator" />
+										</fields>
+									</biped_lock_on_data_fields_v2>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Pad" name="" definition="16" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Real" name="head shot acc scale" help="when the biped ragdolls from a head shot it acceleartes based on this value.  0 defaults to the standard acceleration scale" />
+					<field type="TagReference" name="area damage effect">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="Struct" name="physics">
+						<struct name="character_physics_struct" groupTag="chpy" display="character physics">
+							<block name="character_physics_struct_block" maxCount="1" display="character_physics_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<character_physics_struct_fields size="160" sizeIdentifer="sizeof(s_character_physics_definition)" fieldCount="22">
+										<fields>
+											<field type="LongFlags" name="flags">
+												<definition count="7">
+													<entry>centered_at_origin</entry>
+													<entry>shape spherical</entry>
+													<entry>use player physics</entry>
+													<entry>climb any surface</entry>
+													<entry>flying</entry>
+													<entry>not physical</entry>
+													<entry>dead character collision group</entry>
+												</definition>
+											</field>
+											<field type="Real" name="height standing" />
+											<field type="Real" name="height crouching" />
+											<field type="Real" name="radius" />
+											<field type="Real" name="mass" />
+											<field type="StringId" name="living material name" help="collision material used when character is alive" attributeGroup="sted" hasStringEditor="true" />
+											<field type="StringId" name="dead material name" help="collision material used when character is dead" attributeGroup="sted" hasStringEditor="true" />
+											<field type="UselessPad" name="" definition="16" />
+											<field type="Pad" name="" definition="4" />
+											<field type="UselessPad" name="" definition="20" />
+											<field type="Block" name="dead sphere shapes">
+												<block name="spheres_block" maxCount="1024" display="spheres_block" flags="0" maxIdentifer="k_maximum_shapes_per_physics_model" version="1">
+													<versions>
+														<spheres_block_fields size="128" sizeIdentifer="sizeof(s_physics_model_sphere)" alignment="4" fieldCount="29">
+															<fields>
+																<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+																<field type="ShortBlockIndex1" name="material" isReadonly="True" definition="materials_block" />
+																<field type="WordFlags" name="flags">
+																	<definition count="1">
+																		<entry>unused</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="relative mass scale" />
+																<field type="RealFraction" name="friction" />
+																<field type="RealFraction" name="restitution" />
+																<field type="Real" name="volume " isReadonly="True" />
+																<field type="Real" name="mass" isReadonly="True" />
+																<field type="Skip" name="" definition="2" />
+																<field type="ShortBlockIndex1" name="phantom" isReadonly="True" definition="phantoms_block" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Real" name="radius" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation i" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation j" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation k" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="translation" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</spheres_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="pill shapes">
+												<block name="pills_block" maxCount="1024" display="pills_block" flags="0" maxIdentifer="k_maximum_shapes_per_physics_model" version="1">
+													<versions>
+														<pills_block_fields size="80" sizeIdentifer="sizeof(s_physics_model_pill)" alignment="4" fieldCount="20">
+															<fields>
+																<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+																<field type="ShortBlockIndex1" name="material" isReadonly="True" definition="materials_block" />
+																<field type="WordFlags" name="flags">
+																	<definition count="1">
+																		<entry>unused</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="relative mass scale" />
+																<field type="RealFraction" name="friction" />
+																<field type="RealFraction" name="restitution" />
+																<field type="Real" name="volume " isReadonly="True" />
+																<field type="Real" name="mass" isReadonly="True" />
+																<field type="Skip" name="" definition="2" />
+																<field type="ShortBlockIndex1" name="phantom" isReadonly="True" definition="phantoms_block" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Real" name="radius" isReadonly="True" />
+																<field type="RealVector3D" name="bottom" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="top" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</pills_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="sphere shapes">
+												<block name="spheres_block" maxCount="1024" display="spheres_block" flags="0" maxIdentifer="k_maximum_shapes_per_physics_model" version="1">
+													<versions>
+														<spheres_block_fields size="128" sizeIdentifer="sizeof(s_physics_model_sphere)" alignment="4" fieldCount="29">
+															<fields>
+																<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+																<field type="ShortBlockIndex1" name="material" isReadonly="True" definition="materials_block" />
+																<field type="WordFlags" name="flags">
+																	<definition count="1">
+																		<entry>unused</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="relative mass scale" />
+																<field type="RealFraction" name="friction" />
+																<field type="RealFraction" name="restitution" />
+																<field type="Real" name="volume " isReadonly="True" />
+																<field type="Real" name="mass" isReadonly="True" />
+																<field type="Skip" name="" definition="2" />
+																<field type="ShortBlockIndex1" name="phantom" isReadonly="True" definition="phantoms_block" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Real" name="radius" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation i" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation j" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation k" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="translation" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</spheres_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Explanation" name="ground" definition="" />
+											<field type="Struct" name="ground physics">
+												<struct name="character_physics_ground_struct" groupTag="chgr" display="character physics ground">
+													<block name="character_physics_ground_struct_block" maxCount="1" display="character_physics_ground_struct" flags="0" maxIdentifer="1" version="1">
+														<versions>
+															<character_physics_ground_struct_fields size="48" sizeIdentifer="sizeof(s_character_physics_ground_definition)" fieldCount="12">
+																<fields>
+																	<field type="Angle" name="maximum slope angle" units="degrees" />
+																	<field type="Angle" name="downhill falloff angle" units="degrees" />
+																	<field type="Angle" name="downhill cutoff angle" units="degrees" />
+																	<field type="Angle" name="uphill falloff angle" units="degrees" />
+																	<field type="Angle" name="uphill cutoff angle" units="degrees" />
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Real" name="downhill velocity scale" />
+																	<field type="Real" name="uphill velocity scale" />
+																	<field type="UselessPad" name="" definition="8" />
+																	<field type="Pad" name="" definition="20" />
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Terminator" />
+																</fields>
+															</character_physics_ground_struct_fields>
+														</versions>
+													</block>
+												</struct>
+											</field>
+											<field type="Explanation" name="flying" definition="" />
+											<field type="Struct" name="flying physics">
+												<struct name="character_physics_flying_struct" groupTag="chfl" display="character physics ground">
+													<block name="character_physics_flying_struct_block" maxCount="1" display="character_physics_flying_struct" flags="0" maxIdentifer="1" version="1">
+														<versions>
+															<character_physics_flying_struct_fields size="44" sizeIdentifer="sizeof(s_character_physics_flying_definition)" fieldCount="13">
+																<fields>
+																	<field type="Angle" name="bank angle" help="angle at which we bank left/right when sidestepping or turning while moving forwards" units="degrees" />
+																	<field type="Real" name="bank apply time" help="time it takes us to apply a bank" units="seconds" />
+																	<field type="Real" name="bank decay time" help="time it takes us to recover from a bank" units="seconds" />
+																	<field type="Real" name="pitch ratio" help="amount that we pitch up/down when moving up or down" />
+																	<field type="Real" name="max velocity" help="max velocity when not crouching" units="world units per second" />
+																	<field type="Real" name="max sidestep velocity" help="max sideways or up/down velocity when not crouching" units="world units per second" />
+																	<field type="Real" name="acceleration" units="world units per second squared" />
+																	<field type="Real" name="deceleration" units="world units per second squared" />
+																	<field type="Angle" name="angular velocity maximum" help="turn rate" units="degrees per second" />
+																	<field type="Angle" name="angular acceleration maximum" help="turn acceleration rate" units="degrees per second squared" />
+																	<field type="Real" name="crouch velocity modifier" help="how much slower we fly if crouching (zero = same speed)" units="[0,1]" />
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Terminator" />
+																</fields>
+															</character_physics_flying_struct_fields>
+														</versions>
+													</block>
+												</struct>
+											</field>
+											<field type="Explanation" name="dead" definition="" />
+											<field type="Struct" name="dead physics">
+												<struct name="character_physics_dead_struct" groupTag="chdd" display="character physics dead">
+													<block name="character_physics_dead_struct_block" maxCount="1" display="character_physics_dead_struct" flags="0" maxIdentifer="1" version="1">
+														<versions>
+															<character_physics_dead_struct_fields size="0" sizeIdentifer="k_character_physics_dead_size" fieldCount="2">
+																<fields>
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Terminator" />
+																</fields>
+															</character_physics_dead_struct_fields>
+														</versions>
+													</block>
+												</struct>
+											</field>
+											<field type="Explanation" name="sentinel" definition="" />
+											<field type="Struct" name="sentinel physics">
+												<struct name="character_physics_sentinel_struct" groupTag="chsn" display="character physics sentinel">
+													<block name="character_physics_sentinel_struct_block" maxCount="1" display="character_physics_sentinel_struct" flags="0" maxIdentifer="1" version="1">
+														<versions>
+															<character_physics_sentinel_struct_fields size="0" sizeIdentifer="k_character_physics_sentinel_size" fieldCount="2">
+																<fields>
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Terminator" />
+																</fields>
+															</character_physics_sentinel_struct_fields>
+														</versions>
+													</block>
+												</struct>
+											</field>
+											<field type="Terminator" />
+										</fields>
+									</character_physics_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Block" name="contact points" help="these are the points where the biped touches the ground">
+						<block name="contact_point_block" maxCount="3" display="contact_point_block" flags="0" maxIdentifer="k_contact_point_count" procFormat="True" version="1">
+							<versions>
+								<contact_point_block_fields size="4" sizeIdentifer="sizeof(struct biped_contact_point)" fieldCount="3">
+									<fields>
+										<field type="UselessPad" name="" definition="32" />
+										<field type="OldStringId" name="marker name" isBlockName="True" />
+										<field type="Terminator" />
+									</fields>
+								</contact_point_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="TagReference" name="reanimation character" help="when the flood reanimate this guy, he turns into a ...">
+						<definition flags="0" groupTag="char" />
+					</field>
+					<field type="TagReference" name="death spawn character" help="when I die, out of the ashes of my death crawls a ...">
+						<definition flags="0" groupTag="char" />
+					</field>
+					<field type="ShortInteger" name="death spawn count" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Terminator" />
+				</fields>
+			</biped_definition_tags_v2>
+		</versions>
+	</block>
+</tagGroup>

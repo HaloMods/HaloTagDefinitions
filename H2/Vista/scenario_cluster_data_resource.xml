@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="scenario_cluster_data_resource" groupTag="clu*" groupTagParent="????" version="1" flags="56">
+	<block name="scenario_cluster_data_resource_block" maxCount="1" display="scenario_cluster_data_resource" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<scenario_cluster_data_resource_block_fields size="60" sizeIdentifer="sizeof(s_scenario_cluster_data_resource)" fieldCount="6">
+				<fields>
+					<field type="Block" name="Cluster Data">
+						<block name="scenario_cluster_data_block" maxCount="16" display="scenario_cluster_data_block" flags="0" maxIdentifer="MAXIMUM_STRUCTURE_BSPS_PER_SCENARIO" version="1">
+							<versions>
+								<scenario_cluster_data_block_fields size="80" sizeIdentifer="sizeof(s_scenario_cluster_data)" fieldCount="8">
+									<fields>
+										<field type="TagReference" name="BSP" isReadonly="True">
+											<definition flags="2" groupTag="sbsp" />
+										</field>
+										<field type="Block" name="Background Sounds" isReadonly="True">
+											<block name="scenario_cluster_background_sounds_block" maxCount="512" display="scenario_cluster_background_sounds_block" flags="0" maxIdentifer="MAXIMUM_CLUSTERS_PER_STRUCTURE" version="1">
+												<versions>
+													<scenario_cluster_background_sounds_block_fields size="4" sizeIdentifer="sizeof(s_scenario_cluster_property)" fieldCount="3">
+														<fields>
+															<field type="ShortBlockIndex1" name="Type" isBlockName="True" definition="structure_bsp_background_sound_palette_block" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</scenario_cluster_background_sounds_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="Sound Environments" isReadonly="True">
+											<block name="scenario_cluster_sound_environments_block" maxCount="512" display="scenario_cluster_sound_environments_block" flags="0" maxIdentifer="MAXIMUM_CLUSTERS_PER_STRUCTURE" version="1">
+												<versions>
+													<scenario_cluster_sound_environments_block_fields size="4" sizeIdentifer="sizeof(s_scenario_cluster_property)" fieldCount="3">
+														<fields>
+															<field type="ShortBlockIndex1" name="Type" isBlockName="True" definition="structure_bsp_sound_environment_palette_block" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</scenario_cluster_sound_environments_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="LongInteger" name="BSP Checksum" isReadonly="True" />
+										<field type="Block" name="Cluster Centroids" isReadonly="True">
+											<block name="scenario_cluster_points_block" maxCount="512" display="scenario_cluster_points_block" flags="0" maxIdentifer="MAXIMUM_CLUSTERS_PER_STRUCTURE" version="1">
+												<versions>
+													<scenario_cluster_points_block_fields size="12" sizeIdentifer="sizeof(real_point3d)" fieldCount="2">
+														<fields>
+															<field type="RealPoint3D" name="Centroid" isReadonly="True" />
+															<field type="Terminator" />
+														</fields>
+													</scenario_cluster_points_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="Weather Properties" isReadonly="True">
+											<block name="scenario_cluster_weather_properties_block" maxCount="512" display="scenario_cluster_weather_properties_block" flags="0" maxIdentifer="MAXIMUM_CLUSTERS_PER_STRUCTURE" version="1">
+												<versions>
+													<scenario_cluster_weather_properties_block_fields size="4" sizeIdentifer="sizeof(s_scenario_cluster_property)" fieldCount="3">
+														<fields>
+															<field type="ShortBlockIndex1" name="Type" isBlockName="True" definition="structure_bsp_weather_palette_block" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</scenario_cluster_weather_properties_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="Atmospheric Fog Properties" isReadonly="True">
+											<block name="scenario_cluster_atmospheric_fog_properties_block" maxCount="512" display="scenario_cluster_atmospheric_fog_properties_block" flags="0" maxIdentifer="MAXIMUM_CLUSTERS_PER_STRUCTURE" version="1">
+												<versions>
+													<scenario_cluster_atmospheric_fog_properties_block_fields size="4" sizeIdentifer="sizeof(s_scenario_cluster_property)" fieldCount="3">
+														<fields>
+															<field type="ShortBlockIndex1" name="Type" isBlockName="True" definition="scenario_atmospheric_fog_palette" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</scenario_cluster_atmospheric_fog_properties_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_cluster_data_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Background Sound Palette">
+						<block name="structure_bsp_background_sound_palette_block" maxCount="64" display="structure_bsp_background_sound_palette_block" flags="0" maxIdentifer="k_maximum_cluster_sound_palette_entries_per_structure" version="1">
+							<versions>
+								<structure_bsp_background_sound_palette_block_fields size="116" sizeIdentifer="sizeof(struct structure_background_sound_palette_entry)" fieldCount="12">
+									<fields>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="TagReference" name="Background Sound">
+											<definition flags="4" groupTag="lsnd" />
+										</field>
+										<field type="TagReference" name="Inside Cluster Sound" help="Play only when player is inside cluster.">
+											<definition flags="4" groupTag="lsnd" />
+										</field>
+										<field type="Pad" name="" definition="20" />
+										<field type="Real" name="Cutoff Distance" />
+										<field type="LongFlags" name="Scale Flags">
+											<definition count="4">
+												<entry>Override Default Scale</entry>
+												<entry>Use Adjacent Cluster as Portal Scale</entry>
+												<entry>Use Adjacent Cluster as Exterior Scale</entry>
+												<entry>Scale with Weather Intensity</entry>
+											</definition>
+										</field>
+										<field type="RealFraction" name="Interior Scale" />
+										<field type="RealFraction" name="Portal Scale" />
+										<field type="RealFraction" name="Exterior Scale" />
+										<field type="Real" name="Interpolation Speed" units="1/sec" />
+										<field type="Pad" name="" definition="8" />
+										<field type="Terminator" />
+									</fields>
+								</structure_bsp_background_sound_palette_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Sound Environment Palette">
+						<block name="structure_bsp_sound_environment_palette_block" maxCount="64" display="structure_bsp_sound_environment_palette_block" flags="0" maxIdentifer="k_maximum_cluster_sound_palette_entries_per_structure" version="1">
+							<versions>
+								<structure_bsp_sound_environment_palette_block_fields size="80" sizeIdentifer="sizeof(struct structure_sound_environment_palette_entry)" fieldCount="6">
+									<fields>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="TagReference" name="Sound Environment">
+											<definition flags="0" groupTag="snde" />
+										</field>
+										<field type="Real" name="Cutoff Distance" />
+										<field type="Real" name="Interpolation Speed" units="1/sec" />
+										<field type="Pad" name="" definition="24" />
+										<field type="Terminator" />
+									</fields>
+								</structure_bsp_sound_environment_palette_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Weather Palette">
+						<block name="structure_bsp_weather_palette_block" maxCount="32" display="structure_bsp_weather_palette_block" flags="0" maxIdentifer="MAXIMUM_WEATHER_PALETTE_ENTRIES_PER_STRUCTURE" version="1">
+							<versions>
+								<structure_bsp_weather_palette_block_fields size="152" sizeIdentifer="sizeof(struct structure_weather_palette_entry)" fieldCount="11">
+									<fields>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="TagReference" name="Weather System">
+											<definition flags="0" groupTag="weat" />
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="32" />
+										<field type="TagReference" name="Wind">
+											<definition flags="0" groupTag="wind" />
+										</field>
+										<field type="RealVector3D" name="Wind Direction" />
+										<field type="Real" name="Wind Magnitude" />
+										<field type="Pad" name="" definition="4" />
+										<field type="String" name="Wind Scale Function" />
+										<field type="Terminator" />
+									</fields>
+								</structure_bsp_weather_palette_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Atmospheric Fog Palette">
+						<block name="scenario_atmospheric_fog_palette" maxCount="127" display="scenario_atmospheric_fog_palette" flags="0" maxIdentifer="MAXIMUM_ATMOSPHERIC_FOG_PALETTE_ENTRIES_PER_SCENARIO" version="1">
+							<versions>
+								<scenario_atmospheric_fog_palette_fields size="256" sizeIdentifer="sizeof(s_scenario_atmospheric_fog_palette_entry)" fieldCount="38">
+									<fields>
+										<field type="StringId" name="Name" isBlockName="True" />
+										<field type="Explanation" name="ATMOSPHERIC FOG" definition="" />
+										<field type="RealRgbColor" name="Color" />
+										<field type="Real" name="Spread Distance" help="How far fog spreads into adjacent clusters" units=" 0 defaults to 1." />
+										<field type="Pad" name="" definition="4" />
+										<field type="RealFraction" name="Maximum Density" help="Fog density clamps to this value." units="[0,1]" />
+										<field type="Real" name="Start Distance" help="Before this distance, there is no fog." units="World Units" />
+										<field type="Real" name="Opaque Distance" help="Fog becomes opaque (maximum density) at this distance from viewer." units="World Units" />
+										<field type="Explanation" name="SECONDARY FOG" definition="" />
+										<field type="RealRgbColor" name="Color" />
+										<field type="Pad" name="" definition="4" />
+										<field type="RealFraction" name="Maximum Density" help="Fog density clamps to this value." units="[0,1]" />
+										<field type="Real" name="Start Distance" help="Before this distance, there is no fog." units="World Units" />
+										<field type="Real" name="Opaque Distance" help="Fog becomes opaque (maximum density) at this distance from viewer." units="World Units" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Explanation" name="PLANAR FOG OVERRIDE" definition="Planar fog, if present, is interpolated toward these values." />
+										<field type="RealRgbColor" name="Planar Color" />
+										<field type="RealFraction" name="Planar Max Density" units="[0,1]" />
+										<field type="RealFraction" name="Planar Override Amount" units="[0,1]" />
+										<field type="Real" name="Planar Min Distance Bias" help="Don't ask." units="World Units" />
+										<field type="Pad" name="" definition="44" />
+										<field type="Explanation" name="PATCHY FOG" definition="" />
+										<field type="RealRgbColor" name="Patchy Color" />
+										<field type="Pad" name="" definition="12" />
+										<field type="FractionBounds" name="Patchy Density" units="[0,1]" />
+										<field type="RealBounds" name="Patchy Distance" units="World Units" />
+										<field type="Pad" name="" definition="32" />
+										<field type="TagReference" name="Patchy Fog">
+											<definition flags="0" groupTag="fpch" />
+										</field>
+										<field type="Block" name="Mixers">
+											<block name="scenario_atmospheric_fog_mixer_block" maxCount="2" display="mixers" flags="0" maxIdentifer="k_maximum_mixers_per_scenario_atmospheric_fog_palette_entry" version="1">
+												<versions>
+													<scenario_atmospheric_fog_mixer_block_fields size="16" sizeIdentifer="sizeof(s_scenario_atmospheric_fog_mixer)" fieldCount="6">
+														<fields>
+															<field type="Pad" name="" definition="4" />
+															<field type="StringId" name="Atmospheric Fog Source" units="From Scenario Atmospheric Fog Palette" />
+															<field type="StringId" name="Interpolator" units="From Scenario Interpolators" />
+															<field type="Skip" name="" definition="2" />
+															<field type="Skip" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</scenario_atmospheric_fog_mixer_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="BLOOM OVERRIDE" definition="" />
+										<field type="RealFraction" name="Amount" units="[0,1]" />
+										<field type="RealFraction" name="Threshold" units="[0,1]" />
+										<field type="RealFraction" name="Brightness" units="[0,1]" />
+										<field type="Real" name="Gamma Power" />
+										<field type="Explanation" name="CAMERA IMMERSION OVERRIDE" definition="" />
+										<field type="WordFlags" name="Camera Immersion Flags">
+											<definition count="5">
+												<entry>Disable Atmospheric Fog</entry>
+												<entry>Disable Secondary Fog</entry>
+												<entry>Disable Planar Fog</entry>
+												<entry>Invert Planar Fog Priorities</entry>
+												<entry>Disable Water</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_atmospheric_fog_palette_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</scenario_cluster_data_resource_block_fields>
+		</versions>
+	</block>
+</tagGroup>

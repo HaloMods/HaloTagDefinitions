@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="multiplayer_scenario_description" groupTag="mply" groupTagParent="????" version="1" flags="0">
+	<block name="multiplayer_scenario_description_block" maxCount="1" display="multiplayer_scenario_description" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<multiplayer_scenario_description_block_fields size="12" sizeIdentifer="sizeof(multiplayer_scenario_description_definition)" fieldCount="2">
+				<fields>
+					<field type="Block" name="multiplayer scenarios">
+						<block name="scenario_description_block" maxCount="32" display="scenario_description_block" flags="0" maxIdentifer="MAXIMUM_NUMBER_OF_MULTIPLAYER_SCENARIOS" version="1">
+							<versions>
+								<scenario_description_block_fields size="68" sizeIdentifer="sizeof(multiplayer_scenario_description_item)" fieldCount="6">
+									<fields>
+										<field type="Explanation" name="net map info" definition="these provide the info required by the UI to load a net map" />
+										<field type="TagReference" name="descriptive bitmap">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="displayed map name">
+											<definition flags="0" groupTag="unic" />
+										</field>
+										<field type="String" name="scenario tag directory path" help="this is the path to the directory containing the scenario tag file of the same name" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_description_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</multiplayer_scenario_description_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="shader_light_response" groupTag="slit" groupTagParent="????" version="2" flags="9" procPostprocess="True">
+	<block name="shader_light_response_block" maxCount="1" display="shader_light_response" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<shader_light_response_block_fields size="28" sizeIdentifer="sizeof(s_shader_light_response_definition)" fieldCount="5">
+				<fields>
+					<field type="Block" name="categories">
+						<block name="shader_template_category_block" maxCount="16" display="category" flags="0" maxIdentifer="k_maximum_categories_per_shader_template" version="1">
+							<versions>
+								<shader_template_category_block_fields size="16" sizeIdentifer="sizeof(s_shader_template_category)" fieldCount="3">
+									<fields>
+										<field type="StringId" name="Name" isBlockName="True" />
+										<field type="Block" name="Parameters">
+											<block name="shader_template_parameter_block" maxCount="64" display="parameter" flags="0" maxIdentifer="k_maximum_parameters_per_shader_template_category" version="1">
+												<versions>
+													<shader_template_parameter_block_fields size="72" sizeIdentifer="sizeof(s_shader_template_parameter)" fieldCount="13">
+														<fields>
+															<field type="StringId" name="Name" isBlockName="True" />
+															<field type="Data" name="Explanation">
+																<definition name="shader_text_definition" maxSize="65535" alignment="0" flags="6" maxIdentifer="UNSIGNED_SHORT_MAX" />
+															</field>
+															<field type="Enum" name="Type">
+																<definition count="4">
+																	<entry>Bitmap</entry>
+																	<entry>Value</entry>
+																	<entry>Color</entry>
+																	<entry>Switch</entry>
+																</definition>
+															</field>
+															<field type="WordFlags" name="Flags">
+																<definition count="2">
+																	<entry>Animated</entry>
+																	<entry>Hide Bitmap Reference</entry>
+																</definition>
+															</field>
+															<field type="TagReference" name="Default Bitmap">
+																<definition flags="0" groupTag="bitm" />
+															</field>
+															<field type="Real" name="Default Const Value" />
+															<field type="RealRgbColor" name="Default Const Color" />
+															<field type="Enum" name="Bitmap Type">
+																<definition count="3">
+																	<entry>2D</entry>
+																	<entry>3D</entry>
+																	<entry>Cube Map</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="WordFlags" name="Bitmap Animation Flags">
+																<definition count="5">
+																	<entry>Scale Uniform</entry>
+																	<entry>Scale</entry>
+																	<entry>Translation</entry>
+																	<entry>Rotation</entry>
+																	<entry>Index</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Real" name="Bitmap Scale" />
+															<field type="Terminator" />
+														</fields>
+													</shader_template_parameter_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</shader_template_category_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="shader LODs">
+						<block name="shader_template_level_of_detail_block" maxCount="8" display="shader_template_level_of_detail_block" flags="0" maxIdentifer="k_shader_level_of_detail_count" version="1">
+							<versions>
+								<shader_template_level_of_detail_block_fields size="16" sizeIdentifer="sizeof(s_shader_template_level_of_detail)" fieldCount="3">
+									<fields>
+										<field type="Real" name="Projected Diameter" units="pixels" />
+										<field type="Block" name="Pass">
+											<block name="shader_template_pass_reference_block" maxCount="16" display="pass" flags="0" maxIdentifer="k_maximum_pass_references_per_shader_template" version="1">
+												<versions>
+													<shader_template_pass_reference_block_fields size="32" sizeIdentifer="sizeof(s_shader_template_pass_reference)" fieldCount="5">
+														<fields>
+															<field type="Enum" name="Layer">
+																<definition count="19">
+																	<entry>texaccum</entry>
+																	<entry>Environment Map</entry>
+																	<entry>Self-Illumination</entry>
+																	<entry>Overlay</entry>
+																	<entry>Transparent</entry>
+																	<entry>Lightmap (Indirect)</entry>
+																	<entry>Diffuse</entry>
+																	<entry>Specular</entry>
+																	<entry>Shadow Generate</entry>
+																	<entry>Shadow Apply</entry>
+																	<entry>Boom</entry>
+																	<entry>Fog</entry>
+																	<entry>Sh Prt</entry>
+																	<entry>Active Camo</entry>
+																	<entry>Water Edge Blend</entry>
+																	<entry>Decal</entry>
+																	<entry>Active Camo Stencil Modulate</entry>
+																	<entry>Hologram</entry>
+																	<entry>Light Albedo</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="TagReference" name="Pass" isBlockName="True">
+																<definition flags="0" groupTag="spas" />
+															</field>
+															<field type="Pad" name="" definition="12" />
+															<field type="Terminator" />
+														</fields>
+													</shader_template_pass_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</shader_template_level_of_detail_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Terminator" />
+				</fields>
+			</shader_light_response_block_fields>
+		</versions>
+	</block>
+</tagGroup>

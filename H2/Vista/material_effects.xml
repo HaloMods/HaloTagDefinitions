@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="material_effects" groupTag="foot" groupTagParent="????" version="1" flags="8" procPostprocess="True">
+	<block name="material_effects_block" maxCount="1" display="material_effects" flags="0" maxIdentifer="1" procPostprocess="True" version="2">
+		<versions>
+			<material_effects_tags_v1 size="140" sizeIdentifer="sizeof(struct s_material_effects_definition_v1)" fieldCount="3">
+				<fields>
+					<field type="Block" name="effects">
+						<block name="material_effect_block_v1" maxCount="14" display="material_effect_block_v1" flags="0" maxIdentifer="k_material_effect_v1_type_count" procFormat="True" version="1">
+							<versions>
+								<material_effect_block_v1_fields size="28" sizeIdentifer="sizeof(s_material_effect_v1)" fieldCount="3">
+									<fields>
+										<field type="Block" name="materials">
+											<block name="material_effect_material_block_old_v1" maxCount="33" display="material_effect_material_block_old_v1" flags="0" maxIdentifer="NUMBER_OF_MATERIAL_TYPES" version="1">
+												<versions>
+													<material_effect_material_block_old_v1_fields size="48" sizeIdentifer="sizeof(s_material_effect_material_old_v1)" fieldCount="8">
+														<fields>
+															<field type="TagReference" name="effect">
+																<definition flags="0" groupTag="effe" />
+															</field>
+															<field type="TagReference" name="sound">
+																<definition flags="4">
+																	<groupTags>
+																		<groupTag>snd!</groupTag>
+																		<groupTag>lsnd</groupTag>
+																	</groupTags>
+																</definition>
+															</field>
+															<field type="StringId" name="material name" attributeGroup="sted" hasStringEditor="true" />
+															<field type="Skip" name="" definition="4" />
+															<field type="CharEnum" name="sweetener mode">
+																<definition count="3">
+																	<entry>sweetener default</entry>
+																	<entry>sweetener enabled</entry>
+																	<entry>sweetener disabled</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="3" />
+															<field type="Pad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</material_effect_material_block_old_v1_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="16" />
+										<field type="Terminator" />
+									</fields>
+								</material_effect_block_v1_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="128" />
+					<field type="Terminator" />
+				</fields>
+			</material_effects_tags_v1>
+			<material_effects_tags_v2 size="12" sizeIdentifer="sizeof(struct s_material_effects_definition)" fieldCount="3">
+				<fields>
+					<field type="Block" name="effects">
+						<block name="material_effect_block_v2" maxCount="21" display="material_effect_block_v2" flags="0" maxIdentifer="k_material_effect_type_count" procFormat="True" version="1">
+							<versions>
+								<material_effect_block_v2_fields size="36" sizeIdentifer="sizeof(s_material_effect)" fieldCount="4">
+									<fields>
+										<field type="Block" name="old materials (DO NOT USE)">
+											<block name="old_material_effect_material_block" maxCount="33" display="old_material_effect_material_block" flags="0" maxIdentifer="NUMBER_OF_MATERIAL_TYPES" version="1">
+												<versions>
+													<old_material_effect_material_block_fields size="44" sizeIdentifer="sizeof(s_material_effect_material_old)" fieldCount="8">
+														<fields>
+															<field type="TagReference" name="effect">
+																<definition flags="0" groupTag="effe" />
+															</field>
+															<field type="TagReference" name="sound">
+																<definition flags="4">
+																	<groupTags>
+																		<groupTag>snd!</groupTag>
+																		<groupTag>lsnd</groupTag>
+																	</groupTags>
+																</definition>
+															</field>
+															<field type="StringId" name="material name" attributeGroup="sted" isBlockName="True" hasStringEditor="true" />
+															<field type="Skip" name="" definition="4" />
+															<field type="CharEnum" name="sweetener mode">
+																<definition count="3">
+																	<entry>sweetener default</entry>
+																	<entry>sweetener enabled</entry>
+																	<entry>sweetener disabled</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="3" />
+															<field type="UselessPad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</old_material_effect_material_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="sounds">
+											<block name="material_effect_material_block" maxCount="500" display="material_effect_material_block" flags="0" maxIdentifer="k_maximum_material_effect_blocks" version="2">
+												<versions>
+													<material_effect_material_fields_v1 size="24" sizeIdentifer="sizeof(s_material_effect_material_v1)" fieldCount="6">
+														<fields>
+															<field type="TagReference" name="tag (effect or sound)">
+																<definition flags="4">
+																	<groupTags>
+																		<groupTag>snd!</groupTag>
+																		<groupTag>lsnd</groupTag>
+																		<groupTag>effe</groupTag>
+																	</groupTags>
+																</definition>
+															</field>
+															<field type="StringId" name="material name" attributeGroup="sted" isBlockName="True" hasStringEditor="true" />
+															<field type="Skip" name="" definition="2" />
+															<field type="CharEnum" name="sweetener mode">
+																<definition count="3">
+																	<entry>sweetener default</entry>
+																	<entry>sweetener enabled</entry>
+																	<entry>sweetener disabled</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="1" />
+															<field type="Terminator" />
+														</fields>
+													</material_effect_material_fields_v1>
+													<material_effect_material_fields_v2 size="40" sizeIdentifer="sizeof(s_material_effect_material)" fieldCount="7">
+														<fields>
+															<field type="TagReference" name="tag (effect or sound)">
+																<definition flags="4">
+																	<groupTags>
+																		<groupTag>snd!</groupTag>
+																		<groupTag>lsnd</groupTag>
+																		<groupTag>effe</groupTag>
+																	</groupTags>
+																</definition>
+															</field>
+															<field type="TagReference" name="secondary tag (effect or sound)">
+																<definition flags="4">
+																	<groupTags>
+																		<groupTag>snd!</groupTag>
+																		<groupTag>lsnd</groupTag>
+																		<groupTag>effe</groupTag>
+																	</groupTags>
+																</definition>
+															</field>
+															<field type="StringId" name="material name" attributeGroup="sted" isBlockName="True" hasStringEditor="true" />
+															<field type="Skip" name="" definition="2" />
+															<field type="CharEnum" name="sweetener mode">
+																<definition count="3">
+																	<entry>sweetener default</entry>
+																	<entry>sweetener enabled</entry>
+																	<entry>sweetener disabled</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="1" />
+															<field type="Terminator" />
+														</fields>
+													</material_effect_material_fields_v2>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="effects">
+											<block name="material_effect_material_block" maxCount="500" display="material_effect_material_block" flags="0" maxIdentifer="k_maximum_material_effect_blocks" version="2">
+												<versions>
+													<material_effect_material_fields_v1 size="24" sizeIdentifer="sizeof(s_material_effect_material_v1)" fieldCount="6">
+														<fields>
+															<field type="TagReference" name="tag (effect or sound)">
+																<definition flags="4">
+																	<groupTags>
+																		<groupTag>snd!</groupTag>
+																		<groupTag>lsnd</groupTag>
+																		<groupTag>effe</groupTag>
+																	</groupTags>
+																</definition>
+															</field>
+															<field type="StringId" name="material name" attributeGroup="sted" isBlockName="True" hasStringEditor="true" />
+															<field type="Skip" name="" definition="2" />
+															<field type="CharEnum" name="sweetener mode">
+																<definition count="3">
+																	<entry>sweetener default</entry>
+																	<entry>sweetener enabled</entry>
+																	<entry>sweetener disabled</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="1" />
+															<field type="Terminator" />
+														</fields>
+													</material_effect_material_fields_v1>
+													<material_effect_material_fields_v2 size="40" sizeIdentifer="sizeof(s_material_effect_material)" fieldCount="7">
+														<fields>
+															<field type="TagReference" name="tag (effect or sound)">
+																<definition flags="4">
+																	<groupTags>
+																		<groupTag>snd!</groupTag>
+																		<groupTag>lsnd</groupTag>
+																		<groupTag>effe</groupTag>
+																	</groupTags>
+																</definition>
+															</field>
+															<field type="TagReference" name="secondary tag (effect or sound)">
+																<definition flags="4">
+																	<groupTags>
+																		<groupTag>snd!</groupTag>
+																		<groupTag>lsnd</groupTag>
+																		<groupTag>effe</groupTag>
+																	</groupTags>
+																</definition>
+															</field>
+															<field type="StringId" name="material name" attributeGroup="sted" isBlockName="True" hasStringEditor="true" />
+															<field type="Skip" name="" definition="2" />
+															<field type="CharEnum" name="sweetener mode">
+																<definition count="3">
+																	<entry>sweetener default</entry>
+																	<entry>sweetener enabled</entry>
+																	<entry>sweetener disabled</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="1" />
+															<field type="Terminator" />
+														</fields>
+													</material_effect_material_fields_v2>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</material_effect_block_v2_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="UselessPad" name="" definition="128" />
+					<field type="Terminator" />
+				</fields>
+			</material_effects_tags_v2>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="vertex_shader" groupTag="vrtx" groupTagParent="????" version="1" flags="8">
+	<block name="vertex_shader_block" maxCount="1" display="vertex_shader" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<vertex_shader_block_fields size="20" sizeIdentifer="sizeof(c_vertex_shader_definition)" fieldCount="5">
+				<fields>
+					<field type="Enum" name="platform">
+						<definition count="2">
+							<entry>pc</entry>
+							<entry>xbox</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Block" name="geometry classifications">
+						<block name="vertex_shader_classification_block" maxCount="12" display="classification" flags="0" maxIdentifer="c_vertex_shader_definition::k_vertex_shader_classification_count" procPostprocess="True" procFormat="True" version="1">
+							<versions>
+								<vertex_shader_classification_block_fields size="44" sizeIdentifer="sizeof(c_vertex_shader_classification)" fieldCount="4">
+									<fields>
+										<field type="Pad" name="" definition="4" />
+										<field type="Data" name="compiled shader">
+											<definition name="compiled_shader_block" maxSize="8192" alignment="0" flags="0" maxIdentifer="c_vertex_shader_classification::k_maximum_vertex_shader_size" />
+										</field>
+										<field type="Data" name="code">
+											<definition name="code_block" maxSize="65535" alignment="0" flags="6" maxIdentifer="UNSIGNED_SHORT_MAX" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</vertex_shader_classification_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="LongInteger" name="output swizzles" />
+					<field type="Terminator" />
+				</fields>
+			</vertex_shader_block_fields>
+		</versions>
+	</block>
+</tagGroup>

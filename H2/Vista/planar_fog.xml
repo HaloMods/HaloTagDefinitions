@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="planar_fog" groupTag="fog " groupTagParent="????" version="1" flags="8">
+	<block name="planar_fog_block" maxCount="1" display="planar_fog" flags="0" maxIdentifer="1" procPostprocess="True" version="1">
+		<versions>
+			<planar_fog_block_fields size="132" sizeIdentifer="sizeof(struct s_planar_fog_definition)" fieldCount="31">
+				<fields>
+					<field type="Explanation" name="PLANAR FOG" definition="Please don't use these flags unless you know what you're doing! Come talk to Bernie first." />
+					<field type="WordFlags" name="flags">
+						<definition count="6">
+							<entry>render only submerged geometry</entry>
+							<entry>extend infinitely while visible</entry>
+							<entry>don't floodfill</entry>
+							<entry>aggressive floodfill</entry>
+							<entry>do not render</entry>
+							<entry>do not render unless submerged</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="priority" />
+					<field type="StringId" name="global material name" attributeGroup="sted" hasStringEditor="true" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="72" />
+					<field type="Explanation" name="DENSITY" definition="" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="RealFraction" name="maximum density" help="planar fog density is clamped to this value" units="[0,1]" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Real" name="opaque distance" help="the fog becomes opaque (maximum density) at this distance from the viewer" units="world units" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Real" name="opaque depth" help="the fog becomes opaque at this distance below fog plane" units="world units" />
+					<field type="Explanation" name="DENSITY (ADVANCED CONTROLS)" definition="" />
+					<field type="RealBounds" name="atmospheric-planar depth" help="distances above fog plane where atmospheric fog supercedes planar fog and visa-versa" units="world units" />
+					<field type="Real" name="eye offset scale" help="negative numbers are bad, mmmkay?" units="[-1,1]" />
+					<field type="UselessPad" name="" definition="32" />
+					<field type="Explanation" name="COLOR" definition="" />
+					<field type="RealRgbColor" name="color" />
+					<field type="UselessPad" name="" definition="100" />
+					<field type="Block" name="patchy fog">
+						<block name="planar_fog_patchy_fog_block" maxCount="1" display="planar_fog_patchy_fog_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<planar_fog_patchy_fog_block_fields size="60" sizeIdentifer="sizeof(s_planar_fog_patchy_fog)" fieldCount="9">
+									<fields>
+										<field type="RealRgbColor" name="color" />
+										<field type="Pad" name="" definition="12" />
+										<field type="FractionBounds" name="density" units="[0,1]" />
+										<field type="RealBounds" name="distance" units="world units" />
+										<field type="UselessPad" name="" definition="16" />
+										<field type="RealFraction" name="min depth fraction" help="in range (0,max_depth) world units, where patchy fog starts fading in" units="[0,1]" />
+										<field type="UselessPad" name="" definition="12" />
+										<field type="TagReference" name="patchy fog">
+											<definition flags="0" groupTag="fpch" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</planar_fog_patchy_fog_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="SOUND" definition="" />
+					<field type="TagReference" name="background sound">
+						<definition flags="4" groupTag="lsnd" />
+					</field>
+					<field type="TagReference" name="sound environment">
+						<definition flags="0" groupTag="snde" />
+					</field>
+					<field type="Real" name="environment damping factor" help="scales the surrounding background sound by this much" />
+					<field type="Real" name="background sound gain" help="scale for fog background sound" />
+					<field type="TagReference" name="enter sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="TagReference" name="exit sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="UselessPad" name="" definition="80" />
+					<field type="Terminator" />
+				</fields>
+			</planar_fog_block_fields>
+		</versions>
+	</block>
+</tagGroup>

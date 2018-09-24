@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="light" groupTag="ligh" groupTagParent="????" version="4" flags="8" procPostprocess="True">
+	<block name="light_block" maxCount="1" display="light" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<light_block_fields size="272" sizeIdentifer="sizeof(struct light_definition)" fieldCount="79">
+				<fields>
+					<field type="LongFlags" name="flags">
+						<definition count="23">
+							<entry>no illumination#don't cast any per-pixel dynamic light</entry>
+							<entry>no specular#don't cast any specular highlights</entry>
+							<entry>force cast environment shadows through portals</entry>
+							<entry>no shadow#don't cast any stencil shadows</entry>
+							<entry>force frustum visibility on small light</entry>
+							<entry>only render in first person</entry>
+							<entry>only render in third person</entry>
+							<entry>don't fade when invisible?#don't fade out this light when under active-camouflage</entry>
+							<entry>multiplayer override#don't turn off in multiplayer</entry>
+							<entry>animated gel</entry>
+							<entry>only in dynamic envmap?#only draw this light in dynamic reflection maps</entry>
+							<entry>ignore parent object#don't illuminate or shadow the single object we are attached to</entry>
+							<entry>don't shadow parent#don't shadow the object we are attached to</entry>
+							<entry>ignore all parents#don't illuminate or shadow all the way up to our parent object</entry>
+							<entry>march milestone hack#don't click this unless you know what you're doing</entry>
+							<entry>force light inside world#every update will push light back inside the world</entry>
+							<entry>environment doesnt cast stencil shadows#environment in this light will not cast stencil shadows</entry>
+							<entry>objects don't cast stencil shadows#objects in this light will not cast stencil shadows</entry>
+							<entry>first person from camera</entry>
+							<entry>texture camera gel</entry>
+							<entry>light framerate killer</entry>
+							<entry>allowed in split screen</entry>
+							<entry>only on parent bipeds</entry>
+						</definition>
+					</field>
+					<field type="UselessPad" name="" definition="16" />
+					<field type="Explanation" name="SHAPE" definition="overall shape of the light" />
+					<field type="Enum" name="type">
+						<definition count="4">
+							<entry>sphere</entry>
+							<entry>orthogonal</entry>
+							<entry>projective</entry>
+							<entry>pyramid</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="RealBounds" name="size modifer" help="how the light's size changes with external scale" />
+					<field type="Real" name="shadow quality bias" help="larger positive numbers improve quality, larger negative numbers improve speed" />
+					<field type="Enum" name="shadow tap bias" help="the less taps you use, the faster the light (but edges can look worse)">
+						<definition count="3">
+							<entry>3 tap</entry>
+							<entry>UNUSED</entry>
+							<entry>1 tap</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="24" />
+					<field type="Explanation" name="SPHERE LIGHT" definition="default shape parameters for spherical lights" />
+					<field type="Real" name="radius" help="the radius at which illumination falls off to zero" units="world units" />
+					<field type="Real" name="specular radius" help="the radius at which specular highlights fall off to zero (if zero, same as maximum radius)" units="world units" />
+					<field type="UselessPad" name="" definition="32" />
+					<field type="Explanation" name="FRUSTUM LIGHT" definition="default shape parameters for frustum lights (orthogonal, projective or pyramid types)" />
+					<field type="Real" name="near width" help="width of the frustum light at its near plane" units="world units" />
+					<field type="Real" name="height stretch" help="how much the gel is stretched vertically (0.0 or 1.0 = aspect ratio same as gel)" />
+					<field type="Real" name="field of view" help="horizontal angle that the frustum light covers (0.0 = no spread, a parallel beam)" units="degrees" />
+					<field type="Real" name="falloff distance" help="distance from near plane to where the light falloff starts" />
+					<field type="Real" name="cutoff distance" help="distance from near plane to where illumination falls off to zero" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Explanation" name="COLOR" definition="" />
+					<field type="LongFlags" name="interpolation flags">
+						<definition count="2">
+							<entry>blend in hsv#blends colors in hsv rather than rgb space</entry>
+							<entry>...more colors#blends colors through more hues (goes the long way around the color wheel)</entry>
+						</definition>
+					</field>
+					<field type="RealBounds" name="bloom bounds" units="[0..2]" />
+					<field type="RealRgbColor" name="specular lower bound" />
+					<field type="RealRgbColor" name="specular upper bound" />
+					<field type="RealRgbColor" name="diffuse lower bound" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="RealRgbColor" name="diffuse upper bound" />
+					<field type="RealBounds" name="brightness bounds" units="[0..2]" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Explanation" name="GEL" definition="the gel map tints the light's illumination per-pixel" />
+					<field type="TagReference" name="gel map" help="must be a cubemap for spherical light and a 2d texture for frustum light">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Enum" name="specular mask">
+						<definition count="4">
+							<entry>default</entry>
+							<entry>none (no mask)</entry>
+							<entry>gel alpha</entry>
+							<entry>gel color</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Pad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="80" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="UselessPad" name="" definition="16" />
+					<field type="Explanation" name="FALLOFF" definition="" />
+					<field type="Enum" name="falloff function">
+						<definition count="4">
+							<entry>default</entry>
+							<entry>narrow</entry>
+							<entry>broad</entry>
+							<entry>very broad</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="diffuse contrast">
+						<definition count="4">
+							<entry>default (linear)</entry>
+							<entry>high</entry>
+							<entry>low</entry>
+							<entry>very low</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="specular contrast">
+						<definition count="4">
+							<entry>default (one)</entry>
+							<entry>high (linear)</entry>
+							<entry>low</entry>
+							<entry>very low</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="falloff geometry">
+						<definition count="3">
+							<entry>default</entry>
+							<entry>directional</entry>
+							<entry>spherical</entry>
+						</definition>
+					</field>
+					<field type="UselessPad" name="" definition="8" />
+					<field type="Explanation" name="LENS FLARE" definition="optional lens flare and light volume associated with this light" />
+					<field type="TagReference" name="lens flare">
+						<definition flags="0" groupTag="lens" />
+					</field>
+					<field type="Real" name="bounding radius" help="used to generate a bounding radius for lensflare-only lights" units="world units" />
+					<field type="TagReference" name="light volume">
+						<definition flags="0" groupTag="MGS2" />
+					</field>
+					<field type="UselessPad" name="" definition="8" />
+					<field type="Explanation" name="RADIOSITY" definition="how the light affects the lightmaps (ignored for dynamic lights)" />
+					<field type="Enum" name="default lightmap setting">
+						<definition count="3">
+							<entry>dynamic only</entry>
+							<entry>dynamic with lightmaps</entry>
+							<entry>lightmaps only</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="lightmap half life" />
+					<field type="Real" name="lightmap light scale" />
+					<field type="UselessPad" name="" definition="20" />
+					<field type="Explanation" name="EFFECT PARAMETERS" definition="if the light is created by an effect, it will animate itself as follows" />
+					<field type="Real" name="duration" help="the light will last this long when created by an effect" units="seconds" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Enum" name="falloff function" help="the scale of the light will diminish over time according to this function">
+						<definition count="8">
+							<entry>linear</entry>
+							<entry>late</entry>
+							<entry>very late</entry>
+							<entry>early</entry>
+							<entry>very early</entry>
+							<entry>cosine</entry>
+							<entry>zero</entry>
+							<entry>one</entry>
+						</definition>
+					</field>
+					<field type="UselessPad" name="" definition="8" />
+					<field type="Explanation" name="DISTANCE FADING PARAMETERS" definition="To fade the light's illumination and shadow casting abilities" />
+					<field type="Enum" name="illumination fade">
+						<definition count="5">
+							<entry>fade very far</entry>
+							<entry>fade far</entry>
+							<entry>fade medium</entry>
+							<entry>fade close</entry>
+							<entry>fade very close</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="shadow fade">
+						<definition count="5">
+							<entry>fade very far</entry>
+							<entry>fade far</entry>
+							<entry>fade medium</entry>
+							<entry>fade close</entry>
+							<entry>fade very close</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="specular fade">
+						<definition count="5">
+							<entry>fade very far</entry>
+							<entry>fade far</entry>
+							<entry>fade medium</entry>
+							<entry>fade close</entry>
+							<entry>fade very close</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="8" />
+					<field type="Explanation" name="ANIMATION PARAMETERS" definition="" />
+					<field type="LongFlags" name="flags">
+						<definition count="1">
+							<entry>synchronized</entry>
+						</definition>
+					</field>
+					<field type="Block" name="brightness animation">
+						<block name="light_brightness_animation_block" maxCount="1" display="brightness animation" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<light_brightness_animation_block_fields size="12" sizeIdentifer="sizeof(struct light_brightness_animation_parameters)" fieldCount="3">
+									<fields>
+										<field type="Custom" name="function" attributeGroup="fned" definition="&#x0;???" />
+										<field type="Struct" name="function">
+											<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+												<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+													<versions>
+														<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="CharInteger" name="Function Type" />
+																<field type="ByteFlags" name="Flags">
+																	<definition count="8">
+																		<entry>Range</entry>
+																		<entry>Unused 0</entry>
+																		<entry>Unused 1</entry>
+																		<entry>Unused 2</entry>
+																		<entry>Color Bit 0</entry>
+																		<entry>Color Bit 1</entry>
+																		<entry>Color Bit 2</entry>
+																		<entry>Color Bit 3</entry>
+																	</definition>
+																</field>
+																<field type="CharInteger" name="Function 1" />
+																<field type="CharInteger" name="Function 2" />
+																<field type="RgbColor" name="Color 0" />
+																<field type="RgbColor" name="Color 1" />
+																<field type="RgbColor" name="Color 2" />
+																<field type="RgbColor" name="Color 3" />
+																<field type="Block" name="Values">
+																	<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																		<versions>
+																			<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																				<fields>
+																					<field type="Real" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</real_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v1>
+														<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Block" name="data">
+																	<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																		<versions>
+																			<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																				<fields>
+																					<field type="CharInteger" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</byte_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v2>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</light_brightness_animation_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="color animation">
+						<block name="light_color_animation_block" maxCount="1" display="color animation" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<light_color_animation_block_fields size="12" sizeIdentifer="sizeof(struct light_color_animation_parameters)" fieldCount="3">
+									<fields>
+										<field type="Custom" name="function" attributeGroup="fned" definition="&#x0;???" />
+										<field type="Struct" name="function">
+											<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+												<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+													<versions>
+														<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="CharInteger" name="Function Type" />
+																<field type="ByteFlags" name="Flags">
+																	<definition count="8">
+																		<entry>Range</entry>
+																		<entry>Unused 0</entry>
+																		<entry>Unused 1</entry>
+																		<entry>Unused 2</entry>
+																		<entry>Color Bit 0</entry>
+																		<entry>Color Bit 1</entry>
+																		<entry>Color Bit 2</entry>
+																		<entry>Color Bit 3</entry>
+																	</definition>
+																</field>
+																<field type="CharInteger" name="Function 1" />
+																<field type="CharInteger" name="Function 2" />
+																<field type="RgbColor" name="Color 0" />
+																<field type="RgbColor" name="Color 1" />
+																<field type="RgbColor" name="Color 2" />
+																<field type="RgbColor" name="Color 3" />
+																<field type="Block" name="Values">
+																	<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																		<versions>
+																			<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																				<fields>
+																					<field type="Real" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</real_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v1>
+														<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Block" name="data">
+																	<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																		<versions>
+																			<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																				<fields>
+																					<field type="CharInteger" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</byte_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v2>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</light_color_animation_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="gel animation">
+						<block name="light_gel_animation_block" maxCount="1" display="gel animation" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<light_gel_animation_block_fields size="24" sizeIdentifer="sizeof(struct light_gel_animation_parameters)" fieldCount="5">
+									<fields>
+										<field type="Custom" name="dx" attributeGroup="fned" definition="&#x0;???" />
+										<field type="Struct" name="dx">
+											<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+												<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+													<versions>
+														<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="CharInteger" name="Function Type" />
+																<field type="ByteFlags" name="Flags">
+																	<definition count="8">
+																		<entry>Range</entry>
+																		<entry>Unused 0</entry>
+																		<entry>Unused 1</entry>
+																		<entry>Unused 2</entry>
+																		<entry>Color Bit 0</entry>
+																		<entry>Color Bit 1</entry>
+																		<entry>Color Bit 2</entry>
+																		<entry>Color Bit 3</entry>
+																	</definition>
+																</field>
+																<field type="CharInteger" name="Function 1" />
+																<field type="CharInteger" name="Function 2" />
+																<field type="RgbColor" name="Color 0" />
+																<field type="RgbColor" name="Color 1" />
+																<field type="RgbColor" name="Color 2" />
+																<field type="RgbColor" name="Color 3" />
+																<field type="Block" name="Values">
+																	<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																		<versions>
+																			<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																				<fields>
+																					<field type="Real" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</real_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v1>
+														<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Block" name="data">
+																	<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																		<versions>
+																			<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																				<fields>
+																					<field type="CharInteger" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</byte_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v2>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Custom" name="dy" attributeGroup="fned" definition="&#x0;???" />
+										<field type="Struct" name="dy">
+											<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+												<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+													<versions>
+														<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="CharInteger" name="Function Type" />
+																<field type="ByteFlags" name="Flags">
+																	<definition count="8">
+																		<entry>Range</entry>
+																		<entry>Unused 0</entry>
+																		<entry>Unused 1</entry>
+																		<entry>Unused 2</entry>
+																		<entry>Color Bit 0</entry>
+																		<entry>Color Bit 1</entry>
+																		<entry>Color Bit 2</entry>
+																		<entry>Color Bit 3</entry>
+																	</definition>
+																</field>
+																<field type="CharInteger" name="Function 1" />
+																<field type="CharInteger" name="Function 2" />
+																<field type="RgbColor" name="Color 0" />
+																<field type="RgbColor" name="Color 1" />
+																<field type="RgbColor" name="Color 2" />
+																<field type="RgbColor" name="Color 3" />
+																<field type="Block" name="Values">
+																	<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																		<versions>
+																			<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																				<fields>
+																					<field type="Real" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</real_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v1>
+														<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+															<fields>
+																<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Block" name="data">
+																	<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																		<versions>
+																			<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																				<fields>
+																					<field type="CharInteger" name="Value" />
+																					<field type="Terminator" />
+																				</fields>
+																			</byte_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="Terminator" />
+															</fields>
+														</function_definition_fields_v2>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</light_gel_animation_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="UselessPad" name="" definition="72" />
+					<field type="Explanation" name="SHADER" definition="" />
+					<field type="TagReference" name="shader">
+						<definition flags="0" groupTag="shad" />
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</light_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="light_volume" groupTag="MGS2" groupTagParent="????" version="1" flags="8">
+	<block name="light_volume_block" maxCount="1" display="light_volume" flags="0" maxIdentifer="1" procGenerateDefault="True" version="1">
+		<versions>
+			<light_volume_block_fields size="20" sizeIdentifer="sizeof(s_light_volume_definition)" fieldCount="7">
+				<fields>
+					<field type="Explanation" name="LIGHT VOLUME" definition="Light volumes are rendered as a sequence of glowy sprites, just like in Metal Gear Solid 2. Each instance of the light volume is rendered separately; this allows, for example, a narrow bright white volume to be overlaid on top of a fuzzy wide colored volume, or anything else you want!" />
+					<field type="UselessPad" name="" definition="64" />
+					<field type="Real" name="falloff distance from camera" units="world units" />
+					<field type="Real" name="cutoff distance from camera" units="world units" />
+					<field type="UselessPad" name="" definition="32" />
+					<field type="Block" name="volumes">
+						<block name="light_volume_volume_block" maxCount="16" display="volume" flags="0" maxIdentifer="k_maximum_volumes_per_light_volume_definition" procPostprocess="True" procGenerateDefault="True" version="1">
+							<versions>
+								<light_volume_volume_block_fields size="188" sizeIdentifer="sizeof(s_light_volume)" fieldCount="33">
+									<fields>
+										<field type="Explanation" name="VOLUME" definition="If no bitmap is selected, the default glow bitmap will be used. Sprite count controls how many sprites are used to render this volume. Using more sprites will result in a smoother and brighter effect, at a slight performance penalty. Don't touch the flags unless you know what you're doing (they should be off by default).&#xA;&#xA;Be careful with the 'fuzzy' flag! It should be used on very wide light volumes to make them blend smoothly into solid geometry rather than &quot;cutting&quot; into the zbuffer. Using this feature will make light volumes several times slower when they fill a large portion of the screen." />
+										<field type="LongFlags" name="flags">
+											<definition count="6">
+												<entry>force linear radius function</entry>
+												<entry>force linear offset</entry>
+												<entry>force differential evaluation</entry>
+												<entry>fuzzy</entry>
+												<entry>not scaled by event duration</entry>
+												<entry>scaled by marker</entry>
+											</definition>
+										</field>
+										<field type="UselessPad" name="" definition="16" />
+										<field type="TagReference" name="bitmap">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="LongInteger" name="sprite count" units="[4,256]" />
+										<field type="UselessPad" name="" definition="32" />
+										<field type="Explanation" name="OFFSET" definition="This function controls the offset along the projected forward axis of the light volume. The output range of this function is the distance in WORLD UNITS from the origin where the first and last sprite are rendered. The input to this function is the fractional value (from 0 to 1) along the projected axis. Using a transition function such as &quot;late&quot; will result in more sprites being bunched up towards the origin and spaced further apart near the end.&#xA;&#xA;Note that this and other functions in this tag have a range-input, which is controlled by the output of the FACING function below." />
+										<field type="Struct" name="offset function">
+											<struct name="scalar_function_struct" groupTag="SCFN">
+												<block name="scalar_function_struct_block" maxCount="1" display="scalar_function_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scalar_function_struct_fields size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="3">
+															<fields>
+																<field type="Custom" name="function" attributeGroup="fned" definition="&#x0;?&#xE;?" />
+																<field type="Struct" name="function">
+																	<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																		<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																			<versions>
+																				<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="CharInteger" name="Function Type" />
+																						<field type="ByteFlags" name="Flags">
+																							<definition count="8">
+																								<entry>Range</entry>
+																								<entry>Unused 0</entry>
+																								<entry>Unused 1</entry>
+																								<entry>Unused 2</entry>
+																								<entry>Color Bit 0</entry>
+																								<entry>Color Bit 1</entry>
+																								<entry>Color Bit 2</entry>
+																								<entry>Color Bit 3</entry>
+																							</definition>
+																						</field>
+																						<field type="CharInteger" name="Function 1" />
+																						<field type="CharInteger" name="Function 2" />
+																						<field type="RgbColor" name="Color 0" />
+																						<field type="RgbColor" name="Color 1" />
+																						<field type="RgbColor" name="Color 2" />
+																						<field type="RgbColor" name="Color 3" />
+																						<field type="Block" name="Values">
+																							<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																								<versions>
+																									<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																										<fields>
+																											<field type="Real" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</real_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v1>
+																				<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Block" name="data">
+																							<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																								<versions>
+																									<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																										<fields>
+																											<field type="CharInteger" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</byte_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v2>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scalar_function_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Explanation" name="RADIUS" definition="This function controls the radius in WORLD UNITS of each sprite along the projected forward axis. Using a smaller min value and a larger max value results in a light volume that looks like a cone." />
+										<field type="Struct" name="radius function">
+											<struct name="scalar_function_struct" groupTag="SCFN">
+												<block name="scalar_function_struct_block" maxCount="1" display="scalar_function_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scalar_function_struct_fields size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="3">
+															<fields>
+																<field type="Custom" name="function" attributeGroup="fned" definition="&#x0;?&#xE;?" />
+																<field type="Struct" name="function">
+																	<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																		<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																			<versions>
+																				<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="CharInteger" name="Function Type" />
+																						<field type="ByteFlags" name="Flags">
+																							<definition count="8">
+																								<entry>Range</entry>
+																								<entry>Unused 0</entry>
+																								<entry>Unused 1</entry>
+																								<entry>Unused 2</entry>
+																								<entry>Color Bit 0</entry>
+																								<entry>Color Bit 1</entry>
+																								<entry>Color Bit 2</entry>
+																								<entry>Color Bit 3</entry>
+																							</definition>
+																						</field>
+																						<field type="CharInteger" name="Function 1" />
+																						<field type="CharInteger" name="Function 2" />
+																						<field type="RgbColor" name="Color 0" />
+																						<field type="RgbColor" name="Color 1" />
+																						<field type="RgbColor" name="Color 2" />
+																						<field type="RgbColor" name="Color 3" />
+																						<field type="Block" name="Values">
+																							<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																								<versions>
+																									<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																										<fields>
+																											<field type="Real" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</real_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v1>
+																				<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Block" name="data">
+																							<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																								<versions>
+																									<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																										<fields>
+																											<field type="CharInteger" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</byte_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v2>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scalar_function_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Explanation" name="BRIGHTNESS" definition="This function controls the overall brightness (in [0,1]) of each sprite along the projected forward axis. Note that since the sprites are additive, they will be brighter in areas where they overlap more even if this function is constant, so it may be useful to use the brightness function to compensate for this." />
+										<field type="Struct" name="brightness function">
+											<struct name="scalar_function_struct" groupTag="SCFN">
+												<block name="scalar_function_struct_block" maxCount="1" display="scalar_function_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scalar_function_struct_fields size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="3">
+															<fields>
+																<field type="Custom" name="function" attributeGroup="fned" definition="&#x0;?&#xE;?" />
+																<field type="Struct" name="function">
+																	<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																		<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																			<versions>
+																				<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="CharInteger" name="Function Type" />
+																						<field type="ByteFlags" name="Flags">
+																							<definition count="8">
+																								<entry>Range</entry>
+																								<entry>Unused 0</entry>
+																								<entry>Unused 1</entry>
+																								<entry>Unused 2</entry>
+																								<entry>Color Bit 0</entry>
+																								<entry>Color Bit 1</entry>
+																								<entry>Color Bit 2</entry>
+																								<entry>Color Bit 3</entry>
+																							</definition>
+																						</field>
+																						<field type="CharInteger" name="Function 1" />
+																						<field type="CharInteger" name="Function 2" />
+																						<field type="RgbColor" name="Color 0" />
+																						<field type="RgbColor" name="Color 1" />
+																						<field type="RgbColor" name="Color 2" />
+																						<field type="RgbColor" name="Color 3" />
+																						<field type="Block" name="Values">
+																							<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																								<versions>
+																									<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																										<fields>
+																											<field type="Real" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</real_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v1>
+																				<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Block" name="data">
+																							<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																								<versions>
+																									<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																										<fields>
+																											<field type="CharInteger" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</byte_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v2>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scalar_function_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Explanation" name="COLOR" definition="This function controls the color of each sprite along the projected forward axis. Color is multiplied by brightness to produce the final color that will be applied to the sprite." />
+										<field type="Struct" name="color function">
+											<struct name="color_function_struct" groupTag="CLFN">
+												<block name="color_function_struct_block" maxCount="1" display="color_function_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<color_function_struct_fields size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="3">
+															<fields>
+																<field type="Custom" name="function" attributeGroup="fned" definition="&#x0;?&#xE;?" />
+																<field type="Struct" name="function">
+																	<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																		<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																			<versions>
+																				<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="CharInteger" name="Function Type" />
+																						<field type="ByteFlags" name="Flags">
+																							<definition count="8">
+																								<entry>Range</entry>
+																								<entry>Unused 0</entry>
+																								<entry>Unused 1</entry>
+																								<entry>Unused 2</entry>
+																								<entry>Color Bit 0</entry>
+																								<entry>Color Bit 1</entry>
+																								<entry>Color Bit 2</entry>
+																								<entry>Color Bit 3</entry>
+																							</definition>
+																						</field>
+																						<field type="CharInteger" name="Function 1" />
+																						<field type="CharInteger" name="Function 2" />
+																						<field type="RgbColor" name="Color 0" />
+																						<field type="RgbColor" name="Color 1" />
+																						<field type="RgbColor" name="Color 2" />
+																						<field type="RgbColor" name="Color 3" />
+																						<field type="Block" name="Values">
+																							<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																								<versions>
+																									<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																										<fields>
+																											<field type="Real" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</real_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v1>
+																				<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Block" name="data">
+																							<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																								<versions>
+																									<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																										<fields>
+																											<field type="CharInteger" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</byte_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v2>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</color_function_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="UselessPad" name="" definition="64" />
+										<field type="Explanation" name="FACING" definition="The input to this function is the facing angle between the light volume and the camera. Zero represents facing towards (parallel) or away from the camera and 1.0 represents facing perpendicular to the camera.&#xA;&#xA;The output of this function is fed into the range-input of the functions above." />
+										<field type="Struct" name="facing function">
+											<struct name="scalar_function_struct" groupTag="SCFN">
+												<block name="scalar_function_struct_block" maxCount="1" display="scalar_function_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scalar_function_struct_fields size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="3">
+															<fields>
+																<field type="Custom" name="function" attributeGroup="fned" definition="&#x0;?&#xE;?" />
+																<field type="Struct" name="function">
+																	<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																		<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																			<versions>
+																				<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="CharInteger" name="Function Type" />
+																						<field type="ByteFlags" name="Flags">
+																							<definition count="8">
+																								<entry>Range</entry>
+																								<entry>Unused 0</entry>
+																								<entry>Unused 1</entry>
+																								<entry>Unused 2</entry>
+																								<entry>Color Bit 0</entry>
+																								<entry>Color Bit 1</entry>
+																								<entry>Color Bit 2</entry>
+																								<entry>Color Bit 3</entry>
+																							</definition>
+																						</field>
+																						<field type="CharInteger" name="Function 1" />
+																						<field type="CharInteger" name="Function 2" />
+																						<field type="RgbColor" name="Color 0" />
+																						<field type="RgbColor" name="Color 1" />
+																						<field type="RgbColor" name="Color 2" />
+																						<field type="RgbColor" name="Color 3" />
+																						<field type="Block" name="Values">
+																							<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																								<versions>
+																									<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																										<fields>
+																											<field type="Real" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</real_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v1>
+																				<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Block" name="data">
+																							<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																								<versions>
+																									<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																										<fields>
+																											<field type="CharInteger" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</byte_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v2>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scalar_function_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="UselessPad" name="" definition="64" />
+										<field type="Block" name="aspect">
+											<block name="light_volume_aspect_block" maxCount="1" display="aspect" flags="0" maxIdentifer="1" procGenerateDefault="True" version="1">
+												<versions>
+													<light_volume_aspect_block_fields size="36" sizeIdentifer="sizeof(s_light_volume_aspect)" fieldCount="10">
+														<fields>
+															<field type="Explanation" name="SCALE FACTORS" definition="These function control the screenspace aspect ratio of each sprite relative to the projected forward axis. Note that there is no range-input to these functions, because it would not make sense to stretch sprites when the light volume is facing directly towards or away from the camera (which way would we stretch them?)" />
+															<field type="Explanation" name="ALONG-AXIS SCALE" definition="Values higher than 1 along the axis will cause sprites to elongate and overlap more regardless of the orientation of the light volume, whereas values lower than 1 will cause sprite separation." />
+															<field type="Struct" name="along axis">
+																<struct name="scalar_function_struct" groupTag="SCFN">
+																	<block name="scalar_function_struct_block" maxCount="1" display="scalar_function_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<scalar_function_struct_fields size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="3">
+																				<fields>
+																					<field type="Custom" name="function" attributeGroup="fned" definition="&#x0;?&#xE;?" />
+																					<field type="Struct" name="function">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</scalar_function_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="AWAY-FROM-AXIS SCALE" definition="Values higher than 1 away from the axis will cause the light volume to appear thicker." />
+															<field type="Struct" name="away from axis">
+																<struct name="scalar_function_struct" groupTag="SCFN">
+																	<block name="scalar_function_struct_block" maxCount="1" display="scalar_function_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<scalar_function_struct_fields size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="3">
+																				<fields>
+																					<field type="Custom" name="function" attributeGroup="fned" definition="&#x0;?&#xE;?" />
+																					<field type="Struct" name="function">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</scalar_function_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="PARALLEL SCALE" definition="When the light volume is viewed directly towards (parallel) or away from the camera, the scale factors above are interpolated towards this constant value. The threshold angle controls when the light volume is considered to be 100% parallel for these computations. The exponent controls how quickly the transition from using the perpendicular scale factors to using the parallel scale factor happens, e.g.:&#xA;&#xA;* exponent=0.0 -&gt; perpendicular scale factors will always be used unless below threshold angle&#xA;* exponent=0.1 -&gt; transition quickly as viewing angle becomes perpendicular&#xA;* exponent=1.0 -&gt; transition smoothly between perpendicular and parallel&#xA;* exponent=9.0 -&gt; transition quickly as viewing angle becomes parallel" />
+															<field type="Real" name="parallel scale" />
+															<field type="Angle" name="parallel threshold angle" units="degrees" />
+															<field type="Real" name="parallel exponent" />
+															<field type="Terminator" />
+														</fields>
+													</light_volume_aspect_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="UselessPad" name="" definition="64" />
+										<field type="Explanation" name="POSTPROCESS CONTROL" definition="ADVANCED STUFF!! Don't change these values!!" />
+										<field type="RealFraction" name="radius frac min" units="[0.00390625, 1.0]" isReadonly="True" />
+										<field type="RealFraction" name="DEPRECATED!! x-step exponent" units="[0.5, 0.875]" isReadonly="True" />
+										<field type="LongInteger" name="DEPRECATED!! x-buffer length" units="[32, 512]" isReadonly="True" />
+										<field type="LongInteger" name="x-buffer spacing" units="[1, 256]" isReadonly="True" />
+										<field type="LongInteger" name="x-buffer min iterations" units="[1, 256]" isReadonly="True" />
+										<field type="LongInteger" name="x-buffer max iterations" units="[1, 256]" isReadonly="True" />
+										<field type="RealFraction" name="x-delta max error" units="[0.001, 0.1]" isReadonly="True" />
+										<field type="UselessPad" name="" definition="48" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Block" name="" isReadonly="True">
+											<block name="light_volume_runtime_offset_block" maxCount="256" display="light_volume_runtime_offset_block" flags="0" maxIdentifer="k_maximum_sprites_per_light_volume" version="1">
+												<versions>
+													<light_volume_runtime_offset_block_fields size="8" sizeIdentifer="sizeof(real_vector2d)" fieldCount="2">
+														<fields>
+															<field type="RealVector2D" name="" />
+															<field type="Terminator" />
+														</fields>
+													</light_volume_runtime_offset_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Skip" name="" definition="48" />
+										<field type="Terminator" />
+									</fields>
+								</light_volume_volume_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</light_volume_block_fields>
+		</versions>
+	</block>
+</tagGroup>

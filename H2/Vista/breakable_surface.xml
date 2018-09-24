@@ -1,0 +1,2914 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="breakable_surface" groupTag="bsdt" groupTagParent="????" version="0" flags="8">
+	<block name="breakable_surface_block" maxCount="1" display="breakable_surface" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<breakable_surface_block_fields size="52" sizeIdentifer="sizeof(s_breakable_surface_definition)" fieldCount="6">
+				<fields>
+					<field type="Real" name="maximum vitality" />
+					<field type="TagReference" name="effect">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="TagReference" name="sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Block" name="particle effects">
+						<block name="particle_system_definition_block_new" maxCount="32" display="particle_system_definition_block_new" flags="0" maxIdentifer="c_particle_system_definition::k_maximum_particle_systems_per_block" procPostprocess="True" procFormat="True" version="2">
+							<versions>
+								<particle_system_definition_block_fields_v1 size="44" sizeIdentifer="sizeof(c_particle_system_definition_v1)" fieldCount="10">
+									<fields>
+										<field type="TagReference" name="particle">
+											<definition flags="0">
+												<groupTags>
+													<groupTag>prt3</groupTag>
+													<groupTag>PRTM</groupTag>
+												</groupTags>
+											</definition>
+										</field>
+										<field type="LongBlockIndex1" name="location" definition="effect_locations_block" />
+										<field type="Enum" name="coordinate system">
+											<definition count="3">
+												<entry>world</entry>
+												<entry>local</entry>
+												<entry>parent</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="environment">
+											<definition count="4">
+												<entry>any environment</entry>
+												<entry>air only</entry>
+												<entry>water only</entry>
+												<entry>space only</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="disposition">
+											<definition count="3">
+												<entry>either mode</entry>
+												<entry>violent mode only</entry>
+												<entry>nonviolent mode only</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="camera mode">
+											<definition count="4">
+												<entry>independent of camera mode</entry>
+												<entry>only in first person</entry>
+												<entry>only in third person</entry>
+												<entry>both first and third</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="sort bias" help="use values between -10 and 10 to move closer and farther from camera (positive is closer)" />
+										<field type="WordFlags" name="flags">
+											<definition count="10">
+												<entry>glow</entry>
+												<entry>cinematics</entry>
+												<entry>looping particle</entry>
+												<entry>disabled for debugging</entry>
+												<entry>inherit effect velocity</entry>
+												<entry>don't render system</entry>
+												<entry>render when zoomed</entry>
+												<entry>spread between ticks</entry>
+												<entry>persistent particle</entry>
+												<entry>expensive visibility</entry>
+											</definition>
+										</field>
+										<field type="Block" name="emitters">
+											<block name="particle_system_emitter_definition_block" maxCount="8" display="particle_system_emitter_definition_block" flags="0" maxIdentifer="c_particle_system_definition::k_maximum_emitters_per_definition" procPostprocess="True" procGenerateDefault="True" version="1">
+												<versions>
+													<particle_system_emitter_definition_block_fields size="228" sizeIdentifer="sizeof(c_particle_emitter_definition)" fieldCount="25">
+														<fields>
+															<field type="TagReference" name="particle physics">
+																<definition flags="0" groupTag="pmov" />
+															</field>
+															<field type="Explanation" name="particle emission rate (particles/tick)" definition="" />
+															<field type="Struct" name="particle emission rate">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle lifespan(seconds)" definition="" />
+															<field type="Struct" name="particle lifespan">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle velocity(world units/second)" definition="" />
+															<field type="Struct" name="particle velocity">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle angular velocity(degrees/second)" definition="" />
+															<field type="Struct" name="particle angular velocity">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle size(world units)" definition="" />
+															<field type="Struct" name="particle size">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle tint" definition="" />
+															<field type="Struct" name="particle tint">
+																<struct name="particle_property_color_struct_new" groupTag="PRPC">
+																	<block name="particle_property_color_struct_new_block" maxCount="1" display="particle_property_color_struct_new" flags="0" maxIdentifer="1" procPostprocess="True" version="1">
+																		<versions>
+																			<particle_property_color_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??&#x10;" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_color_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle alpha" definition="" />
+															<field type="Struct" name="particle alpha">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="EMISSION SETTINGS" definition="" />
+															<field type="LongEnum" name="emission shape">
+																<definition count="10">
+																	<entry>sprayer</entry>
+																	<entry>disc</entry>
+																	<entry>globe</entry>
+																	<entry>implode</entry>
+																	<entry>tube</entry>
+																	<entry>halo</entry>
+																	<entry>impact contour</entry>
+																	<entry>impact area</entry>
+																	<entry>debris</entry>
+																	<entry>line</entry>
+																</definition>
+															</field>
+															<field type="Explanation" name="emission radius(world units)" definition="" />
+															<field type="Struct" name="emission radius">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="emission angle(degrees)" definition="" />
+															<field type="Struct" name="emission angle">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="RealPoint3D" name="translational offset" />
+															<field type="RealEulerAngles2D" name="relative direction" help="particle initial velocity direction relative to the location's forward" />
+															<field type="Pad" name="" definition="8" />
+															<field type="Terminator" />
+														</fields>
+													</particle_system_emitter_definition_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</particle_system_definition_block_fields_v1>
+								<particle_system_definition_block_fields_v2 size="68" sizeIdentifer="sizeof(c_particle_system_definition)" fieldCount="16">
+									<fields>
+										<field type="TagReference" name="particle">
+											<definition flags="0">
+												<groupTags>
+													<groupTag>prt3</groupTag>
+													<groupTag>PRTM</groupTag>
+												</groupTags>
+											</definition>
+										</field>
+										<field type="LongBlockIndex1" name="location" definition="effect_locations_block" />
+										<field type="Enum" name="coordinate system">
+											<definition count="3">
+												<entry>world</entry>
+												<entry>local</entry>
+												<entry>parent</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="environment">
+											<definition count="4">
+												<entry>any environment</entry>
+												<entry>air only</entry>
+												<entry>water only</entry>
+												<entry>space only</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="disposition">
+											<definition count="3">
+												<entry>either mode</entry>
+												<entry>violent mode only</entry>
+												<entry>nonviolent mode only</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="camera mode">
+											<definition count="4">
+												<entry>independent of camera mode</entry>
+												<entry>only in first person</entry>
+												<entry>only in third person</entry>
+												<entry>both first and third</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="sort bias" help="use values between -10 and 10 to move closer and farther from camera (positive is closer)" />
+										<field type="WordFlags" name="flags">
+											<definition count="10">
+												<entry>glow</entry>
+												<entry>cinematics</entry>
+												<entry>looping particle</entry>
+												<entry>disabled for debugging</entry>
+												<entry>inherit effect velocity</entry>
+												<entry>don't render system</entry>
+												<entry>render when zoomed</entry>
+												<entry>spread between ticks</entry>
+												<entry>persistent particle</entry>
+												<entry>expensive visibility</entry>
+											</definition>
+										</field>
+										<field type="Real" name="LOD in distance" help="defaults to 0.0" />
+										<field type="Real" name="LOD feather in delta" help="defaults to 0.0" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Real" name="LOD out distance" help="defaults to 30.0" />
+										<field type="Real" name="LOD feather out delta" help="defaults to 10.0" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Block" name="emitters">
+											<block name="particle_system_emitter_definition_block" maxCount="8" display="particle_system_emitter_definition_block" flags="0" maxIdentifer="c_particle_system_definition::k_maximum_emitters_per_definition" procPostprocess="True" procGenerateDefault="True" version="1">
+												<versions>
+													<particle_system_emitter_definition_block_fields size="228" sizeIdentifer="sizeof(c_particle_emitter_definition)" fieldCount="25">
+														<fields>
+															<field type="TagReference" name="particle physics">
+																<definition flags="0" groupTag="pmov" />
+															</field>
+															<field type="Explanation" name="particle emission rate (particles/tick)" definition="" />
+															<field type="Struct" name="particle emission rate">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle lifespan(seconds)" definition="" />
+															<field type="Struct" name="particle lifespan">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle velocity(world units/second)" definition="" />
+															<field type="Struct" name="particle velocity">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle angular velocity(degrees/second)" definition="" />
+															<field type="Struct" name="particle angular velocity">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle size(world units)" definition="" />
+															<field type="Struct" name="particle size">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle tint" definition="" />
+															<field type="Struct" name="particle tint">
+																<struct name="particle_property_color_struct_new" groupTag="PRPC">
+																	<block name="particle_property_color_struct_new_block" maxCount="1" display="particle_property_color_struct_new" flags="0" maxIdentifer="1" procPostprocess="True" version="1">
+																		<versions>
+																			<particle_property_color_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??&#x10;" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_color_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="particle alpha" definition="" />
+															<field type="Struct" name="particle alpha">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="EMISSION SETTINGS" definition="" />
+															<field type="LongEnum" name="emission shape">
+																<definition count="10">
+																	<entry>sprayer</entry>
+																	<entry>disc</entry>
+																	<entry>globe</entry>
+																	<entry>implode</entry>
+																	<entry>tube</entry>
+																	<entry>halo</entry>
+																	<entry>impact contour</entry>
+																	<entry>impact area</entry>
+																	<entry>debris</entry>
+																	<entry>line</entry>
+																</definition>
+															</field>
+															<field type="Explanation" name="emission radius(world units)" definition="" />
+															<field type="Struct" name="emission radius">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Explanation" name="emission angle(degrees)" definition="" />
+															<field type="Struct" name="emission angle">
+																<struct name="particle_property_scalar_struct_new" groupTag="PRPS">
+																	<block name="particle_property_scalar_struct_new_block" maxCount="1" display="particle_property_scalar_struct_new" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<particle_property_scalar_struct_new_fields size="20" sizeIdentifer="sizeof(c_particle_property)" fieldCount="7">
+																				<fields>
+																					<field type="Enum" name="Input Variable" attributeGroup="fnin">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Range Variable" attributeGroup="fnir">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier" attributeGroup="fnop">
+																						<definition count="3">
+																							<entry> </entry>
+																							<entry>Plus</entry>
+																							<entry>Times</entry>
+																						</definition>
+																					</field>
+																					<field type="Enum" name="Output Modifier Input" attributeGroup="fnom">
+																						<definition count="17">
+																							<entry>particle age</entry>
+																							<entry>particle emit time</entry>
+																							<entry>particle random 1</entry>
+																							<entry>particle random 2</entry>
+																							<entry>emitter age</entry>
+																							<entry>emitter random 1</entry>
+																							<entry>emitter random 2</entry>
+																							<entry>system lod</entry>
+																							<entry>game time</entry>
+																							<entry>effect a scale</entry>
+																							<entry>effect b scale</entry>
+																							<entry>particle rotation</entry>
+																							<entry>explosion animation</entry>
+																							<entry>explosion rotation</entry>
+																							<entry>particle random 3</entry>
+																							<entry>particle random 4</entry>
+																							<entry>location random</entry>
+																						</definition>
+																					</field>
+																					<field type="Custom" name="Mapping" attributeGroup="fned" definition="&#x0;??H" />
+																					<field type="Struct" name="Mapping">
+																						<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																							<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																								<versions>
+																									<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="CharInteger" name="Function Type" />
+																											<field type="ByteFlags" name="Flags">
+																												<definition count="8">
+																													<entry>Range</entry>
+																													<entry>Unused 0</entry>
+																													<entry>Unused 1</entry>
+																													<entry>Unused 2</entry>
+																													<entry>Color Bit 0</entry>
+																													<entry>Color Bit 1</entry>
+																													<entry>Color Bit 2</entry>
+																													<entry>Color Bit 3</entry>
+																												</definition>
+																											</field>
+																											<field type="CharInteger" name="Function 1" />
+																											<field type="CharInteger" name="Function 2" />
+																											<field type="RgbColor" name="Color 0" />
+																											<field type="RgbColor" name="Color 1" />
+																											<field type="RgbColor" name="Color 2" />
+																											<field type="RgbColor" name="Color 3" />
+																											<field type="Block" name="Values">
+																												<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																													<versions>
+																														<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																															<fields>
+																																<field type="Real" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</real_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v1>
+																									<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																										<fields>
+																											<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Block" name="data">
+																												<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																													<versions>
+																														<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																															<fields>
+																																<field type="CharInteger" name="Value" />
+																																<field type="Terminator" />
+																															</fields>
+																														</byte_block_fields>
+																													</versions>
+																												</block>
+																											</field>
+																											<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																											<field type="Terminator" />
+																										</fields>
+																									</function_definition_fields_v2>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</particle_property_scalar_struct_new_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="RealPoint3D" name="translational offset" />
+															<field type="RealEulerAngles2D" name="relative direction" help="particle initial velocity direction relative to the location's forward" />
+															<field type="Pad" name="" definition="8" />
+															<field type="Terminator" />
+														</fields>
+													</particle_system_emitter_definition_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</particle_system_definition_block_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Real" name="particle density" />
+					<field type="Terminator" />
+				</fields>
+			</breakable_surface_block_fields>
+		</versions>
+	</block>
+</tagGroup>

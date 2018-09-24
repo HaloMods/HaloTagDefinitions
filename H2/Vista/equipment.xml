@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="equipment" groupTag="eqip" groupTagParent="item" version="2" flags="8">
+	<block name="equipment_block" maxCount="1" display="equipment" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<equipment_block_fields size="24" sizeIdentifer="sizeof(struct _equipment_definition)" fieldCount="6">
+				<fields>
+					<field type="Enum" name="powerup type">
+						<definition count="7">
+							<entry>none</entry>
+							<entry>double speed</entry>
+							<entry>over shield</entry>
+							<entry>active camouflage</entry>
+							<entry>full-spectrum vision</entry>
+							<entry>health</entry>
+							<entry>grenade</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="grenade type">
+						<definition count="2">
+							<entry>human fragmentation</entry>
+							<entry>covenant plasma</entry>
+						</definition>
+					</field>
+					<field type="Real" name="powerup time" units="seconds" />
+					<field type="TagReference" name="pickup sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="UselessPad" name="" definition="144" />
+					<field type="Terminator" />
+				</fields>
+			</equipment_block_fields>
+		</versions>
+	</block>
+</tagGroup>

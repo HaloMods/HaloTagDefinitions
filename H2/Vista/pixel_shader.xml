@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="pixel_shader" groupTag="pixl" groupTagParent="????" version="1" flags="8">
+	<block name="pixel_shader_block" maxCount="1" display="pixel_shader" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<pixel_shader_block_fields size="24" sizeIdentifer="sizeof(c_pixel_shader_definition)" fieldCount="3">
+				<fields>
+					<field type="Pad" name="" definition="4" />
+					<field type="Data" name="compiled_shader">
+						<definition name="compiled_pixel_shader_block" maxSize="4096" alignment="0" flags="0" maxIdentifer="c_pixel_shader_definition::k_maximum_pixel_shader_size" />
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</pixel_shader_block_fields>
+		</versions>
+	</block>
+</tagGroup>

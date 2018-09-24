@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="physics" groupTag="phys" groupTagParent="????" version="4" flags="9">
+	<block name="physics_block" maxCount="1" display="physics" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<physics_block_fields size="128" sizeIdentifer="sizeof(struct physics_definition)" fieldCount="25">
+				<fields>
+					<field type="Real" name="radius" help="positive uses old inferior physics, negative uses new improved physics" />
+					<field type="RealFraction" name="moment scale" />
+					<field type="Real" name="mass" />
+					<field type="RealPoint3D" name="center of mass" isReadonly="True" />
+					<field type="Real" name="density" />
+					<field type="Real" name="gravity scale" />
+					<field type="Real" name="ground friction" />
+					<field type="Real" name="ground depth" />
+					<field type="RealFraction" name="ground damp fraction" />
+					<field type="Real" name="ground normal k1" />
+					<field type="Real" name="ground normal k0" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Real" name="water friction" />
+					<field type="Real" name="water depth" />
+					<field type="Real" name="water density" />
+					<field type="Pad" name="" definition="4" />
+					<field type="RealFraction" name="air friction" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Real" name="xx moment" />
+					<field type="Real" name="yy moment" />
+					<field type="Real" name="zz moment" />
+					<field type="Block" name="inertial matrix and inverse" isReadonly="True">
+						<block name="inertial_matrix_block" maxCount="2" display="inertial_matrix_block" flags="0" maxIdentifer="2" version="1">
+							<versions>
+								<inertial_matrix_block_fields size="36" sizeIdentifer="sizeof(real_matrix3x3)" fieldCount="4">
+									<fields>
+										<field type="RealVector3D" name="yy+zz    -xy     -zx" />
+										<field type="RealVector3D" name=" -xy    zz+xx    -yz" />
+										<field type="RealVector3D" name=" -zx     -yz    xx+yy" />
+										<field type="Terminator" />
+									</fields>
+								</inertial_matrix_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="powered mass points">
+						<block name="powered_mass_point_block" maxCount="32" display="powered_mass_point_block" flags="0" maxIdentifer="MAXIMUM_POWERED_MASS_POINTS_PER_PHYSICS" version="1">
+							<versions>
+								<powered_mass_point_block_fields size="128" sizeIdentifer="sizeof(struct powered_mass_point_definition)" fieldCount="11">
+									<fields>
+										<field type="String" name="name" isBlockName="True" />
+										<field type="LongFlags" name="flags">
+											<definition count="8">
+												<entry>ground friction</entry>
+												<entry>water friction</entry>
+												<entry>air friction</entry>
+												<entry>water lift</entry>
+												<entry>air lift</entry>
+												<entry>thrust</entry>
+												<entry>antigrav</entry>
+												<entry>gets damage from region</entry>
+											</definition>
+										</field>
+										<field type="Real" name="antigrav strength" />
+										<field type="Real" name="antigrav offset" />
+										<field type="Real" name="antigrav height" />
+										<field type="Real" name="antigrav damp fraction" />
+										<field type="Real" name="antigrav normal k1" />
+										<field type="Real" name="antigrav normal k0" />
+										<field type="StringId" name="damage source region name" />
+										<field type="Pad" name="" definition="64" />
+										<field type="Terminator" />
+									</fields>
+								</powered_mass_point_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="mass points">
+						<block name="mass_point_block" maxCount="32" display="mass_point_block" flags="0" maxIdentifer="MAXIMUM_MASS_POINTS_PER_PHYSICS" version="1">
+							<versions>
+								<mass_point_block_fields size="128" sizeIdentifer="sizeof(struct mass_point_definition)" fieldCount="18">
+									<fields>
+										<field type="String" name="name" isBlockName="True" isReadonly="True" />
+										<field type="ShortBlockIndex1" name="powered mass point" definition="powered_mass_point_block" />
+										<field type="ShortInteger" name="model node" isReadonly="True" />
+										<field type="LongFlags" name="flags">
+											<definition count="1">
+												<entry>metallic</entry>
+											</definition>
+										</field>
+										<field type="Real" name="relative mass" />
+										<field type="Real" name="mass" isReadonly="True" />
+										<field type="Real" name="relative density" />
+										<field type="Real" name="density" isReadonly="True" />
+										<field type="RealPoint3D" name="position" />
+										<field type="RealVector3D" name="forward" />
+										<field type="RealVector3D" name="up" />
+										<field type="Enum" name="friction type">
+											<definition count="4">
+												<entry>point</entry>
+												<entry>forward</entry>
+												<entry>left</entry>
+												<entry>up</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Real" name="friction parallel scale" />
+										<field type="Real" name="friction perpendicular scale" />
+										<field type="Real" name="radius" />
+										<field type="Pad" name="" definition="20" />
+										<field type="Terminator" />
+									</fields>
+								</mass_point_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</physics_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="detail_object_collection" groupTag="dobc" groupTagParent="????" version="1" flags="8" procPostprocess="True">
+	<block name="detail_object_collection_block" maxCount="1" display="detail_object_collection" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<detail_object_collection_block_fields size="128" sizeIdentifer="sizeof(struct detail_object_collection_definition)" fieldCount="8">
+				<fields>
+					<field type="Enum" name="Collection Type">
+						<definition count="2">
+							<entry>Screen-Facing</entry>
+							<entry>Viewer-Facing</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="Global z Offset" units=" Applied to all detail objects in this collection so they don't float above the ground." />
+					<field type="Pad" name="" definition="44" />
+					<field type="TagReference" name="Sprite Plate">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Block" name="Types">
+						<block name="detail_object_type_block" maxCount="16" display="detail_object_type_block" flags="0" maxIdentifer="MAXIMUM_DETAIL_OBJECT_TYPES_PER_COLLECTION" version="1">
+							<versions>
+								<detail_object_type_block_fields size="96" sizeIdentifer="sizeof(struct detail_object_type_definition)" fieldCount="15">
+									<fields>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="CharInteger" name="Sequence Index" units="[0,15]" />
+										<field type="ByteFlags" name="type flags">
+											<definition count="4">
+												<entry>Unused</entry>
+												<entry>Unused</entry>
+												<entry>Interpolate Color in HSV</entry>
+												<entry>...More Colors</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="RealFraction" name="Color Override Factor" help="Fraction of detail object color to use instead of the base map color in the environment" units="[0,1]" />
+										<field type="Pad" name="" definition="8" />
+										<field type="Real" name="Near Fade Distance" units="world units" />
+										<field type="Real" name="Far Fade Distance" units="world units" />
+										<field type="Real" name="Size" units="world units per pixel" />
+										<field type="Pad" name="" definition="4" />
+										<field type="RealRgbColor" name="Minimum Color" units="[0,1]" />
+										<field type="RealRgbColor" name="Maximum Color" units="[0,1]" />
+										<field type="ArgbColor" name="ambient color" units="[0,255]" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</detail_object_type_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="48" />
+					<field type="Terminator" />
+				</fields>
+			</detail_object_collection_block_fields>
+		</versions>
+	</block>
+</tagGroup>

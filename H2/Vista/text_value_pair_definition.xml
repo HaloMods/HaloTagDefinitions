@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="text_value_pair_definition" groupTag="sily" groupTagParent="????" version="1" flags="8">
+	<block name="text_value_pair_definition_block" maxCount="1" display="text_value_pair_definition" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<text_value_pair_definition_block_fields size="48" sizeIdentifer="sizeof(s_text_value_pair_definition)" fieldCount="8">
+				<fields>
+					<field type="LongEnum" name="parameter">
+						<definition count="112">
+							<entry>match round setting</entry>
+							<entry>match ctf score to win</entry>
+							<entry>match slayer score to win round</entry>
+							<entry>match oddball score to win round</entry>
+							<entry>match king score to win round</entry>
+							<entry>match race score to win round</entry>
+							<entry>match headhunter score to win round</entry>
+							<entry>match juggernaut score to win round</entry>
+							<entry>match territories score to win round</entry>
+							<entry>match assault score to win round</entry>
+							<entry>match round time limit</entry>
+							<entry>match rounds reset map</entry>
+							<entry>match tie resolution</entry>
+							<entry>match observers</entry>
+							<entry>match join in progress</entry>
+							<entry>maximum players</entry>
+							<entry>lives per round</entry>
+							<entry>respawn time</entry>
+							<entry>suicide penalty</entry>
+							<entry>shields</entry>
+							<entry>motion sensor</entry>
+							<entry>invisibility</entry>
+							<entry>team changing</entry>
+							<entry>team scoring</entry>
+							<entry>friendly fire</entry>
+							<entry>team respawn setting</entry>
+							<entry>betrayal respawn penalty</entry>
+							<entry>team killer management</entry>
+							<entry>slayer bonus points</entry>
+							<entry>slayer suicide point loss</entry>
+							<entry>slayer death point loss</entry>
+							<entry>headhunter moving head bin</entry>
+							<entry>headhunter point multiplier</entry>
+							<entry>headhunter suicide point loss</entry>
+							<entry>headhunter death point loss</entry>
+							<entry>headhunter uncontested bin</entry>
+							<entry>headhunter speed with heads</entry>
+							<entry>headhunter max heads carried</entry>
+							<entry>king uncontested hill</entry>
+							<entry>king team time multiplier</entry>
+							<entry>king moving hill</entry>
+							<entry>king extra damage on hill</entry>
+							<entry>king dmg resistance on hill</entry>
+							<entry>oddball ball spawn count</entry>
+							<entry>oddball ball hit damage</entry>
+							<entry>oddball speed with ball</entry>
+							<entry>oddball driving gunning with ball</entry>
+							<entry>oddball waypoint to ball</entry>
+							<entry>race random track</entry>
+							<entry>race uncontested flag</entry>
+							<entry>ctf game type</entry>
+							<entry>ctf sudden death</entry>
+							<entry>ctf flag may be returned</entry>
+							<entry>ctf flag at home to score</entry>
+							<entry>ctf flag reset time</entry>
+							<entry>ctf speed with flag</entry>
+							<entry>ctf flag hit damage</entry>
+							<entry>ctf driving gunning with flag</entry>
+							<entry>ctf waypoint to own flag</entry>
+							<entry>assault game type</entry>
+							<entry>assault sudden death</entry>
+							<entry>assault detonation time</entry>
+							<entry>assault bomb at home to score</entry>
+							<entry>assault arming time</entry>
+							<entry>assault speed with bomb</entry>
+							<entry>assault bomb hit damage</entry>
+							<entry>assault driving gunning with bomb</entry>
+							<entry>assault waypoint to own bomb</entry>
+							<entry>juggernaut betrayal point loss</entry>
+							<entry>juggernaut juggy extra damage</entry>
+							<entry>juggernaut juggy infinite ammo</entry>
+							<entry>juggernaut juggy overshields</entry>
+							<entry>juggernaut juggy active camo</entry>
+							<entry>juggernaut juggy motion sensor</entry>
+							<entry>territories territory count</entry>
+							<entry>veh. respawn</entry>
+							<entry>veh. primary light land</entry>
+							<entry>veh. secondary light land</entry>
+							<entry>veh. primary heavy land</entry>
+							<entry>veh. primary flying</entry>
+							<entry>veh. secondary heavy land</entry>
+							<entry>veh. primary turret</entry>
+							<entry>veh. secondary turret</entry>
+							<entry>equip. weapons on map</entry>
+							<entry>equip. overshields on map</entry>
+							<entry>equip. active camo on map</entry>
+							<entry>equip. grenades on map</entry>
+							<entry>equip. weapon respawn times</entry>
+							<entry>equip. starting grenades</entry>
+							<entry>equip. primary starting equipment</entry>
+							<entry>UNS. max. living players</entry>
+							<entry>UNS. teams enabled</entry>
+							<entry>UNS. assault bomb may be returned</entry>
+							<entry>UNS. max. teams</entry>
+							<entry>UNS. equip. secondary starting equipment</entry>
+							<entry>UNS. assault fuse time</entry>
+							<entry>UNS. juggy movement</entry>
+							<entry>UNS. sticky fuse</entry>
+							<entry>UNS. terr. contest time</entry>
+							<entry>UNS. terr. control time</entry>
+							<entry>UNS. oddb. carr. invis</entry>
+							<entry>UNS. king invis in hill</entry>
+							<entry>UNS. ball carr. dmg. resis.</entry>
+							<entry>UNS. king dmg. res. in hill</entry>
+							<entry>UNS. players ex. dmg</entry>
+							<entry>UNS. players dmg. resis.</entry>
+							<entry>UNS. ctf carr. dmg. resis.</entry>
+							<entry>UNS. ctf carr. invis.</entry>
+							<entry>UNS. juggy dmg. resis.</entry>
+							<entry>UNS. bomb carr. dmg. resis.</entry>
+							<entry>UNS. bomb carr. invis.</entry>
+							<entry>UNS. force even teams</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="4" />
+					<field type="TagReference" name="string list">
+						<definition flags="0" groupTag="unic" />
+					</field>
+					<field type="StringId" name="title text" />
+					<field type="StringId" name="header text" />
+					<field type="StringId" name="description text" />
+					<field type="Block" name="text value pairs">
+						<block name="text_value_pair_reference_block" maxCount="32" display="text_value_pair_reference_block" flags="0" maxIdentifer="k_maximum_text_value_pairs_new_per_block" procFormat="True" version="1">
+							<versions>
+								<text_value_pair_reference_block_fields size="12" sizeIdentifer="sizeof(s_text_value_pair_reference_new)" fieldCount="4">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="1">
+												<entry>default setting</entry>
+											</definition>
+										</field>
+										<field type="LongInteger" name="value" />
+										<field type="StringId" name="label string id" />
+										<field type="Terminator" />
+									</fields>
+								</text_value_pair_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</text_value_pair_definition_block_fields>
+		</versions>
+	</block>
+</tagGroup>

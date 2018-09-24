@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="crate" groupTag="bloc" groupTagParent="obje" version="1" flags="9">
+	<block name="crate_block" maxCount="1" display="crate" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<crate_block_fields size="4" sizeIdentifer="sizeof(struct _crate_definition)" fieldCount="4">
+				<fields>
+					<field type="WordFlags" name="flags">
+						<definition count="1">
+							<entry>does not block AOE</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="124" />
+					<field type="Terminator" />
+				</fields>
+			</crate_block_fields>
+		</versions>
+	</block>
+</tagGroup>

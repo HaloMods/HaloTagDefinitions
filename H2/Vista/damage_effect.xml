@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="damage_effect" groupTag="jpt!" groupTagParent="????" version="6" flags="8" procPostprocess="True">
+	<block name="damage_effect_block" maxCount="1" display="damage_effect" flags="0" maxIdentifer="1" procInvalidHandler="True" version="2">
+		<versions>
+			<damage_effect_fields_v1 size="248" sizeIdentifer="sizeof(s_damage_effect_definition_v1)" fieldCount="82">
+				<fields>
+					<field type="RealBounds" name="radius" units="world units" />
+					<field type="RealFraction" name="cutoff scale" units="[0,1]" />
+					<field type="LongFlags" name="flags">
+						<definition count="2">
+							<entry>don't scale damage by distance</entry>
+							<entry>area damage players only#area of effect damage only affects players</entry>
+						</definition>
+					</field>
+					<field type="Real" name="AI stun radius" units="world units" />
+					<field type="RealBounds" name="AI stun bounds" units="(0-1)" />
+					<field type="UselessPad" name="" definition="8" />
+					<field type="Enum" name="type">
+						<definition count="7">
+							<entry>none</entry>
+							<entry>lighten</entry>
+							<entry>darken</entry>
+							<entry>max</entry>
+							<entry>min</entry>
+							<entry>invert</entry>
+							<entry>tint</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="priority">
+						<definition count="3">
+							<entry>low</entry>
+							<entry>medium</entry>
+							<entry>high</entry>
+						</definition>
+					</field>
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Real" name="duration" units="seconds" />
+					<field type="Enum" name="fade function">
+						<definition count="8">
+							<entry>linear</entry>
+							<entry>late</entry>
+							<entry>very late</entry>
+							<entry>early</entry>
+							<entry>very early</entry>
+							<entry>cosine</entry>
+							<entry>zero</entry>
+							<entry>one</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="8" />
+					<field type="RealFraction" name="maximum intensity" units="[0,1]" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="RealArgbColor" name="color" />
+					<field type="RealFraction" name="frequency" units="[0,1]" />
+					<field type="Real" name="duration" units="seconds" />
+					<field type="Enum" name="fade function">
+						<definition count="8">
+							<entry>linear</entry>
+							<entry>late</entry>
+							<entry>very late</entry>
+							<entry>early</entry>
+							<entry>very early</entry>
+							<entry>cosine</entry>
+							<entry>zero</entry>
+							<entry>one</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="8" />
+					<field type="RealFraction" name="frequency" units="[0,1]" />
+					<field type="Real" name="duration" units="seconds" />
+					<field type="Enum" name="fade function">
+						<definition count="8">
+							<entry>linear</entry>
+							<entry>late</entry>
+							<entry>very late</entry>
+							<entry>early</entry>
+							<entry>very early</entry>
+							<entry>cosine</entry>
+							<entry>zero</entry>
+							<entry>one</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="8" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="16" />
+					<field type="Real" name="duration" units="seconds" />
+					<field type="Enum" name="fade function">
+						<definition count="8">
+							<entry>linear</entry>
+							<entry>late</entry>
+							<entry>very late</entry>
+							<entry>early</entry>
+							<entry>very early</entry>
+							<entry>cosine</entry>
+							<entry>zero</entry>
+							<entry>one</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Angle" name="rotation" units="degrees" />
+					<field type="Real" name="pushback" units="world units" />
+					<field type="RealBounds" name="jitter" units="world units" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="24" />
+					<field type="Real" name="duration" help="the effect will last for this duration." units="seconds" />
+					<field type="Enum" name="falloff function" help="a function to envelope the effect's magnitude over time">
+						<definition count="8">
+							<entry>linear</entry>
+							<entry>late</entry>
+							<entry>very late</entry>
+							<entry>early</entry>
+							<entry>very early</entry>
+							<entry>cosine</entry>
+							<entry>zero</entry>
+							<entry>one</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="random translation" help="random translation in all directions" units="world units" />
+					<field type="Angle" name="random rotation" help="random rotation in all directions" units="degrees" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Enum" name="wobble function" help="a function to perturb the effect's behavior over time">
+						<definition count="12">
+							<entry>one</entry>
+							<entry>zero</entry>
+							<entry>cosine</entry>
+							<entry>cosine (variable period)</entry>
+							<entry>diagonal wave</entry>
+							<entry>diagonal wave (variable period)</entry>
+							<entry>slide</entry>
+							<entry>slide (variable period)</entry>
+							<entry>noise</entry>
+							<entry>jitter</entry>
+							<entry>wander</entry>
+							<entry>spark</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="wobble function period" units="seconds" />
+					<field type="RealFraction" name="wobble weight" help="a value of 0.0 signifies that the wobble function has no effect; a value of 1.0 signifies that the effect will not be felt when the wobble function's value is zero." />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="28" />
+					<field type="TagReference" name="sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="UselessPad" name="" definition="112" />
+					<field type="Real" name="forward velocity" units="world units per second" />
+					<field type="Real" name="forward radius" units="world units" />
+					<field type="Real" name="forward exponent" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Real" name="outward velocity" units="world units per second" />
+					<field type="Real" name="outward radius" units="world units" />
+					<field type="Real" name="outward exponent" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Explanation" name="damage" definition="" />
+					<field type="Enum" name="side effect">
+						<definition count="4">
+							<entry>none</entry>
+							<entry>harmless</entry>
+							<entry>lethal to the unsuspecting</entry>
+							<entry>emp</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="category">
+						<definition count="13">
+							<entry>none</entry>
+							<entry>falling</entry>
+							<entry>bullet</entry>
+							<entry>grenade</entry>
+							<entry>high explosive</entry>
+							<entry>sniper</entry>
+							<entry>melee</entry>
+							<entry>flame</entry>
+							<entry>mounted weapon</entry>
+							<entry>vehicle</entry>
+							<entry>plasma</entry>
+							<entry>needle</entry>
+							<entry>shotgun</entry>
+						</definition>
+					</field>
+					<field type="LongFlags" name="flags">
+						<definition count="16">
+							<entry>does not hurt owner</entry>
+							<entry>can cause headshots</entry>
+							<entry>pings resistant units</entry>
+							<entry>does not hurt friends</entry>
+							<entry>does not ping units</entry>
+							<entry>detonates explosives</entry>
+							<entry>only hurts shields</entry>
+							<entry>causes flaming death</entry>
+							<entry>damage indicators always point down</entry>
+							<entry>skips shields</entry>
+							<entry>only hurts one infection form</entry>
+							<entry>obsolete, was can cause multiplayer headshots</entry>
+							<entry>infection form pop</entry>
+							<entry>ignore seat scale for dir. dmg</entry>
+							<entry>forces hard ping</entry>
+							<entry>does not hurt players</entry>
+						</definition>
+					</field>
+					<field type="Real" name="AOE core radius" help="if this is area of effect damage" units="world units" />
+					<field type="Real" name="damage lower bound" />
+					<field type="RealBounds" name="damage upper bound" />
+					<field type="Angle" name="dmg inner cone angle" />
+					<field type="Struct" name="blah">
+						<struct name="damage_outer_cone_angle_struct" groupTag="masd">
+							<block name="damage_outer_cone_angle_struct_block" maxCount="1" display="damage_outer_cone_angle_struct" flags="0" maxIdentifer="1" version="2">
+								<versions>
+									<damage_outer_cone_angle_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+										<fields>
+											<field type="Terminator" />
+										</fields>
+									</damage_outer_cone_angle_fields_v1>
+									<damage_outer_cone_angle_fields_v2 size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+										<fields>
+											<field type="Angle" name="dmg outer cone angle" />
+											<field type="Terminator" />
+										</fields>
+									</damage_outer_cone_angle_fields_v2>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Real" name="active camouflage damage" help="how much more visible this damage makes a player who is active camouflaged" units="[0,1]" />
+					<field type="Real" name="stun" help="amount of stun added to damaged unit" units="[0,1]" />
+					<field type="Real" name="maximum stun" help="damaged unit's stun will never exceed this amount" units="[0,1]" />
+					<field type="Real" name="stun time" help="duration of stun due to this damage" units="seconds" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Real" name="instantaneous acceleration" units="[0,+inf]" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Real" name="" />
+					<field type="Real" name="" />
+					<field type="Real" name="" />
+					<field type="UselessPad" name="" definition="140" />
+					<field type="StringId" name="general_damage" />
+					<field type="StringId" name="specific_damage" />
+					<field type="Terminator" />
+				</fields>
+			</damage_effect_fields_v1>
+			<damage_effect_fields_v2 size="212" sizeIdentifer="sizeof(s_damage_effect_definition)" fieldCount="67">
+				<fields>
+					<field type="RealBounds" name="radius" units="world units" />
+					<field type="RealFraction" name="cutoff scale" units="[0,1]" />
+					<field type="LongFlags" name="flags">
+						<definition count="2">
+							<entry>don't scale damage by distance</entry>
+							<entry>area damage players only#area of effect damage only affects players</entry>
+						</definition>
+					</field>
+					<field type="Explanation" name="damage" definition="" />
+					<field type="Enum" name="side effect">
+						<definition count="4">
+							<entry>none</entry>
+							<entry>harmless</entry>
+							<entry>lethal to the unsuspecting</entry>
+							<entry>emp</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="category">
+						<definition count="13">
+							<entry>none</entry>
+							<entry>falling</entry>
+							<entry>bullet</entry>
+							<entry>grenade</entry>
+							<entry>high explosive</entry>
+							<entry>sniper</entry>
+							<entry>melee</entry>
+							<entry>flame</entry>
+							<entry>mounted weapon</entry>
+							<entry>vehicle</entry>
+							<entry>plasma</entry>
+							<entry>needle</entry>
+							<entry>shotgun</entry>
+						</definition>
+					</field>
+					<field type="LongFlags" name="flags">
+						<definition count="16">
+							<entry>does not hurt owner</entry>
+							<entry>can cause headshots</entry>
+							<entry>pings resistant units</entry>
+							<entry>does not hurt friends</entry>
+							<entry>does not ping units</entry>
+							<entry>detonates explosives</entry>
+							<entry>only hurts shields</entry>
+							<entry>causes flaming death</entry>
+							<entry>damage indicators always point down</entry>
+							<entry>skips shields</entry>
+							<entry>only hurts one infection form</entry>
+							<entry>obsolete, was can cause multiplayer headshots</entry>
+							<entry>infection form pop</entry>
+							<entry>ignore seat scale for dir. dmg</entry>
+							<entry>forces hard ping</entry>
+							<entry>does not hurt players</entry>
+						</definition>
+					</field>
+					<field type="Real" name="AOE core radius" help="if this is area of effect damage" units="world units" />
+					<field type="Real" name="damage lower bound" />
+					<field type="RealBounds" name="damage upper bound" />
+					<field type="Angle" name="dmg inner cone angle" />
+					<field type="Struct" name="blah">
+						<struct name="damage_outer_cone_angle_struct" groupTag="masd">
+							<block name="damage_outer_cone_angle_struct_block" maxCount="1" display="damage_outer_cone_angle_struct" flags="0" maxIdentifer="1" version="2">
+								<versions>
+									<damage_outer_cone_angle_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+										<fields>
+											<field type="Terminator" />
+										</fields>
+									</damage_outer_cone_angle_fields_v1>
+									<damage_outer_cone_angle_fields_v2 size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+										<fields>
+											<field type="Angle" name="dmg outer cone angle" />
+											<field type="Terminator" />
+										</fields>
+									</damage_outer_cone_angle_fields_v2>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Real" name="active camouflage damage" help="how much more visible this damage makes a player who is active camouflaged" units="[0,1]" />
+					<field type="Real" name="stun" help="amount of stun added to damaged unit" units="[0,1]" />
+					<field type="Real" name="maximum stun" help="damaged unit's stun will never exceed this amount" units="[0,1]" />
+					<field type="Real" name="stun time" help="duration of stun due to this damage" units="seconds" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Real" name="instantaneous acceleration" units="[0,+inf]" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Real" name="rider direct damage scale" />
+					<field type="Real" name="rider maximum transfer damage scale" />
+					<field type="Real" name="rider minimum transfer damage scale" />
+					<field type="UselessPad" name="" definition="140" />
+					<field type="StringId" name="general_damage" />
+					<field type="StringId" name="specific_damage" />
+					<field type="Real" name="AI stun radius" units="world units" />
+					<field type="RealBounds" name="AI stun bounds" units="(0-1)" />
+					<field type="Real" name="shake radius" />
+					<field type="Real" name="EMP radius" />
+					<field type="Block" name="player responses">
+						<block name="damage_effect_player_response_block" maxCount="2" display="damage_effect_player_response_block" flags="0" maxIdentifer="2" version="1">
+							<versions>
+								<damage_effect_player_response_block_fields size="88" sizeIdentifer="sizeof(s_damage_effect_player_response_definition)" fieldCount="10">
+									<fields>
+										<field type="Enum" name="response type">
+											<definition count="3">
+												<entry>shielded</entry>
+												<entry>unshielded</entry>
+												<entry>all</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Explanation" name="screen flash" definition="There are seven screen flash types:&#xA;&#xA;NONE: DST'= DST&#xA;LIGHTEN: DST'= DST(1 - A) + C&#xA;DARKEN: DST'= DST(1 - A) - C&#xA;MAX: DST'= MAX[DST(1 - C), (C - A)(1-DST)]&#xA;MIN: DST'= MIN[DST(1 - C), (C + A)(1-DST)]&#xA;TINT: DST'= DST(1 - C) + (A*PIN[2C - 1, 0, 1] + A)(1-DST)&#xA;INVERT: DST'= DST(1 - C) + A)&#xA;&#xA;In the above equations C and A represent the color and alpha of the screen flash, DST represents the color in the framebuffer before the screen flash is applied, and DST' represents the color after the screen flash is applied." />
+										<field type="Struct" name="screen flash" isReadonly="True">
+											<struct name="screen_flash_definition_struct" groupTag="SFDS">
+												<block name="screen_flash_definition_struct_block" maxCount="1" display="screen_flash_definition_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<screen_flash_definition_struct_fields size="32" sizeIdentifer="sizeof(struct screen_flash_definition)" fieldCount="11">
+															<fields>
+																<field type="Enum" name="type">
+																	<definition count="7">
+																		<entry>none</entry>
+																		<entry>lighten</entry>
+																		<entry>darken</entry>
+																		<entry>max</entry>
+																		<entry>min</entry>
+																		<entry>invert</entry>
+																		<entry>tint</entry>
+																	</definition>
+																</field>
+																<field type="Enum" name="priority">
+																	<definition count="3">
+																		<entry>low</entry>
+																		<entry>medium</entry>
+																		<entry>high</entry>
+																	</definition>
+																</field>
+																<field type="UselessPad" name="" definition="12" />
+																<field type="Real" name="duration" units="seconds" />
+																<field type="Enum" name="fade function">
+																	<definition count="8">
+																		<entry>linear</entry>
+																		<entry>late</entry>
+																		<entry>very late</entry>
+																		<entry>early</entry>
+																		<entry>very early</entry>
+																		<entry>cosine</entry>
+																		<entry>zero</entry>
+																		<entry>one</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="2" />
+																<field type="UselessPad" name="" definition="8" />
+																<field type="RealFraction" name="maximum intensity" units="[0,1]" />
+																<field type="UselessPad" name="" definition="4" />
+																<field type="RealArgbColor" name="color" />
+																<field type="Terminator" />
+															</fields>
+														</screen_flash_definition_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Explanation" name="vibration" definition="" />
+										<field type="Struct" name="vibration" isReadonly="True">
+											<struct name="vibration_definition_struct" groupTag="RBDS">
+												<block name="vibration_definition_struct_block" maxCount="1" display="vibration_definition_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<vibration_definition_struct_fields size="32" sizeIdentifer="sizeof(struct s_vibration_definition)" fieldCount="6">
+															<fields>
+																<field type="Explanation" name="low frequency vibration" definition="" />
+																<field type="Struct" name="low frequency vibration">
+																	<struct name="vibration_frequency_definition_struct" groupTag="RFDS">
+																		<block name="vibration_frequency_definition_struct_block" maxCount="1" display="vibration_frequency_definition_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<vibration_frequency_definition_struct_fields size="16" sizeIdentifer="sizeof(s_vibration_frequency_definition)" fieldCount="5">
+																					<fields>
+																						<field type="Real" name="duration" units="seconds" />
+																						<field type="Custom" name="whore function" attributeGroup="fned" definition="&#x0;??&#x0;" />
+																						<field type="Struct" name="dirty whore">
+																							<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																								<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																									<versions>
+																										<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																											<fields>
+																												<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																												<field type="CharInteger" name="Function Type" />
+																												<field type="ByteFlags" name="Flags">
+																													<definition count="8">
+																														<entry>Range</entry>
+																														<entry>Unused 0</entry>
+																														<entry>Unused 1</entry>
+																														<entry>Unused 2</entry>
+																														<entry>Color Bit 0</entry>
+																														<entry>Color Bit 1</entry>
+																														<entry>Color Bit 2</entry>
+																														<entry>Color Bit 3</entry>
+																													</definition>
+																												</field>
+																												<field type="CharInteger" name="Function 1" />
+																												<field type="CharInteger" name="Function 2" />
+																												<field type="RgbColor" name="Color 0" />
+																												<field type="RgbColor" name="Color 1" />
+																												<field type="RgbColor" name="Color 2" />
+																												<field type="RgbColor" name="Color 3" />
+																												<field type="Block" name="Values">
+																													<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																														<versions>
+																															<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																																<fields>
+																																	<field type="Real" name="Value" />
+																																	<field type="Terminator" />
+																																</fields>
+																															</real_block_fields>
+																														</versions>
+																													</block>
+																												</field>
+																												<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																												<field type="Terminator" />
+																											</fields>
+																										</function_definition_fields_v1>
+																										<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																											<fields>
+																												<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																												<field type="Block" name="data">
+																													<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																														<versions>
+																															<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																																<fields>
+																																	<field type="CharInteger" name="Value" />
+																																	<field type="Terminator" />
+																																</fields>
+																															</byte_block_fields>
+																														</versions>
+																													</block>
+																												</field>
+																												<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																												<field type="Terminator" />
+																											</fields>
+																										</function_definition_fields_v2>
+																									</versions>
+																								</block>
+																							</struct>
+																						</field>
+																						<field type="UselessPad" name="" definition="16" />
+																						<field type="Terminator" />
+																					</fields>
+																				</vibration_frequency_definition_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="Explanation" name="high frequency vibration" definition="" />
+																<field type="Struct" name="high frequency vibration">
+																	<struct name="vibration_frequency_definition_struct" groupTag="RFDS">
+																		<block name="vibration_frequency_definition_struct_block" maxCount="1" display="vibration_frequency_definition_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<vibration_frequency_definition_struct_fields size="16" sizeIdentifer="sizeof(s_vibration_frequency_definition)" fieldCount="5">
+																					<fields>
+																						<field type="Real" name="duration" units="seconds" />
+																						<field type="Custom" name="whore function" attributeGroup="fned" definition="&#x0;??&#x0;" />
+																						<field type="Struct" name="dirty whore">
+																							<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																								<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																									<versions>
+																										<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																											<fields>
+																												<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																												<field type="CharInteger" name="Function Type" />
+																												<field type="ByteFlags" name="Flags">
+																													<definition count="8">
+																														<entry>Range</entry>
+																														<entry>Unused 0</entry>
+																														<entry>Unused 1</entry>
+																														<entry>Unused 2</entry>
+																														<entry>Color Bit 0</entry>
+																														<entry>Color Bit 1</entry>
+																														<entry>Color Bit 2</entry>
+																														<entry>Color Bit 3</entry>
+																													</definition>
+																												</field>
+																												<field type="CharInteger" name="Function 1" />
+																												<field type="CharInteger" name="Function 2" />
+																												<field type="RgbColor" name="Color 0" />
+																												<field type="RgbColor" name="Color 1" />
+																												<field type="RgbColor" name="Color 2" />
+																												<field type="RgbColor" name="Color 3" />
+																												<field type="Block" name="Values">
+																													<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																														<versions>
+																															<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																																<fields>
+																																	<field type="Real" name="Value" />
+																																	<field type="Terminator" />
+																																</fields>
+																															</real_block_fields>
+																														</versions>
+																													</block>
+																												</field>
+																												<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																												<field type="Terminator" />
+																											</fields>
+																										</function_definition_fields_v1>
+																										<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																											<fields>
+																												<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																												<field type="Block" name="data">
+																													<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																														<versions>
+																															<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																																<fields>
+																																	<field type="CharInteger" name="Value" />
+																																	<field type="Terminator" />
+																																</fields>
+																															</byte_block_fields>
+																														</versions>
+																													</block>
+																												</field>
+																												<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																												<field type="Terminator" />
+																											</fields>
+																										</function_definition_fields_v2>
+																									</versions>
+																								</block>
+																							</struct>
+																						</field>
+																						<field type="UselessPad" name="" definition="16" />
+																						<field type="Terminator" />
+																					</fields>
+																				</vibration_frequency_definition_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="UselessPad" name="" definition="16" />
+																<field type="Terminator" />
+															</fields>
+														</vibration_definition_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Explanation" name="sound effect" definition="" />
+										<field type="Struct" name="sound effect">
+											<struct name="damage_effect_sound_effect_definition" groupTag="dsfx">
+												<block name="damage_effect_sound_effect_definition_block" maxCount="1" display="damage_effect_sound_effect_definition" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<damage_effect_sound_effect_definition_fields size="20" sizeIdentifer="sizeof(s_damage_effect_sound_effect_definition)" fieldCount="5">
+															<fields>
+																<field type="StringId" name="effect name" />
+																<field type="Real" name="duration" units="seconds" />
+																<field type="Custom" name="effect scale function" attributeGroup="fned" definition="&#x0;?.?" />
+																<field type="Struct" name="effect scale function">
+																	<struct name="mapping_function" groupTag="MAPP" display="Mapping">
+																		<block name="mapping_function_block" maxCount="1" display="mapping_function" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="2">
+																			<versions>
+																				<function_definition_fields_v1 size="32" sizeIdentifer="sizeof(s_function_definition_v1)" fieldCount="12">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="CharInteger" name="Function Type" />
+																						<field type="ByteFlags" name="Flags">
+																							<definition count="8">
+																								<entry>Range</entry>
+																								<entry>Unused 0</entry>
+																								<entry>Unused 1</entry>
+																								<entry>Unused 2</entry>
+																								<entry>Color Bit 0</entry>
+																								<entry>Color Bit 1</entry>
+																								<entry>Color Bit 2</entry>
+																								<entry>Color Bit 3</entry>
+																							</definition>
+																						</field>
+																						<field type="CharInteger" name="Function 1" />
+																						<field type="CharInteger" name="Function 2" />
+																						<field type="RgbColor" name="Color 0" />
+																						<field type="RgbColor" name="Color 1" />
+																						<field type="RgbColor" name="Color 2" />
+																						<field type="RgbColor" name="Color 3" />
+																						<field type="Block" name="Values">
+																							<block name="real_block" maxCount="64" display="real_block" flags="0" maxIdentifer="64" version="1">
+																								<versions>
+																									<real_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+																										<fields>
+																											<field type="Real" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</real_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v1>
+																				<function_definition_fields_v2 size="12" sizeIdentifer="sizeof(c_function_definition)" fieldCount="4">
+																					<fields>
+																						<field type="Custom" name="" attributeGroup="hide" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Block" name="data">
+																							<block name="byte_block" maxCount="1024" display="byte_block" flags="0" maxIdentifer="k_kilo" version="1">
+																								<versions>
+																									<byte_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																										<fields>
+																											<field type="CharInteger" name="Value" />
+																											<field type="Terminator" />
+																										</fields>
+																									</byte_block_fields>
+																								</versions>
+																							</block>
+																						</field>
+																						<field type="Custom" name="" attributeGroup="edih" definition="&#x0;&#x0;&#x0;&#x0;" />
+																						<field type="Terminator" />
+																					</fields>
+																				</function_definition_fields_v2>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</damage_effect_sound_effect_definition_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="UselessPad" name="" definition="24" />
+										<field type="Terminator" />
+									</fields>
+								</damage_effect_player_response_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="temporary camera impulse" definition="" />
+					<field type="Real" name="duration" units="seconds" />
+					<field type="Enum" name="fade function">
+						<definition count="8">
+							<entry>linear</entry>
+							<entry>late</entry>
+							<entry>very late</entry>
+							<entry>early</entry>
+							<entry>very early</entry>
+							<entry>cosine</entry>
+							<entry>zero</entry>
+							<entry>one</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Angle" name="rotation" units="degrees" />
+					<field type="Real" name="pushback" units="world units" />
+					<field type="RealBounds" name="jitter" units="world units" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="24" />
+					<field type="Explanation" name="camera shaking" definition="The wobble function and weight affects how the camera shake oscilates over time.&#xA;If the weight is one, then the wobble function completely scales the translational&#xA;and rotational magnitudes.  The less the weight, the less the effect wobble has.&#xA;If the wobble weight is 0 then wobble is completely ignored." />
+					<field type="Real" name="duration" help="the effect will last for this duration." units="seconds" />
+					<field type="Enum" name="falloff function" help="a function to envelope the effect's magnitude over time">
+						<definition count="8">
+							<entry>linear</entry>
+							<entry>late</entry>
+							<entry>very late</entry>
+							<entry>early</entry>
+							<entry>very early</entry>
+							<entry>cosine</entry>
+							<entry>zero</entry>
+							<entry>one</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="random translation" help="random translation in all directions" units="world units" />
+					<field type="Angle" name="random rotation" help="random rotation in all directions" units="degrees" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Enum" name="wobble function" help="a function to perturb the effect's behavior over time">
+						<definition count="12">
+							<entry>one</entry>
+							<entry>zero</entry>
+							<entry>cosine</entry>
+							<entry>cosine (variable period)</entry>
+							<entry>diagonal wave</entry>
+							<entry>diagonal wave (variable period)</entry>
+							<entry>slide</entry>
+							<entry>slide (variable period)</entry>
+							<entry>noise</entry>
+							<entry>jitter</entry>
+							<entry>wander</entry>
+							<entry>spark</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="wobble function period" units="seconds" />
+					<field type="RealFraction" name="wobble weight" help="a value of 0.0 signifies that the wobble function has no effect; a value of 1.0 signifies that the effect will not be felt when the wobble function's value is zero." />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="20" />
+					<field type="UselessPad" name="" definition="8" />
+					<field type="Explanation" name="sound" definition="" />
+					<field type="TagReference" name="sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="UselessPad" name="" definition="112" />
+					<field type="Explanation" name="breaking effect" definition="Controls particle velocities when a damage effect shatters a materal.&#xA;&#xA;All particles created within 'forward radius' will be kicked along the&#xA;damage direction with a speed equivalent to 'forward velocity' at the&#xA;epicenter of the damage and 0 at the outer radius.  'Forward exponent'&#xA;is used to modify the velocity scale.  A low exponent (like 0.5) means that&#xA;particles between the epicenter and the radius will be kicked out with a speed&#xA;closer to 'forward velocity' than if a higher exponent (like 2.0) was used&#xA;&#xA;The outward fields work in a similar way, except instead of kicking along the&#xA;damage direction, they get kick away from the damage epicenter." />
+					<field type="Real" name="forward velocity" units="world units per second" />
+					<field type="Real" name="forward radius" units="world units" />
+					<field type="Real" name="forward exponent" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Real" name="outward velocity" units="world units per second" />
+					<field type="Real" name="outward radius" units="world units" />
+					<field type="Real" name="outward exponent" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Terminator" />
+				</fields>
+			</damage_effect_fields_v2>
+		</versions>
+	</block>
+</tagGroup>

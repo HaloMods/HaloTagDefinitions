@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="device" groupTag="devi" groupTagParent="obje" version="1" flags="9" procPostprocess="True">
+	<block name="device_block" maxCount="1" display="device" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<device_block_fields size="152" sizeIdentifer="sizeof(struct _device_definition)" fieldCount="23">
+				<fields>
+					<field type="Explanation" name="$$$ DEVICE $$$" definition="" />
+					<field type="LongFlags" name="flags">
+						<definition count="3">
+							<entry>position loops</entry>
+							<entry>(unused)</entry>
+							<entry>allow interpolation</entry>
+						</definition>
+					</field>
+					<field type="Real" name="power transition time" units="seconds" />
+					<field type="Real" name="power acceleration time" units="seconds" />
+					<field type="Real" name="position transition time" units="seconds" />
+					<field type="Real" name="position acceleration time" units="seconds" />
+					<field type="Real" name="depowered position transition time" units="seconds" />
+					<field type="Real" name="depowered position acceleration time" units="seconds" />
+					<field type="WordFlags" name="lightmap flags">
+						<definition count="2">
+							<entry>don't use in lightmap</entry>
+							<entry>don't use in lightprobe</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="TagReference" name="open (up)">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="TagReference" name="close (down)">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="TagReference" name="opened">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="TagReference" name="closed">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="TagReference" name="depowered">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="TagReference" name="repowered">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="Real" name="delay time" units="seconds" />
+					<field type="UselessPad" name="" definition="8" />
+					<field type="TagReference" name="delay effect">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="Real" name="automatic activation radius" units="world units" />
+					<field type="UselessPad" name="" definition="112" />
+					<field type="Terminator" />
+				</fields>
+			</device_block_fields>
+		</versions>
+	</block>
+</tagGroup>

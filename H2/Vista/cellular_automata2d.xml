@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="cellular_automata2d" groupTag="whip" groupTagParent="????" version="1" flags="32">
+	<block name="cellular_automata2d_block" maxCount="1" display="cellular_automata2d" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<cellular_automata2d_block_fields size="556" sizeIdentifer="sizeof(struct ca2d_definition)" fieldCount="32">
+				<fields>
+					<field type="Explanation" name="properties" definition="" />
+					<field type="ShortInteger" name="updates per second" units="Hz" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="dead cell penalty" />
+					<field type="Real" name="live cell bonus" />
+					<field type="Pad" name="" definition="80" />
+					<field type="Explanation" name="height map" definition="" />
+					<field type="ShortInteger" name="width" units="cells" />
+					<field type="ShortInteger" name="height" units="cells" />
+					<field type="Real" name="cell width" units="world units" />
+					<field type="Real" name="height" units="world units" />
+					<field type="RealVector2D" name="velocity" units="cells/update" />
+					<field type="Pad" name="" definition="28" />
+					<field type="OldStringId" name="marker" />
+					<field type="LongFlags" name="interpolation flags">
+						<definition count="2">
+							<entry>blend in hsv#blends colors in hsv rather than rgb space</entry>
+							<entry>...more colors#blends colors through more hues (goes the long way around the color wheel)</entry>
+						</definition>
+					</field>
+					<field type="RealRgbColor" name="base color" />
+					<field type="RealRgbColor" name="peak color" />
+					<field type="Pad" name="" definition="76" />
+					<field type="Explanation" name="detail map" definition="" />
+					<field type="ShortInteger" name="width" units="cells" />
+					<field type="ShortInteger" name="height" units="cells" />
+					<field type="Real" name="cell width" units="world units" />
+					<field type="RealVector2D" name="velocity" units="cells/update" />
+					<field type="Pad" name="" definition="48" />
+					<field type="OldStringId" name="marker" />
+					<field type="ShortInteger" name="texture width" units="cells" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="48" />
+					<field type="TagReference" name="texture">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Pad" name="" definition="160" />
+					<field type="Block" name="rules">
+						<block name="rules_block" maxCount="16" display="rules_block" flags="0" maxIdentifer="MAXIMUM_RULES_PER_CA" version="1">
+							<versions>
+								<rules_block_fields size="88" sizeIdentifer="sizeof(struct ca2d_rule)" fieldCount="5">
+									<fields>
+										<field type="String" name="name" isBlockName="True" />
+										<field type="RealRgbColor" name="tint color" />
+										<field type="Pad" name="" definition="32" />
+										<field type="Block" name="states">
+											<block name="states_block" maxCount="16" display="states_block" flags="0" maxIdentifer="MAXIMUM_STATES_PER_RULE" version="1">
+												<versions>
+													<states_block_fields size="96" sizeIdentifer="sizeof(struct ca2d_rule_state)" fieldCount="17">
+														<fields>
+															<field type="String" name="name" isBlockName="True" />
+															<field type="RealRgbColor" name="color" />
+															<field type="ShortInteger" name="counts as" units="neighbors" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Real" name="initial placement weight" />
+															<field type="Pad" name="" definition="24" />
+															<field type="ShortBlockIndex1" name="zero" definition="states_block" />
+															<field type="ShortBlockIndex1" name="one" definition="states_block" />
+															<field type="ShortBlockIndex1" name="two" definition="states_block" />
+															<field type="ShortBlockIndex1" name="three" definition="states_block" />
+															<field type="ShortBlockIndex1" name="four" definition="states_block" />
+															<field type="ShortBlockIndex1" name="five" definition="states_block" />
+															<field type="ShortBlockIndex1" name="six" definition="states_block" />
+															<field type="ShortBlockIndex1" name="seven" definition="states_block" />
+															<field type="ShortBlockIndex1" name="eight" definition="states_block" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</states_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</rules_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</cellular_automata2d_block_fields>
+		</versions>
+	</block>
+</tagGroup>

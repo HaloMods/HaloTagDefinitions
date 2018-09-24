@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="shader_template" groupTag="stem" groupTagParent="????" version="1" flags="9" procPostprocess="True">
+	<block name="shader_template_block" maxCount="1" display="shader_template" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<shader_template_block_fields size="156" sizeIdentifer="sizeof(s_shader_template_definition)" fieldCount="21">
+				<fields>
+					<field type="Data" name="Documentation">
+						<definition name="shader_text_definition" maxSize="65535" alignment="0" flags="6" maxIdentifer="UNSIGNED_SHORT_MAX" />
+					</field>
+					<field type="StringId" name="Default Material Name" attributeGroup="sted" hasStringEditor="true" />
+					<field type="Explanation" name="FLAGS" definition="* Force Active Camo: Should be used with cautuion, as this causes a backbuffer copy when this shader is rendered.&#xA;* Water: ???.&#xA;* Foliage: Used with lightmapped foliage (two-sided lighting) shaders. It affects importing but not rendering." />
+					<field type="Pad" name="" definition="2" />
+					<field type="WordFlags" name="Flags">
+						<definition count="4">
+							<entry>Force Active Camo</entry>
+							<entry>Water</entry>
+							<entry>Foliage</entry>
+							<entry>Hide Standard Parameters</entry>
+						</definition>
+					</field>
+					<field type="Block" name="Properties">
+						<block name="shader_template_property_block" maxCount="14" display="property" flags="0" maxIdentifer="k_number_of_shader_template_properties" version="1">
+							<versions>
+								<shader_template_property_block_fields size="8" sizeIdentifer="sizeof(s_shader_template_property)" fieldCount="4">
+									<fields>
+										<field type="Enum" name="Property" isBlockName="True">
+											<definition count="14">
+												<entry>Unused</entry>
+												<entry>Diffuse Map</entry>
+												<entry>Lightmap Emissive Map</entry>
+												<entry>Lightmap Emissive Color</entry>
+												<entry>Lightmap Emissive Power</entry>
+												<entry>Lightmap Resolution Scale</entry>
+												<entry>Lightmap Half Life</entry>
+												<entry>Lightmap Diffuse Scale</entry>
+												<entry>Lightmap Alpha Test Map</entry>
+												<entry>Lightmap Translucent Map</entry>
+												<entry>Lightmap Translucent Color</entry>
+												<entry>Lightmap Translucent Alpha</entry>
+												<entry>Active Camo Map</entry>
+												<entry>Lightmap Foliage Scale</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="StringId" name="Parameter Name" />
+										<field type="Terminator" />
+									</fields>
+								</shader_template_property_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Categories">
+						<block name="shader_template_category_block" maxCount="16" display="category" flags="0" maxIdentifer="k_maximum_categories_per_shader_template" version="1">
+							<versions>
+								<shader_template_category_block_fields size="16" sizeIdentifer="sizeof(s_shader_template_category)" fieldCount="3">
+									<fields>
+										<field type="StringId" name="Name" isBlockName="True" />
+										<field type="Block" name="Parameters">
+											<block name="shader_template_parameter_block" maxCount="64" display="parameter" flags="0" maxIdentifer="k_maximum_parameters_per_shader_template_category" version="1">
+												<versions>
+													<shader_template_parameter_block_fields size="72" sizeIdentifer="sizeof(s_shader_template_parameter)" fieldCount="13">
+														<fields>
+															<field type="StringId" name="Name" isBlockName="True" />
+															<field type="Data" name="Explanation">
+																<definition name="shader_text_definition" maxSize="65535" alignment="0" flags="6" maxIdentifer="UNSIGNED_SHORT_MAX" />
+															</field>
+															<field type="Enum" name="Type">
+																<definition count="4">
+																	<entry>Bitmap</entry>
+																	<entry>Value</entry>
+																	<entry>Color</entry>
+																	<entry>Switch</entry>
+																</definition>
+															</field>
+															<field type="WordFlags" name="Flags">
+																<definition count="2">
+																	<entry>Animated</entry>
+																	<entry>Hide Bitmap Reference</entry>
+																</definition>
+															</field>
+															<field type="TagReference" name="Default Bitmap">
+																<definition flags="0" groupTag="bitm" />
+															</field>
+															<field type="Real" name="Default Const Value" />
+															<field type="RealRgbColor" name="Default Const Color" />
+															<field type="Enum" name="Bitmap Type">
+																<definition count="3">
+																	<entry>2D</entry>
+																	<entry>3D</entry>
+																	<entry>Cube Map</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="WordFlags" name="Bitmap Animation Flags">
+																<definition count="5">
+																	<entry>Scale Uniform</entry>
+																	<entry>Scale</entry>
+																	<entry>Translation</entry>
+																	<entry>Rotation</entry>
+																	<entry>Index</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Real" name="Bitmap Scale" />
+															<field type="Terminator" />
+														</fields>
+													</shader_template_parameter_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</shader_template_category_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="LIGHT RESPONSE" definition="Not used anymore." />
+					<field type="TagReference" name="Light Response">
+						<definition flags="0" groupTag="slit" />
+					</field>
+					<field type="Block" name="LODs">
+						<block name="shader_template_level_of_detail_block" maxCount="8" display="shader_template_level_of_detail_block" flags="0" maxIdentifer="k_shader_level_of_detail_count" version="1">
+							<versions>
+								<shader_template_level_of_detail_block_fields size="16" sizeIdentifer="sizeof(s_shader_template_level_of_detail)" fieldCount="3">
+									<fields>
+										<field type="Real" name="Projected Diameter" units="pixels" />
+										<field type="Block" name="Pass">
+											<block name="shader_template_pass_reference_block" maxCount="16" display="pass" flags="0" maxIdentifer="k_maximum_pass_references_per_shader_template" version="1">
+												<versions>
+													<shader_template_pass_reference_block_fields size="32" sizeIdentifer="sizeof(s_shader_template_pass_reference)" fieldCount="5">
+														<fields>
+															<field type="Enum" name="Layer">
+																<definition count="19">
+																	<entry>texaccum</entry>
+																	<entry>Environment Map</entry>
+																	<entry>Self-Illumination</entry>
+																	<entry>Overlay</entry>
+																	<entry>Transparent</entry>
+																	<entry>Lightmap (Indirect)</entry>
+																	<entry>Diffuse</entry>
+																	<entry>Specular</entry>
+																	<entry>Shadow Generate</entry>
+																	<entry>Shadow Apply</entry>
+																	<entry>Boom</entry>
+																	<entry>Fog</entry>
+																	<entry>Sh Prt</entry>
+																	<entry>Active Camo</entry>
+																	<entry>Water Edge Blend</entry>
+																	<entry>Decal</entry>
+																	<entry>Active Camo Stencil Modulate</entry>
+																	<entry>Hologram</entry>
+																	<entry>Light Albedo</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="TagReference" name="Pass" isBlockName="True">
+																<definition flags="0" groupTag="spas" />
+															</field>
+															<field type="Pad" name="" definition="12" />
+															<field type="Terminator" />
+														</fields>
+													</shader_template_pass_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</shader_template_level_of_detail_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="">
+						<block name="shader_template_runtime_external_light_response_index_block" maxCount="65535" display="shader_template_runtime_external_light_response_index_block" flags="0" maxIdentifer="UNSIGNED_SHORT_MAX" version="1">
+							<versions>
+								<shader_template_runtime_external_light_response_index_block_fields size="4" sizeIdentifer="sizeof(long)" fieldCount="2">
+									<fields>
+										<field type="LongInteger" name="" />
+										<field type="Terminator" />
+									</fields>
+								</shader_template_runtime_external_light_response_index_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="">
+						<block name="shader_template_runtime_external_light_response_index_block" maxCount="65535" display="shader_template_runtime_external_light_response_index_block" flags="0" maxIdentifer="UNSIGNED_SHORT_MAX" version="1">
+							<versions>
+								<shader_template_runtime_external_light_response_index_block_fields size="4" sizeIdentifer="sizeof(long)" fieldCount="2">
+									<fields>
+										<field type="LongInteger" name="" />
+										<field type="Terminator" />
+									</fields>
+								</shader_template_runtime_external_light_response_index_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="RECURSIVE RENDERING" definition="Really cool stuff." />
+					<field type="TagReference" name="Aux 1 Shader">
+						<definition flags="0" groupTag="shad" />
+					</field>
+					<field type="Enum" name="Aux 1 Layer">
+						<definition count="19">
+							<entry>texaccum</entry>
+							<entry>Environment Map</entry>
+							<entry>Self-Illumination</entry>
+							<entry>Overlay</entry>
+							<entry>Transparent</entry>
+							<entry>Lightmap (Indirect)</entry>
+							<entry>Diffuse</entry>
+							<entry>Specular</entry>
+							<entry>Shadow Generate</entry>
+							<entry>Shadow Apply</entry>
+							<entry>Boom</entry>
+							<entry>Fog</entry>
+							<entry>Sh Prt</entry>
+							<entry>Active Camo</entry>
+							<entry>Water Edge Blend</entry>
+							<entry>Decal</entry>
+							<entry>Active Camo Stencil Modulate</entry>
+							<entry>Hologram</entry>
+							<entry>Light Albedo</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="TagReference" name="Aux 2 Shader">
+						<definition flags="0" groupTag="shad" />
+					</field>
+					<field type="Enum" name="Aux 2 Layer">
+						<definition count="19">
+							<entry>texaccum</entry>
+							<entry>Environment Map</entry>
+							<entry>Self-Illumination</entry>
+							<entry>Overlay</entry>
+							<entry>Transparent</entry>
+							<entry>Lightmap (Indirect)</entry>
+							<entry>Diffuse</entry>
+							<entry>Specular</entry>
+							<entry>Shadow Generate</entry>
+							<entry>Shadow Apply</entry>
+							<entry>Boom</entry>
+							<entry>Fog</entry>
+							<entry>Sh Prt</entry>
+							<entry>Active Camo</entry>
+							<entry>Water Edge Blend</entry>
+							<entry>Decal</entry>
+							<entry>Active Camo Stencil Modulate</entry>
+							<entry>Hologram</entry>
+							<entry>Light Albedo</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Block" name="Postprocess Definition" isReadonly="True">
+						<block name="shader_template_postprocess_definition_new_block" maxCount="1" display="shader_template_postprocess_definition_new_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<shader_template_postprocess_definition_new_block_fields size="60" sizeIdentifer="sizeof(s_shader_template_postprocess_definition_new)" fieldCount="6">
+									<fields>
+										<field type="Block" name="levels of detail">
+											<block name="shader_template_postprocess_level_of_detail_new_block" maxCount="1024" display="shader_template_postprocess_level_of_detail_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_template_postprocess_level_of_detail_new_block_fields size="10" sizeIdentifer="sizeof(s_shader_template_postprocess_level_of_detail_new)" fieldCount="4">
+														<fields>
+															<field type="Struct" name="layers">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="LongInteger" name="available layers" />
+															<field type="Real" name="projected height percentage" />
+															<field type="Terminator" />
+														</fields>
+													</shader_template_postprocess_level_of_detail_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="layers">
+											<block name="tag_block_index_block" maxCount="1024" display="tag_block_index_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<tag_block_index_block_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+														<fields>
+															<field type="Struct" name="indices">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</tag_block_index_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="passes">
+											<block name="shader_template_postprocess_pass_new_block" maxCount="1024" display="shader_template_postprocess_pass_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_template_postprocess_pass_new_block_fields size="18" sizeIdentifer="sizeof(s_shader_template_postprocess_pass_new)" fieldCount="3">
+														<fields>
+															<field type="TagReference" name="pass">
+																<definition flags="0" groupTag="spas" />
+															</field>
+															<field type="Struct" name="implementations">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</shader_template_postprocess_pass_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="implementations">
+											<block name="shader_template_postprocess_implementation_new_block" maxCount="1024" display="shader_template_postprocess_implementation_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_template_postprocess_implementation_new_block_fields size="6" sizeIdentifer="sizeof(s_shader_template_postprocess_implementation_new)" fieldCount="4">
+														<fields>
+															<field type="Struct" name="bitmaps">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="pixel constants">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="vertex constants">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</shader_template_postprocess_implementation_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="remappings">
+											<block name="shader_template_postprocess_remapping_new_block" maxCount="1024" display="shader_template_postprocess_remapping_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_template_postprocess_remapping_new_block_fields size="4" sizeIdentifer="sizeof(s_shader_template_postprocess_remapping_new)" fieldCount="3">
+														<fields>
+															<field type="Skip" name="" definition="3" />
+															<field type="CharInteger" name="source index" />
+															<field type="Terminator" />
+														</fields>
+													</shader_template_postprocess_remapping_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</shader_template_postprocess_definition_new_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</shader_template_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="meter" groupTag="metr" groupTagParent="????" version="1" flags="8" procPostprocess="True">
+	<block name="meter_block" maxCount="1" display="meter" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<meter_block_fields size="172" sizeIdentifer="sizeof(struct meter_definition)" fieldCount="18">
+				<fields>
+					<field type="LongFlags" name="flags">
+						<definition count="0" />
+					</field>
+					<field type="TagReference" name="stencil bitmaps" help="two bitmaps specifying the mask and the meter levels">
+						<definition flags="2" groupTag="bitm" />
+					</field>
+					<field type="TagReference" name="source bitmap" help="optional bitmap to draw into the unmasked regions of the meter (modulated by the colors below)">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="ShortInteger" name="stencil sequence index" />
+					<field type="ShortInteger" name="source sequence index" />
+					<field type="Pad" name="" definition="16" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Enum" name="interpolate colors...">
+						<definition count="4">
+							<entry>linearly</entry>
+							<entry>faster near empty</entry>
+							<entry>faster near full</entry>
+							<entry>through random noise</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="anchor colors...">
+						<definition count="3">
+							<entry>at both ends</entry>
+							<entry>at empty</entry>
+							<entry>at full</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="8" />
+					<field type="RealArgbColor" name="empty color" />
+					<field type="RealArgbColor" name="full color" />
+					<field type="Pad" name="" definition="20" />
+					<field type="Real" name="unmask distance" help="fade from fully masked to fully unmasked this distance beyond full (and below empty)" units="meter units" />
+					<field type="Real" name="mask distance" help="fade from fully unmasked to fully masked this distance below full (and beyond empty)" units="meter units" />
+					<field type="Pad" name="" definition="20" />
+					<field type="Data" name="encoded stencil">
+						<definition name="meter_stencil_data_definition" maxSize="65536" alignment="0" flags="0" maxIdentifer="MAXIMUM_METER_DEFINITION_ENCODED_STENCIL_SIZE" requiresByteSwap="true" />
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</meter_block_fields>
+		</versions>
+	</block>
+</tagGroup>

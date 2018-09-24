@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="unit" groupTag="unit" groupTagParent="obje" version="3" flags="8" procPostprocess="True">
+	<block name="unit_block" maxCount="1" display="unit" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<unit_block_fields size="396" sizeIdentifer="sizeof(struct _unit_definition)" fieldCount="56">
+				<fields>
+					<field type="Explanation" name="$$$ UNIT $$$" definition="" />
+					<field type="LongFlags" name="flags">
+						<definition count="29">
+							<entry>circular aiming</entry>
+							<entry>destroyed after dying</entry>
+							<entry>half-speed interpolation</entry>
+							<entry>fires from camera</entry>
+							<entry>entrance inside bounding sphere</entry>
+							<entry>doesn't show readied weapon</entry>
+							<entry>causes passenger dialogue</entry>
+							<entry>resists pings</entry>
+							<entry>melee attack is fatal</entry>
+							<entry>don't reface during pings</entry>
+							<entry>has no aiming</entry>
+							<entry>simple creature</entry>
+							<entry>impact melee attaches to unit</entry>
+							<entry>impact melee dies on shields</entry>
+							<entry>cannot open doors automatically</entry>
+							<entry>melee attackers cannot attach</entry>
+							<entry>not instantly killed by melee</entry>
+							<entry>shield sapping</entry>
+							<entry>runs around flaming</entry>
+							<entry>inconsequential</entry>
+							<entry>special cinematic unit</entry>
+							<entry>ignored by autoaiming</entry>
+							<entry>shields fry infection forms</entry>
+							<entry>unused</entry>
+							<entry>unused</entry>
+							<entry>acts as gunner for parent</entry>
+							<entry>controlled by parent gunner</entry>
+							<entry>parent's primary weapon</entry>
+							<entry>unit has boost</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="default team">
+						<definition count="16">
+							<entry>default</entry>
+							<entry>player</entry>
+							<entry>human</entry>
+							<entry>covenant</entry>
+							<entry>flood</entry>
+							<entry>sentinel</entry>
+							<entry>heretic</entry>
+							<entry>prophet</entry>
+							<entry>unused8</entry>
+							<entry>unused9</entry>
+							<entry>unused10</entry>
+							<entry>unused11</entry>
+							<entry>unused12</entry>
+							<entry>unused13</entry>
+							<entry>unused14</entry>
+							<entry>unused15</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="constant sound volume">
+						<definition count="5">
+							<entry>silent</entry>
+							<entry>medium</entry>
+							<entry>loud</entry>
+							<entry>shout</entry>
+							<entry>quiet</entry>
+						</definition>
+					</field>
+					<field type="UselessPad" name="" definition="4" />
+					<field type="TagReference" name="integrated light toggle">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="UselessPad" name="" definition="8" />
+					<field type="Angle" name="camera field of view" units="degrees" />
+					<field type="Real" name="camera stiffness" />
+					<field type="Struct" name="unit camera">
+						<struct name="unit_camera_struct" groupTag="uncs" display="unit camera">
+							<block name="unit_camera_struct_block" maxCount="1" display="unit_camera_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<unit_camera_struct_fields size="32" sizeOverride="88" sizeIdentifer="sizeof(s_unit_camera)" fieldCount="6">
+										<fields>
+											<field type="OldStringId" name="camera marker name" />
+											<field type="OldStringId" name="camera submerged marker name" />
+											<field type="Angle" name="pitch auto-level" />
+											<field type="AngleBounds" name="pitch range" />
+											<field type="Block" name="camera tracks">
+												<block name="unit_camera_track_block" maxCount="2" display="unit_camera_track_block" flags="0" maxIdentifer="MAXIMUM_NUMBER_OF_UNIT_CAMERA_TRACKS" procFormat="True" version="1">
+													<versions>
+														<unit_camera_track_block_fields size="16" sizeIdentifer="sizeof(s_unit_camera_track)" fieldCount="3">
+															<fields>
+																<field type="TagReference" name="track">
+																	<definition flags="0" groupTag="trak" />
+																</field>
+																<field type="UselessPad" name="" definition="12" />
+																<field type="Terminator" />
+															</fields>
+														</unit_camera_track_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Terminator" />
+										</fields>
+									</unit_camera_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Struct" name="acceleration">
+						<struct name="unit_seat_acceleration_struct" groupTag="usas">
+							<block name="unit_seat_acceleration_struct_block" maxCount="1" display="unit_seat_acceleration_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<unit_seat_acceleration_struct_fields size="20" sizeIdentifer="sizeof(struct unit_seat_acceleration)" fieldCount="4">
+										<fields>
+											<field type="RealVector3D" name="acceleration range" units="world units per second squared" />
+											<field type="Real" name="accel action scale" units="actions fail [0,1+]" />
+											<field type="Real" name="accel attach scale" units="detach unit [0,1+]" />
+											<field type="Terminator" />
+										</fields>
+									</unit_seat_acceleration_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Real" name="soft ping threshold" units="[0,1]" />
+					<field type="Real" name="soft ping interrupt time" units="seconds" />
+					<field type="Real" name="hard ping threshold" units="[0,1]" />
+					<field type="Real" name="hard ping interrupt time" units="seconds" />
+					<field type="Real" name="hard death threshold" units="[0,1]" />
+					<field type="Real" name="feign death threshold" units="[0,1]" />
+					<field type="Real" name="feign death time" units="seconds" />
+					<field type="Real" name="distance of evade anim" help="this must be set to tell the AI how far it should expect our evade animation to move us" units="world units" />
+					<field type="Real" name="distance of dive anim" help="this must be set to tell the AI how far it should expect our dive animation to move us" units="world units" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Real" name="stunned movement threshold" help="if we take this much damage in a short space of time we will play our 'stunned movement' animations" units="[0,1]" />
+					<field type="Real" name="feign death chance" units="[0,1]" />
+					<field type="Real" name="feign repeat chance" units="[0,1]" />
+					<field type="TagReference" name="spawned turret character" help="automatically created character when this unit is driven">
+						<definition flags="0" groupTag="char" />
+					</field>
+					<field type="ShortIntegerBounds" name="spawned actor count" help="number of actors which we spawn" />
+					<field type="Real" name="spawned velocity" help="velocity at which we throw spawned actors" />
+					<field type="Angle" name="aiming velocity maximum" units="degrees per second" />
+					<field type="Angle" name="aiming acceleration maximum" units="degrees per second squared" />
+					<field type="RealFraction" name="casual aiming modifier" units="[0,1]" />
+					<field type="Angle" name="looking velocity maximum" units="degrees per second" />
+					<field type="Angle" name="looking acceleration maximum" units="degrees per second squared" />
+					<field type="StringId" name="right_hand_node" help="where the primary weapon is attached" />
+					<field type="StringId" name="left_hand_node" help="where the seconday weapon is attached (for dual-pistol modes)" />
+					<field type="Struct" name="more damn nodes">
+						<struct name="unit_additional_node_names_struct" groupTag="uHnd">
+							<block name="unit_additional_node_names_struct_block" maxCount="1" display="unit_additional_node_names_struct" flags="0" maxIdentifer="1" version="2">
+								<versions>
+									<unit_additional_node_names_v1 size="0" sizeIdentifer="0" fieldCount="1">
+										<fields>
+											<field type="Terminator" />
+										</fields>
+									</unit_additional_node_names_v1>
+									<unit_additional_node_names size="4" sizeIdentifer="sizeof(struct s_unit_additional_node_names)" fieldCount="2">
+										<fields>
+											<field type="StringId" name="preferred_gun_node" help="if found, use this gun marker" />
+											<field type="Terminator" />
+										</fields>
+									</unit_additional_node_names>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="UselessPad" name="" definition="8" />
+					<field type="TagReference" name="melee damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="Struct" name="your momma">
+						<struct name="unit_boarding_melee_struct" groupTag="ubms">
+							<block name="unit_boarding_melee_struct_block" maxCount="1" display="unit_boarding_melee_struct" flags="0" maxIdentifer="1" version="2">
+								<versions>
+									<unit_boarding_melee_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+										<fields>
+											<field type="Terminator" />
+										</fields>
+									</unit_boarding_melee_fields_v1>
+									<unit_boarding_melee_fields_v2 size="80" sizeIdentifer="sizeof(struct tag_reference)*5" fieldCount="6">
+										<fields>
+											<field type="TagReference" name="boarding melee damage">
+												<definition flags="0" groupTag="jpt!" />
+											</field>
+											<field type="TagReference" name="boarding melee response">
+												<definition flags="0" groupTag="jpt!" />
+											</field>
+											<field type="TagReference" name="landing melee damage">
+												<definition flags="0" groupTag="jpt!" />
+											</field>
+											<field type="TagReference" name="flurry melee damage">
+												<definition flags="0" groupTag="jpt!" />
+											</field>
+											<field type="TagReference" name="obstacle smash damage">
+												<definition flags="0" groupTag="jpt!" />
+											</field>
+											<field type="Terminator" />
+										</fields>
+									</unit_boarding_melee_fields_v2>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Enum" name="motion sensor blip size">
+						<definition count="3">
+							<entry>medium</entry>
+							<entry>small</entry>
+							<entry>large</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Block" name="postures">
+						<block name="unit_postures_block" maxCount="20" display="unit_postures_block" flags="0" maxIdentifer="MAXIMUM_POSTURES_PER_UNIT" version="1">
+							<versions>
+								<unit_postures_block_fields size="16" sizeIdentifer="sizeof(s_posture_definition)" fieldCount="4">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="UselessPad" name="" definition="24" />
+										<field type="RealVector3D" name="pill offset" />
+										<field type="Terminator" />
+									</fields>
+								</unit_postures_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="NEW HUD INTERFACES">
+						<block name="unit_hud_reference_block" maxCount="2" display="unit_hud_reference_block" flags="0" maxIdentifer="NUMBER_OF_UNIT_HUD_TYPES" procFormat="True" version="1">
+							<versions>
+								<unit_hud_reference_block_fields size="16" sizeIdentifer="sizeof(struct unit_hud_reference)" fieldCount="4">
+									<fields>
+										<field type="UselessPad" name="" definition="16" />
+										<field type="TagReference" name="new unit hud interface">
+											<definition flags="0" groupTag="nhdt" />
+										</field>
+										<field type="UselessPad" name="" definition="16" />
+										<field type="Terminator" />
+									</fields>
+								</unit_hud_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="dialogue variants">
+						<block name="dialogue_variant_block" maxCount="16" display="dialogue_variant_block" flags="0" maxIdentifer="MAXIMUM_DIALOGUE_VARIANTS_PER_UNIT" procFormat="True" version="1">
+							<versions>
+								<dialogue_variant_block_fields size="20" sizeIdentifer="sizeof(struct dialogue_variant_definition)" fieldCount="5">
+									<fields>
+										<field type="ShortInteger" name="variant number" help="variant number to use this dialogue with (must match the suffix in the permutations on the unit's model)" />
+										<field type="Pad" name="" definition="2" />
+										<field type="UselessPad" name="" definition="4" />
+										<field type="TagReference" name="dialogue">
+											<definition flags="0" groupTag="udlg" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</dialogue_variant_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Real" name="grenade velocity" units="world units per second" />
+					<field type="Enum" name="grenade type">
+						<definition count="2">
+							<entry>human fragmentation</entry>
+							<entry>covenant plasma</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="grenade count" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Block" name="powered seats">
+						<block name="powered_seat_block" maxCount="2" display="powered_seat_block" flags="0" maxIdentifer="k_powered_seats_count" procFormat="True" version="1">
+							<versions>
+								<powered_seat_block_fields size="8" sizeIdentifer="sizeof(struct powered_seat_definition)" fieldCount="5">
+									<fields>
+										<field type="UselessPad" name="" definition="4" />
+										<field type="Real" name="driver powerup time" units="seconds" />
+										<field type="Real" name="driver powerdown time" units="seconds" />
+										<field type="UselessPad" name="" definition="56" />
+										<field type="Terminator" />
+									</fields>
+								</powered_seat_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="weapons">
+						<block name="unit_weapon_block" maxCount="4" display="unit_weapon_block" flags="0" maxIdentifer="MAXIMUM_INITIAL_WEAPONS_PER_UNIT" version="1">
+							<versions>
+								<unit_weapon_block_fields size="16" sizeIdentifer="sizeof(struct unit_initial_weapon)" fieldCount="3">
+									<fields>
+										<field type="TagReference" name="weapon" isBlockName="True">
+											<definition flags="0" groupTag="weap" />
+										</field>
+										<field type="UselessPad" name="" definition="20" />
+										<field type="Terminator" />
+									</fields>
+								</unit_weapon_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="seats">
+						<block name="unit_seat_block" maxCount="32" display="unit_seat_block" flags="0" maxIdentifer="MAXIMUM_SEATS_PER_UNIT_DEFINITION" procPostprocess="True" version="4">
+							<versions>
+								<unit_seat_fields_v1 size="172" sizeIdentifer="sizeof(struct unit_seat_v1)" fieldCount="21">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="20">
+												<entry>invisible</entry>
+												<entry>locked</entry>
+												<entry>driver</entry>
+												<entry>gunner</entry>
+												<entry>third person camera</entry>
+												<entry>allows weapons</entry>
+												<entry>third person on enter</entry>
+												<entry>first person camera slaved to gun.</entry>
+												<entry>allow vehicle communication animations</entry>
+												<entry>not valid without driver</entry>
+												<entry>allow AI noncombatants</entry>
+												<entry>boarding seat</entry>
+												<entry>ai firing disabled by max acceleration</entry>
+												<entry>boarding enters seat</entry>
+												<entry>boarding need any passenger</entry>
+												<entry>controls open and close</entry>
+												<entry>invalid for player</entry>
+												<entry>invalid for non-player</entry>
+												<entry>gunner (player only)</entry>
+												<entry>invisible under major damage</entry>
+											</definition>
+										</field>
+										<field type="OldStringId" name="label" />
+										<field type="OldStringId" name="marker name" isBlockName="True" />
+										<field type="Pad" name="" definition="32" />
+										<field type="RealVector3D" name="acceleration scale" />
+										<field type="Real" name="AI scariness" />
+										<field type="Enum" name="ai seat type">
+											<definition count="6">
+												<entry>NONE</entry>
+												<entry>passenger</entry>
+												<entry>gunner</entry>
+												<entry>small cargo</entry>
+												<entry>large cargo</entry>
+												<entry>driver</entry>
+											</definition>
+										</field>
+										<field type="ShortBlockIndex1" name="boarding seat" definition="unit_seat_block" />
+										<field type="RealFraction" name="listener interpolation factor" help="how far to interpolate listener position from camera to occupant's head" />
+										<field type="Real" name="yaw rate" units="degrees per second" />
+										<field type="Real" name="pitch rate" units="degrees per second" />
+										<field type="Struct" name="unit camera">
+											<struct name="unit_camera_struct" groupTag="uncs" display="unit camera">
+												<block name="unit_camera_struct_block" maxCount="1" display="unit_camera_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<unit_camera_struct_fields size="32" sizeOverride="88" sizeIdentifer="sizeof(s_unit_camera)" fieldCount="6">
+															<fields>
+																<field type="OldStringId" name="camera marker name" />
+																<field type="OldStringId" name="camera submerged marker name" />
+																<field type="Angle" name="pitch auto-level" />
+																<field type="AngleBounds" name="pitch range" />
+																<field type="Block" name="camera tracks">
+																	<block name="unit_camera_track_block" maxCount="2" display="unit_camera_track_block" flags="0" maxIdentifer="MAXIMUM_NUMBER_OF_UNIT_CAMERA_TRACKS" procFormat="True" version="1">
+																		<versions>
+																			<unit_camera_track_block_fields size="16" sizeIdentifer="sizeof(s_unit_camera_track)" fieldCount="3">
+																				<fields>
+																					<field type="TagReference" name="track">
+																						<definition flags="0" groupTag="trak" />
+																					</field>
+																					<field type="UselessPad" name="" definition="12" />
+																					<field type="Terminator" />
+																				</fields>
+																			</unit_camera_track_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</unit_camera_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Block" name="unit hud interface">
+											<block name="unit_hud_reference_block" maxCount="2" display="unit_hud_reference_block" flags="0" maxIdentifer="NUMBER_OF_UNIT_HUD_TYPES" procFormat="True" version="1">
+												<versions>
+													<unit_hud_reference_block_fields size="16" sizeIdentifer="sizeof(struct unit_hud_reference)" fieldCount="4">
+														<fields>
+															<field type="UselessPad" name="" definition="16" />
+															<field type="TagReference" name="new unit hud interface">
+																<definition flags="0" groupTag="nhdt" />
+															</field>
+															<field type="UselessPad" name="" definition="16" />
+															<field type="Terminator" />
+														</fields>
+													</unit_hud_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="4" />
+										<field type="ShortInteger" name="hud text message index" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Angle" name="yaw minimum" />
+										<field type="Angle" name="yaw maximum" />
+										<field type="TagReference" name="built-in gunner">
+											<definition flags="0" groupTag="char" />
+										</field>
+										<field type="Pad" name="" definition="20" />
+										<field type="Terminator" />
+									</fields>
+								</unit_seat_fields_v1>
+								<unit_seat_fields_v2 size="188" sizeIdentifer="sizeof(struct unit_seat_v2)" fieldCount="23">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="20">
+												<entry>invisible</entry>
+												<entry>locked</entry>
+												<entry>driver</entry>
+												<entry>gunner</entry>
+												<entry>third person camera</entry>
+												<entry>allows weapons</entry>
+												<entry>third person on enter</entry>
+												<entry>first person camera slaved to gun.</entry>
+												<entry>allow vehicle communication animations</entry>
+												<entry>not valid without driver</entry>
+												<entry>allow AI noncombatants</entry>
+												<entry>boarding seat</entry>
+												<entry>ai firing disabled by max acceleration</entry>
+												<entry>boarding enters seat</entry>
+												<entry>boarding need any passenger</entry>
+												<entry>controls open and close</entry>
+												<entry>invalid for player</entry>
+												<entry>invalid for non-player</entry>
+												<entry>gunner (player only)</entry>
+												<entry>invisible under major damage</entry>
+											</definition>
+										</field>
+										<field type="OldStringId" name="label" />
+										<field type="OldStringId" name="marker name" isBlockName="True" />
+										<field type="Pad" name="" definition="32" />
+										<field type="RealVector3D" name="acceleration scale" />
+										<field type="Real" name="AI scariness" />
+										<field type="Enum" name="ai seat type">
+											<definition count="6">
+												<entry>NONE</entry>
+												<entry>passenger</entry>
+												<entry>gunner</entry>
+												<entry>small cargo</entry>
+												<entry>large cargo</entry>
+												<entry>driver</entry>
+											</definition>
+										</field>
+										<field type="ShortBlockIndex1" name="boarding seat" definition="unit_seat_block" />
+										<field type="RealFraction" name="listener interpolation factor" help="how far to interpolate listener position from camera to occupant's head" />
+										<field type="RealBounds" name="yaw rate bounds" units="degrees per second" />
+										<field type="RealBounds" name="pitch rate bounds" units="degrees per second" />
+										<field type="Real" name="max speed reference" />
+										<field type="Real" name="speed exponent" />
+										<field type="Struct" name="unit camera">
+											<struct name="unit_camera_struct" groupTag="uncs" display="unit camera">
+												<block name="unit_camera_struct_block" maxCount="1" display="unit_camera_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<unit_camera_struct_fields size="32" sizeOverride="88" sizeIdentifer="sizeof(s_unit_camera)" fieldCount="6">
+															<fields>
+																<field type="OldStringId" name="camera marker name" />
+																<field type="OldStringId" name="camera submerged marker name" />
+																<field type="Angle" name="pitch auto-level" />
+																<field type="AngleBounds" name="pitch range" />
+																<field type="Block" name="camera tracks">
+																	<block name="unit_camera_track_block" maxCount="2" display="unit_camera_track_block" flags="0" maxIdentifer="MAXIMUM_NUMBER_OF_UNIT_CAMERA_TRACKS" procFormat="True" version="1">
+																		<versions>
+																			<unit_camera_track_block_fields size="16" sizeIdentifer="sizeof(s_unit_camera_track)" fieldCount="3">
+																				<fields>
+																					<field type="TagReference" name="track">
+																						<definition flags="0" groupTag="trak" />
+																					</field>
+																					<field type="UselessPad" name="" definition="12" />
+																					<field type="Terminator" />
+																				</fields>
+																			</unit_camera_track_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</unit_camera_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Block" name="unit hud interface">
+											<block name="unit_hud_reference_block" maxCount="2" display="unit_hud_reference_block" flags="0" maxIdentifer="NUMBER_OF_UNIT_HUD_TYPES" procFormat="True" version="1">
+												<versions>
+													<unit_hud_reference_block_fields size="16" sizeIdentifer="sizeof(struct unit_hud_reference)" fieldCount="4">
+														<fields>
+															<field type="UselessPad" name="" definition="16" />
+															<field type="TagReference" name="new unit hud interface">
+																<definition flags="0" groupTag="nhdt" />
+															</field>
+															<field type="UselessPad" name="" definition="16" />
+															<field type="Terminator" />
+														</fields>
+													</unit_hud_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="4" />
+										<field type="ShortInteger" name="hud text message index" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Angle" name="yaw minimum" />
+										<field type="Angle" name="yaw maximum" />
+										<field type="TagReference" name="built-in gunner">
+											<definition flags="0" groupTag="char" />
+										</field>
+										<field type="Pad" name="" definition="20" />
+										<field type="Terminator" />
+									</fields>
+								</unit_seat_fields_v2>
+								<unit_seat_fields_v3 size="240" sizeIdentifer="sizeof(struct unit_seat_v3)" fieldCount="36">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="20">
+												<entry>invisible</entry>
+												<entry>locked</entry>
+												<entry>driver</entry>
+												<entry>gunner</entry>
+												<entry>third person camera</entry>
+												<entry>allows weapons</entry>
+												<entry>third person on enter</entry>
+												<entry>first person camera slaved to gun.</entry>
+												<entry>allow vehicle communication animations</entry>
+												<entry>not valid without driver</entry>
+												<entry>allow AI noncombatants</entry>
+												<entry>boarding seat</entry>
+												<entry>ai firing disabled by max acceleration</entry>
+												<entry>boarding enters seat</entry>
+												<entry>boarding need any passenger</entry>
+												<entry>controls open and close</entry>
+												<entry>invalid for player</entry>
+												<entry>invalid for non-player</entry>
+												<entry>gunner (player only)</entry>
+												<entry>invisible under major damage</entry>
+											</definition>
+										</field>
+										<field type="OldStringId" name="label" isBlockName="True" />
+										<field type="OldStringId" name="marker name" />
+										<field type="StringId" name="entry marker(s) name" />
+										<field type="StringId" name="boarding grenade marker" />
+										<field type="Pad" name="" definition="20" />
+										<field type="Real" name="turnover time" help="how much time it takes to evict a rider from a flipped vehicle" units="seconds" />
+										<field type="RealVector3D" name="acceleration scale" />
+										<field type="Real" name="AI scariness" />
+										<field type="Enum" name="ai seat type">
+											<definition count="6">
+												<entry>NONE</entry>
+												<entry>passenger</entry>
+												<entry>gunner</entry>
+												<entry>small cargo</entry>
+												<entry>large cargo</entry>
+												<entry>driver</entry>
+											</definition>
+										</field>
+										<field type="ShortBlockIndex1" name="boarding seat" definition="unit_seat_block" />
+										<field type="RealFraction" name="listener interpolation factor" help="how far to interpolate listener position from camera to occupant's head" />
+										<field type="Explanation" name="speed dependant turn rates" definition="when the unit velocity is 0, the yaw/pitch rates are the left values&#xA;at [max speed reference], the yaw/pitch rates are the right values.&#xA;the max speed reference is what the code uses to generate a clamped speed from 0..1&#xA;the exponent controls how midrange speeds are interpreted." />
+										<field type="RealBounds" name="yaw rate bounds" units="degrees per second" />
+										<field type="RealBounds" name="pitch rate bounds" units="degrees per second" />
+										<field type="Real" name="min speed reference" />
+										<field type="Real" name="max speed reference" />
+										<field type="Real" name="speed exponent" />
+										<field type="Pad" name="" definition="12" />
+										<field type="Explanation" name="camera fields" definition="" />
+										<field type="Struct" name="unit camera">
+											<struct name="unit_camera_struct" groupTag="uncs" display="unit camera">
+												<block name="unit_camera_struct_block" maxCount="1" display="unit_camera_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<unit_camera_struct_fields size="32" sizeOverride="88" sizeIdentifer="sizeof(s_unit_camera)" fieldCount="6">
+															<fields>
+																<field type="OldStringId" name="camera marker name" />
+																<field type="OldStringId" name="camera submerged marker name" />
+																<field type="Angle" name="pitch auto-level" />
+																<field type="AngleBounds" name="pitch range" />
+																<field type="Block" name="camera tracks">
+																	<block name="unit_camera_track_block" maxCount="2" display="unit_camera_track_block" flags="0" maxIdentifer="MAXIMUM_NUMBER_OF_UNIT_CAMERA_TRACKS" procFormat="True" version="1">
+																		<versions>
+																			<unit_camera_track_block_fields size="16" sizeIdentifer="sizeof(s_unit_camera_track)" fieldCount="3">
+																				<fields>
+																					<field type="TagReference" name="track">
+																						<definition flags="0" groupTag="trak" />
+																					</field>
+																					<field type="UselessPad" name="" definition="12" />
+																					<field type="Terminator" />
+																				</fields>
+																			</unit_camera_track_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</unit_camera_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Block" name="unit hud interface">
+											<block name="unit_hud_reference_block" maxCount="2" display="unit_hud_reference_block" flags="0" maxIdentifer="NUMBER_OF_UNIT_HUD_TYPES" procFormat="True" version="1">
+												<versions>
+													<unit_hud_reference_block_fields size="16" sizeIdentifer="sizeof(struct unit_hud_reference)" fieldCount="4">
+														<fields>
+															<field type="UselessPad" name="" definition="16" />
+															<field type="TagReference" name="new unit hud interface">
+																<definition flags="0" groupTag="nhdt" />
+															</field>
+															<field type="UselessPad" name="" definition="16" />
+															<field type="Terminator" />
+														</fields>
+													</unit_hud_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="4" />
+										<field type="ShortInteger" name="hud text message index" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Angle" name="yaw minimum" />
+										<field type="Angle" name="yaw maximum" />
+										<field type="TagReference" name="built-in gunner">
+											<definition flags="0" groupTag="char" />
+										</field>
+										<field type="Pad" name="" definition="20" />
+										<field type="Explanation" name="entry fields" definition="note: the entry radius shouldn't exceed 3 world units, &#xA;as that is as far as the player will search for a vehicle&#xA;to enter." />
+										<field type="Real" name="entry radius" help="how close to the entry marker a unit must be" />
+										<field type="Angle" name="entry marker cone angle" help="angle from marker forward the unit must be" />
+										<field type="Angle" name="entry marker facing angle" help="angle from unit facing the marker must be" />
+										<field type="Real" name="maximum relative velocity" />
+										<field type="Pad" name="" definition="20" />
+										<field type="Terminator" />
+									</fields>
+								</unit_seat_fields_v3>
+								<unit_seat_fields_v4 size="192" sizeIdentifer="sizeof(struct unit_seat)" fieldCount="40">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="20">
+												<entry>invisible</entry>
+												<entry>locked</entry>
+												<entry>driver</entry>
+												<entry>gunner</entry>
+												<entry>third person camera</entry>
+												<entry>allows weapons</entry>
+												<entry>third person on enter</entry>
+												<entry>first person camera slaved to gun.</entry>
+												<entry>allow vehicle communication animations</entry>
+												<entry>not valid without driver</entry>
+												<entry>allow AI noncombatants</entry>
+												<entry>boarding seat</entry>
+												<entry>ai firing disabled by max acceleration</entry>
+												<entry>boarding enters seat</entry>
+												<entry>boarding need any passenger</entry>
+												<entry>controls open and close</entry>
+												<entry>invalid for player</entry>
+												<entry>invalid for non-player</entry>
+												<entry>gunner (player only)</entry>
+												<entry>invisible under major damage</entry>
+											</definition>
+										</field>
+										<field type="OldStringId" name="label" isBlockName="True" />
+										<field type="OldStringId" name="marker name" />
+										<field type="StringId" name="entry marker(s) name" />
+										<field type="StringId" name="boarding grenade marker" />
+										<field type="StringId" name="boarding grenade string" />
+										<field type="StringId" name="boarding melee string" />
+										<field type="RealFraction" name="ping scale" help="nathan is too lazy to make pings for each seat." />
+										<field type="UselessPad" name="" definition="8" />
+										<field type="Real" name="turnover time" help="how much time it takes to evict a rider from a flipped vehicle" units="seconds" />
+										<field type="Struct" name="acceleration">
+											<struct name="unit_seat_acceleration_struct" groupTag="usas">
+												<block name="unit_seat_acceleration_struct_block" maxCount="1" display="unit_seat_acceleration_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<unit_seat_acceleration_struct_fields size="20" sizeIdentifer="sizeof(struct unit_seat_acceleration)" fieldCount="4">
+															<fields>
+																<field type="RealVector3D" name="acceleration range" units="world units per second squared" />
+																<field type="Real" name="accel action scale" units="actions fail [0,1+]" />
+																<field type="Real" name="accel attach scale" units="detach unit [0,1+]" />
+																<field type="Terminator" />
+															</fields>
+														</unit_seat_acceleration_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Real" name="AI scariness" />
+										<field type="Enum" name="ai seat type">
+											<definition count="6">
+												<entry>NONE</entry>
+												<entry>passenger</entry>
+												<entry>gunner</entry>
+												<entry>small cargo</entry>
+												<entry>large cargo</entry>
+												<entry>driver</entry>
+											</definition>
+										</field>
+										<field type="ShortBlockIndex1" name="boarding seat" definition="unit_seat_block" />
+										<field type="RealFraction" name="listener interpolation factor" help="how far to interpolate listener position from camera to occupant's head" />
+										<field type="Explanation" name="speed dependant turn rates" definition="when the unit velocity is 0, the yaw/pitch rates are the left values&#xA;at [max speed reference], the yaw/pitch rates are the right values.&#xA;the max speed reference is what the code uses to generate a clamped speed from 0..1&#xA;the exponent controls how midrange speeds are interpreted." />
+										<field type="RealBounds" name="yaw rate bounds" units="degrees per second" />
+										<field type="RealBounds" name="pitch rate bounds" units="degrees per second" />
+										<field type="Real" name="min speed reference" />
+										<field type="Real" name="max speed reference" />
+										<field type="Real" name="speed exponent" />
+										<field type="UselessPad" name="" definition="12" />
+										<field type="Explanation" name="camera fields" definition="" />
+										<field type="Struct" name="unit camera">
+											<struct name="unit_camera_struct" groupTag="uncs" display="unit camera">
+												<block name="unit_camera_struct_block" maxCount="1" display="unit_camera_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<unit_camera_struct_fields size="32" sizeOverride="88" sizeIdentifer="sizeof(s_unit_camera)" fieldCount="6">
+															<fields>
+																<field type="OldStringId" name="camera marker name" />
+																<field type="OldStringId" name="camera submerged marker name" />
+																<field type="Angle" name="pitch auto-level" />
+																<field type="AngleBounds" name="pitch range" />
+																<field type="Block" name="camera tracks">
+																	<block name="unit_camera_track_block" maxCount="2" display="unit_camera_track_block" flags="0" maxIdentifer="MAXIMUM_NUMBER_OF_UNIT_CAMERA_TRACKS" procFormat="True" version="1">
+																		<versions>
+																			<unit_camera_track_block_fields size="16" sizeIdentifer="sizeof(s_unit_camera_track)" fieldCount="3">
+																				<fields>
+																					<field type="TagReference" name="track">
+																						<definition flags="0" groupTag="trak" />
+																					</field>
+																					<field type="UselessPad" name="" definition="12" />
+																					<field type="Terminator" />
+																				</fields>
+																			</unit_camera_track_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</unit_camera_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Block" name="unit hud interface">
+											<block name="unit_hud_reference_block" maxCount="2" display="unit_hud_reference_block" flags="0" maxIdentifer="NUMBER_OF_UNIT_HUD_TYPES" procFormat="True" version="1">
+												<versions>
+													<unit_hud_reference_block_fields size="16" sizeIdentifer="sizeof(struct unit_hud_reference)" fieldCount="4">
+														<fields>
+															<field type="UselessPad" name="" definition="16" />
+															<field type="TagReference" name="new unit hud interface">
+																<definition flags="0" groupTag="nhdt" />
+															</field>
+															<field type="UselessPad" name="" definition="16" />
+															<field type="Terminator" />
+														</fields>
+													</unit_hud_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="StringId" name="enter seat string" />
+										<field type="UselessPad" name="" definition="4" />
+										<field type="Angle" name="yaw minimum" />
+										<field type="Angle" name="yaw maximum" />
+										<field type="TagReference" name="built-in gunner">
+											<definition flags="0" groupTag="char" />
+										</field>
+										<field type="UselessPad" name="" definition="20" />
+										<field type="Explanation" name="entry fields" definition="note: the entry radius shouldn't exceed 3 world units, &#xA;as that is as far as the player will search for a vehicle&#xA;to enter." />
+										<field type="Real" name="entry radius" help="how close to the entry marker a unit must be" />
+										<field type="Angle" name="entry marker cone angle" help="angle from marker forward the unit must be" />
+										<field type="Angle" name="entry marker facing angle" help="angle from unit facing the marker must be" />
+										<field type="Real" name="maximum relative velocity" />
+										<field type="UselessPad" name="" definition="20" />
+										<field type="StringId" name="invisible seat region" />
+										<field type="LongInteger" name="runtime invisible seat region index" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</unit_seat_fields_v4>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="Boost" definition="" />
+					<field type="Struct" name="boost">
+						<struct name="unit_boost_struct" groupTag="!@#$">
+							<block name="unit_boost_struct_block" maxCount="1" display="unit_boost_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<unit_boost_struct_fields size="20" sizeOverride="0" sizeIdentifer="sizeof(real)*5" fieldCount="6">
+										<fields>
+											<field type="Real" name="boost peak power" />
+											<field type="Real" name="boost rise power" />
+											<field type="Real" name="boost peak time" />
+											<field type="Real" name="boost fall power" />
+											<field type="Real" name="dead time" />
+											<field type="Terminator" />
+										</fields>
+									</unit_boost_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Explanation" name="Lipsync" definition="" />
+					<field type="Struct" name="lipsync">
+						<struct name="unit_lipsync_scales_struct" groupTag="ulYc">
+							<block name="unit_lipsync_scales_struct_block" maxCount="1" display="unit_lipsync_scales_struct" flags="0" maxIdentifer="1" version="2">
+								<versions>
+									<unit_lipsync_scales_v1 size="0" sizeIdentifer="0" fieldCount="1">
+										<fields>
+											<field type="Terminator" />
+										</fields>
+									</unit_lipsync_scales_v1>
+									<unit_lipsync_scales size="8" sizeIdentifer="sizeof(struct s_unit_lipsync_scales)" fieldCount="3">
+										<fields>
+											<field type="RealFraction" name="attack weight" />
+											<field type="RealFraction" name="decay weight" />
+											<field type="Terminator" />
+										</fields>
+									</unit_lipsync_scales>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</unit_block_fields>
+		</versions>
+	</block>
+</tagGroup>

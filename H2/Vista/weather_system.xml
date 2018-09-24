@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="weather_system" groupTag="weat" groupTagParent="????" version="1" flags="9" procPostprocessForSync="True">
+	<block name="weather_system_block" maxCount="1" display="weather_system" flags="0" maxIdentifer="1" procPostprocess="True" procDispose="True" version="1">
+		<versions>
+			<weather_system_block_fields size="188" sizeIdentifer="sizeof(c_weather_system)" fieldCount="5">
+				<fields>
+					<field type="Block" name="particle system">
+						<block name="global_particle_system_lite_block" maxCount="1" display="global_particle_system_lite_block" flags="0" maxIdentifer="1" procPostprocess="True" procDispose="True" version="1">
+							<versions>
+								<global_particle_system_lite_block_fields size="156" sizeIdentifer="sizeof(c_particle_system_lite)" fieldCount="25">
+									<fields>
+										<field type="TagReference" name="sprites">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Real" name="view box width" />
+										<field type="Real" name="view box height" />
+										<field type="Real" name="view box depth" />
+										<field type="Real" name="exclusion radius" />
+										<field type="Real" name="max velocity" />
+										<field type="Real" name="min mass" />
+										<field type="Real" name="max mass" />
+										<field type="Real" name="min size" />
+										<field type="Real" name="max size" />
+										<field type="LongInteger" name="maximum number of particles" />
+										<field type="RealVector3D" name="initial velocity" />
+										<field type="Real" name="bitmap animation speed" />
+										<field type="Struct" name="geometry block info" isReadonly="True">
+											<struct name="global_geometry_block_info_struct" groupTag="BLOK">
+												<block name="global_geometry_block_info_struct_block" maxCount="1" display="global_geometry_block_info_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<global_geometry_block_info_struct_fields size="40" sizeIdentifer="sizeof(struct geometry_block_info)" fieldCount="11">
+															<fields>
+																<field type="Explanation" name="BLOCK INFO" definition="" />
+																<field type="LongInteger" name="Block Offset" isReadonly="True" />
+																<field type="LongInteger" name="Block Size" isReadonly="True" />
+																<field type="LongInteger" name="Section Data Size" isReadonly="True" />
+																<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																<field type="Block" name="Resources" isReadonly="True">
+																	<block name="global_geometry_block_resource_block" maxCount="1024" display="block resources" flags="0" maxIdentifer="MAXIMUM_RESOURCES_PER_GEOMETRY_BLOCK" version="1">
+																		<versions>
+																			<global_geometry_block_resource_block_fields size="16" sizeIdentifer="sizeof(struct geometry_block_resource)" fieldCount="7">
+																				<fields>
+																					<field type="CharEnum" name="Type" isReadonly="True">
+																						<definition count="3">
+																							<entry>Tag Block</entry>
+																							<entry>Tag Data</entry>
+																							<entry>Vertex Buffer</entry>
+																						</definition>
+																					</field>
+																					<field type="Pad" name="" definition="3" />
+																					<field type="ShortInteger" name="Primary Locator" isReadonly="True" />
+																					<field type="ShortInteger" name="Secondary Locator" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Offset" isReadonly="True" />
+																					<field type="Terminator" />
+																				</fields>
+																			</global_geometry_block_resource_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Pad" name="" definition="4" />
+																<field type="ShortInteger" name="Owner Tag Section Offset" isReadonly="True" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Pad" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</global_geometry_block_info_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Block" name="particle system data">
+											<block name="particle_system_lite_data_block" maxCount="1" display="particle_system_lite_data_block" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<particle_system_lite_data_block_fields size="56" sizeIdentifer="sizeof(particle_system_data)" fieldCount="4">
+														<fields>
+															<field type="Block" name="particles render data" isReadonly="True">
+																<block name="particles_render_data_block" maxCount="4096" display="particles_render_data_block" flags="0" maxIdentifer="MAX_PARTICLES_LITE" version="1">
+																	<versions>
+																		<particles_render_data_block_fields size="20" sizeIdentifer="sizeof(c_particle_lite_render)" fieldCount="6">
+																			<fields>
+																				<field type="Real" name="position.x" isReadonly="True" />
+																				<field type="Real" name="position.y" isReadonly="True" />
+																				<field type="Real" name="position.z" isReadonly="True" />
+																				<field type="Real" name="size" isReadonly="True" />
+																				<field type="RgbColor" name="color" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</particles_render_data_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="particles other data" isReadonly="True">
+																<block name="particles_update_data_block" maxCount="4096" display="particles_update_data_block" flags="0" maxIdentifer="MAX_PARTICLES_LITE" version="1">
+																	<versions>
+																		<particles_update_data_block_fields size="32" sizeIdentifer="sizeof(c_particle_lite_data)" fieldCount="7">
+																			<fields>
+																				<field type="Real" name="velocity.x" isReadonly="True" />
+																				<field type="Real" name="velocity.y" isReadonly="True" />
+																				<field type="Real" name="velocity.z" isReadonly="True" />
+																				<field type="Pad" name="" definition="12" />
+																				<field type="Real" name="mass" isReadonly="True" />
+																				<field type="Real" name="creation time stamp" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</particles_update_data_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Pad" name="" definition="32" />
+															<field type="Terminator" />
+														</fields>
+													</particle_system_lite_data_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Enum" name="type">
+											<definition count="8">
+												<entry>generic</entry>
+												<entry>snow</entry>
+												<entry>rain</entry>
+												<entry>rain splash</entry>
+												<entry>bugs</entry>
+												<entry>sand storm</entry>
+												<entry>debris</entry>
+												<entry>bubbles</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Real" name="mininum opacity" />
+										<field type="Real" name="maxinum opacity" />
+										<field type="Real" name="rain streak scale" />
+										<field type="Real" name="rain line width" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</global_particle_system_lite_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="background plates">
+						<block name="global_weather_background_plate_block" maxCount="3" display="global_weather_background_plate_block" flags="0" maxIdentifer="3" procPostprocess="True" procDispose="True" version="1">
+							<versions>
+								<global_weather_background_plate_block_fields size="960" sizeIdentifer="sizeof(c_animated_background_plate)" fieldCount="31">
+									<fields>
+										<field type="TagReference" name="texture 0">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="texture 1">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="TagReference" name="texture 2">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Real" name="plate positions 0" />
+										<field type="Real" name="plate positions 1" />
+										<field type="Real" name="plate positions 2" />
+										<field type="RealVector3D" name="move speed 0" />
+										<field type="RealVector3D" name="move speed 1" />
+										<field type="RealVector3D" name="move speed 2" />
+										<field type="Real" name="texture scale 0" />
+										<field type="Real" name="texture scale 1" />
+										<field type="Real" name="texture scale 2" />
+										<field type="RealVector3D" name="jitter 0" />
+										<field type="RealVector3D" name="jitter 1" />
+										<field type="RealVector3D" name="jitter 2" />
+										<field type="Real" name="plate z near" />
+										<field type="Real" name="plate z far" />
+										<field type="Real" name="depth blend z near" />
+										<field type="Real" name="depth blend z far" />
+										<field type="Real" name="opacity 0" />
+										<field type="Real" name="opacity 1" />
+										<field type="Real" name="opacity 2" />
+										<field type="LongFlags" name="flags">
+											<definition count="3">
+												<entry>forward motion</entry>
+												<entry>auto position planes</entry>
+												<entry>auto scale planesauto update speed</entry>
+											</definition>
+										</field>
+										<field type="RealRgbColor" name="tint color0" />
+										<field type="RealRgbColor" name="tint color1" />
+										<field type="RealRgbColor" name="tint color2" />
+										<field type="Real" name="mass 1" />
+										<field type="Real" name="mass 2" />
+										<field type="Real" name="mass 3" />
+										<field type="Pad" name="" definition="736" />
+										<field type="Terminator" />
+									</fields>
+								</global_weather_background_plate_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Struct" name="wind model">
+						<struct name="global_wind_model_struct" groupTag="WNDM">
+							<block name="global_wind_model_struct_block" maxCount="1" display="global_wind_model_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<global_wind_model_struct_fields size="160" sizeIdentifer="sizeof(c_wind_model)" fieldCount="23">
+										<fields>
+											<field type="Real" name="wind tiling scale" />
+											<field type="RealVector3D" name="wind primary heading/pitch/strength" />
+											<field type="Real" name="primary rate of change" />
+											<field type="Real" name="primary min strength" />
+											<field type="Pad" name="" definition="4" />
+											<field type="Pad" name="" definition="4" />
+											<field type="Pad" name="" definition="12" />
+											<field type="RealVector3D" name="wind gusting heading/pitch/strength" />
+											<field type="Real" name="gust diretional rate of change" />
+											<field type="Real" name="gust strength rate of change" />
+											<field type="Real" name="gust cone angle" />
+											<field type="Pad" name="" definition="4" />
+											<field type="Pad" name="" definition="4" />
+											<field type="Pad" name="" definition="12" />
+											<field type="Pad" name="" definition="12" />
+											<field type="Pad" name="" definition="12" />
+											<field type="Pad" name="" definition="12" />
+											<field type="Real" name="turbulance rate of change" />
+											<field type="RealVector3D" name="turbulence_scale x, y, z" />
+											<field type="Real" name="gravity constant" />
+											<field type="Block" name="wind_pirmitives">
+												<block name="gloal_wind_primitives_block" maxCount="128" display="wind primitives" flags="0" maxIdentifer="MAX_WIND_PRIMITIVES" version="1">
+													<versions>
+														<gloal_wind_primitives_block_fields size="24" sizeIdentifer="sizeof(c_wind_primitive)" fieldCount="6">
+															<fields>
+																<field type="RealVector3D" name="position" />
+																<field type="Real" name="radius" />
+																<field type="Real" name="strength" />
+																<field type="Enum" name="wind primitive type">
+																	<definition count="4">
+																		<entry>vortex</entry>
+																		<entry>gust</entry>
+																		<entry>implosion</entry>
+																		<entry>explosion</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="2" />
+																<field type="Terminator" />
+															</fields>
+														</gloal_wind_primitives_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Pad" name="" definition="4" />
+											<field type="Terminator" />
+										</fields>
+									</global_wind_model_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Real" name="fade radius" />
+					<field type="Terminator" />
+				</fields>
+			</weather_system_block_fields>
+		</versions>
+	</block>
+</tagGroup>

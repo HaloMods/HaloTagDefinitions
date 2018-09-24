@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="screen_effect" groupTag="egor" groupTagParent="????" version="4" flags="9">
+	<block name="screen_effect_block" maxCount="1" display="screen_effect" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<screen_effect_block_fields size="156" sizeIdentifer="sizeof(s_rasterizer_screen_effect_definition)" fieldCount="6">
+				<fields>
+					<field type="Explanation" name="SCREEN EFFECT" definition="A screen effect is essentially a collection of pass references, each one corresponding to a shader pass reference from the template. Note that only shader passes in the TRANSPARENT layer are considered during screen effect rendering." />
+					<field type="Pad" name="" definition="64" />
+					<field type="TagReference" name="shader">
+						<definition flags="0" groupTag="shad" />
+					</field>
+					<field type="Pad" name="" definition="64" />
+					<field type="Block" name="pass references">
+						<block name="rasterizer_screen_effect_pass_reference_block" maxCount="8" display="pass reference" flags="0" maxIdentifer="k_maximum_pass_references_per_rasterizer_screen_effect" procGenerateDefault="True" version="1">
+							<versions>
+								<rasterizer_screen_effect_pass_reference_block_fields size="192" sizeIdentifer="sizeof(s_rasterizer_screen_effect_pass_reference)" fieldCount="21">
+									<fields>
+										<field type="Data" name="explanation">
+											<definition name="rasterizer_screen_effect_text_definition" maxSize="65535" alignment="0" flags="6" maxIdentifer="UNSIGNED_SHORT_MAX" />
+										</field>
+										<field type="Explanation" name="IMPLEMENTATIONS" definition="Used to control which shader pass implementations are used depending on whether the primary and/or secondary external inputs are greater than zero. An implementation of -1 will not draw anything." />
+										<field type="ShortInteger" name="layer pass index" units="leave as -1 unless debugging" isReadonly="True" />
+										<field type="Pad" name="" definition="2" />
+										<field type="CharInteger" name="primary=0 and secondary=0" units="implementation index" />
+										<field type="CharInteger" name="primary&gt;0 and secondary=0" units="implementation index" />
+										<field type="CharInteger" name="primary=0 and secondary&gt;0" units="implementation index" />
+										<field type="CharInteger" name="primary&gt;0 and secondary&gt;0" units="implementation index" />
+										<field type="Pad" name="" definition="64" />
+										<field type="Explanation" name="TEXCOORD GENERATION" definition="* DEFAULT: Use for mask bitmaps that are mirrored and offset through the texcoords supplied to the screen effect (e.g. through the weapon HUD interface). The shader system must handle scaling.&#xA;&#xA;* VIEWPORT NORMALIZED: Use when copying from texaccum or some other buffer or when applying a texture that is not an interface mask (e.g. another kind of mask, a noise map, etc. which is not mirrored or offset through the weapon HUD interface). Texture coordinates will range from [0,1][0,1] within the viewport, and the shader system must handle scaling if the bitmap is a linear target or an interface bitmap.&#xA;&#xA;* VIEWPORT RELATIVE: Should not be used! This mode was necessary before we had he ability for the shader system to scale by texture resolution. Texture coordinates will range from [0,viewport_size_x][0,viewport_size_y] within the viewport.&#xA;&#xA;* FRAMEBUFFER RELATIVE: Use when copying from the framebuffer. Texture coordinates will range from [viewport_bounds.x0,viewport_bounds.x1][viewport_bounds.y0,viewport_bounds.y1] within the viewport. Let the shader system assume normalized [0,1] coordinate range.&#xA;&#xA;* ZERO: Use when doing dependent-z reads. Texture coordinates will be zero before applying offset (in advanced control block). Offset should be {1/(z_max-z_min), 0, -z_min/(z_max-z_min), 0} where z_min and z_max are in world units, and the &quot;xy scaled by z_far&quot; flag should be checked." />
+										<field type="Enum" name="stage 0 mode">
+											<definition count="5">
+												<entry>default</entry>
+												<entry>viewport normalized</entry>
+												<entry>viewport relative</entry>
+												<entry>framebuffer relative</entry>
+												<entry>zero</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="stage 1 mode">
+											<definition count="5">
+												<entry>default</entry>
+												<entry>viewport normalized</entry>
+												<entry>viewport relative</entry>
+												<entry>framebuffer relative</entry>
+												<entry>zero</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="stage 2 mode">
+											<definition count="5">
+												<entry>default</entry>
+												<entry>viewport normalized</entry>
+												<entry>viewport relative</entry>
+												<entry>framebuffer relative</entry>
+												<entry>zero</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="stage 3 mode">
+											<definition count="5">
+												<entry>default</entry>
+												<entry>viewport normalized</entry>
+												<entry>viewport relative</entry>
+												<entry>framebuffer relative</entry>
+												<entry>zero</entry>
+											</definition>
+										</field>
+										<field type="Block" name="advanced control">
+											<block name="rasterizer_screen_effect_texcoord_generation_advanced_control_block" maxCount="1" display="advanced control" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<rasterizer_screen_effect_texcoord_generation_advanced_control_block_fields size="72" sizeIdentifer="sizeof(s_rasterizer_screen_effect_texcoord_generation_advanced_control)" fieldCount="9">
+														<fields>
+															<field type="WordFlags" name="stage 0 flags">
+																<definition count="1">
+																	<entry>xy scaled by z_far</entry>
+																</definition>
+															</field>
+															<field type="WordFlags" name="stage 1 flags">
+																<definition count="1">
+																	<entry>xy scaled by z_far</entry>
+																</definition>
+															</field>
+															<field type="WordFlags" name="stage 2 flags">
+																<definition count="1">
+																	<entry>xy scaled by z_far</entry>
+																</definition>
+															</field>
+															<field type="WordFlags" name="stage 3 flags">
+																<definition count="1">
+																	<entry>xy scaled by z_far</entry>
+																</definition>
+															</field>
+															<field type="RealPlane3D" name="stage 0 offset" />
+															<field type="RealPlane3D" name="stage 1 offset" />
+															<field type="RealPlane3D" name="stage 2 offset" />
+															<field type="RealPlane3D" name="stage 3 offset" />
+															<field type="Terminator" />
+														</fields>
+													</rasterizer_screen_effect_texcoord_generation_advanced_control_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="TARGET" definition="" />
+										<field type="Enum" name="target">
+											<definition count="5">
+												<entry>framebuffer</entry>
+												<entry>texaccum</entry>
+												<entry>texaccum small</entry>
+												<entry>texaccum tiny</entry>
+												<entry>copy fb to texaccum</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="64" />
+										<field type="Block" name="convolution">
+											<block name="rasterizer_screen_effect_convolution_block" maxCount="2" display="convolution" flags="0" maxIdentifer="k_maximum_convolutions_per_rasterizer_screen_effect_pass_reference" procGenerateDefault="True" version="1">
+												<versions>
+													<rasterizer_screen_effect_convolution_block_fields size="92" sizeIdentifer="sizeof(s_rasterizer_screen_effect_convolution)" fieldCount="11">
+														<fields>
+															<field type="Explanation" name="CONVOLUTION" definition="Convolution blurs the target of this pass reference to the SCREEN EFFECT CONVOLUTION buffer, which is accessible in the shader system through a texture extern. It is not cheap especially for large convolution amounts, so please use it sparingly!! Note that the resolution will be clamped to 64x64 minimum and 768000 pixels total maximum." />
+															<field type="WordFlags" name="flags">
+																<definition count="3">
+																	<entry>only when primary is active</entry>
+																	<entry>only when secondary is active</entry>
+																	<entry>predator zoom</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="64" />
+															<field type="Real" name="convolution amount" units="[0,+inf)" />
+															<field type="Real" name="filter scale" />
+															<field type="RealFraction" name="filter box factor" units="[0,1] not used for zoom" />
+															<field type="Real" name="zoom falloff radius" />
+															<field type="Real" name="zoom cutoff radius" />
+															<field type="RealFraction" name="resolution scale" units="[0,1]" />
+															<field type="Terminator" />
+														</fields>
+													</rasterizer_screen_effect_convolution_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</rasterizer_screen_effect_pass_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</screen_effect_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="contrail" groupTag="cont" groupTagParent="????" version="3" flags="8">
+	<block name="contrail_block" maxCount="1" display="contrail" flags="0" maxIdentifer="1" procPostprocess="True" version="1">
+		<versions>
+			<contrail_block_fields size="260" sizeIdentifer="sizeof(struct contrail_definition)" fieldCount="50">
+				<fields>
+					<field type="WordFlags" name="flags">
+						<definition count="8">
+							<entry>first point unfaded</entry>
+							<entry>last point unfaded</entry>
+							<entry>points start pinned to media</entry>
+							<entry>points start pinned to ground</entry>
+							<entry>points always pinned to media</entry>
+							<entry>points always pinned to ground</entry>
+							<entry>edge effect fades slowly</entry>
+							<entry>dont't inherit object change color</entry>
+						</definition>
+					</field>
+					<field type="WordFlags" name="scale flags" help="these flags determine which fields are scaled by the contrail density">
+						<definition count="10">
+							<entry>point generation rate</entry>
+							<entry>point velocity</entry>
+							<entry>point velocity delta</entry>
+							<entry>point velocity cone angle</entry>
+							<entry>inherited velocity fraction</entry>
+							<entry>sequence animation rate</entry>
+							<entry>texture scale u</entry>
+							<entry>texture scale v</entry>
+							<entry>texture animation u</entry>
+							<entry>texture animation v</entry>
+						</definition>
+					</field>
+					<field type="Explanation" name="point creation" definition="" />
+					<field type="Real" name="point generation rate" help="this many points are generated per second" units="points per second" />
+					<field type="RealBounds" name="point velocity" help="velocity added to each point's initial velocity" units="world units per second" />
+					<field type="Angle" name="point velocity cone angle" help="initial velocity is inside the cone defined by the marker's forward vector and this angle" units="degrees" />
+					<field type="RealFraction" name="inherited velocity fraction" help="fraction of parent object's velocity that is inherited by contrail points." />
+					<field type="Explanation" name="rendering" definition="" />
+					<field type="Enum" name="render type" help="this specifies how the contrail is oriented in space">
+						<definition count="6">
+							<entry>vertical orientation</entry>
+							<entry>horizontal orientation</entry>
+							<entry>media mapped</entry>
+							<entry>ground mapped</entry>
+							<entry>viewer facing</entry>
+							<entry>double-marker linked</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="texture repeats u" help="texture repeats per contrail segment" />
+					<field type="Real" name="texture repeats v" help="texture repeats across contrail width" />
+					<field type="Real" name="texture animation u" help="the texture along the contrail is animated by this value" units="repeats per second" />
+					<field type="Real" name="texture animation v" help="the texture across the contrail is animated by this value" units="repeats per second" />
+					<field type="Real" name="animation rate" units="frames per second" />
+					<field type="TagReference" name="bitmap">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="ShortInteger" name="first sequence index" />
+					<field type="ShortInteger" name="sequence count" />
+					<field type="UselessPad" name="" definition="64" />
+					<field type="Pad" name="" definition="40" />
+					<field type="WordFlags" name="shader flags">
+						<definition count="3">
+							<entry>sort bias</entry>
+							<entry>nonlinear tint</entry>
+							<entry>don't overdraw fp weapon</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="framebuffer blend function">
+						<definition count="11">
+							<entry>alpha blend</entry>
+							<entry>multiply</entry>
+							<entry>double multiply</entry>
+							<entry>add</entry>
+							<entry>subtract</entry>
+							<entry>component min</entry>
+							<entry>component max</entry>
+							<entry>alpha-multiply add</entry>
+							<entry>constant color blend</entry>
+							<entry>inverse constant color blend</entry>
+							<entry>none</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="framebuffer fade mode">
+						<definition count="3">
+							<entry>none</entry>
+							<entry>fade when perpendicular</entry>
+							<entry>fade when parallel</entry>
+						</definition>
+					</field>
+					<field type="WordFlags" name="map flags">
+						<definition count="1">
+							<entry>unfiltered</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="28" />
+					<field type="Explanation" name="Secondary Map" definition="Optional multitextured second map" />
+					<field type="TagReference" name="bitmap">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Enum" name="anchor">
+						<definition count="3">
+							<entry>with primary</entry>
+							<entry>with screen space</entry>
+							<entry>zsprite</entry>
+						</definition>
+					</field>
+					<field type="WordFlags" name="flags">
+						<definition count="1">
+							<entry>unfiltered</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Enum" name="u-animation function">
+						<definition count="12">
+							<entry>one</entry>
+							<entry>zero</entry>
+							<entry>cosine</entry>
+							<entry>cosine (variable period)</entry>
+							<entry>diagonal wave</entry>
+							<entry>diagonal wave (variable period)</entry>
+							<entry>slide</entry>
+							<entry>slide (variable period)</entry>
+							<entry>noise</entry>
+							<entry>jitter</entry>
+							<entry>wander</entry>
+							<entry>spark</entry>
+						</definition>
+					</field>
+					<field type="Real" name="u-animation period" help="0 defaults to 1" units="seconds" />
+					<field type="Real" name="u-animation phase" />
+					<field type="Real" name="u-animation scale" help="0 defaults to 1" units="repeats" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Enum" name="v-animation function">
+						<definition count="12">
+							<entry>one</entry>
+							<entry>zero</entry>
+							<entry>cosine</entry>
+							<entry>cosine (variable period)</entry>
+							<entry>diagonal wave</entry>
+							<entry>diagonal wave (variable period)</entry>
+							<entry>slide</entry>
+							<entry>slide (variable period)</entry>
+							<entry>noise</entry>
+							<entry>jitter</entry>
+							<entry>wander</entry>
+							<entry>spark</entry>
+						</definition>
+					</field>
+					<field type="Real" name="v-animation period" help="0 defaults to 1" units="seconds" />
+					<field type="Real" name="v-animation phase" />
+					<field type="Real" name="v-animation scale" help="0 defaults to 1" units="repeats" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Enum" name="rotation-animation function">
+						<definition count="12">
+							<entry>one</entry>
+							<entry>zero</entry>
+							<entry>cosine</entry>
+							<entry>cosine (variable period)</entry>
+							<entry>diagonal wave</entry>
+							<entry>diagonal wave (variable period)</entry>
+							<entry>slide</entry>
+							<entry>slide (variable period)</entry>
+							<entry>noise</entry>
+							<entry>jitter</entry>
+							<entry>wander</entry>
+							<entry>spark</entry>
+						</definition>
+					</field>
+					<field type="Real" name="rotation-animation period" help="0 defaults to 1" units="seconds" />
+					<field type="Real" name="rotation-animation phase" />
+					<field type="Real" name="rotation-animation scale" help="0 defaults to 360" units="degrees" />
+					<field type="RealPoint2D" name="rotation-animation center" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Real" name="zsprite radius scale" />
+					<field type="Pad" name="" definition="20" />
+					<field type="Block" name="point states">
+						<block name="contrail_point_states_block" maxCount="16" display="contrail_point_states_block" flags="0" maxIdentifer="MAXIMUM_CONTRAIL_POINT_STATES_PER_CONTRAIL" procFormat="True" version="1">
+							<versions>
+								<contrail_point_states_block_fields size="72" sizeIdentifer="sizeof(struct contrail_point_state)" fieldCount="11">
+									<fields>
+										<field type="Explanation" name="state timing" definition="" />
+										<field type="RealBounds" name="duration" help="the time a point spends in this state" units="seconds" />
+										<field type="RealBounds" name="transition duration" help="the time a point takes to transition to the next state" units="seconds" />
+										<field type="Explanation" name="point variables" definition="" />
+										<field type="TagReference" name="physics">
+											<definition flags="0" groupTag="pphy" />
+										</field>
+										<field type="UselessPad" name="" definition="32" />
+										<field type="Real" name="width" help="contrail width at this point" units="world units" />
+										<field type="RealArgbColor" name="color lower bound" help="contrail color at this point" />
+										<field type="RealArgbColor" name="color upper bound" help="contrail color at this point" />
+										<field type="LongFlags" name="scale flags" help="these flags determine which fields are scaled by the contrail density">
+											<definition count="6">
+												<entry>duration</entry>
+												<entry>duration delta</entry>
+												<entry>transition duration</entry>
+												<entry>transition duration delta</entry>
+												<entry>width</entry>
+												<entry>color</entry>
+											</definition>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</contrail_point_states_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</contrail_block_fields>
+		</versions>
+	</block>
+</tagGroup>

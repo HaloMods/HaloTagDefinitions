@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="camera_track" groupTag="trak" groupTagParent="????" version="2" flags="8">
+	<block name="camera_track_block" maxCount="1" display="camera_track" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<camera_track_block_fields size="16" sizeIdentifer="sizeof(s_camera_track_definition)" fieldCount="4">
+				<fields>
+					<field type="LongFlags" name="flags">
+						<definition count="0" />
+					</field>
+					<field type="Block" name="control points">
+						<block name="camera_track_control_point_block" maxCount="16" display="camera_track_control_point_block" flags="0" maxIdentifer="k_maximum_number_of_camera_track_control_points" version="1">
+							<versions>
+								<camera_track_control_point_block_fields size="28" sizeIdentifer="sizeof(s_camera_track_control_point)" fieldCount="4">
+									<fields>
+										<field type="RealVector3D" name="position" />
+										<field type="RealQuaternion" name="orientation" />
+										<field type="UselessPad" name="" definition="32" />
+										<field type="Terminator" />
+									</fields>
+								</camera_track_control_point_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="UselessPad" name="" definition="32" />
+					<field type="Terminator" />
+				</fields>
+			</camera_track_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="scenario_trigger_volumes_resource" groupTag="trg*" groupTagParent="????" version="1" flags="56">
+	<block name="scenario_trigger_volumes_resource_block" maxCount="1" display="scenario_trigger_volumes_resource" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<scenario_trigger_volumes_resource_block_fields size="24" sizeIdentifer="sizeof(struct scenario_trigger_volumes_resource_definition)" fieldCount="3">
+				<fields>
+					<field type="Block" name="Kill Trigger Volumes">
+						<block name="scenario_trigger_volume_block" maxCount="256" display="scenario_trigger_volume_block" flags="0" maxIdentifer="MAXIMUM_TRIGGER_VOLUMES_PER_SCENARIO" procPostprocess="True" version="2">
+							<versions>
+								<scenario_trigger_volume_fields_v0 size="100" sizeIdentifer="sizeof(struct scenario_trigger_volume_v0)" fieldCount="8">
+									<fields>
+										<field type="ShortInteger" name="" />
+										<field type="Pad" name="" definition="2" />
+										<field type="String" name="Name" isBlockName="True" />
+										<arrayStart definition="15" />
+										<field type="Real" name="" />
+										<arrayEnd />
+										<field type="Pad" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_trigger_volume_fields_v0>
+								<scenario_trigger_volume_fields size="68" sizeIdentifer="sizeof(struct scenario_trigger_volume)" fieldCount="13">
+									<fields>
+										<field type="StringId" name="Name" isBlockName="True" />
+										<field type="ShortBlockIndex1" name="Object Name" definition="scenario_object_names_block" />
+										<field type="Skip" name="" definition="2" />
+										<field type="StringId" name="Node Name" />
+										<arrayStart definition="6" />
+										<field type="Real" name="" />
+										<arrayEnd />
+										<field type="RealPoint3D" name="Position" />
+										<field type="RealPoint3D" name="Extents" />
+										<field type="Pad" name="" definition="4" />
+										<field type="ShortBlockIndex1" name="Kill Trigger Volume" isReadonly="True" isHidden="True" definition="scenario_kill_trigger_volumes_block" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_trigger_volume_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Object Names">
+						<block name="scenario_object_names_block" maxCount="640" display="scenario_object_names_block" flags="0" maxIdentifer="MAXIMUM_OBJECT_NAMES_PER_SCENARIO" procPostprocess="True" version="1">
+							<versions>
+								<scenario_object_names_block_fields size="36" sizeIdentifer="sizeof(struct scenario_object_name)" fieldCount="4">
+									<fields>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="ShortBlockIndex1" name="" definition="2????????????????A&#xC;??t&#x15;?P&#x1C;?H&#x18;?@&#xC;RQP???&#x8;" />
+										<field type="ShortBlockIndex2" name="" definition="SVW?|$&#x14;2?3??&#x3;?I" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_object_names_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</scenario_trigger_volumes_resource_block_fields>
+		</versions>
+	</block>
+</tagGroup>

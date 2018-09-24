@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="wind" groupTag="wind" groupTagParent="????" version="1" flags="9">
+	<block name="wind_block" maxCount="1" display="wind" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<wind_block_fields size="64" sizeIdentifer="sizeof(struct wind_definition)" fieldCount="7">
+				<fields>
+					<field type="RealBounds" name="velocity" help="the wind magnitude in the weather region scales the wind between these bounds" units="world units" />
+					<field type="RealEulerAngles2D" name="variation area" help="the wind direction varies inside a box defined by these angles on either side of the direction from the weather region." />
+					<field type="Real" name="local variation weight" />
+					<field type="Real" name="local variation rate" />
+					<field type="Real" name="damping" />
+					<field type="Pad" name="" definition="36" />
+					<field type="Terminator" />
+				</fields>
+			</wind_block_fields>
+		</versions>
+	</block>
+</tagGroup>

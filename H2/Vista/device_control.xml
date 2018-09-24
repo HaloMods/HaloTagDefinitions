@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="device_control" groupTag="ctrl" groupTagParent="devi" version="1" flags="9">
+	<block name="device_control_block" maxCount="1" display="device_control" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<device_control_block_fields size="60" sizeIdentifer="sizeof(struct _control_definition)" fieldCount="10">
+				<fields>
+					<field type="Explanation" name="$$$ CONTROL $$$" definition="" />
+					<field type="Enum" name="type">
+						<definition count="4">
+							<entry>toggle switch</entry>
+							<entry>on button</entry>
+							<entry>off button</entry>
+							<entry>call button</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="triggers when">
+						<definition count="2">
+							<entry>touched by player</entry>
+							<entry>destroyed</entry>
+						</definition>
+					</field>
+					<field type="Real" name="call value" units="[0,1]" />
+					<field type="StringId" name="action string" />
+					<field type="UselessPad" name="" definition="76" />
+					<field type="TagReference" name="on">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="TagReference" name="off">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="TagReference" name="deny">
+						<definition flags="0">
+							<groupTags>
+								<groupTag>snd!</groupTag>
+								<groupTag>effe</groupTag>
+							</groupTags>
+						</definition>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</device_control_block_fields>
+		</versions>
+	</block>
+</tagGroup>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="scenario_cinematics_resource" groupTag="cin*" groupTagParent="????" version="1" flags="56">
+	<block name="scenario_cinematics_resource_block" maxCount="1" display="scenario_cinematics_resource" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<scenario_cinematics_resource_block_fields size="36" sizeIdentifer="sizeof(struct scenario_cinematics_resource_definition)" fieldCount="4">
+				<fields>
+					<field type="Block" name="Flags">
+						<block name="scenario_cutscene_flag_block" maxCount="512" display="scenario_cutscene_flag_block" flags="0" maxIdentifer="MAXIMUM_CUTSCENE_FLAGS_PER_SCENARIO" version="1">
+							<versions>
+								<scenario_cutscene_flag_block_fields size="56" sizeIdentifer="sizeof(struct scenario_cutscene_flag)" fieldCount="6">
+									<fields>
+										<field type="Pad" name="" definition="4" />
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="RealPoint3D" name="Position" />
+										<field type="RealEulerAngles2D" name="Facing" />
+										<field type="UselessPad" name="" definition="36" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_cutscene_flag_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Camera Points">
+						<block name="scenario_cutscene_camera_point_block" maxCount="512" display="scenario_cutscene_camera_point_block" flags="0" maxIdentifer="MAXIMUM_CUTSCENE_CAMERA_POINTS_PER_SCENARIO" version="1">
+							<versions>
+								<scenario_cutscene_camera_point_block_fields size="64" sizeIdentifer="sizeof(struct scenario_cutscene_camera_point)" fieldCount="10">
+									<fields>
+										<field type="WordFlags" name="Flags">
+											<definition count="1">
+												<entry>edit as relative</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="Type">
+											<definition count="4">
+												<entry>normal</entry>
+												<entry>ignore target orientation</entry>
+												<entry>dolly</entry>
+												<entry>ignore target updates</entry>
+											</definition>
+										</field>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="Custom" name="" attributeGroup="cmed" definition="&#x0;&#x0;&#x0;&#x0;" />
+										<field type="UselessPad" name="" definition="4" />
+										<field type="RealPoint3D" name="Position" />
+										<field type="RealEulerAngles3D" name="Orientation" />
+										<field type="Angle" name=")Unused" />
+										<field type="UselessPad" name="" definition="36" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_cutscene_camera_point_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Recorded Animations">
+						<block name="recorded_animation_block" maxCount="1024" display="recorded_animation_block" flags="0" maxIdentifer="MAXIMUM_RECORDED_ANIMATIONS_PER_MAP" version="1">
+							<versions>
+								<recorded_animation_block_fields size="64" sizeIdentifer="sizeof(struct recorded_animation_definition)" fieldCount="10">
+									<fields>
+										<field type="String" name="name" isBlockName="True" />
+										<field type="CharInteger" name="version" isReadonly="True" />
+										<field type="CharInteger" name="raw animation data" isReadonly="True" />
+										<field type="CharInteger" name="unit control data version" isReadonly="True" />
+										<field type="Pad" name="" definition="1" />
+										<field type="ShortInteger" name="length of animation" units="ticks" isReadonly="True" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Data" name="recorded animation event stream" isReadonly="True">
+											<definition name="recorded_animation_event_stream_data" maxSize="2097152" alignment="0" flags="0" maxIdentifer="MAXIMUM_RECORDED_ANIMATION_DATA_SIZE" requiresByteSwap="true" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</recorded_animation_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</scenario_cinematics_resource_block_fields>
+		</versions>
+	</block>
+</tagGroup>

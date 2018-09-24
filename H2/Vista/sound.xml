@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sound" groupTag="snd!" groupTagParent="????" version="4" flags="40" procPostprocess="True" procPostprocessForSync="True">
+	<block name="sound_block" maxCount="1" display="sound" flags="0" maxIdentifer="1" />
+</tagGroup>

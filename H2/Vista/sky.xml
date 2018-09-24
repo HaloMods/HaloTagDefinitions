@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sky" groupTag="sky " groupTagParent="????" version="1" flags="8">
+	<block name="sky_block" maxCount="1" display="sky" flags="0" maxIdentifer="1" procPostprocess="True" version="1">
+		<versions>
+			<sky_block_fields size="220" sizeIdentifer="sizeof(s_sky_definition)" fieldCount="30">
+				<fields>
+					<field type="TagReference" name="Render Model">
+						<definition flags="0" groupTag="mode" />
+					</field>
+					<field type="TagReference" name="Animation Graph">
+						<definition flags="0" groupTag="jmad" />
+					</field>
+					<field type="LongFlags" name="Flags">
+						<definition count="6">
+							<entry>Fixed in World Space</entry>
+							<entry>Depreciated</entry>
+							<entry>Sky Casts Light from Below</entry>
+							<entry>Disable Sky in Lightmaps</entry>
+							<entry>Fog Only Affects Containing Clusters</entry>
+							<entry>Use Clear Color</entry>
+						</definition>
+					</field>
+					<field type="Real" name="Render Model Scale" help="Multiplier by which to scale the model's geometry up or down (0 defaults to standard, 0.03)." />
+					<field type="Real" name="Movement Scale" help="How much the sky moves to remain centered on the player (0 defaults to 1.0, which means no parallax)." />
+					<field type="Block" name="Cube Map">
+						<block name="sky_cubemap_block" maxCount="1" display="sky_cubemap_block" flags="0" maxIdentifer="1" procPostprocess="True" version="1">
+							<versions>
+								<sky_cubemap_block_fields size="20" sizeIdentifer="sizeof(s_sky_cubemap)" fieldCount="3">
+									<fields>
+										<field type="TagReference" name="Cube Map Reference">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Real" name="Power Scale" help="0 Defaults to 1." />
+										<field type="Terminator" />
+									</fields>
+								</sky_cubemap_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="AMBIENT LIGHT" definition="" />
+					<field type="RealRgbColor" name="Indoor Ambient Color" help="Indoor ambient light color." />
+					<field type="Pad" name="" definition="4" />
+					<field type="RealRgbColor" name="Outdoor Ambient Color" help="Indoor ambient light color." />
+					<field type="Pad" name="" definition="4" />
+					<field type="Explanation" name="FOG" definition="" />
+					<field type="Real" name="Fog Spread Distance" help="How far fog spreads into adjacent clusters." units="world units" />
+					<field type="Block" name="Atmospheric Fog">
+						<block name="sky_atmospheric_fog_block" maxCount="1" display="sky_atmospheric_fog_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<sky_atmospheric_fog_block_fields size="24" sizeIdentifer="sizeof(s_sky_atmospheric_fog)" fieldCount="5">
+									<fields>
+										<field type="RealRgbColor" name="Color" />
+										<field type="RealFraction" name="Maximum Density" help="Fog density is clamped to this value." units="[0,1]" />
+										<field type="Real" name="Start Distance" help="Before this distance there is no fog." units="world units" />
+										<field type="Real" name="Opaque Distance" help="Fog becomes opaque (maximum density) at this distance from the viewer." units="world units" />
+										<field type="Terminator" />
+									</fields>
+								</sky_atmospheric_fog_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Secondary Fog">
+						<block name="sky_atmospheric_fog_block" maxCount="1" display="sky_atmospheric_fog_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<sky_atmospheric_fog_block_fields size="24" sizeIdentifer="sizeof(s_sky_atmospheric_fog)" fieldCount="5">
+									<fields>
+										<field type="RealRgbColor" name="Color" />
+										<field type="RealFraction" name="Maximum Density" help="Fog density is clamped to this value." units="[0,1]" />
+										<field type="Real" name="Start Distance" help="Before this distance there is no fog." units="world units" />
+										<field type="Real" name="Opaque Distance" help="Fog becomes opaque (maximum density) at this distance from the viewer." units="world units" />
+										<field type="Terminator" />
+									</fields>
+								</sky_atmospheric_fog_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Sky Fog">
+						<block name="sky_fog_block" maxCount="1" display="sky_fog_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<sky_fog_block_fields size="16" sizeIdentifer="sizeof(s_sky_fog)" fieldCount="3">
+									<fields>
+										<field type="RealRgbColor" name="Color" />
+										<field type="RealFraction" name="Density" help="Fog density is clamped to this value." units="[0,1]" />
+										<field type="Terminator" />
+									</fields>
+								</sky_fog_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Patchy Fog">
+						<block name="sky_patchy_fog_block" maxCount="1" display="sky_patchy_fog_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<sky_patchy_fog_block_fields size="88" sizeIdentifer="sizeof(s_sky_patchy_fog)" fieldCount="7">
+									<fields>
+										<field type="RealRgbColor" name="Color" />
+										<field type="Pad" name="" definition="12" />
+										<field type="FractionBounds" name="Density" units="[0,1]" />
+										<field type="RealBounds" name="Distance" units="world units" />
+										<field type="Pad" name="" definition="32" />
+										<field type="TagReference" name="Patchy Fog">
+											<definition flags="0" groupTag="fpch" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</sky_patchy_fog_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="BLOOM OVERRIDE" definition="" />
+					<field type="RealFraction" name="Amount" units="[0,1]" />
+					<field type="RealFraction" name="Threshold" units="[0,1]" />
+					<field type="RealFraction" name="Brightness" units="[0,1]" />
+					<field type="Real" name="Gamma Power" />
+					<field type="Block" name="Lights">
+						<block name="sky_light_block" maxCount="8" display="sky_light_block" flags="0" maxIdentifer="MAXIMUM_LIGHTS_PER_SKY" version="1">
+							<versions>
+								<sky_light_block_fields size="72" sizeIdentifer="sizeof(s_sky_light)" fieldCount="7">
+									<fields>
+										<field type="RealVector3D" name="Direction Vector" />
+										<field type="RealEulerAngles2D" name="Direction" />
+										<field type="TagReference" name="Lens Flare">
+											<definition flags="0" groupTag="lens" />
+										</field>
+										<field type="Block" name="Fog">
+											<block name="sky_light_fog_block" maxCount="1" display="sky_light_fog_block" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<sky_light_fog_block_fields size="44" sizeIdentifer="sizeof(s_sky_light_fog)" fieldCount="10">
+														<fields>
+															<field type="RealRgbColor" name="Color" />
+															<field type="RealFraction" name="Maximum Density" help="Fog density is clamped to this value." units="[0,1]" />
+															<field type="Real" name="Start Distance" help="Before this distance there is no fog." units="world units" />
+															<field type="Real" name="Opaque Distance" help="Fog becomes opaque (maximum density) at this distance from the viewer." units="world units" />
+															<field type="Explanation" name="FOG INFLUENCES" definition="" />
+															<field type="AngleBounds" name="Cone" units="degrees" />
+															<field type="RealFraction" name="Atmospheric Fog Influence" units="[0,1]" />
+															<field type="RealFraction" name="Secondary Fog Influence" units="[0,1]" />
+															<field type="RealFraction" name="Sky Fog Influence" units="[0,1]" />
+															<field type="Terminator" />
+														</fields>
+													</sky_light_fog_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="Fog Opposite">
+											<block name="sky_light_fog_block" maxCount="1" display="sky_light_fog_block" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<sky_light_fog_block_fields size="44" sizeIdentifer="sizeof(s_sky_light_fog)" fieldCount="10">
+														<fields>
+															<field type="RealRgbColor" name="Color" />
+															<field type="RealFraction" name="Maximum Density" help="Fog density is clamped to this value." units="[0,1]" />
+															<field type="Real" name="Start Distance" help="Before this distance there is no fog." units="world units" />
+															<field type="Real" name="Opaque Distance" help="Fog becomes opaque (maximum density) at this distance from the viewer." units="world units" />
+															<field type="Explanation" name="FOG INFLUENCES" definition="" />
+															<field type="AngleBounds" name="Cone" units="degrees" />
+															<field type="RealFraction" name="Atmospheric Fog Influence" units="[0,1]" />
+															<field type="RealFraction" name="Secondary Fog Influence" units="[0,1]" />
+															<field type="RealFraction" name="Sky Fog Influence" units="[0,1]" />
+															<field type="Terminator" />
+														</fields>
+													</sky_light_fog_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="Radiosity">
+											<block name="sky_radiosity_light_block" maxCount="1" display="sky_radiosity_light_block" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<sky_radiosity_light_block_fields size="40" sizeIdentifer="sizeof(s_sky_radiosity_light)" fieldCount="7">
+														<fields>
+															<field type="LongFlags" name="Flags">
+																<definition count="4">
+																	<entry>Affects Exteriors</entry>
+																	<entry>Affects Interiors</entry>
+																	<entry>Direct Illumination in Lightmaps</entry>
+																	<entry>Indirect Illumination in Lightmaps</entry>
+																</definition>
+															</field>
+															<field type="RealRgbColor" name="Color" help="Light color." />
+															<field type="Real" name="Power" help="Light power from 0 to infinity." units="[0,+inf]" />
+															<field type="Real" name="Test Distance" help="Length of the ray for shadow testing." units="world units" />
+															<field type="Pad" name="" definition="12" />
+															<field type="Angle" name="Diameter" help="Angular diameter of the light source in the sky." units="degrees" />
+															<field type="Terminator" />
+														</fields>
+													</sky_radiosity_light_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</sky_light_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="ROTATION" definition="" />
+					<field type="Angle" name="Global Sky Rotation" />
+					<field type="Block" name="Shader Functions">
+						<block name="sky_shader_function_block" maxCount="8" display="sky_shader_function_block" flags="0" maxIdentifer="MAXIMUM_SHADER_FUNCTIONS_PER_SKY" version="1">
+							<versions>
+								<sky_shader_function_block_fields size="36" sizeIdentifer="sizeof(s_sky_shader_function)" fieldCount="3">
+									<fields>
+										<field type="Pad" name="" definition="4" />
+										<field type="String" name="Global Function Name" help="Global function that controls this shader value." isBlockName="True" />
+										<field type="Terminator" />
+									</fields>
+								</sky_shader_function_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Animations">
+						<block name="sky_animation_block" maxCount="8" display="sky_animation_block" flags="0" maxIdentifer="MAXIMUM_ANIMATIONS_PER_SKY" version="1">
+							<versions>
+								<sky_animation_block_fields size="36" sizeIdentifer="sizeof(s_sky_animation)" fieldCount="5">
+									<fields>
+										<field type="ShortInteger" name="Animation Index" help="Index of the animation in the animation graph." />
+										<field type="Pad" name="" definition="2" />
+										<field type="Real" name="Period" units="sec" />
+										<field type="Pad" name="" definition="28" />
+										<field type="Terminator" />
+									</fields>
+								</sky_animation_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="12" />
+					<field type="RealRgbColor" name="Clear Color" />
+					<field type="Terminator" />
+				</fields>
+			</sky_block_fields>
+		</versions>
+	</block>
+</tagGroup>

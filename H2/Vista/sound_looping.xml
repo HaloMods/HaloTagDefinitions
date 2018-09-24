@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sound_looping" groupTag="lsnd" groupTagParent="????" version="3" flags="8" procPostprocess="True">
+	<block name="sound_looping_block" maxCount="1" display="sound_looping" flags="0" maxIdentifer="1" version="3">
+		<versions>
+			<looping_sound_fields_v1 size="84" sizeIdentifer="sizeof(struct looping_sound_definition_v1)" fieldCount="12">
+				<fields>
+					<field type="LongFlags" name="flags">
+						<definition count="8">
+							<entry>deafening to AIs#when used as a background stereo track, causes nearby AIs to be unable to hear</entry>
+							<entry>not a loop#this is a collection of permutations strung together that should play once then stop.</entry>
+							<entry>stops music#all other music loops will stop when this one starts.</entry>
+							<entry>always spatialize#always play as 3d sound, even in first person</entry>
+							<entry>synchronize playback#synchronizes playback with other looping sounds attached to the owner of this sound</entry>
+							<entry>synchronize tracks</entry>
+							<entry>fake spatialization with distance</entry>
+							<entry>combine all 3d playback</entry>
+						</definition>
+					</field>
+					<field type="Explanation" name="when scale is ZERO" definition="as the sound's input scale changes from zero to one, these modifiers move between the two values specified here. the sound will play using the current scale modifier multiplied by the value specified below. (0 values are ignored.)" />
+					<field type="Real" name="detail sound period" />
+					<field type="Pad" name="" definition="8" />
+					<field type="Explanation" name="when scale is ONE" definition="as the sound's input scale changes from zero to one, these modifiers move between the two values specified here. the sound will play using the current scale modifier multiplied by the value specified below. (0 values are ignored.)" />
+					<field type="Real" name="detail sound period" />
+					<field type="Pad" name="" definition="8" />
+					<field type="Pad" name="" definition="16" />
+					<field type="TagReference" name="continuous damage effect">
+						<definition flags="0" groupTag="????" />
+					</field>
+					<field type="Block" name="tracks" help="tracks play in parallel and loop continuously for the duration of the looping sound.">
+						<block name="looping_sound_track_block" maxCount="3" display="looping_sound_track_block" flags="0" maxIdentifer="MAXIMUM_TRACKS_PER_LOOPING_SOUND" procPostprocess="True" version="2">
+							<versions>
+								<looping_sound_track_fields_v1 size="160" sizeIdentifer="sizeof(struct looping_sound_track_v1)" fieldCount="12">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="5">
+												<entry>fade in at start#the loop sound should fade in while the start sound is playing.</entry>
+												<entry>fade out at stop#the loop sound should fade out while the stop sound is playing.</entry>
+												<entry>crossfade alt loop#when the sound changes to the alternate version,  .</entry>
+												<entry>master surround sound track</entry>
+												<entry>fade out at alt stop</entry>
+											</definition>
+										</field>
+										<field type="Real" name="gain" units="dB" />
+										<field type="Real" name="fade in duration" units="seconds" />
+										<field type="Real" name="fade out duration" units="seconds" />
+										<field type="Pad" name="" definition="32" />
+										<field type="TagReference" name="start">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="loop" isBlockName="True">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="end">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Pad" name="" definition="32" />
+										<field type="TagReference" name="alternate loop">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alternate end">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_track_fields_v1>
+								<looping_sound_track_fields_v2 size="144" sizeIdentifer="sizeof(struct looping_sound_track)" fieldCount="18">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="LongFlags" name="flags">
+											<definition count="5">
+												<entry>fade in at start#the loop sound should fade in while the start sound is playing.</entry>
+												<entry>fade out at stop#the loop sound should fade out while the stop sound is playing.</entry>
+												<entry>crossfade alt loop#when the sound changes to the alternate version,  .</entry>
+												<entry>master surround sound track</entry>
+												<entry>fade out at alt stop</entry>
+											</definition>
+										</field>
+										<field type="Real" name="gain" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="fade in duration" units="seconds" />
+										<field type="Real" name="fade out duration" units="seconds" />
+										<field type="TagReference" name="in">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="loop">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="out">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alt loop">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alt out">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="UselessPad" name="" definition="12" />
+										<field type="Enum" name="output effect">
+											<definition count="4">
+												<entry>none</entry>
+												<entry>output front speakers</entry>
+												<entry>output rear speakers</entry>
+												<entry>output center speakers</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="TagReference" name="alt trans in">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alt trans out">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Real" name="alt crossfade duration" units="seconds" />
+										<field type="Real" name="alt fade out duration" units="seconds" />
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_track_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="detail sounds" help="detail sounds play at random throughout the duration of the looping sound.">
+						<block name="looping_sound_detail_block" maxCount="12" display="looping_sound_detail_block" flags="0" maxIdentifer="MAXIMUM_DETAIL_SOUNDS_PER_LOOPING_SOUND" procPostprocess="True" version="2">
+							<versions>
+								<looping_sound_detail_fields_v1 size="104" sizeIdentifer="sizeof(struct looping_sound_detail_v1)" fieldCount="11">
+									<fields>
+										<field type="TagReference" name="sound" isBlockName="True">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Explanation" name="frequency of play" definition="" />
+										<field type="RealBounds" name="random period bounds" help="the time between successive playings of this sound will be randomly selected from this range." units="seconds" />
+										<field type="Real" name="gain" units="dB" />
+										<field type="LongFlags" name="flags">
+											<definition count="3">
+												<entry>don't play with alternate</entry>
+												<entry>don't play without alternate</entry>
+												<entry>start immediately with loop</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="48" />
+										<field type="Explanation" name="random spatialization" definition="if the sound specified above is not stereo it will be randomly spatialized according to the following constraints. if both lower and upper bounds are zero for any of the following fields, the sound's position will be randomly selected from all possible directions or distances." />
+										<field type="AngleBounds" name="yaw bounds" help="the sound's position along the horizon will be randomly selected from this range." units="degrees" />
+										<field type="AngleBounds" name="pitch bounds" help="the sound's position above (positive values) or below (negative values) the horizon will be randomly selected from this range." units="degrees" />
+										<field type="RealBounds" name="distance bounds" help="the sound's distance (from its spatialized looping sound or from the listener if the looping sound is stereo) will be randomly selected from this range." units="world units" />
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_detail_fields_v1>
+								<looping_sound_detail_fields_v2 size="60" sizeIdentifer="sizeof(struct looping_sound_detail)" fieldCount="11">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="TagReference" name="sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Explanation" name="frequency of play" definition="" />
+										<field type="RealBounds" name="random period bounds" help="the time between successive playings of this sound will be randomly selected from this range." units="seconds" />
+										<field type="Real" name="" attributeGroup="+dB+" />
+										<field type="LongFlags" name="flags">
+											<definition count="3">
+												<entry>don't play with alternate</entry>
+												<entry>don't play without alternate</entry>
+												<entry>start immediately with loop</entry>
+											</definition>
+										</field>
+										<field type="Explanation" name="random spatialization" definition="if the sound specified above is not stereo it will be randomly spatialized according to the following constraints. if both lower and upper bounds are zero for any of the following fields, the sound's position will be randomly selected from all possible directions or distances." />
+										<field type="AngleBounds" name="yaw bounds" help="the sound's position along the horizon will be randomly selected from this range." units="degrees" />
+										<field type="AngleBounds" name="pitch bounds" help="the sound's position above (positive values) or below (negative values) the horizon will be randomly selected from this range." units="degrees" />
+										<field type="RealBounds" name="distance bounds" help="the sound's distance (from its spatialized looping sound or from the listener if the looping sound is stereo) will be randomly selected from this range." units="world units" />
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_detail_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</looping_sound_fields_v1>
+			<looping_sound_fields_v2 size="60" sizeIdentifer="sizeof(struct looping_sound_definition)" fieldCount="8">
+				<fields>
+					<field type="LongFlags" name="flags">
+						<definition count="8">
+							<entry>deafening to AIs#when used as a background stereo track, causes nearby AIs to be unable to hear</entry>
+							<entry>not a loop#this is a collection of permutations strung together that should play once then stop.</entry>
+							<entry>stops music#all other music loops will stop when this one starts.</entry>
+							<entry>always spatialize#always play as 3d sound, even in first person</entry>
+							<entry>synchronize playback#synchronizes playback with other looping sounds attached to the owner of this sound</entry>
+							<entry>synchronize tracks</entry>
+							<entry>fake spatialization with distance</entry>
+							<entry>combine all 3d playback</entry>
+						</definition>
+					</field>
+					<field type="Real" name="marty's music time" units=" seconds" />
+					<field type="Real" name="" />
+					<field type="Pad" name="" definition="8" />
+					<field type="TagReference" name="">
+						<definition flags="0" groupTag="????" />
+					</field>
+					<field type="Block" name="tracks" help="tracks play in parallel and loop continuously for the duration of the looping sound.">
+						<block name="looping_sound_track_block" maxCount="3" display="looping_sound_track_block" flags="0" maxIdentifer="MAXIMUM_TRACKS_PER_LOOPING_SOUND" procPostprocess="True" version="2">
+							<versions>
+								<looping_sound_track_fields_v1 size="160" sizeIdentifer="sizeof(struct looping_sound_track_v1)" fieldCount="12">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="5">
+												<entry>fade in at start#the loop sound should fade in while the start sound is playing.</entry>
+												<entry>fade out at stop#the loop sound should fade out while the stop sound is playing.</entry>
+												<entry>crossfade alt loop#when the sound changes to the alternate version,  .</entry>
+												<entry>master surround sound track</entry>
+												<entry>fade out at alt stop</entry>
+											</definition>
+										</field>
+										<field type="Real" name="gain" units="dB" />
+										<field type="Real" name="fade in duration" units="seconds" />
+										<field type="Real" name="fade out duration" units="seconds" />
+										<field type="Pad" name="" definition="32" />
+										<field type="TagReference" name="start">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="loop" isBlockName="True">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="end">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Pad" name="" definition="32" />
+										<field type="TagReference" name="alternate loop">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alternate end">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_track_fields_v1>
+								<looping_sound_track_fields_v2 size="144" sizeIdentifer="sizeof(struct looping_sound_track)" fieldCount="18">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="LongFlags" name="flags">
+											<definition count="5">
+												<entry>fade in at start#the loop sound should fade in while the start sound is playing.</entry>
+												<entry>fade out at stop#the loop sound should fade out while the stop sound is playing.</entry>
+												<entry>crossfade alt loop#when the sound changes to the alternate version,  .</entry>
+												<entry>master surround sound track</entry>
+												<entry>fade out at alt stop</entry>
+											</definition>
+										</field>
+										<field type="Real" name="gain" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="fade in duration" units="seconds" />
+										<field type="Real" name="fade out duration" units="seconds" />
+										<field type="TagReference" name="in">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="loop">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="out">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alt loop">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alt out">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="UselessPad" name="" definition="12" />
+										<field type="Enum" name="output effect">
+											<definition count="4">
+												<entry>none</entry>
+												<entry>output front speakers</entry>
+												<entry>output rear speakers</entry>
+												<entry>output center speakers</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="TagReference" name="alt trans in">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alt trans out">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Real" name="alt crossfade duration" units="seconds" />
+										<field type="Real" name="alt fade out duration" units="seconds" />
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_track_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="detail sounds" help="detail sounds play at random throughout the duration of the looping sound.">
+						<block name="looping_sound_detail_block" maxCount="12" display="looping_sound_detail_block" flags="0" maxIdentifer="MAXIMUM_DETAIL_SOUNDS_PER_LOOPING_SOUND" procPostprocess="True" version="2">
+							<versions>
+								<looping_sound_detail_fields_v1 size="104" sizeIdentifer="sizeof(struct looping_sound_detail_v1)" fieldCount="11">
+									<fields>
+										<field type="TagReference" name="sound" isBlockName="True">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Explanation" name="frequency of play" definition="" />
+										<field type="RealBounds" name="random period bounds" help="the time between successive playings of this sound will be randomly selected from this range." units="seconds" />
+										<field type="Real" name="gain" units="dB" />
+										<field type="LongFlags" name="flags">
+											<definition count="3">
+												<entry>don't play with alternate</entry>
+												<entry>don't play without alternate</entry>
+												<entry>start immediately with loop</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="48" />
+										<field type="Explanation" name="random spatialization" definition="if the sound specified above is not stereo it will be randomly spatialized according to the following constraints. if both lower and upper bounds are zero for any of the following fields, the sound's position will be randomly selected from all possible directions or distances." />
+										<field type="AngleBounds" name="yaw bounds" help="the sound's position along the horizon will be randomly selected from this range." units="degrees" />
+										<field type="AngleBounds" name="pitch bounds" help="the sound's position above (positive values) or below (negative values) the horizon will be randomly selected from this range." units="degrees" />
+										<field type="RealBounds" name="distance bounds" help="the sound's distance (from its spatialized looping sound or from the listener if the looping sound is stereo) will be randomly selected from this range." units="world units" />
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_detail_fields_v1>
+								<looping_sound_detail_fields_v2 size="60" sizeIdentifer="sizeof(struct looping_sound_detail)" fieldCount="11">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="TagReference" name="sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Explanation" name="frequency of play" definition="" />
+										<field type="RealBounds" name="random period bounds" help="the time between successive playings of this sound will be randomly selected from this range." units="seconds" />
+										<field type="Real" name="" attributeGroup="+dB+" />
+										<field type="LongFlags" name="flags">
+											<definition count="3">
+												<entry>don't play with alternate</entry>
+												<entry>don't play without alternate</entry>
+												<entry>start immediately with loop</entry>
+											</definition>
+										</field>
+										<field type="Explanation" name="random spatialization" definition="if the sound specified above is not stereo it will be randomly spatialized according to the following constraints. if both lower and upper bounds are zero for any of the following fields, the sound's position will be randomly selected from all possible directions or distances." />
+										<field type="AngleBounds" name="yaw bounds" help="the sound's position along the horizon will be randomly selected from this range." units="degrees" />
+										<field type="AngleBounds" name="pitch bounds" help="the sound's position above (positive values) or below (negative values) the horizon will be randomly selected from this range." units="degrees" />
+										<field type="RealBounds" name="distance bounds" help="the sound's distance (from its spatialized looping sound or from the listener if the looping sound is stereo) will be randomly selected from this range." units="world units" />
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_detail_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</looping_sound_fields_v2>
+			<looping_sound_fields_v2 size="60" sizeIdentifer="sizeof(struct looping_sound_definition)" fieldCount="8">
+				<fields>
+					<field type="LongFlags" name="flags">
+						<definition count="8">
+							<entry>deafening to AIs#when used as a background stereo track, causes nearby AIs to be unable to hear</entry>
+							<entry>not a loop#this is a collection of permutations strung together that should play once then stop.</entry>
+							<entry>stops music#all other music loops will stop when this one starts.</entry>
+							<entry>always spatialize#always play as 3d sound, even in first person</entry>
+							<entry>synchronize playback#synchronizes playback with other looping sounds attached to the owner of this sound</entry>
+							<entry>synchronize tracks</entry>
+							<entry>fake spatialization with distance</entry>
+							<entry>combine all 3d playback</entry>
+						</definition>
+					</field>
+					<field type="Real" name="marty's music time" units=" seconds" />
+					<field type="Real" name="" />
+					<field type="Pad" name="" definition="8" />
+					<field type="TagReference" name="">
+						<definition flags="0" groupTag="????" />
+					</field>
+					<field type="Block" name="tracks" help="tracks play in parallel and loop continuously for the duration of the looping sound.">
+						<block name="looping_sound_track_block" maxCount="3" display="looping_sound_track_block" flags="0" maxIdentifer="MAXIMUM_TRACKS_PER_LOOPING_SOUND" procPostprocess="True" version="2">
+							<versions>
+								<looping_sound_track_fields_v1 size="160" sizeIdentifer="sizeof(struct looping_sound_track_v1)" fieldCount="12">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="5">
+												<entry>fade in at start#the loop sound should fade in while the start sound is playing.</entry>
+												<entry>fade out at stop#the loop sound should fade out while the stop sound is playing.</entry>
+												<entry>crossfade alt loop#when the sound changes to the alternate version,  .</entry>
+												<entry>master surround sound track</entry>
+												<entry>fade out at alt stop</entry>
+											</definition>
+										</field>
+										<field type="Real" name="gain" units="dB" />
+										<field type="Real" name="fade in duration" units="seconds" />
+										<field type="Real" name="fade out duration" units="seconds" />
+										<field type="Pad" name="" definition="32" />
+										<field type="TagReference" name="start">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="loop" isBlockName="True">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="end">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Pad" name="" definition="32" />
+										<field type="TagReference" name="alternate loop">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alternate end">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_track_fields_v1>
+								<looping_sound_track_fields_v2 size="144" sizeIdentifer="sizeof(struct looping_sound_track)" fieldCount="18">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="LongFlags" name="flags">
+											<definition count="5">
+												<entry>fade in at start#the loop sound should fade in while the start sound is playing.</entry>
+												<entry>fade out at stop#the loop sound should fade out while the stop sound is playing.</entry>
+												<entry>crossfade alt loop#when the sound changes to the alternate version,  .</entry>
+												<entry>master surround sound track</entry>
+												<entry>fade out at alt stop</entry>
+											</definition>
+										</field>
+										<field type="Real" name="gain" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="fade in duration" units="seconds" />
+										<field type="Real" name="fade out duration" units="seconds" />
+										<field type="TagReference" name="in">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="loop">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="out">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alt loop">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alt out">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="UselessPad" name="" definition="12" />
+										<field type="Enum" name="output effect">
+											<definition count="4">
+												<entry>none</entry>
+												<entry>output front speakers</entry>
+												<entry>output rear speakers</entry>
+												<entry>output center speakers</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="TagReference" name="alt trans in">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="TagReference" name="alt trans out">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Real" name="alt crossfade duration" units="seconds" />
+										<field type="Real" name="alt fade out duration" units="seconds" />
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_track_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="detail sounds" help="detail sounds play at random throughout the duration of the looping sound.">
+						<block name="looping_sound_detail_block" maxCount="12" display="looping_sound_detail_block" flags="0" maxIdentifer="MAXIMUM_DETAIL_SOUNDS_PER_LOOPING_SOUND" procPostprocess="True" version="2">
+							<versions>
+								<looping_sound_detail_fields_v1 size="104" sizeIdentifer="sizeof(struct looping_sound_detail_v1)" fieldCount="11">
+									<fields>
+										<field type="TagReference" name="sound" isBlockName="True">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Explanation" name="frequency of play" definition="" />
+										<field type="RealBounds" name="random period bounds" help="the time between successive playings of this sound will be randomly selected from this range." units="seconds" />
+										<field type="Real" name="gain" units="dB" />
+										<field type="LongFlags" name="flags">
+											<definition count="3">
+												<entry>don't play with alternate</entry>
+												<entry>don't play without alternate</entry>
+												<entry>start immediately with loop</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="48" />
+										<field type="Explanation" name="random spatialization" definition="if the sound specified above is not stereo it will be randomly spatialized according to the following constraints. if both lower and upper bounds are zero for any of the following fields, the sound's position will be randomly selected from all possible directions or distances." />
+										<field type="AngleBounds" name="yaw bounds" help="the sound's position along the horizon will be randomly selected from this range." units="degrees" />
+										<field type="AngleBounds" name="pitch bounds" help="the sound's position above (positive values) or below (negative values) the horizon will be randomly selected from this range." units="degrees" />
+										<field type="RealBounds" name="distance bounds" help="the sound's distance (from its spatialized looping sound or from the listener if the looping sound is stereo) will be randomly selected from this range." units="world units" />
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_detail_fields_v1>
+								<looping_sound_detail_fields_v2 size="60" sizeIdentifer="sizeof(struct looping_sound_detail)" fieldCount="11">
+									<fields>
+										<field type="StringId" name="name" isBlockName="True" />
+										<field type="TagReference" name="sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Explanation" name="frequency of play" definition="" />
+										<field type="RealBounds" name="random period bounds" help="the time between successive playings of this sound will be randomly selected from this range." units="seconds" />
+										<field type="Real" name="" attributeGroup="+dB+" />
+										<field type="LongFlags" name="flags">
+											<definition count="3">
+												<entry>don't play with alternate</entry>
+												<entry>don't play without alternate</entry>
+												<entry>start immediately with loop</entry>
+											</definition>
+										</field>
+										<field type="Explanation" name="random spatialization" definition="if the sound specified above is not stereo it will be randomly spatialized according to the following constraints. if both lower and upper bounds are zero for any of the following fields, the sound's position will be randomly selected from all possible directions or distances." />
+										<field type="AngleBounds" name="yaw bounds" help="the sound's position along the horizon will be randomly selected from this range." units="degrees" />
+										<field type="AngleBounds" name="pitch bounds" help="the sound's position above (positive values) or below (negative values) the horizon will be randomly selected from this range." units="degrees" />
+										<field type="RealBounds" name="distance bounds" help="the sound's distance (from its spatialized looping sound or from the listener if the looping sound is stereo) will be randomly selected from this range." units="world units" />
+										<field type="Terminator" />
+									</fields>
+								</looping_sound_detail_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</looping_sound_fields_v2>
+		</versions>
+	</block>
+</tagGroup>

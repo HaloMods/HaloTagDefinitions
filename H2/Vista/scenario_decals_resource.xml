@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="scenario_decals_resource" groupTag="dec*" groupTagParent="????" version="1" flags="56">
+	<block name="scenario_decals_resource_block" maxCount="1" display="scenario_decals_resource" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<scenario_decals_resource_block_fields size="24" sizeIdentifer="sizeof(struct scenario_decals_resource_definition)" fieldCount="3">
+				<fields>
+					<field type="Block" name="Palette">
+						<block name="scenario_decal_palette_block" maxCount="128" display="scenario_decal_palette_block" flags="0" maxIdentifer="MAXIMUM_DECAL_PALETTES_PER_SCENARIO" version="1">
+							<versions>
+								<scenario_decal_palette_block_fields size="16" sizeIdentifer="sizeof(struct scenario_decal_palette_entry)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="Reference" isBlockName="True">
+											<definition flags="0" groupTag="deca" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_decal_palette_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Decals">
+						<block name="scenario_decals_block" maxCount="65536" display="scenario_decals_block" flags="0" maxIdentifer="MAXIMUM_DECALS_PER_SCENARIO" version="1">
+							<versions>
+								<scenario_decals_block_fields size="16" sizeIdentifer="sizeof(struct scenario_decal)" fieldCount="5">
+									<fields>
+										<field type="ShortBlockIndex1" name="Decal Type" isBlockName="True" definition="scenario_decal_palette_block" />
+										<field type="CharInteger" name="Yaw[-127,127]" isReadonly="True" />
+										<field type="CharInteger" name="Pitch[-127,127]" isReadonly="True" />
+										<field type="RealPoint3D" name="Position" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_decals_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</scenario_decals_resource_block_fields>
+		</versions>
+	</block>
+</tagGroup>

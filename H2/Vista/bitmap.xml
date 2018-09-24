@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="bitmap" groupTag="bitm" groupTagParent="????" version="7" flags="8" procPostprocess="True" procPostprocessForSync="True">
+	<block name="bitmap_block" maxCount="1" display="bitmap" flags="0" maxIdentifer="1" procInvalidHandler="True" version="1">
+		<versions>
+			<bitmap_block_fields size="112" sizeIdentifer="sizeof(struct bitmap_group)" fieldCount="37">
+				<fields>
+					<field type="Custom" name="" attributeGroup="bshw" definition="&#x0;&#x0;&#x0;&#x0;" />
+					<field type="Explanation" name="Type" definition="Type controls bitmap geometry. All dimensions must be a power of 2 except for SPRITES and INTERFACE BITMAPS:&#xA;&#xA;* 2D TEXTURES: Ordinary 2D textures will be generated.&#xA;* 3D TEXTURES: Volume textures will be generated from each sequence of 2D texture slices.&#xA;* CUBE MAPS: Generated from each consecutive set of six 2D textures in each sequence, all faces of a cube map must be square and the same size.&#xA;* SPRITES: Sprite texture pages will be generated.&#xA;* INTERFACE BITMAPS: Similar to 2D TEXTURES but without mipmaps and without the power of 2 restriction." />
+					<field type="Enum" name="Type">
+						<definition count="5">
+							<entry>2D Textures</entry>
+							<entry>3D Textures</entry>
+							<entry>Cube Maps</entry>
+							<entry>Sprites</entry>
+							<entry>Interface Bitmaps</entry>
+						</definition>
+					</field>
+					<field type="Explanation" name="Format" definition="Format controls how pixels will be stored internally:&#xA;&#xA;* COMPRESSED WITH COLOR-KEY TRANSPARENCY: DXT1 compression, using 4 bits/pixel. 4-x-4 blocks of pixels, are reduced to two colors and interpolated, alpha channel uses color-key transparency instead of alpha from the plate (all zero-alpha pixels also have zero-color).&#xA;* COMPRESSED WITH EXPLICIT ALPHA: DXT2/3 compression, using 8 bits/pixel. Same as DXT1 without the color key transparency, alpha channel uses alpha from plate quantized down to 4 bits/pixel.&#xA;* COMPRESSED WITH INTERPOLATED ALPHA: DXT4/5 compression, using 8 bits/pixel. Same as DXT2/3, except alpha is smoother. Better for smooth alpha gradients, but worse for noisy alpha.&#xA;* 16-BIT COLOR: Uses 16 bits/pixel. Depending on the alpha channel, bitmaps are quantized to either r5g6b5 (no alpha), a1r5g5b5 (1-bit alpha), or a4r4g4b4 (&gt;1-bit alpha).&#xA;* 32-BIT COLOR: Uses 32 bits/pixel. Very high quality and can have alpha at no added cost. This format takes up the most memory, however. Bitmap formats are x8r8g8b8 and a8r8g8b.&#xA;* MONOCHROME: Uses either 8 or 16 bits/pixel. Bitmap formats are a8 (alpha), y8 (intensity), ay8 (combined alpha intensity), and a8y8 (separate alpha intensity)." />
+					<field type="Enum" name="Format">
+						<definition count="6">
+							<entry>Compressed with Color-Key Transparency</entry>
+							<entry>Compressed with Explicit Alpha</entry>
+							<entry>Compressed with Interpolated Alpha</entry>
+							<entry>16-Bit Color</entry>
+							<entry>32-Bit Color</entry>
+							<entry>Monochrome</entry>
+						</definition>
+					</field>
+					<field type="Explanation" name="Usage" definition="Usage controls how mipmaps are generated:&#xA;&#xA;* ALPHA BLEND: Pixels with zero alpha are ignored in mipmaps, to prevent bleeding the transparent color.&#xA;* DEFAULT: Downsampling works normally, as in Photoshop.&#xA;* HEIGHT MAP: The bitmap (normally grayscale) is a height map that gets converted to a bump map. Uses &lt;bump height&gt; below. Alpha is passed through unmodified.&#xA;* DETAIL MAP: Mipmap color fades to gray, controlled by &lt;detail fade factor&gt; below. Alpha fades to white.&#xA;* LIGHT MAP: Generates no mipmaps. Do not use!&#xA;* VECTOR MAP: Used mostly for special effects; pixels are treated as xyz vectors and normalized after downsampling. Alpha is passed through unmodified." />
+					<field type="Enum" name="Usage">
+						<definition count="11">
+							<entry>Alpha Blend</entry>
+							<entry>Default</entry>
+							<entry>Height Map</entry>
+							<entry>Detail Map</entry>
+							<entry>Light Map</entry>
+							<entry>Vector Map</entry>
+							<entry>Height Map BLUE 255</entry>
+							<entry>embm</entry>
+							<entry>Height Map A8L8</entry>
+							<entry>Height Map G8B8</entry>
+							<entry>Height Map G8B8 w/ Alpha</entry>
+						</definition>
+					</field>
+					<field type="WordFlags" name="Flags">
+						<definition count="13">
+							<entry>Enable Diffusion Dithering</entry>
+							<entry>Disable Height Map Compression</entry>
+							<entry>Uniform Sprite Sequences</entry>
+							<entry>Filthy Sprite Bug Fix</entry>
+							<entry>Use Sharp Bump Filter</entry>
+							<entry>UNUSED</entry>
+							<entry>Use Clamped/Mirrored Bump Filter</entry>
+							<entry>Invert Detail Fade</entry>
+							<entry>Swap x-y Vector Components</entry>
+							<entry>Convert from Signed</entry>
+							<entry>Convert to Signed</entry>
+							<entry>Import mipmap Chains</entry>
+							<entry>Intentionally True Color</entry>
+						</definition>
+					</field>
+					<field type="Explanation" name="Postprocessing" definition="These properties control how mipmaps are postprocessed." />
+					<field type="RealFraction" name="Detail Fade Factor" help="0 means fade to gray by last mipmap; 1 means fade to gray by first mipmap." units="[0,1]" />
+					<field type="RealFraction" name="Sharpen Amount" help="Sharpens mipmap after downsampling." units="[0,1]" />
+					<field type="Real" name="Bump Height" help="tApparent height of the bump map above the triangle onto which it is textured, in texture repeats (i.e., 1.0 would be as high as the texture is wide)." units="repeats" />
+					<field type="Enum" name="">
+						<definition count="6">
+							<entry>32 x 32</entry>
+							<entry>64 x 64</entry>
+							<entry>128 x 128</entry>
+							<entry>256 x 256</entry>
+							<entry>512 x 512</entry>
+							<entry>1024 x 1024</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="" />
+					<field type="Explanation" name="Color Plate" definition="The original image file used to import the bitmap group." />
+					<field type="ShortInteger" name="Color Plate Width" units="pixels" isReadonly="True" />
+					<field type="ShortInteger" name="Color Plate Height" units="pixels" isReadonly="True" />
+					<field type="Data" name="Compressed Color Plate Data" isReadonly="True">
+						<definition name="color_plate_data" maxSize="1073741824" alignment="0" flags="1" maxIdentifer="MAXIMUM_BITMAP_PIXELS_SIZE" />
+					</field>
+					<field type="Explanation" name="Processed Pixel Data" definition="Pixel data after being processed by the tool." />
+					<field type="Data" name="Processed Pixel Data" isReadonly="True">
+						<definition name="bitmap_pixel_data" maxSize="1073741824" alignment="0" flags="0" maxIdentifer="MAXIMUM_BITMAP_PIXELS_SIZE" />
+					</field>
+					<field type="Explanation" name="Miscellaneous" definition="" />
+					<field type="Real" name="Blur Filter Size" help="Blurs the bitmap before generating mipmaps." units="[0,10] pixels" />
+					<field type="Real" name="Alpha Bias" help="Affects alpha mipmap generation." units="[-1,1]" />
+					<field type="ShortInteger" name="Mipmap Count" help="0 Defaults to all levels." units="levels" />
+					<field type="Explanation" name="...More Sprite Processing" definition="Sprite usage controls the background color of sprite plates." />
+					<field type="Enum" name="Sprite Usage">
+						<definition count="3">
+							<entry>Blend/Add/Subtract/Max</entry>
+							<entry>Multiply/Min</entry>
+							<entry>Double Multiply</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="Sprite Spacing" isReadonly="True" />
+					<field type="Explanation" name="...More Stuff" definition="" />
+					<field type="Enum" name="Force Format">
+						<definition count="7">
+							<entry>Default</entry>
+							<entry>Force G8B8</entry>
+							<entry>Force DXT1</entry>
+							<entry>Force DXT3</entry>
+							<entry>Force DXT5</entry>
+							<entry>Force ALPHA-LUMINANCE8</entry>
+							<entry>Force A4R4G4B4</entry>
+						</definition>
+					</field>
+					<field type="Block" name="Sequences" isReadonly="True">
+						<block name="bitmap_group_sequence_block" maxCount="256" display="bitmap_group_sequence_block" flags="0" maxIdentifer="MAXIMUM_SEQUENCES_PER_BITMAP_GROUP" version="1">
+							<versions>
+								<bitmap_group_sequence_block_fields size="64" sizeIdentifer="sizeof(struct bitmap_group_sequence)" fieldCount="6">
+									<fields>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="ShortInteger" name="First Bitmap Index" isReadonly="True" />
+										<field type="ShortInteger" name="Bitmap Count" isReadonly="True" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Block" name="Sprites" isReadonly="True">
+											<block name="bitmap_group_sprite_block" maxCount="64" display="bitmap_group_sprite_block" flags="0" maxIdentifer="MAXIMUM_SPRITES_PER_SEQUENCE" version="1">
+												<versions>
+													<bitmap_group_sprite_block_fields size="32" sizeIdentifer="sizeof(struct bitmap_group_sprite)" fieldCount="9">
+														<fields>
+															<field type="ShortInteger" name="Bitmap Index" isReadonly="True" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="4" />
+															<field type="Real" name="Left" isReadonly="True" />
+															<field type="Real" name="Right" isReadonly="True" />
+															<field type="Real" name="Top" isReadonly="True" />
+															<field type="Real" name="Bottom" isReadonly="True" />
+															<field type="RealPoint2D" name="Registration Point" isReadonly="True" />
+															<field type="Terminator" />
+														</fields>
+													</bitmap_group_sprite_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</bitmap_group_sequence_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Bitmaps" isReadonly="True">
+						<block name="bitmap_data_block" maxCount="65536" display="bitmap_data_block" flags="0" maxIdentifer="MAXIMUM_BITMAPS_PER_BITMAP_GROUP" procPostprocess="True" procDispose="True" version="2">
+							<versions>
+								<bitmap_tags_v1 size="48" sizeIdentifer="sizeof(struct bitmap_data_v1)" fieldCount="16">
+									<fields>
+										<field type="Tag" name="Signature" isReadonly="True" />
+										<field type="ShortInteger" name="Width" units="pixels" isReadonly="True" />
+										<field type="ShortInteger" name="Height" units="pixels" isReadonly="True" />
+										<field type="ShortInteger" name="Depth" help="Depth is 1 for 2D textures and cube maps." units="pixels" isReadonly="True" />
+										<field type="Enum" name="Type" help="Determines bitmap &quot;geometry.&quot;" isReadonly="True">
+											<definition count="3">
+												<entry>2D Texture</entry>
+												<entry>3D Texture</entry>
+												<entry>Cube Map</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="Format" help="Determines how pixels are represented internally." isReadonly="True">
+											<definition count="24">
+												<entry>a8</entry>
+												<entry>y8</entry>
+												<entry>ay8</entry>
+												<entry>a8y8</entry>
+												<entry>unused1</entry>
+												<entry>unused2</entry>
+												<entry>r5g6b5</entry>
+												<entry>unused3</entry>
+												<entry>a1r5g5b5</entry>
+												<entry>a4r4g4b4</entry>
+												<entry>x8r8g8b8</entry>
+												<entry>a8r8g8b8</entry>
+												<entry>unused4</entry>
+												<entry>unused5</entry>
+												<entry>dxt1</entry>
+												<entry>dxt3</entry>
+												<entry>dxt5</entry>
+												<entry>p8-bump</entry>
+												<entry>p8</entry>
+												<entry>argbfp32</entry>
+												<entry>rgbfp32</entry>
+												<entry>rgbfp16</entry>
+												<entry>v8u8</entry>
+												<entry>g8b8</entry>
+											</definition>
+										</field>
+										<field type="WordFlags" name="Flags" isReadonly="True">
+											<definition count="8">
+												<entry>Power of Two Dimensions</entry>
+												<entry>Compressed</entry>
+												<entry>Palettized</entry>
+												<entry>Swizzled</entry>
+												<entry>Linear</entry>
+												<entry>v16u16</entry>
+												<entry>MIP Map Debug Level</entry>
+												<entry>Prefer Stutter (Prefer Low Detail)</entry>
+											</definition>
+										</field>
+										<field type="Point2D" name="Registration Point" isReadonly="True" />
+										<field type="ShortInteger" name="mipmap Count" isReadonly="True" />
+										<field type="Pad" name="" definition="2" />
+										<field type="LongInteger" name="Pixels Offset" isReadonly="True" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Pad" name="" definition="8" />
+										<field type="Terminator" />
+									</fields>
+								</bitmap_tags_v1>
+								<bitmap_tags_v2 size="116" sizeIdentifer="sizeof(struct bitmap_data)" fieldCount="23">
+									<fields>
+										<field type="Tag" name="Signature" isReadonly="True" />
+										<field type="ShortInteger" name="Width" units="pixels" isReadonly="True" />
+										<field type="ShortInteger" name="Height" units="pixels" isReadonly="True" />
+										<field type="CharInteger" name="Depth" help="Depth is 1 for 2D textures and cube maps." units="pixels" isReadonly="True" />
+										<field type="ByteFlags" name="More Flags">
+											<definition count="3">
+												<entry>Delete from Cache File</entry>
+												<entry>bitmap create attempted</entry>
+												<entry />
+											</definition>
+										</field>
+										<field type="Enum" name="Type" help="Determines bitmap &quot;geometry.&quot;" isReadonly="True">
+											<definition count="3">
+												<entry>2D Texture</entry>
+												<entry>3D Texture</entry>
+												<entry>Cube Map</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="Format" help="Determines how pixels are represented internally." isReadonly="True">
+											<definition count="24">
+												<entry>a8</entry>
+												<entry>y8</entry>
+												<entry>ay8</entry>
+												<entry>a8y8</entry>
+												<entry>unused1</entry>
+												<entry>unused2</entry>
+												<entry>r5g6b5</entry>
+												<entry>unused3</entry>
+												<entry>a1r5g5b5</entry>
+												<entry>a4r4g4b4</entry>
+												<entry>x8r8g8b8</entry>
+												<entry>a8r8g8b8</entry>
+												<entry>unused4</entry>
+												<entry>unused5</entry>
+												<entry>dxt1</entry>
+												<entry>dxt3</entry>
+												<entry>dxt5</entry>
+												<entry>p8-bump</entry>
+												<entry>p8</entry>
+												<entry>argbfp32</entry>
+												<entry>rgbfp32</entry>
+												<entry>rgbfp16</entry>
+												<entry>v8u8</entry>
+												<entry>g8b8</entry>
+											</definition>
+										</field>
+										<field type="WordFlags" name="Flags" isReadonly="True">
+											<definition count="8">
+												<entry>Power of Two Dimensions</entry>
+												<entry>Compressed</entry>
+												<entry>Palettized</entry>
+												<entry>Swizzled</entry>
+												<entry>Linear</entry>
+												<entry>v16u16</entry>
+												<entry>MIP Map Debug Level</entry>
+												<entry>Prefer Stutter (Prefer Low Detail)</entry>
+											</definition>
+										</field>
+										<field type="Point2D" name="Registration Point" isReadonly="True" />
+										<field type="ShortInteger" name="mipmap Count" isReadonly="True" />
+										<field type="ShortInteger" name="Low-Detail mipmap Count" isReadonly="True" />
+										<field type="LongInteger" name="Pixels Offset" isReadonly="True" />
+										<field type="Skip" name="" definition="12" />
+										<field type="Skip" name="" definition="12" />
+										<field type="Skip" name="" definition="12" />
+										<field type="Skip" name="" definition="12" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Skip" name="" definition="20" />
+										<field type="Skip" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</bitmap_tags_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="WDP fields" definition="" />
+					<field type="CharInteger" name="color compression quality" help="1 means lossless, 127 means crappy" units="[1,127]" />
+					<field type="CharInteger" name="alpha compression quality" help="1 means lossless, 127 means crappy" units="[1,127]" />
+					<field type="CharInteger" name="overlap" isReadonly="True" />
+					<field type="CharEnum" name="color subsampling" isReadonly="True">
+						<definition count="4">
+							<entry>4:0:0</entry>
+							<entry>4:2:0</entry>
+							<entry>4:2:2</entry>
+							<entry>4:4:4</entry>
+						</definition>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</bitmap_block_fields>
+		</versions>
+	</block>
+</tagGroup>

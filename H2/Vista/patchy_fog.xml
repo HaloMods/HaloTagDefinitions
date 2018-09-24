@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="patchy_fog" groupTag="fpch" groupTagParent="????" version="1" flags="8">
+	<block name="patchy_fog_block" maxCount="1" display="patchy_fog" flags="0" maxIdentifer="1" procPostprocess="True" version="1">
+		<versions>
+			<patchy_fog_block_fields size="88" sizeIdentifer="sizeof(struct s_patchy_fog_definition)" fieldCount="28">
+				<fields>
+					<field type="Explanation" name="PATCHY FOG" definition="Use the separate_layer_depths flag carefully, it's expensive!" />
+					<field type="WordFlags" name="flags">
+						<definition count="2">
+							<entry>separate layer depths</entry>
+							<entry>sort behind transparents</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="60" />
+					<field type="Explanation" name="MOVEMENT MODIFIERS" definition="" />
+					<field type="RealFraction" name="rotation multiplier" units="[0,1]" />
+					<field type="RealFraction" name="strafing multiplier" units="[0,1]" />
+					<field type="RealFraction" name="zoom multiplier" units="[0,1]" />
+					<field type="UselessPad" name="" definition="32" />
+					<field type="Explanation" name="NOISE MAP" definition="" />
+					<field type="Real" name="noise map scale" help="0 defaults to 1" />
+					<field type="TagReference" name="noise map">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Real" name="noise vertical scale forward" help="0 defaults to 1" />
+					<field type="Real" name="noise vertical scale up" help="0 defaults to 1" />
+					<field type="Real" name="noise opacity scale up" help="0 defaults to 1" />
+					<field type="UselessPad" name="" definition="20" />
+					<field type="Explanation" name="ANIMATION" definition="" />
+					<field type="Real" name="animation period" units="seconds" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="RealBounds" name="wind velocity" units="world units per second" />
+					<field type="RealBounds" name="wind period" help="0 defaults to 1" units="seconds" />
+					<field type="RealFraction" name="wind acceleration weight" units="[0,1]" />
+					<field type="RealFraction" name="wind perpendicular weight" units="[0,1]" />
+					<field type="Real" name="wind constant velocity x" units="world units per second" />
+					<field type="Real" name="wind constant velocity y" units="world units per second" />
+					<field type="Real" name="wind constant velocity z" units="world units per second" />
+					<field type="UselessPad" name="" definition="20" />
+					<field type="Terminator" />
+				</fields>
+			</patchy_fog_block_fields>
+		</versions>
+	</block>
+</tagGroup>

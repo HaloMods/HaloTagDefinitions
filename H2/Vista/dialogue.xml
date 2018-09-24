@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="dialogue" groupTag="udlg" groupTagParent="????" version="1" flags="24" procPostprocess="True">
+	<block name="dialogue_block" maxCount="1" display="dialogue" flags="0" maxIdentifer="1" version="2">
+		<versions>
+			<g_dialogue_definition_fields_v1 size="56" sizeIdentifer="sizeof(s_dialogue_definition_v1)" fieldCount="6">
+				<fields>
+					<field type="TagReference" name="global dialogue info">
+						<definition flags="0" groupTag="adlg" />
+					</field>
+					<field type="LongFlags" name="flags">
+						<definition count="1">
+							<entry>female</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="20" />
+					<field type="Block" name="vocalizations">
+						<block name="sound_references_block" maxCount="500" display="sound_references_block" flags="0" maxIdentifer="500" procPostprocess="True" version="2">
+							<versions>
+								<g_vocalization_sound_references_fields_v1 size="44" sizeIdentifer="sizeof(s_vocalization_sound_v1)" fieldCount="6">
+									<fields>
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>new vocalization</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="20" />
+										<field type="StringId" name="vocalization" isBlockName="True" />
+										<field type="TagReference" name="sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</g_vocalization_sound_references_fields_v1>
+								<g_vocalization_sound_references_fields_v2 size="24" sizeIdentifer="sizeof(s_vocalization_sound)" fieldCount="5">
+									<fields>
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>new vocalization</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="StringId" name="vocalization" isBlockName="True" />
+										<field type="TagReference" name="sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</g_vocalization_sound_references_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="StringId" name="mission dialogue designator" help="3-letter mission dialogue designator name" />
+					<field type="Terminator" />
+				</fields>
+			</g_dialogue_definition_fields_v1>
+			<g_dialogue_definition_fields_v2 size="36" sizeIdentifer="sizeof(s_dialogue_definition)" fieldCount="5">
+				<fields>
+					<field type="TagReference" name="global dialogue info">
+						<definition flags="0" groupTag="adlg" />
+					</field>
+					<field type="LongFlags" name="flags">
+						<definition count="1">
+							<entry>female</entry>
+						</definition>
+					</field>
+					<field type="Block" name="vocalizations">
+						<block name="sound_references_block" maxCount="500" display="sound_references_block" flags="0" maxIdentifer="500" procPostprocess="True" version="2">
+							<versions>
+								<g_vocalization_sound_references_fields_v1 size="44" sizeIdentifer="sizeof(s_vocalization_sound_v1)" fieldCount="6">
+									<fields>
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>new vocalization</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="20" />
+										<field type="StringId" name="vocalization" isBlockName="True" />
+										<field type="TagReference" name="sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</g_vocalization_sound_references_fields_v1>
+								<g_vocalization_sound_references_fields_v2 size="24" sizeIdentifer="sizeof(s_vocalization_sound)" fieldCount="5">
+									<fields>
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>new vocalization</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="StringId" name="vocalization" isBlockName="True" />
+										<field type="TagReference" name="sound">
+											<definition flags="4" groupTag="snd!" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</g_vocalization_sound_references_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="StringId" name="mission dialogue designator" help="3-letter mission dialogue designator name" />
+					<field type="Terminator" />
+				</fields>
+			</g_dialogue_definition_fields_v2>
+		</versions>
+	</block>
+</tagGroup>

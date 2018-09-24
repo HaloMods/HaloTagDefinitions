@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="scenario_comments_resource" groupTag="/**/" groupTagParent="????" version="1" flags="56">
+	<block name="scenario_comments_resource_block" maxCount="1" display="scenario_comments_resource" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<scenario_comments_resource_block_fields size="12" sizeIdentifer="sizeof(s_scenario_comment_flags_resource)" fieldCount="2">
+				<fields>
+					<field type="Block" name="Comments">
+						<block name="editor_comment_block" maxCount="65536" display="editor_comment_block" flags="0" maxIdentifer="MAXIMUM_EDITOR_COMMENTS" version="1">
+							<versions>
+								<editor_comment_block_fields size="304" sizeIdentifer="sizeof(struct editor_comment_definition)" fieldCount="5">
+									<fields>
+										<field type="RealPoint3D" name="Position" />
+										<field type="LongEnum" name=")Type">
+											<definition count="1">
+												<entry>Generic</entry>
+											</definition>
+										</field>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="LongString" name="Comment" />
+										<field type="Terminator" />
+									</fields>
+								</editor_comment_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</scenario_comments_resource_block_fields>
+		</versions>
+	</block>
+</tagGroup>

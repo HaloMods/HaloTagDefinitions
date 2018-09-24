@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="device_machine" groupTag="mach" groupTagParent="devi" version="1" flags="9" procPostprocess="True">
+	<block name="device_machine_block" maxCount="1" display="device_machine" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<device_machine_block_fields size="24" sizeIdentifer="sizeof(struct _machine_definition)" fieldCount="12">
+				<fields>
+					<field type="Explanation" name="$$$ MACHINE $$$" definition="" />
+					<field type="Enum" name="type">
+						<definition count="3">
+							<entry>door</entry>
+							<entry>platform</entry>
+							<entry>gear</entry>
+						</definition>
+					</field>
+					<field type="WordFlags" name="flags">
+						<definition count="3">
+							<entry>pathfinding obstacle</entry>
+							<entry>...but not when open</entry>
+							<entry>elevator#lighting based on what's around, rather than what's below</entry>
+						</definition>
+					</field>
+					<field type="Real" name="door open time" units="seconds" />
+					<field type="FractionBounds" name="door occlusion bounds" help="maps position [0,1] to occlusion" />
+					<field type="UselessPad" name="" definition="72" />
+					<field type="Enum" name="collision response">
+						<definition count="2">
+							<entry>pause until crushed</entry>
+							<entry>reverse directions</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="elevator node" />
+					<field type="UselessPad" name="" definition="68" />
+					<field type="Enum" name="pathfinding policy">
+						<definition count="4">
+							<entry>discs</entry>
+							<entry>sectors</entry>
+							<entry>cut_out</entry>
+							<entry>none</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Terminator" />
+				</fields>
+			</device_machine_block_fields>
+		</versions>
+	</block>
+</tagGroup>

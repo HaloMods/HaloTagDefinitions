@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="hud_number" groupTag="hud#" groupTagParent="????" version="1" flags="8">
+	<block name="hud_number_block" maxCount="1" display="hud_number" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<hud_number_block_fields size="100" sizeIdentifer="sizeof(struct hud_number_definition)" fieldCount="10">
+				<fields>
+					<field type="TagReference" name="digits bitmap">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="CharInteger" name="bitmap digit width" />
+					<field type="CharInteger" name="screen digit width" />
+					<field type="CharInteger" name="x offset" />
+					<field type="CharInteger" name="y offset" />
+					<field type="CharInteger" name="decimal point width" />
+					<field type="CharInteger" name="colon width" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="76" />
+					<field type="Terminator" />
+				</fields>
+			</hud_number_block_fields>
+		</versions>
+	</block>
+</tagGroup>

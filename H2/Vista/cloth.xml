@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="cloth" groupTag="clwd" groupTagParent="????" version="0" flags="8" procPostprocess="True">
+	<block name="cloth_block" maxCount="1" display="cloth" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<cloth_block_fields size="132" sizeIdentifer="sizeof(cloth_definition)" fieldCount="16">
+				<fields>
+					<field type="LongFlags" name="flags">
+						<definition count="2">
+							<entry>Doesn't use wind</entry>
+							<entry>Uses grid attach top</entry>
+						</definition>
+					</field>
+					<field type="StringId" name="marker attachment name" />
+					<field type="TagReference" name="Shader">
+						<definition flags="0" groupTag="shad" />
+					</field>
+					<field type="Explanation" name="Default cloth vertices" definition="if not importing from a render model, type a grid size" />
+					<field type="ShortInteger" name="grid x dimension" />
+					<field type="ShortInteger" name="grid y dimension" />
+					<field type="Real" name="grid spacing x" />
+					<field type="Real" name="grid spacing y" />
+					<field type="Explanation" name="Cloth Properties" definition="" />
+					<field type="Struct" name="properties">
+						<struct name="cloth_properties" groupTag="clpr" display="cloth properties">
+							<block name="cloth_properties_block" maxCount="1" display="cloth_properties" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<cloth_properties_fields size="48" sizeIdentifer="sizeof(struct cloth_properties)" fieldCount="9">
+										<fields>
+											<field type="Enum" name="Integration type" isReadonly="True">
+												<definition count="1">
+													<entry>verlet</entry>
+												</definition>
+											</field>
+											<field type="ShortInteger" name="Number iterations" help="[1-8] sug 1" />
+											<field type="Real" name="weight" help="[-10.0 - 10.0] sug 1.0" />
+											<field type="Real" name="drag" help="[0.0 - 0.5] sug 0.07" />
+											<field type="Real" name="wind_scale" help="[0.0 - 3.0] sug 1.0" />
+											<field type="Real" name="wind_flappiness_scale" help="[0.0 - 1.0] sug 0.75" />
+											<field type="Real" name="longest_rod" help="[1.0 - 10.0] sug 3.5" />
+											<field type="Pad" name="" definition="24" />
+											<field type="Terminator" />
+										</fields>
+									</cloth_properties_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Explanation" name="Import or grid data" definition="" />
+					<field type="Block" name="vertices" isReadonly="True">
+						<block name="cloth_vertices_block" maxCount="128" display="cloth_vertices_block" flags="0" maxIdentifer="k_maximum_vertices_per_cloth" version="1">
+							<versions>
+								<cloth_vertices_block_fields size="20" sizeIdentifer="sizeof(cloth_vertex_definition)" fieldCount="3">
+									<fields>
+										<field type="RealPoint3D" name="initial position" isReadonly="True" />
+										<field type="RealVector2D" name="uv" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</cloth_vertices_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="indices" isReadonly="True">
+						<block name="cloth_indices_block" maxCount="768" display="cloth_indices_block" flags="0" maxIdentifer="k_maximum_indices_per_cloth" version="1">
+							<versions>
+								<cloth_indices_block_fields size="2" sizeIdentifer="sizeof(cloth_index_definition)" fieldCount="2">
+									<fields>
+										<field type="ShortInteger" name="index" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</cloth_indices_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="strip indices" isReadonly="True">
+						<block name="cloth_indices_block" maxCount="768" display="cloth_indices_block" flags="0" maxIdentifer="k_maximum_indices_per_cloth" version="1">
+							<versions>
+								<cloth_indices_block_fields size="2" sizeIdentifer="sizeof(cloth_index_definition)" fieldCount="2">
+									<fields>
+										<field type="ShortInteger" name="index" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</cloth_indices_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="links" isReadonly="True">
+						<block name="cloth_links_block" maxCount="640" display="cloth_links_block" flags="0" maxIdentifer="k_maximum_links_per_cloth" version="1">
+							<versions>
+								<cloth_links_block_fields size="16" sizeIdentifer="sizeof(cloth_link_definition)" fieldCount="6">
+									<fields>
+										<field type="LongInteger" name="attachment bits" isReadonly="True" />
+										<field type="ShortInteger" name="index1" isReadonly="True" />
+										<field type="ShortInteger" name="index2" isReadonly="True" />
+										<field type="Real" name="default_distance" isReadonly="True" />
+										<field type="Real" name="damping_multiplier" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</cloth_links_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</cloth_block_fields>
+		</versions>
+	</block>
+</tagGroup>

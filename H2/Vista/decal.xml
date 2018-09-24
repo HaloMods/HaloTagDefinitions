@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="decal" groupTag="deca" groupTagParent="????" version="1" flags="9">
+	<block name="decal_block" maxCount="1" display="decal" flags="0" maxIdentifer="1" procPostprocess="True" procGenerateDefault="True" version="1">
+		<versions>
+			<decal_block_fields size="188" sizeIdentifer="sizeof(struct decal_definition)" fieldCount="29">
+				<fields>
+					<field type="Explanation" name="DECAL" definition="There are several &quot;layers&quot; which decals can be placed into, these layers are drawn in a specific order relative to the shader layers and each layer has its own specific blending mode. In general, the decal bitmap's alpha channel will be used as an opacity mask if it exists.&#xA;&#xA;* LIT ALPHA-BLEND PRELIGHT: Decals in this layer are lit by the lightmap but are &quot;faded out&quot; by dynamic lights. What this means is that dynamic lights hitting them will cause them to disappear, sort of. This layer is rendered immediately before lightmap shadows (and before dynamic lights).&#xA;&#xA;* LIT ALPHA-BLEND: Decals in this layer are lit by the lightmap but are NOT lit by dynamic lights. What this means is that if the decal exists in an area that has dark lightmapping but bright dynamic lighting, the decal will appear dark. This layer is rendered immediately after dynamic lights, and all subsequent decal layers are rendered after this one in order.&#xA;&#xA;* DOUBLE MULTIPLY: Decals in this layer will double-multiply the color in the framebuffer. Gray pixels in the decal bitmap will be transparent (black darkens, white brightens). The decal color in the tag does NOT do anything!!&#xA;&#xA;* MULTIPLY: Decals in this layer will multiply the color in the framebuffer. White pixels in the decal bitmap will be transparent. The decal color (in the decal tag) does NOT do anything!!&#xA;&#xA;* MAX: Decals in this layer will perform a component-wise max operation on the framebuffer, replacing color values with whichever is higher. Black pixels in the decal bitmap will be transparent.&#xA;&#xA;* ADD: Decals in this layer will perform an addition operation on the framebuffer, replacing color values with the sum of the two. Black pixels in the decal bitmap will be transparent.&#xA;&#xA;* ERROR: Decals in this layer will render bright red and show through geometry!&#xA;&#xA;A compound decal is a chain of decals which are instantiated simultaneously. Compound decals are created by referencing another decal tag in the 'next_decal_in_chain' field below. Do not attempt to create a circularly linked decal chain, i.e. A-&gt;B-&gt;C-&gt;A! This will cause problems and probably hang the game. Also, do not reference a decal from an effect if it is not the head of the chain; for example an effect should not instantiate decal B if the chain was A-&gt;B-&gt;C. Compound decals can have seperate bitmaps, etc., and can be drawn in seperate layers. In addition, we used to have the ability for each decal in the chain can either inherit its parent's radius, rotation, color, etc. - or it can randomly choose its own. This behavior was controlled by the 'geometry_inherited_by_next_decal_in_chain' flag, below but it's currently broken." />
+					<field type="WordFlags" name="flags">
+						<definition count="10">
+							<entry>geometry inherited by next decal in chain</entry>
+							<entry>interpolate color in hsv</entry>
+							<entry>...more colors</entry>
+							<entry>no random rotation</entry>
+							<entry>UNUSED</entry>
+							<entry>SAPIEN- snap to axis</entry>
+							<entry>SAPIEN- incremental counter</entry>
+							<entry>UNUSED</entry>
+							<entry>preserve aspect</entry>
+							<entry>UNUSED</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="type" help="controls how the decal wraps onto surface geometry">
+						<definition count="4">
+							<entry>scratch</entry>
+							<entry>splatter</entry>
+							<entry>burn</entry>
+							<entry>painted sign</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="layer">
+						<definition count="7">
+							<entry>lit alpha-blend prelight</entry>
+							<entry>lit alpha-blend</entry>
+							<entry>double multiply</entry>
+							<entry>multiply</entry>
+							<entry>max</entry>
+							<entry>add</entry>
+							<entry>error</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="max overlapping count" />
+					<field type="TagReference" name="next decal in chain">
+						<definition flags="0" groupTag="deca" />
+					</field>
+					<field type="RealBounds" name="radius" help="0 defaults to 0.125" units="world units" />
+					<field type="Real" name="radius overlap rejection" units="muliplier" />
+					<field type="UselessPad" name="" definition="16" />
+					<field type="RealRgbColor" name="color lower bounds" />
+					<field type="RealRgbColor" name="color upper bounds" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="28" />
+					<field type="RealBounds" name="lifetime" units="seconds" />
+					<field type="RealBounds" name="decay time" units="seconds" />
+					<field type="UselessPad" name="" definition="12" />
+					<field type="Pad" name="" definition="40" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="20" />
+					<field type="TagReference" name="bitmap">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Pad" name="" definition="20" />
+					<field type="Real" name="maximum sprite extent" units="pixels" isReadonly="True" />
+					<field type="Pad" name="" definition="4" />
+					<field type="UselessPad" name="" definition="8" />
+					<field type="Terminator" />
+				</fields>
+			</decal_block_fields>
+		</versions>
+	</block>
+</tagGroup>

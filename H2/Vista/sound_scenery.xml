@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sound_scenery" groupTag="ssce" groupTagParent="obje" version="1" flags="9" procPostprocess="True">
+	<block name="sound_scenery_block" maxCount="1" display="sound_scenery" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<sound_scenery_block_fields size="16" sizeIdentifer="sizeof(struct _sound_scenery_definition)" fieldCount="3">
+				<fields>
+					<field type="Pad" name="" definition="16" />
+					<field type="UselessPad" name="" definition="112" />
+					<field type="Terminator" />
+				</fields>
+			</sound_scenery_block_fields>
+		</versions>
+	</block>
+</tagGroup>

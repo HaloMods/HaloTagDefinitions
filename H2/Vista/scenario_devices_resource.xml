@@ -1,0 +1,1883 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="scenario_devices_resource" groupTag="dgr*" groupTagParent="????" version="1" flags="56">
+	<block name="scenario_devices_resource_block" maxCount="1" display="scenario_devices_resource" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<scenario_devices_resource_block_fields size="144" sizeIdentifer="sizeof(struct scenario_devices_resource_definition)" fieldCount="15">
+				<fields>
+					<field type="Block" name="Names">
+						<block name="scenario_object_names_block" maxCount="640" display="scenario_object_names_block" flags="0" maxIdentifer="MAXIMUM_OBJECT_NAMES_PER_SCENARIO" procPostprocess="True" version="1">
+							<versions>
+								<scenario_object_names_block_fields size="36" sizeIdentifer="sizeof(struct scenario_object_name)" fieldCount="4">
+									<fields>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="ShortBlockIndex1" name="" definition="2????????????????A&#xC;??t&#x15;?P&#x1C;?H&#x18;?@&#xC;RQP???&#x8;" />
+										<field type="ShortBlockIndex2" name="" definition="SVW?|$&#x14;2?3??&#x3;?I" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_object_names_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="" isReadonly="True">
+						<block name="dont_use_me_scenario_environment_object_block" maxCount="4096" display="dont_use_me_scenario_environment_object_block" flags="0" maxIdentifer="MAXIMUM_ENVIRONMENT_OBJECTS_PER_SCENARIO" version="1">
+							<versions>
+								<dont_use_me_scenario_environment_object_block_fields size="64" sizeIdentifer="sizeof(struct scenario_environment_object)" fieldCount="9">
+									<fields>
+										<field type="Custom" name="" attributeGroup="envf" definition="&#x0;&#x0;&#x0;&#x0;" />
+										<field type="ShortBlockIndex1" name="BSP" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+										<field type="ShortInteger" name="" />
+										<field type="LongInteger" name="Unique ID" isReadonly="True" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Tag" name="Object Definition Tag" isReadonly="True" />
+										<field type="LongInteger" name="Object" isBlockName="True" isReadonly="True" />
+										<field type="Pad" name="" definition="44" />
+										<field type="Terminator" />
+									</fields>
+								</dont_use_me_scenario_environment_object_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Structure References">
+						<block name="scenario_structure_bsp_reference_block" maxCount="16" display="scenario_structure_bsp_reference_block" flags="0" maxIdentifer="MAXIMUM_STRUCTURE_BSPS_PER_SCENARIO" version="2">
+							<versions>
+								<scenario_structure_bsp_reference_tags_v1 size="32" sizeIdentifer="sizeof(struct scenario_structure_bsp_reference_v1)" fieldCount="3">
+									<fields>
+										<field type="Pad" name="" definition="16" />
+										<field type="TagReference" name="Structure BSP" isBlockName="True">
+											<definition flags="2" groupTag="sbsp" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_structure_bsp_reference_tags_v1>
+								<scenario_structure_bsp_reference_tags_v2 size="84" sizeIdentifer="sizeof(struct scenario_structure_bsp_reference)" fieldCount="14">
+									<fields>
+										<field type="Pad" name="" definition="16" />
+										<field type="TagReference" name="Structure BSP" isBlockName="True">
+											<definition flags="2" groupTag="sbsp" />
+										</field>
+										<field type="TagReference" name="Structure Lightmap" isBlockName="True">
+											<definition flags="2" groupTag="ltmp" />
+										</field>
+										<field type="Pad" name="" definition="4" />
+										<field type="Real" name="UNUSED radiance est. search distance" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Real" name="UNUSED luminels per world unit" />
+										<field type="Real" name="UNUSED output white reference" />
+										<field type="Pad" name="" definition="8" />
+										<field type="WordFlags" name="Flags">
+											<definition count="1">
+												<entry>Default Sky Enabled</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="ShortBlockIndex1" name="Default Sky" definition="scenario_sky_reference_block" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_structure_bsp_reference_tags_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Device Groups">
+						<block name="device_group_block" maxCount="128" display="device_group_block" flags="0" maxIdentifer="MAXIMUM_DEVICE_GROUPS_PER_SCENARIO" version="1">
+							<versions>
+								<device_group_block_fields size="40" sizeIdentifer="sizeof(struct scenario_device_group)" fieldCount="5">
+									<fields>
+										<field type="String" name="Name" isBlockName="True" />
+										<field type="Real" name="Initial Value" units="[0,1]" />
+										<field type="LongFlags" name="Flags">
+											<definition count="1">
+												<entry>Can change only once.</entry>
+											</definition>
+										</field>
+										<field type="UselessPad" name="" definition="12" />
+										<field type="Terminator" />
+									</fields>
+								</device_group_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Machines">
+						<block name="scenario_machine_block" maxCount="400" display="scenario_machine_block" flags="0" maxIdentifer="MAXIMUM_MACHINE_DATUMS_PER_SCENARIO" procFormat="True" version="4">
+							<versions>
+								<scenario_machine_fields_v1 size="64" sizeIdentifer="sizeof(s_old_scenario_machine_datum)" fieldCount="12">
+									<fields>
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_machine_palette_block" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="WordFlags" name="Not placed">
+											<definition count="9">
+												<entry>Not Automatically</entry>
+												<entry>Unused</entry>
+												<entry>Unused</entry>
+												<entry>Unused</entry>
+												<entry>Lock Type to Env. Object</entry>
+												<entry>Lock Transform to Env. Object</entry>
+												<entry>Never Placed</entry>
+												<entry>Lock Name to Env. Object</entry>
+												<entry>Create at Rest</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="Desired Permutation" help="If non-0, will try to use model permutations with names that end in that number (e.g., 7 would pick &quot;body-7&quot; and &quot;head-7&quot;)." />
+										<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+										<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+										<field type="Pad" name="" definition="4" />
+										<field type="LongBlockIndex1" name="Environment Object Reference" isReadonly="True" definition="dont_use_me_scenario_environment_object_block" />
+										<field type="Struct" name="Device Data">
+											<struct name="old_scenario_device_struct" groupTag="sdst">
+												<block name="old_scenario_device_struct_block" maxCount="1" display="old_scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<old_scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_old_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</old_scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="LongFlags" name="Flags">
+											<definition count="6">
+												<entry>Does Not Operate Automatically</entry>
+												<entry>One-Sided</entry>
+												<entry>Never Appears Locked</entry>
+												<entry>Opened by Melee Attack</entry>
+												<entry>One-Sided for Player</entry>
+												<entry>Does Not Close Automatically</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="12" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_machine_fields_v1>
+								<scenario_machine_fields_v2 size="80" sizeIdentifer="sizeof(s_scenario_machine_v2)" fieldCount="8">
+									<fields>
+										<field type="Custom" name="" attributeGroup="filt" definition="" />
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_machine_palette_block" />
+										<field type="Custom" name="" attributeGroup="filt" definition="????" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="Struct" name="Object Data">
+											<struct name="scenario_object_datum_struct" groupTag="sobj">
+												<block name="scenario_object_datum_struct_block" maxCount="1" display="scenario_object_datum_struct" flags="0" maxIdentifer="1" version="2">
+													<versions>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Device Data">
+											<struct name="scenario_device_struct" groupTag="sdvt">
+												<block name="scenario_device_struct_block" maxCount="1" display="scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Machine Data">
+											<struct name="scenario_machine_struct_v2" groupTag="smht">
+												<block name="scenario_machine_struct_v2_block" maxCount="1" display="scenario_machine_struct_v2" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_machine_struct_v2_fields size="20" sizeIdentifer="sizeof(s_scenario_machine_datum_v2)" fieldCount="5">
+															<fields>
+																<field type="LongFlags" name="Flags">
+																	<definition count="6">
+																		<entry>Does Not Operate Automatically</entry>
+																		<entry>One-Sided</entry>
+																		<entry>Never Appears Locked</entry>
+																		<entry>Opened by Melee Attack</entry>
+																		<entry>One-Sided for Player</entry>
+																		<entry>Does Not Close Automatically</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="12" />
+																<field type="ShortInteger" name="Pathfinding Object Reference" isReadonly="True" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Terminator" />
+															</fields>
+														</scenario_machine_struct_v2_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_machine_fields_v2>
+								<scenario_machine_fields_v2 size="80" sizeIdentifer="sizeof(s_scenario_machine_v2)" fieldCount="8">
+									<fields>
+										<field type="Custom" name="" attributeGroup="filt" definition="" />
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_machine_palette_block" />
+										<field type="Custom" name="" attributeGroup="filt" definition="????" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="Struct" name="Object Data">
+											<struct name="scenario_object_datum_struct" groupTag="sobj">
+												<block name="scenario_object_datum_struct_block" maxCount="1" display="scenario_object_datum_struct" flags="0" maxIdentifer="1" version="2">
+													<versions>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Device Data">
+											<struct name="scenario_device_struct" groupTag="sdvt">
+												<block name="scenario_device_struct_block" maxCount="1" display="scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Machine Data">
+											<struct name="scenario_machine_struct_v2" groupTag="smht">
+												<block name="scenario_machine_struct_v2_block" maxCount="1" display="scenario_machine_struct_v2" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_machine_struct_v2_fields size="20" sizeIdentifer="sizeof(s_scenario_machine_datum_v2)" fieldCount="5">
+															<fields>
+																<field type="LongFlags" name="Flags">
+																	<definition count="6">
+																		<entry>Does Not Operate Automatically</entry>
+																		<entry>One-Sided</entry>
+																		<entry>Never Appears Locked</entry>
+																		<entry>Opened by Melee Attack</entry>
+																		<entry>One-Sided for Player</entry>
+																		<entry>Does Not Close Automatically</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="12" />
+																<field type="ShortInteger" name="Pathfinding Object Reference" isReadonly="True" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Terminator" />
+															</fields>
+														</scenario_machine_struct_v2_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_machine_fields_v2>
+								<scenario_machine_fields_v3 size="76" sizeIdentifer="sizeof(s_scenario_machine)" fieldCount="8">
+									<fields>
+										<field type="Custom" name="" attributeGroup="filt" definition="" />
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_machine_palette_block" />
+										<field type="Custom" name="" attributeGroup="filt" definition="????" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="Struct" name="Object Data">
+											<struct name="scenario_object_datum_struct" groupTag="sobj">
+												<block name="scenario_object_datum_struct_block" maxCount="1" display="scenario_object_datum_struct" flags="0" maxIdentifer="1" version="2">
+													<versions>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Device Data">
+											<struct name="scenario_device_struct" groupTag="sdvt">
+												<block name="scenario_device_struct_block" maxCount="1" display="scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Machine Data">
+											<struct name="scenario_machine_struct_v3" groupTag="smht">
+												<block name="scenario_machine_struct_v3_block" maxCount="1" display="scenario_machine_struct_v3" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_machine_struct_v3_fields size="16" sizeIdentifer="sizeof(s_scenario_machine_datum)" fieldCount="3">
+															<fields>
+																<field type="LongFlags" name="Flags">
+																	<definition count="6">
+																		<entry>Does Not Operate Automatically</entry>
+																		<entry>One-Sided</entry>
+																		<entry>Never Appears Locked</entry>
+																		<entry>Opened by Melee Attack</entry>
+																		<entry>One-Sided for Player</entry>
+																		<entry>Does Not Close Automatically</entry>
+																	</definition>
+																</field>
+																<field type="Block" name="Pathfinding References" isReadonly="True">
+																	<block name="pathfinding_object_index_list_block" maxCount="16" display="pathfinding_object_index_list_block" flags="0" maxIdentifer="MAXIMUM_STRUCTURE_BSPS_PER_SCENARIO" version="1">
+																		<versions>
+																			<pathfinding_object_index_list_block_fields size="4" sizeIdentifer="sizeof(struct pathfinding_object_index_list)" fieldCount="3">
+																				<fields>
+																					<field type="ShortInteger" name="BSP Index" />
+																					<field type="ShortInteger" name="Pathfinding Object Index" />
+																					<field type="Terminator" />
+																				</fields>
+																			</pathfinding_object_index_list_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scenario_machine_struct_v3_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_machine_fields_v3>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Machines Palette">
+						<block name="scenario_machine_palette_block" maxCount="256" display="scenario_machine_palette_block" flags="0" maxIdentifer="MAXIMUM_SCENARIO_OBJECT_PALETTE_ENTRIES_PER_BLOCK" version="1">
+							<versions>
+								<scenario_machine_palette_block_fields size="48" sizeIdentifer="sizeof(struct scenario_object_palette_entry)" fieldCount="3">
+									<fields>
+										<field type="TagReference" name="Name" isBlockName="True">
+											<definition flags="0" groupTag="mach" />
+										</field>
+										<field type="Pad" name="" definition="32" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_machine_palette_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Controls">
+						<block name="scenario_control_block" maxCount="100" display="scenario_control_block" flags="0" maxIdentifer="MAXIMUM_CONTROL_DATUMS_PER_SCENARIO" procFormat="True" version="3">
+							<versions>
+								<scenario_control_fields_v1 size="64" sizeIdentifer="sizeof(s_old_scenario_control_datum)" fieldCount="15">
+									<fields>
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_control_palette_block" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="WordFlags" name="Not placed">
+											<definition count="9">
+												<entry>Not Automatically</entry>
+												<entry>Unused</entry>
+												<entry>Unused</entry>
+												<entry>Unused</entry>
+												<entry>Lock Type to Env. Object</entry>
+												<entry>Lock Transform to Env. Object</entry>
+												<entry>Never Placed</entry>
+												<entry>Lock Name to Env. Object</entry>
+												<entry>Create at Rest</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="Desired Permutation" help="If non-0, will try to use model permutations with names that end in that number (e.g., 7 would pick &quot;body-7&quot; and &quot;head-7&quot;)." />
+										<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+										<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+										<field type="Pad" name="" definition="4" />
+										<field type="LongBlockIndex1" name="Environment Object Reference" isReadonly="True" definition="dont_use_me_scenario_environment_object_block" />
+										<field type="Struct" name="Device Data">
+											<struct name="old_scenario_device_struct" groupTag="sdst">
+												<block name="old_scenario_device_struct_block" maxCount="1" display="old_scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<old_scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_old_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</old_scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="LongFlags" name="Flags">
+											<definition count="1">
+												<entry>Usable from Both Sides</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="DON'T TOUCH THIS" isReadonly="True" />
+										<field type="Custom" name="" attributeGroup="ugh@" definition="&#x0;&#x0;&#x0;&#x0;" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="8" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_control_fields_v1>
+								<scenario_control_fields_v2 size="68" sizeIdentifer="sizeof(s_scenario_control)" fieldCount="8">
+									<fields>
+										<field type="Custom" name="" attributeGroup="filt" definition="" />
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_control_palette_block" />
+										<field type="Custom" name="" attributeGroup="filt" definition="????" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="Struct" name="Object Data">
+											<struct name="scenario_object_datum_struct" groupTag="sobj">
+												<block name="scenario_object_datum_struct_block" maxCount="1" display="scenario_object_datum_struct" flags="0" maxIdentifer="1" version="2">
+													<versions>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Device Data">
+											<struct name="scenario_device_struct" groupTag="sdvt">
+												<block name="scenario_device_struct_block" maxCount="1" display="scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Control Data">
+											<struct name="scenario_control_struct" groupTag="sctt">
+												<block name="scenario_control_struct_block" maxCount="1" display="scenario_control_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_control_struct_fields size="8" sizeIdentifer="sizeof(s_scenario_control_datum)" fieldCount="4">
+															<fields>
+																<field type="LongFlags" name="Flags">
+																	<definition count="1">
+																		<entry>Usable from Both Sides</entry>
+																	</definition>
+																</field>
+																<field type="ShortInteger" name="DON'T TOUCH THIS" attributeGroup="ugh@" isReadonly="True" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Terminator" />
+															</fields>
+														</scenario_control_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_control_fields_v2>
+								<scenario_control_fields_v2 size="68" sizeIdentifer="sizeof(s_scenario_control)" fieldCount="8">
+									<fields>
+										<field type="Custom" name="" attributeGroup="filt" definition="" />
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_control_palette_block" />
+										<field type="Custom" name="" attributeGroup="filt" definition="????" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="Struct" name="Object Data">
+											<struct name="scenario_object_datum_struct" groupTag="sobj">
+												<block name="scenario_object_datum_struct_block" maxCount="1" display="scenario_object_datum_struct" flags="0" maxIdentifer="1" version="2">
+													<versions>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Device Data">
+											<struct name="scenario_device_struct" groupTag="sdvt">
+												<block name="scenario_device_struct_block" maxCount="1" display="scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Control Data">
+											<struct name="scenario_control_struct" groupTag="sctt">
+												<block name="scenario_control_struct_block" maxCount="1" display="scenario_control_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_control_struct_fields size="8" sizeIdentifer="sizeof(s_scenario_control_datum)" fieldCount="4">
+															<fields>
+																<field type="LongFlags" name="Flags">
+																	<definition count="1">
+																		<entry>Usable from Both Sides</entry>
+																	</definition>
+																</field>
+																<field type="ShortInteger" name="DON'T TOUCH THIS" attributeGroup="ugh@" isReadonly="True" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Terminator" />
+															</fields>
+														</scenario_control_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_control_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Controls Palette">
+						<block name="scenario_control_palette_block" maxCount="256" display="scenario_control_palette_block" flags="0" maxIdentifer="MAXIMUM_SCENARIO_OBJECT_PALETTE_ENTRIES_PER_BLOCK" version="1">
+							<versions>
+								<scenario_control_palette_block_fields size="48" sizeIdentifer="sizeof(struct scenario_object_palette_entry)" fieldCount="3">
+									<fields>
+										<field type="TagReference" name="Name" isBlockName="True">
+											<definition flags="0" groupTag="ctrl" />
+										</field>
+										<field type="Pad" name="" definition="32" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_control_palette_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Light Fixtures">
+						<block name="scenario_light_fixture_block" maxCount="500" display="scenario_light_fixture_block" flags="0" maxIdentifer="MAXIMUM_LIGHT_FIXTURE_DATUMS_PER_SCENARIO" procFormat="True" version="3">
+							<versions>
+								<scenario_light_fixture_fields_v1 size="88" sizeIdentifer="sizeof(s_old_scenario_light_fixture_datum)" fieldCount="15">
+									<fields>
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_light_fixture_palette_block" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="WordFlags" name="Not placed">
+											<definition count="9">
+												<entry>Not Automatically</entry>
+												<entry>Unused</entry>
+												<entry>Unused</entry>
+												<entry>Unused</entry>
+												<entry>Lock Type to Env. Object</entry>
+												<entry>Lock Transform to Env. Object</entry>
+												<entry>Never Placed</entry>
+												<entry>Lock Name to Env. Object</entry>
+												<entry>Create at Rest</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="Desired Permutation" help="If non-0, will try to use model permutations with names that end in that number (e.g., 7 would pick &quot;body-7&quot; and &quot;head-7&quot;)." />
+										<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+										<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+										<field type="Pad" name="" definition="4" />
+										<field type="LongBlockIndex1" name="Environment Object Reference" isReadonly="True" definition="dont_use_me_scenario_environment_object_block" />
+										<field type="Struct" name="Device Data">
+											<struct name="old_scenario_device_struct" groupTag="sdst">
+												<block name="old_scenario_device_struct_block" maxCount="1" display="old_scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<old_scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_old_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</old_scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="RealRgbColor" name="Color" />
+										<field type="Real" name="Intensity" />
+										<field type="Angle" name="Falloff Angle" units="Degrees" />
+										<field type="Angle" name="Cutoff Angle" units="Degrees" />
+										<field type="Pad" name="" definition="16" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_light_fixture_fields_v1>
+								<scenario_light_fixture_fields_v2 size="84" sizeIdentifer="sizeof(s_scenario_light_fixture)" fieldCount="8">
+									<fields>
+										<field type="Custom" name="" attributeGroup="filt" definition="" />
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_light_fixture_palette_block" />
+										<field type="Custom" name="" attributeGroup="filt" definition="????" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="Struct" name="Object Data">
+											<struct name="scenario_object_datum_struct" groupTag="sobj">
+												<block name="scenario_object_datum_struct_block" maxCount="1" display="scenario_object_datum_struct" flags="0" maxIdentifer="1" version="2">
+													<versions>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Device Data">
+											<struct name="scenario_device_struct" groupTag="sdvt">
+												<block name="scenario_device_struct_block" maxCount="1" display="scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="light_fixture data">
+											<struct name="scenario_light_fixture_struct" groupTag="slft">
+												<block name="scenario_light_fixture_struct_block" maxCount="1" display="scenario_light_fixture_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_light_fixture_struct_fields size="24" sizeIdentifer="sizeof(s_scenario_light_fixture_datum)" fieldCount="5">
+															<fields>
+																<field type="RealRgbColor" name="Color" />
+																<field type="Real" name="Intensity" />
+																<field type="Angle" name="Falloff Angle" units="Degrees" />
+																<field type="Angle" name="Cutoff Angle" units="Degrees" />
+																<field type="Terminator" />
+															</fields>
+														</scenario_light_fixture_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_light_fixture_fields_v2>
+								<scenario_light_fixture_fields_v2 size="84" sizeIdentifer="sizeof(s_scenario_light_fixture)" fieldCount="8">
+									<fields>
+										<field type="Custom" name="" attributeGroup="filt" definition="" />
+										<field type="ShortBlockIndex1" name="Type" attributeGroup="type" definition="scenario_light_fixture_palette_block" />
+										<field type="Custom" name="" attributeGroup="filt" definition="????" />
+										<field type="ShortBlockIndex1" name="Name" attributeGroup="name" isBlockName="True" definition="scenario_object_names_block" />
+										<field type="Struct" name="Object Data">
+											<struct name="scenario_object_datum_struct" groupTag="sobj">
+												<block name="scenario_object_datum_struct_block" maxCount="1" display="scenario_object_datum_struct" flags="0" maxIdentifer="1" version="2">
+													<versions>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+														<g_new_scenario_object_datum_fields size="48" sizeIdentifer="sizeof(s_scenario_object_datum)" fieldCount="12">
+															<fields>
+																<field type="Custom" name="" attributeGroup="obed" definition="&#x0;&#x0;&#x0;&#x0;" />
+																<field type="LongFlags" name="Placement Flags">
+																	<definition count="9">
+																		<entry>Not Automatically</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Unused</entry>
+																		<entry>Lock Type to Env. Object</entry>
+																		<entry>Lock Transform to Env. Object</entry>
+																		<entry>Never Placed</entry>
+																		<entry>Lock Name to Env. Object</entry>
+																		<entry>Create at Rest</entry>
+																	</definition>
+																</field>
+																<field type="RealPoint3D" name="Position" attributeGroup="poin" />
+																<field type="RealEulerAngles3D" name="Rotation" attributeGroup="orie" />
+																<field type="Real" name="Scale" attributeGroup="scal" />
+																<field type="WordFlags" name=")Transform Flags">
+																	<definition count="1">
+																		<entry>Mirrored</entry>
+																	</definition>
+																</field>
+																<field type="WordBlockFlags" name="Manual BSP Flags" attributeGroup="mbsp" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																<field type="Struct" name="Object ID">
+																	<struct name="scenario_object_id_struct" groupTag="obj#">
+																		<block name="scenario_object_id_struct_block" maxCount="1" display="scenario_object_id_struct" flags="0" maxIdentifer="1" version="1">
+																			<versions>
+																				<scenario_object_id_struct_fields size="8" sizeIdentifer="sizeof(c_object_identifier)" fieldCount="5">
+																					<fields>
+																						<field type="LongInteger" name="Unique ID" attributeGroup="obj#" isReadonly="True" />
+																						<field type="ShortBlockIndex1" name="Origin BSP Index" attributeGroup="obj#" isReadonly="True" definition="scenario_structure_bsp_reference_block" />
+																						<field type="CharEnum" name="Type" attributeGroup="obj#" isReadonly="True">
+																							<definition count="13">
+																								<entry>Biped</entry>
+																								<entry>Vehicle</entry>
+																								<entry>Weapon</entry>
+																								<entry>Equipment</entry>
+																								<entry>Garbage</entry>
+																								<entry>Projectile</entry>
+																								<entry>Scenery</entry>
+																								<entry>Machine</entry>
+																								<entry>Control</entry>
+																								<entry>light_fixture</entry>
+																								<entry>sound_scenery</entry>
+																								<entry>Crate</entry>
+																								<entry>Creature</entry>
+																							</definition>
+																						</field>
+																						<field type="CharEnum" name="Source" attributeGroup="obj#" isReadonly="True">
+																							<definition count="4">
+																								<entry>Structure</entry>
+																								<entry>Editor</entry>
+																								<entry>Dynamic</entry>
+																								<entry>Legacy</entry>
+																							</definition>
+																						</field>
+																						<field type="Terminator" />
+																					</fields>
+																				</scenario_object_id_struct_fields>
+																			</versions>
+																		</block>
+																	</struct>
+																</field>
+																<field type="CharEnum" name="BSP Policy" attributeGroup="enum">
+																	<definition count="3">
+																		<entry>Default</entry>
+																		<entry>Always Placed</entry>
+																		<entry>Manual BSP Placement</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="1" />
+																<field type="ShortBlockIndex1" name="Editor Folder" attributeGroup="ugly" definition="g_scenario_editor_folder_block" />
+																<field type="Terminator" />
+															</fields>
+														</g_new_scenario_object_datum_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="Device Data">
+											<struct name="scenario_device_struct" groupTag="sdvt">
+												<block name="scenario_device_struct_block" maxCount="1" display="scenario_device_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_device_struct_fields size="8" sizeIdentifer="sizeof(struct s_scenario_device_datum)" fieldCount="4">
+															<fields>
+																<field type="ShortBlockIndex1" name="Power Group" definition="device_group_block" />
+																<field type="ShortBlockIndex1" name="Position Group" definition="device_group_block" />
+																<field type="LongFlags" name="Flags">
+																	<definition count="5">
+																		<entry>Initially Open (1.0)</entry>
+																		<entry>Initially Off (0.0)</entry>
+																		<entry>Can change only once.</entry>
+																		<entry>Position Reversed</entry>
+																		<entry>Not Usable from Any Side</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</scenario_device_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Struct" name="light_fixture data">
+											<struct name="scenario_light_fixture_struct" groupTag="slft">
+												<block name="scenario_light_fixture_struct_block" maxCount="1" display="scenario_light_fixture_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<scenario_light_fixture_struct_fields size="24" sizeIdentifer="sizeof(s_scenario_light_fixture_datum)" fieldCount="5">
+															<fields>
+																<field type="RealRgbColor" name="Color" />
+																<field type="Real" name="Intensity" />
+																<field type="Angle" name="Falloff Angle" units="Degrees" />
+																<field type="Angle" name="Cutoff Angle" units="Degrees" />
+																<field type="Terminator" />
+															</fields>
+														</scenario_light_fixture_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</scenario_light_fixture_fields_v2>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Light Fixtures Palette">
+						<block name="scenario_light_fixture_palette_block" maxCount="256" display="scenario_light_fixture_palette_block" flags="0" maxIdentifer="MAXIMUM_SCENARIO_OBJECT_PALETTE_ENTRIES_PER_BLOCK" version="1">
+							<versions>
+								<scenario_light_fixture_palette_block_fields size="48" sizeIdentifer="sizeof(struct scenario_object_palette_entry)" fieldCount="3">
+									<fields>
+										<field type="TagReference" name="Name" isBlockName="True">
+											<definition flags="0" groupTag="lifi" />
+										</field>
+										<field type="Pad" name="" definition="32" />
+										<field type="Terminator" />
+									</fields>
+								</scenario_light_fixture_palette_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="LongInteger" name="next machine id salt" isReadonly="True" />
+					<field type="LongInteger" name="Next Control ID Salt" isReadonly="True" />
+					<field type="LongInteger" name="Next Light Fixture ID Salt" isReadonly="True" />
+					<field type="Block" name="Editor Folders" isReadonly="True">
+						<block name="g_scenario_editor_folder_block" maxCount="32767" display="g_scenario_editor_folder_block" flags="0" maxIdentifer="k_maximum_scenario_editor_folders" version="1">
+							<versions>
+								<g_scenario_editor_folder_block_fields size="260" sizeIdentifer="sizeof(s_scenario_editor_folder)" fieldCount="3">
+									<fields>
+										<field type="LongBlockIndex1" name="parent folder" definition="g_scenario_editor_folder_block" />
+										<field type="LongString" name="name" isBlockName="True" />
+										<field type="Terminator" />
+									</fields>
+								</g_scenario_editor_folder_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</scenario_devices_resource_block_fields>
+		</versions>
+	</block>
+</tagGroup>

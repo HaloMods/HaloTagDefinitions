@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sound_environment" groupTag="snde" groupTagParent="????" version="1" flags="8">
+	<block name="sound_environment_block" maxCount="1" display="sound_environment" flags="0" maxIdentifer="1" procPostprocess="True" version="2">
+		<versions>
+			<sound_environment_definition_fields size="72" sizeIdentifer="sizeof(sound_environment)" fieldCount="17">
+				<fields>
+					<field type="Pad" name="" definition="4" />
+					<field type="ShortInteger" name="priority" help="when multiple listeners are in different sound environments in split screen, the combined environment will be the one with the highest priority." />
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="room intensity" help="intensity of the room effect" units="dB" attributeGroup="+dB+" />
+					<field type="Real" name="room intensity hf" help="intensity of the room effect above the reference high frequency" units="dB" attributeGroup="+dB+" />
+					<field type="Real" name="room rolloff (0 to 10)" help="how quickly the room effect rolls off, from 0.0 to 10.0" attributeGroup="auds" />
+					<field type="Real" name="decay time (.1 to 20)" units="seconds" attributeGroup="auds" />
+					<field type="Real" name="decay hf ratio (.1 to 2)" attributeGroup="auds" />
+					<field type="Real" name="reflections intensity" units="dB[-100,10]" attributeGroup="+dB+" />
+					<field type="Real" name="reflections delay (0 to .3)" units="seconds" attributeGroup="auds" />
+					<field type="Real" name="reverb intensity" units="dB[-100,20]" attributeGroup="+dB+" />
+					<field type="Real" name="reverb delay (0 to .1)" units="seconds" attributeGroup="auds" />
+					<field type="Real" name="diffusion" attributeGroup="auds" />
+					<field type="Real" name="density" attributeGroup="auds" />
+					<field type="Real" name="hf reference(20 to 20,000)" help="for hf values, what frequency defines hf, from 20 to 20,000" units="Hz" attributeGroup="auds" />
+					<field type="Pad" name="" definition="16" />
+					<field type="Terminator" />
+				</fields>
+			</sound_environment_definition_fields>
+			<sound_environment_definition_fields size="72" sizeIdentifer="sizeof(sound_environment)" fieldCount="17">
+				<fields>
+					<field type="Pad" name="" definition="4" />
+					<field type="ShortInteger" name="priority" help="when multiple listeners are in different sound environments in split screen, the combined environment will be the one with the highest priority." />
+					<field type="Pad" name="" definition="2" />
+					<field type="Real" name="room intensity" help="intensity of the room effect" units="dB" attributeGroup="+dB+" />
+					<field type="Real" name="room intensity hf" help="intensity of the room effect above the reference high frequency" units="dB" attributeGroup="+dB+" />
+					<field type="Real" name="room rolloff (0 to 10)" help="how quickly the room effect rolls off, from 0.0 to 10.0" attributeGroup="auds" />
+					<field type="Real" name="decay time (.1 to 20)" units="seconds" attributeGroup="auds" />
+					<field type="Real" name="decay hf ratio (.1 to 2)" attributeGroup="auds" />
+					<field type="Real" name="reflections intensity" units="dB[-100,10]" attributeGroup="+dB+" />
+					<field type="Real" name="reflections delay (0 to .3)" units="seconds" attributeGroup="auds" />
+					<field type="Real" name="reverb intensity" units="dB[-100,20]" attributeGroup="+dB+" />
+					<field type="Real" name="reverb delay (0 to .1)" units="seconds" attributeGroup="auds" />
+					<field type="Real" name="diffusion" attributeGroup="auds" />
+					<field type="Real" name="density" attributeGroup="auds" />
+					<field type="Real" name="hf reference(20 to 20,000)" help="for hf values, what frequency defines hf, from 20 to 20,000" units="Hz" attributeGroup="auds" />
+					<field type="Pad" name="" definition="16" />
+					<field type="Terminator" />
+				</fields>
+			</sound_environment_definition_fields>
+		</versions>
+	</block>
+</tagGroup>

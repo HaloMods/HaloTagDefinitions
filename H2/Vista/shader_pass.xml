@@ -1,0 +1,1903 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="shader_pass" groupTag="spas" groupTagParent="????" version="1" flags="9" procPostprocess="True">
+	<block name="shader_pass_block" maxCount="1" display="shader_pass" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<shader_pass_block_fields size="60" sizeIdentifer="sizeof(s_shader_pass_definition)" fieldCount="7">
+				<fields>
+					<field type="Data" name="Documentation">
+						<definition name="shader_text_definition" maxSize="65535" alignment="0" flags="6" maxIdentifer="UNSIGNED_SHORT_MAX" />
+					</field>
+					<field type="Block" name="Parameters">
+						<block name="shader_pass_parameter_block" maxCount="64" display="parameter" flags="0" maxIdentifer="k_maximum_parameters_per_shader" version="1">
+							<versions>
+								<shader_pass_parameter_block_fields size="64" sizeIdentifer="sizeof(s_shader_pass_parameter)" fieldCount="10">
+									<fields>
+										<field type="StringId" name="Name" isBlockName="True" />
+										<field type="Data" name="Explanation">
+											<definition name="shader_text_definition" maxSize="65535" alignment="0" flags="6" maxIdentifer="UNSIGNED_SHORT_MAX" />
+										</field>
+										<field type="Enum" name="Type">
+											<definition count="4">
+												<entry>Bitmap</entry>
+												<entry>Value</entry>
+												<entry>Color</entry>
+												<entry>Switch</entry>
+											</definition>
+										</field>
+										<field type="WordFlags" name="Flags">
+											<definition count="2">
+												<entry>No Bitmap LOD</entry>
+												<entry>Required Parameter</entry>
+											</definition>
+										</field>
+										<field type="TagReference" name="Default Bitmap">
+											<definition flags="0" groupTag="bitm" />
+										</field>
+										<field type="Real" name="Default Const Value" />
+										<field type="RealRgbColor" name="Default Const Color" />
+										<field type="Enum" name="Source Extern">
+											<definition count="94">
+												<entry>None</entry>
+												<entry>GLOBAL: Eye Forward Vector (z)</entry>
+												<entry>GLOBAL: Eye Right Vector (x)</entry>
+												<entry>GLOBAL: Eye Up Vector (y)</entry>
+												<entry>OBJECT: Primary Color</entry>
+												<entry>OBJECT: Secondary Color</entry>
+												<entry>OBJECT: Function Value</entry>
+												<entry>LIGHT: Diffuse Color</entry>
+												<entry>LIGHT: Specular Color</entry>
+												<entry>LIGHT: Forward Vector (z)</entry>
+												<entry>LIGHT: Right Vector (x)</entry>
+												<entry>LIGHT: Up Vector (y)</entry>
+												<entry>LIGHT: Object-Relative Forward Vector (z)</entry>
+												<entry>LIGHT: Object-Relative Right Vector (x)</entry>
+												<entry>LIGHT: Object-Relative Up Vector (y)</entry>
+												<entry>LIGHT: Object Falloff Value</entry>
+												<entry>LIGHT: Object Gel Color</entry>
+												<entry>LIGHTMAP: Object Ambient Factor</entry>
+												<entry>LIGHTMAP: Object Direct Vector</entry>
+												<entry>LIGHTMAP: Object Direct Color</entry>
+												<entry>LIGHTMAP: Object Indirect Vector</entry>
+												<entry>LIGHTMAP: Object Indirect Color</entry>
+												<entry>OLD FOG: Atmospheric Color</entry>
+												<entry>OLD FOG: Atmospheric Max Density</entry>
+												<entry>OLD FOG: Planar Color</entry>
+												<entry>OLD FOG: Planar Max Density</entry>
+												<entry>OLD FOG: Atmospheric Planar Blend Value</entry>
+												<entry>OLD FOG: Object Atmospheric Density</entry>
+												<entry>OLD FOG: Object Planar Density</entry>
+												<entry>OLD FOG: Object Color</entry>
+												<entry>OLD FOG: Object Density</entry>
+												<entry>OBJECT: Model Alpha</entry>
+												<entry>OBJECT: Shadow Alpha</entry>
+												<entry>LIGHT: Overbrighten Diffuse Shift</entry>
+												<entry>LIGHT: Overbrighten Specular Shift</entry>
+												<entry>LIGHT: Diffuse Contrast</entry>
+												<entry>LIGHT: Specular Gel</entry>
+												<entry>SHADER: Specular Type</entry>
+												<entry>pad3</entry>
+												<entry>pad3-scale</entry>
+												<entry>Pad Thai</entry>
+												<entry>Taco Salad</entry>
+												<entry>Anisotropic Binormal</entry>
+												<entry>OBJECT LIGHT: Shadow Fade</entry>
+												<entry>LIGHT: Shadow Fade</entry>
+												<entry>OLD FOG: Atmospheric Density</entry>
+												<entry>OLD FOG: Planar Density</entry>
+												<entry>OLD FOG: Planar Density Invert</entry>
+												<entry>OBJECT: Change Color Tertiary</entry>
+												<entry>OBJECT: Change Color Quaternary</entry>
+												<entry>LIGHTMAP: Object Specular Color</entry>
+												<entry>SHADER: Lightmap Type</entry>
+												<entry>LIGHTMAP: Object Ambient Color</entry>
+												<entry>SHADER: Lightmap Specular Brightness</entry>
+												<entry>GLOBAL: Lightmap Shadow Darkening</entry>
+												<entry>LIGHTMAP: Object Env Brightness</entry>
+												<entry>FOG: Atmospheric Max Density</entry>
+												<entry>FOG: Atmospheric Color</entry>
+												<entry>FOG: Atmospheric Color Adj</entry>
+												<entry>FOG: Atmospheric Planar Blend</entry>
+												<entry>FOG: Atmospheric Planar Blend Adj Inv</entry>
+												<entry>FOG: Atmospheric Planar Blend Adj</entry>
+												<entry>FOG: Secondary Max Density</entry>
+												<entry>FOG: Secondary Color</entry>
+												<entry>FOG: Secondary Color Adj</entry>
+												<entry>FOG: Atmospheric Secondary Blend</entry>
+												<entry>FOG: Atmospheric Secondary Blend Adj Inv</entry>
+												<entry>FOG: Atmospheric Secondary Blend Adj</entry>
+												<entry>FOG: Sky Density</entry>
+												<entry>FOG: Sky Color</entry>
+												<entry>FOG: Sky Color Adj</entry>
+												<entry>FOG: Planar Max Density</entry>
+												<entry>FOG: Planar Color</entry>
+												<entry>FOG: Planar Color Adj</entry>
+												<entry>FOG: Planar Eye Density</entry>
+												<entry>FOG: Planar Eye Density Adj Inv</entry>
+												<entry>FOG: Planar Eye Density Adj</entry>
+												<entry>HUD: Waypoint Primary Color</entry>
+												<entry>HUD: Waypoint Secondary Color</entry>
+												<entry>LIGHTMAP: Object Specular Color Times One Half</entry>
+												<entry>LIGHT: Specular Enabled</entry>
+												<entry>LIGHT: Definition Specular Enabled</entry>
+												<entry>OBJECT: Active Camo Amount</entry>
+												<entry>OBJECT: Super Camo Amount</entry>
+												<entry>HUD: Custom Color 1</entry>
+												<entry>HUD: Custom Color 2</entry>
+												<entry>HUD: Custom Color 3</entry>
+												<entry>HUD: Custom Color 4</entry>
+												<entry>OBJECT: Active Camo RGB</entry>
+												<entry>FOG: Patchy Plane n(xyz)</entry>
+												<entry>FOG: Patchy Plane d(w)</entry>
+												<entry>HUD: Global Fade</entry>
+												<entry>SCREEN EFFECT: Primary</entry>
+												<entry>SCREEN EFFECT: Secondary</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Terminator" />
+									</fields>
+								</shader_pass_parameter_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Block" name="Implementations">
+						<block name="shader_pass_implementation_block" maxCount="32" display="implementation" flags="0" maxIdentifer="k_maximum_implementations_per_shader_pass" version="1">
+							<versions>
+								<shader_pass_implementation_block_fields size="184" sizeIdentifer="sizeof(s_shader_pass_implementation)" fieldCount="25">
+									<fields>
+										<field type="WordFlags" name="Flags">
+											<definition count="2">
+												<entry>Delete from Cache File</entry>
+												<entry>Critical</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Block" name="Textures">
+											<block name="shader_pass_texture_block" maxCount="8" display="texture stage" flags="0" maxIdentifer="k_maximum_textures_per_shader_pass_implementation" version="1">
+												<versions>
+													<shader_pass_texture_block_fields size="80" sizeIdentifer="sizeof(s_shader_pass_texture)" fieldCount="15">
+														<fields>
+															<field type="StringId" name="Source Parameter" />
+															<field type="Enum" name="Source Extern">
+																<definition count="28">
+																	<entry>None</entry>
+																	<entry>GLOBAL: Vector Normalization</entry>
+																	<entry>UNUSED</entry>
+																	<entry>GLOBAL: Target texaccum</entry>
+																	<entry>UNUSED</entry>
+																	<entry>GLOBAL: Target Frame Buffer</entry>
+																	<entry>GLOBA: Target z</entry>
+																	<entry>UNUSED</entry>
+																	<entry>GLOBAL: Target Shadow</entry>
+																	<entry>LIGHT: Falloff</entry>
+																	<entry>LIGHT: Gel</entry>
+																	<entry>LIGHTMAP</entry>
+																	<entry>UNUSED</entry>
+																	<entry>GLOBAL: Shadow Buffer</entry>
+																	<entry>GLOBAL: Gradient Separate</entry>
+																	<entry>GLOBAL: Gradient Product</entry>
+																	<entry>HUD: Bitmap</entry>
+																	<entry>GLOBAL: active camo</entry>
+																	<entry>GLOBAL: Texture Camera</entry>
+																	<entry>GLOBAL: Water Reflection</entry>
+																	<entry>GLOBAL: Water Refraction</entry>
+																	<entry>GLOBAL: Aux 1</entry>
+																	<entry>GLOBAL: Aux 2</entry>
+																	<entry>GLOBAL: Particle Distortion</entry>
+																	<entry>GLOBAL: Convolution 1</entry>
+																	<entry>GLOBAL: Convolution 2</entry>
+																	<entry>SHADER: Active Camo Bump</entry>
+																	<entry>FIRST PERSON: Scope</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Skip" name="" definition="2" />
+															<field type="Enum" name="Mode">
+																<definition count="19">
+																	<entry>2D</entry>
+																	<entry>3D</entry>
+																	<entry>Cube Map</entry>
+																	<entry>Passthrough</entry>
+																	<entry>texkill</entry>
+																	<entry>2D Dependent AR</entry>
+																	<entry>2D Dependent GB</entry>
+																	<entry>2D bumpenv</entry>
+																	<entry>2D bumpenv Luminance</entry>
+																	<entry>3D BRDF</entry>
+																	<entry>Dot Product</entry>
+																	<entry>Dot Product 2D</entry>
+																	<entry>Dot Product 3D</entry>
+																	<entry>Dot Product Cube Map</entry>
+																	<entry>Dot Product ZW</entry>
+																	<entry>Dot Reflect Diffuse</entry>
+																	<entry>Dot Reflect Specular</entry>
+																	<entry>Dot Reflect Specular Const</entry>
+																	<entry>None</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Enum" name="Dot Mapping">
+																<definition count="8">
+																	<entry>0 to 1</entry>
+																	<entry>Signed D3D</entry>
+																	<entry>Signed GL</entry>
+																	<entry>Signed NV</entry>
+																	<entry>HILO: 0 to 1</entry>
+																	<entry>HILO: Signed Hemisphere D3D</entry>
+																	<entry>HILO: Signed Hemisphere GL</entry>
+																	<entry>HILO: Signed Hemisphere NV</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="Input Stage" units="[0,3]" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Block" name="address state">
+																<block name="shader_texture_state_address_state_block" maxCount="1" display="address state" flags="0" maxIdentifer="1" version="1">
+																	<versions>
+																		<shader_texture_state_address_state_block_fields size="8" sizeIdentifer="sizeof(s_shader_texture_state_address_state)" fieldCount="5">
+																			<fields>
+																				<field type="Enum" name="U address mode">
+																					<definition count="5">
+																						<entry>wrap</entry>
+																						<entry>mirror</entry>
+																						<entry>clamp</entry>
+																						<entry>border</entry>
+																						<entry>clamp to edge</entry>
+																					</definition>
+																				</field>
+																				<field type="Enum" name="V address mode">
+																					<definition count="5">
+																						<entry>wrap</entry>
+																						<entry>mirror</entry>
+																						<entry>clamp</entry>
+																						<entry>border</entry>
+																						<entry>clamp to edge</entry>
+																					</definition>
+																				</field>
+																				<field type="Enum" name="W address mode">
+																					<definition count="5">
+																						<entry>wrap</entry>
+																						<entry>mirror</entry>
+																						<entry>clamp</entry>
+																						<entry>border</entry>
+																						<entry>clamp to edge</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="Terminator" />
+																			</fields>
+																		</shader_texture_state_address_state_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="filter state">
+																<block name="shader_texture_state_filter_state_block" maxCount="1" display="filter state" flags="0" maxIdentifer="1" version="1">
+																	<versions>
+																		<shader_texture_state_filter_state_block_fields size="16" sizeIdentifer="sizeof(s_shader_texture_state_filter_state)" fieldCount="8">
+																			<fields>
+																				<field type="Enum" name="mag filter">
+																					<definition count="6">
+																						<entry>none</entry>
+																						<entry>point sampled</entry>
+																						<entry>linear</entry>
+																						<entry>anisotropic</entry>
+																						<entry>quincunx</entry>
+																						<entry>gaussian cubic</entry>
+																					</definition>
+																				</field>
+																				<field type="Enum" name="min filter">
+																					<definition count="6">
+																						<entry>none</entry>
+																						<entry>point sampled</entry>
+																						<entry>linear</entry>
+																						<entry>anisotropic</entry>
+																						<entry>quincunx</entry>
+																						<entry>gaussian cubic</entry>
+																					</definition>
+																				</field>
+																				<field type="Enum" name="mip filter">
+																					<definition count="6">
+																						<entry>none</entry>
+																						<entry>point sampled</entry>
+																						<entry>linear</entry>
+																						<entry>anisotropic</entry>
+																						<entry>quincunx</entry>
+																						<entry>gaussian cubic</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="Real" name="mipmap bias" />
+																				<field type="ShortInteger" name="max mipmap index" help="0 means all mipmap levels are used" />
+																				<field type="Enum" name="anisotropy">
+																					<definition count="4">
+																						<entry>non anisotropic</entry>
+																						<entry>2-tap</entry>
+																						<entry>3-tap</entry>
+																						<entry>4-tap</entry>
+																					</definition>
+																				</field>
+																				<field type="Terminator" />
+																			</fields>
+																		</shader_texture_state_filter_state_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="kill state">
+																<block name="shader_texture_state_kill_state_block" maxCount="1" display="kill state" flags="0" maxIdentifer="1" version="1">
+																	<versions>
+																		<shader_texture_state_kill_state_block_fields size="12" sizeIdentifer="sizeof(s_shader_texture_state_kill_state)" fieldCount="6">
+																			<fields>
+																				<field type="WordFlags" name="flags">
+																					<definition count="1">
+																						<entry>alpha kill</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="Enum" name="colorkey mode">
+																					<definition count="4">
+																						<entry>disabled</entry>
+																						<entry>zero alpha</entry>
+																						<entry>zero ARGB</entry>
+																						<entry>kill</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="RgbColor" name="colorkey color" />
+																				<field type="Terminator" />
+																			</fields>
+																		</shader_texture_state_kill_state_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="misc state">
+																<block name="shader_texture_state_misc_state_block" maxCount="1" display="misc state" flags="0" maxIdentifer="1" version="1">
+																	<versions>
+																		<shader_texture_state_misc_state_block_fields size="8" sizeIdentifer="sizeof(s_shader_texture_state_misc_state)" fieldCount="4">
+																			<fields>
+																				<field type="WordFlags" name="component sign flags">
+																					<definition count="4">
+																						<entry>R signed</entry>
+																						<entry>G signed</entry>
+																						<entry>B signed</entry>
+																						<entry>A signed</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="2" />
+																				<field type="ArgbColor" name="border color" />
+																				<field type="Terminator" />
+																			</fields>
+																		</shader_texture_state_misc_state_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="constants">
+																<block name="shader_texture_state_constant_block" maxCount="10" display="texture constant" flags="0" maxIdentifer="k_number_of_shader_texture_state_constants" version="1">
+																	<versions>
+																		<shader_texture_state_constant_block_fields size="8" sizeIdentifer="sizeof(s_shader_state_constant)" fieldCount="4">
+																			<fields>
+																				<field type="StringId" name="source parameter" />
+																				<field type="Pad" name="" definition="2" />
+																				<field type="Enum" name="constant" isBlockName="True">
+																					<definition count="10">
+																						<entry>mipmap bias (value)</entry>
+																						<entry>colorkey color</entry>
+																						<entry>border color</entry>
+																						<entry>border alpha (value)</entry>
+																						<entry>bumpenv mat[0][0]</entry>
+																						<entry>bumpenv mat[0][1]</entry>
+																						<entry>bumpenv mat[1][0]</entry>
+																						<entry>bumpenv mat[1][1]</entry>
+																						<entry>bumpenv lum scale (value)</entry>
+																						<entry>bumpenv lum offset (value)</entry>
+																					</definition>
+																				</field>
+																				<field type="Terminator" />
+																			</fields>
+																		</shader_texture_state_constant_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</shader_pass_texture_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="VERTEX SHADER" definition="" />
+										<field type="TagReference" name="Vertex Shader">
+											<definition flags="0" groupTag="vrtx" />
+										</field>
+										<field type="Block" name="vs Constants">
+											<block name="shader_pass_vertex_shader_constant_block" maxCount="32" display="vs constant" flags="0" maxIdentifer="k_maximum_vertex_shader_constants_per_shader_pass_implementation" version="1">
+												<versions>
+													<shader_pass_vertex_shader_constant_block_fields size="12" sizeIdentifer="sizeof(s_shader_pass_constant)" fieldCount="6">
+														<fields>
+															<field type="StringId" name="Source Parameter" />
+															<field type="Enum" name="Scale by Texture Stage">
+																<definition count="5">
+																	<entry>None</entry>
+																	<entry>Stage 0</entry>
+																	<entry>Stage 1</entry>
+																	<entry>Stage 2</entry>
+																	<entry>Stage 3</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="Register Bank">
+																<definition count="2">
+																	<entry>Vn [0,15]</entry>
+																	<entry>Cn [0,12]</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="Register Index" />
+															<field type="Enum" name="Component Mask">
+																<definition count="21">
+																	<entry>x (value)</entry>
+																	<entry>y (value)</entry>
+																	<entry>z (value)</entry>
+																	<entry>w (value)</entry>
+																	<entry>xyz/rgb (color)</entry>
+																	<entry>x (uniform scale)</entry>
+																	<entry>y (uniform scale)</entry>
+																	<entry>z (uniform scale)</entry>
+																	<entry>w (uniform scale)</entry>
+																	<entry>xy (2D scale)</entry>
+																	<entry>zw (2D scale)</entry>
+																	<entry>xy (2D translation)</entry>
+																	<entry>zw (2D translation)</entry>
+																	<entry>xyzw (2D simple xform)</entry>
+																	<entry>xyw Row 1 (2D affine xform)</entry>
+																	<entry>xyw Row 2 (2D affine xform)</entry>
+																	<entry>xyz (3D scale)</entry>
+																	<entry>xyz (3D translation)</entry>
+																	<entry>xyzw Row 1 (3D affine xform)</entry>
+																	<entry>xyzw Row 2 (3D affine xform)</entry>
+																	<entry>xyzw Row 3 (3D affine xform)</entry>
+																</definition>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</shader_pass_vertex_shader_constant_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="UselessPad" name="" definition="4" />
+										<field type="Data" name="Pixel Shader Code [NO LONGER USED]">
+											<definition name="shader_text_definition" maxSize="65535" alignment="0" flags="6" maxIdentifer="UNSIGNED_SHORT_MAX" />
+										</field>
+										<field type="UselessPad" name="" definition="12" />
+										<field type="Explanation" name="STATE" definition="" />
+										<field type="Enum" name="channels">
+											<definition count="4">
+												<entry>all</entry>
+												<entry>color only</entry>
+												<entry>alpha only</entry>
+												<entry>custom</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="alpha-blend">
+											<definition count="8">
+												<entry>disabled</entry>
+												<entry>add</entry>
+												<entry>multiply</entry>
+												<entry>add src times dstalpha</entry>
+												<entry>add src times srcalpha</entry>
+												<entry>add dst times srcalpha inverse</entry>
+												<entry>alpha blend</entry>
+												<entry>custom</entry>
+											</definition>
+										</field>
+										<field type="Enum" name="depth">
+											<definition count="5">
+												<entry>disabled</entry>
+												<entry>default opaque</entry>
+												<entry>default opaque write</entry>
+												<entry>default transparent</entry>
+												<entry>custom</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Block" name="channel state">
+											<block name="shader_state_channels_state_block" maxCount="1" display="channels" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<shader_state_channels_state_block_fields size="4" sizeIdentifer="sizeof(s_shader_state_channels_state)" fieldCount="3">
+														<fields>
+															<field type="WordFlags" name="flags">
+																<definition count="4">
+																	<entry>R</entry>
+																	<entry>G</entry>
+																	<entry>B</entry>
+																	<entry>A</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</shader_state_channels_state_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="alpha-blend state">
+											<block name="shader_state_alpha_blend_state_block" maxCount="1" display="alpha-blend state" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<shader_state_alpha_blend_state_block_fields size="16" sizeIdentifer="sizeof(s_shader_state_alpha_blend_state)" fieldCount="8">
+														<fields>
+															<field type="Enum" name="blend function">
+																<definition count="8">
+																	<entry>add</entry>
+																	<entry>subtract</entry>
+																	<entry>reverse subtract</entry>
+																	<entry>min</entry>
+																	<entry>max</entry>
+																	<entry>add signed</entry>
+																	<entry>reverse subtract signed</entry>
+																	<entry>logic-op</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="blend src factor">
+																<definition count="15">
+																	<entry>zero</entry>
+																	<entry>one</entry>
+																	<entry>srccolor</entry>
+																	<entry>srccolor inverse</entry>
+																	<entry>srcalpha</entry>
+																	<entry>srcalpha inverse</entry>
+																	<entry>dstcolor</entry>
+																	<entry>dstcolor inverse</entry>
+																	<entry>dstalpha</entry>
+																	<entry>dstalpha inverse</entry>
+																	<entry>srcalpha saturate</entry>
+																	<entry>constant color</entry>
+																	<entry>constant color inverse</entry>
+																	<entry>constant alpha</entry>
+																	<entry>constant alpha inverse</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="blend dst factor">
+																<definition count="15">
+																	<entry>zero</entry>
+																	<entry>one</entry>
+																	<entry>srccolor</entry>
+																	<entry>srccolor inverse</entry>
+																	<entry>srcalpha</entry>
+																	<entry>srcalpha inverse</entry>
+																	<entry>dstcolor</entry>
+																	<entry>dstcolor inverse</entry>
+																	<entry>dstalpha</entry>
+																	<entry>dstalpha inverse</entry>
+																	<entry>srcalpha saturate</entry>
+																	<entry>constant color</entry>
+																	<entry>constant color inverse</entry>
+																	<entry>constant alpha</entry>
+																	<entry>constant alpha inverse</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="ArgbColor" name="blend color" />
+															<field type="WordFlags" name="logic-op flags">
+																<definition count="4">
+																	<entry>src=0 dst=0</entry>
+																	<entry>src=0 dst=1</entry>
+																	<entry>src=1 dst=0</entry>
+																	<entry>src=1 dst=1</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</shader_state_alpha_blend_state_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="alpha-test state">
+											<block name="shader_state_alpha_test_state_block" maxCount="1" display="alpha-test state" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<shader_state_alpha_test_state_block_fields size="8" sizeIdentifer="sizeof(s_shader_state_alpha_test_state)" fieldCount="5">
+														<fields>
+															<field type="WordFlags" name="flags">
+																<definition count="3">
+																	<entry>alpha-test enabled</entry>
+																	<entry>sample-alpha to coverage</entry>
+																	<entry>sample-alpha to one</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="alpha compare function">
+																<definition count="8">
+																	<entry>never</entry>
+																	<entry>less</entry>
+																	<entry>equal</entry>
+																	<entry>less or equal</entry>
+																	<entry>greater</entry>
+																	<entry>not equal</entry>
+																	<entry>greater or equal</entry>
+																	<entry>always</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="alpha-test ref" units="[0,255]" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Terminator" />
+														</fields>
+													</shader_state_alpha_test_state_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="depth state">
+											<block name="shader_state_depth_state_block" maxCount="1" display="depth state" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<shader_state_depth_state_block_fields size="16" sizeIdentifer="sizeof(s_shader_state_depth_state)" fieldCount="7">
+														<fields>
+															<field type="Enum" name="mode">
+																<definition count="2">
+																	<entry>use Z</entry>
+																	<entry>use W</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="depth compare function">
+																<definition count="8">
+																	<entry>never</entry>
+																	<entry>less</entry>
+																	<entry>equal</entry>
+																	<entry>less or equal</entry>
+																	<entry>greater</entry>
+																	<entry>not equal</entry>
+																	<entry>greater or equal</entry>
+																	<entry>always</entry>
+																</definition>
+															</field>
+															<field type="WordFlags" name="flags">
+																<definition count="7">
+																	<entry>depth write</entry>
+																	<entry>offset points</entry>
+																	<entry>offset lines</entry>
+																	<entry>offset triangles</entry>
+																	<entry>clip control don't cull primitive</entry>
+																	<entry>clip control clamp</entry>
+																	<entry>clip control ignore W sign</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Real" name="depth bias slope scale" />
+															<field type="Real" name="depth bias" />
+															<field type="Terminator" />
+														</fields>
+													</shader_state_depth_state_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="cull state">
+											<block name="shader_state_cull_state_block" maxCount="1" display="cull state" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<shader_state_cull_state_block_fields size="4" sizeIdentifer="sizeof(s_shader_state_cull_state)" fieldCount="3">
+														<fields>
+															<field type="Enum" name="mode">
+																<definition count="3">
+																	<entry>none</entry>
+																	<entry>CW</entry>
+																	<entry>CCW</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="front face">
+																<definition count="2">
+																	<entry>CW</entry>
+																	<entry>CCW</entry>
+																</definition>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</shader_state_cull_state_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="fill state">
+											<block name="shader_state_fill_state_block" maxCount="1" display="fill state" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<shader_state_fill_state_block_fields size="12" sizeIdentifer="sizeof(s_shader_state_fill_state)" fieldCount="6">
+														<fields>
+															<field type="WordFlags" name="flags">
+																<definition count="2">
+																	<entry>flat shading</entry>
+																	<entry>edge antialiasing</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="fill mode">
+																<definition count="3">
+																	<entry>solid</entry>
+																	<entry>wireframe</entry>
+																	<entry>points</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="back fill mode">
+																<definition count="3">
+																	<entry>solid</entry>
+																	<entry>wireframe</entry>
+																	<entry>points</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="Real" name="line width" />
+															<field type="Terminator" />
+														</fields>
+													</shader_state_fill_state_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="misc state">
+											<block name="shader_state_misc_state_block" maxCount="1" display="misc state" flags="0" maxIdentifer="1" version="1">
+												<versions>
+													<shader_state_misc_state_block_fields size="8" sizeIdentifer="sizeof(s_shader_state_misc_state)" fieldCount="4">
+														<fields>
+															<field type="WordFlags" name="flags">
+																<definition count="3">
+																	<entry>YUV to RGB</entry>
+																	<entry>16-bit dither</entry>
+																	<entry>32-bit DXT1 noise</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="2" />
+															<field type="RgbColor" name="fog color" />
+															<field type="Terminator" />
+														</fields>
+													</shader_state_misc_state_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="constants">
+											<block name="shader_state_constant_block" maxCount="7" display="render state constant" flags="0" maxIdentifer="k_number_of_shader_state_constants" version="1">
+												<versions>
+													<shader_state_constant_block_fields size="8" sizeIdentifer="sizeof(s_shader_state_constant)" fieldCount="4">
+														<fields>
+															<field type="StringId" name="source parameter" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Enum" name="constant" isBlockName="True">
+																<definition count="7">
+																	<entry>constant blend color</entry>
+																	<entry>constant blend alpha (value)</entry>
+																	<entry>alpha-test ref (value)</entry>
+																	<entry>depth bias slope scale (value)</entry>
+																	<entry>depth bias (value)</entry>
+																	<entry>line width (value)</entry>
+																	<entry>fog color</entry>
+																</definition>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</shader_state_constant_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="TagReference" name="Pixel Shader">
+											<definition flags="0" groupTag="pixl" />
+										</field>
+										<field type="UselessPad" name="" definition="224" />
+										<field type="Terminator" />
+									</fields>
+								</shader_pass_implementation_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Postprocess Definition" isReadonly="True">
+						<block name="shader_pass_postprocess_definition_new_block" maxCount="1" display="shader_pass_postprocess_definition_new_block" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<shader_pass_postprocess_definition_new_block_fields size="132" sizeIdentifer="sizeof(s_shader_pass_postprocess_definition_new)" fieldCount="12">
+									<fields>
+										<field type="Block" name="implementations">
+											<block name="shader_pass_postprocess_implementation_new_block" maxCount="1024" display="shader_pass_postprocess_implementation_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_pass_postprocess_implementation_new_block_fields size="350" sizeIdentifer="sizeof(s_shader_pass_postprocess_implementation_new)" fieldCount="27">
+														<fields>
+															<field type="Struct" name="textures">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="render states">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="texture states">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Skip" name="" definition="240" />
+															<field type="Struct" name="ps fragments">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="ps permutations">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="ps combiners">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="TagReference" name="vertex shader">
+																<definition flags="0" groupTag="vrtx" />
+															</field>
+															<field type="Skip" name="" definition="8" />
+															<field type="Skip" name="" definition="8" />
+															<field type="Skip" name="" definition="4" />
+															<field type="Skip" name="" definition="4" />
+															<field type="Struct" name="default render states">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="render state externs">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="texture state externs">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="pixel constant externs">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="vertex constant externs">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="ps constants">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="vs constants">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="pixel constant info">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="vertex constant info">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="render state info">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="texture state info">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Block" name="pixel shader">
+																<block name="shader_postprocess_pixel_shader" maxCount="100" display="shader_postprocess_pixel_shader" flags="0" maxIdentifer="100" version="1">
+																	<versions>
+																		<shader_postprocess_pixel_shader_fields size="84" sizeIdentifer="sizeof(s_pixel_shader)" fieldCount="8">
+																			<fields>
+																				<field type="LongInteger" name="pixel shader handle (runtime)" />
+																				<field type="LongInteger" name="pixel shader handle (runtime)" />
+																				<field type="LongInteger" name="pixel shader handle (runtime)" />
+																				<field type="Block" name="constant register defaults">
+																					<block name="shader_postprocess_pixel_shader_constant_defaults" maxCount="32" display="shader_postprocess_pixel_shader_constant_defaults" flags="0" maxIdentifer="32" version="1">
+																						<versions>
+																							<shader_postprocess_pixel_shader_constant_defaults_fields size="4" sizeIdentifer="sizeof(s_pixel_shader_constant_defaults)" fieldCount="2">
+																								<fields>
+																									<field type="LongInteger" name="defaults" />
+																									<field type="Terminator" />
+																								</fields>
+																							</shader_postprocess_pixel_shader_constant_defaults_fields>
+																						</versions>
+																					</block>
+																				</field>
+																				<field type="Data" name="compiled shader">
+																					<definition name="shader_postprocess_compiled_pixel_shader_data" maxSize="32768" alignment="0" flags="0" maxIdentifer="k_max_ps_code_size" />
+																				</field>
+																				<field type="Data" name="compiled shader">
+																					<definition name="shader_postprocess_compiled_pixel_shader_data" maxSize="32768" alignment="0" flags="0" maxIdentifer="k_max_ps_code_size" />
+																				</field>
+																				<field type="Data" name="compiled shader">
+																					<definition name="shader_postprocess_compiled_pixel_shader_data" maxSize="32768" alignment="0" flags="0" maxIdentifer="k_max_ps_code_size" />
+																				</field>
+																				<field type="Terminator" />
+																			</fields>
+																		</shader_postprocess_pixel_shader_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="pixel shader switch extern map">
+																<block name="pixel_shader_extern_map_block" maxCount="6" display="pixel_shader_extern_map_block" flags="0" maxIdentifer="6" version="1">
+																	<versions>
+																		<pixel_shader_extern_map_block_fields size="2" sizeIdentifer="sizeof(s_pixel_shader_extern_map)" fieldCount="3">
+																			<fields>
+																				<field type="CharInteger" name="switch parameter" />
+																				<field type="CharInteger" name="case scalar" />
+																				<field type="Terminator" />
+																			</fields>
+																		</pixel_shader_extern_map_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="pixel shader index block">
+																<block name="pixel_shader_index_block" maxCount="100" display="pixel_shader_index_block" flags="0" maxIdentifer="100" version="1">
+																	<versions>
+																		<pixel_shader_index_block_fields size="1" sizeIdentifer="sizeof(s_pixel_shader_index)" fieldCount="2">
+																			<fields>
+																				<field type="CharInteger" name="pixel shader index" />
+																				<field type="Terminator" />
+																			</fields>
+																		</pixel_shader_index_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</shader_pass_postprocess_implementation_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="textures">
+											<block name="shader_pass_postprocess_texture_new_block" maxCount="1024" display="shader_pass_postprocess_texture_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_pass_postprocess_texture_new_block_fields size="4" sizeIdentifer="sizeof(s_shader_pass_postprocess_texture_new)" fieldCount="5">
+														<fields>
+															<field type="CharInteger" name="bitmap parameter index" />
+															<field type="CharInteger" name="bitmap extern index" />
+															<field type="CharInteger" name="texture stage index" />
+															<field type="CharInteger" name="flags" />
+															<field type="Terminator" />
+														</fields>
+													</shader_pass_postprocess_texture_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="render states">
+											<block name="render_state_block" maxCount="1024" display="render_state_block" flags="0" maxIdentifer="k_number_of_render_states" version="1">
+												<versions>
+													<render_state_block_fields size="5" sizeIdentifer="sizeof(s_render_state)" fieldCount="3">
+														<fields>
+															<field type="CharInteger" name="state index" />
+															<field type="LongInteger" name="state value" />
+															<field type="Terminator" />
+														</fields>
+													</render_state_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="texture states">
+											<block name="shader_pass_postprocess_texture_state_block" maxCount="1024" display="shader_pass_postprocess_texture_state_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_pass_postprocess_texture_state_block_fields size="24" sizeIdentifer="sizeof(s_shader_pass_postprocess_texture_state)" fieldCount="2">
+														<fields>
+															<field type="Skip" name="" definition="24" />
+															<field type="Terminator" />
+														</fields>
+													</shader_pass_postprocess_texture_state_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="ps fragments">
+											<block name="pixel_shader_fragment_block" maxCount="1024" display="pixel_shader_fragment_block" flags="0" maxIdentifer="k_number_of_pixel_shader_fragments" version="1">
+												<versions>
+													<pixel_shader_fragment_block_fields size="3" sizeIdentifer="sizeof(s_pixel_shader_fragment)" fieldCount="3">
+														<fields>
+															<field type="CharInteger" name="switch parameter index" />
+															<field type="Struct" name="permutations index">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</pixel_shader_fragment_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="ps permutations">
+											<block name="pixel_shader_permutation_new_block" maxCount="1024" display="pixel_shader_permutation_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<pixel_shader_permutation_new_block_fields size="6" sizeIdentifer="sizeof(s_pixel_shader_permutation_new)" fieldCount="4">
+														<fields>
+															<field type="ShortInteger" name="enum index" />
+															<field type="ShortInteger" name="flags" />
+															<field type="Struct" name="combiners">
+																<struct name="tag_block_index_struct" groupTag="shtb">
+																	<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																				<fields>
+																					<field type="ShortInteger" name="block index data" />
+																					<field type="Terminator" />
+																				</fields>
+																			</tag_block_index_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</pixel_shader_permutation_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="ps combiners">
+											<block name="pixel_shader_combiner_block" maxCount="1024" display="pixel_shader_combiner_block" flags="0" maxIdentifer="k_number_of_pixel_shader_combiners" version="1">
+												<versions>
+													<pixel_shader_combiner_block_fields size="32" sizeIdentifer="sizeof(s_pixel_shader_combiner)" fieldCount="12">
+														<fields>
+															<field type="Pad" name="" definition="16" />
+															<field type="ArgbColor" name="constant color0" />
+															<field type="ArgbColor" name="constant color1" />
+															<field type="CharInteger" name="color A register ptr index" />
+															<field type="CharInteger" name="color B register ptr index" />
+															<field type="CharInteger" name="color C register ptr index" />
+															<field type="CharInteger" name="color D register ptr index" />
+															<field type="CharInteger" name="alpha A register ptr index" />
+															<field type="CharInteger" name="alpha B register ptr index" />
+															<field type="CharInteger" name="alpha C register ptr index" />
+															<field type="CharInteger" name="alpha D register ptr index" />
+															<field type="Terminator" />
+														</fields>
+													</pixel_shader_combiner_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="externs">
+											<block name="shader_pass_postprocess_extern_new_block" maxCount="1024" display="shader_pass_postprocess_extern_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_pass_postprocess_extern_new_block_fields size="4" sizeIdentifer="sizeof(s_shader_pass_postprocess_extern_new)" fieldCount="3">
+														<fields>
+															<field type="Skip" name="" definition="3" />
+															<field type="CharInteger" name="extern index" />
+															<field type="Terminator" />
+														</fields>
+													</shader_pass_postprocess_extern_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="constants">
+											<block name="shader_pass_postprocess_constant_new_block" maxCount="1024" display="shader_pass_postprocess_constant_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_pass_postprocess_constant_new_block_fields size="7" sizeIdentifer="sizeof(s_shader_pass_postprocess_constant_new)" fieldCount="5">
+														<fields>
+															<field type="StringId" name="parameter name" />
+															<field type="CharInteger" name="component mask" />
+															<field type="CharInteger" name="scale by texture stage" />
+															<field type="CharInteger" name="function index" />
+															<field type="Terminator" />
+														</fields>
+													</shader_pass_postprocess_constant_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="constant info">
+											<block name="shader_pass_postprocess_constant_info_new_block" maxCount="1024" display="shader_pass_postprocess_constant_info_new_block" flags="0" maxIdentifer="k_kilo" version="1">
+												<versions>
+													<shader_pass_postprocess_constant_info_new_block_fields size="7" sizeIdentifer="sizeof(s_shader_pass_postprocess_constant_info_new)" fieldCount="3">
+														<fields>
+															<field type="StringId" name="parameter name" />
+															<field type="Pad" name="" definition="3" />
+															<field type="Terminator" />
+														</fields>
+													</shader_pass_postprocess_constant_info_new_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="old implementations">
+											<block name="shader_pass_postprocess_implementation_block" maxCount="1024" display="shader_pass_postprocess_implementation_block" flags="0" maxIdentifer="k_number_of_shader_pass_implementations" version="1">
+												<versions>
+													<shader_pass_postprocess_implementation_block_fields size="502" sizeIdentifer="sizeof(s_shader_pass_postprocess_implementation)" fieldCount="22">
+														<fields>
+															<field type="Struct" name="GPU State">
+																<struct name="shader_gpu_state_struct" groupTag="GPUS">
+																	<block name="shader_gpu_state_struct_block" maxCount="1" display="shader_gpu_state_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<shader_gpu_state_struct_fields size="84" sizeIdentifer="sizeof(s_shader_gpu_state)" fieldCount="8">
+																				<fields>
+																					<field type="Block" name="render states">
+																						<block name="render_state_block" maxCount="1024" display="render_state_block" flags="0" maxIdentifer="k_number_of_render_states" version="1">
+																							<versions>
+																								<render_state_block_fields size="5" sizeIdentifer="sizeof(s_render_state)" fieldCount="3">
+																									<fields>
+																										<field type="CharInteger" name="state index" />
+																										<field type="LongInteger" name="state value" />
+																										<field type="Terminator" />
+																									</fields>
+																								</render_state_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="texture stage states">
+																						<block name="texture_stage_state_block" maxCount="1024" display="texture_stage_state_block" flags="0" maxIdentifer="k_number_of_texture_stage_states" version="1">
+																							<versions>
+																								<texture_stage_state_block_fields size="6" sizeIdentifer="sizeof(s_texture_stage_state)" fieldCount="4">
+																									<fields>
+																										<field type="CharInteger" name="state index" />
+																										<field type="CharInteger" name="stage index" />
+																										<field type="LongInteger" name="state value" />
+																										<field type="Terminator" />
+																									</fields>
+																								</texture_stage_state_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="render state parameters">
+																						<block name="render_state_parameter_block" maxCount="1024" display="render_state_parameter_block" flags="0" maxIdentifer="k_number_of_render_state_parameters" version="1">
+																							<versions>
+																								<render_state_parameter_block_fields size="3" sizeIdentifer="sizeof(s_render_state_parameter)" fieldCount="4">
+																									<fields>
+																										<field type="CharInteger" name="parameter index" />
+																										<field type="CharInteger" name="parameter type" />
+																										<field type="CharInteger" name="state index" />
+																										<field type="Terminator" />
+																									</fields>
+																								</render_state_parameter_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="texture stage parameters">
+																						<block name="texture_stage_state_parameter_block" maxCount="1024" display="texture_stage_state_parameter_block" flags="0" maxIdentifer="k_number_of_texture_stage_state_parameters" version="1">
+																							<versions>
+																								<texture_stage_state_parameter_block_fields size="4" sizeIdentifer="sizeof(s_texture_stage_state_parameter)" fieldCount="5">
+																									<fields>
+																										<field type="CharInteger" name="parameter index" />
+																										<field type="CharInteger" name="parameter type" />
+																										<field type="CharInteger" name="state index" />
+																										<field type="CharInteger" name="stage index" />
+																										<field type="Terminator" />
+																									</fields>
+																								</texture_stage_state_parameter_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="textures">
+																						<block name="texture_block" maxCount="1024" display="texture_block" flags="0" maxIdentifer="k_number_of_textures" version="1">
+																							<versions>
+																								<texture_block_fields size="4" sizeIdentifer="sizeof(s_texture)" fieldCount="5">
+																									<fields>
+																										<field type="CharInteger" name="stage index" />
+																										<field type="CharInteger" name="parameter index" />
+																										<field type="CharInteger" name="global texture index" />
+																										<field type="CharInteger" name="flags" />
+																										<field type="Terminator" />
+																									</fields>
+																								</texture_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Vn Constants">
+																						<block name="vertex_shader_constant_block" maxCount="1024" display="vertex_shader_constant_block" flags="0" maxIdentifer="k_number_of_vertex_shader_constants" version="1">
+																							<versions>
+																								<vertex_shader_constant_block_fields size="4" sizeIdentifer="sizeof(s_vertex_shader_constant)" fieldCount="5">
+																									<fields>
+																										<field type="CharInteger" name="register index" />
+																										<field type="CharInteger" name="parameter index" />
+																										<field type="CharInteger" name="destination mask" />
+																										<field type="CharInteger" name="scale by texture stage" />
+																										<field type="Terminator" />
+																									</fields>
+																								</vertex_shader_constant_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Cn Constants">
+																						<block name="vertex_shader_constant_block" maxCount="1024" display="vertex_shader_constant_block" flags="0" maxIdentifer="k_number_of_vertex_shader_constants" version="1">
+																							<versions>
+																								<vertex_shader_constant_block_fields size="4" sizeIdentifer="sizeof(s_vertex_shader_constant)" fieldCount="5">
+																									<fields>
+																										<field type="CharInteger" name="register index" />
+																										<field type="CharInteger" name="parameter index" />
+																										<field type="CharInteger" name="destination mask" />
+																										<field type="CharInteger" name="scale by texture stage" />
+																										<field type="Terminator" />
+																									</fields>
+																								</vertex_shader_constant_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</shader_gpu_state_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="GPU Constant State">
+																<struct name="shader_gpu_state_reference_struct" groupTag="GPUR">
+																	<block name="shader_gpu_state_reference_struct_block" maxCount="1" display="shader_gpu_state_reference_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<shader_gpu_state_reference_struct_fields size="14" sizeIdentifer="sizeof(s_shader_gpu_state_reference)" fieldCount="8">
+																				<fields>
+																					<field type="Struct" name="render states">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="texture stage states">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="render state parameters">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="texture stage parameters">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="textures">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="Vn Constants">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="Cn Constants">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</shader_gpu_state_reference_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="GPU Volatile State">
+																<struct name="shader_gpu_state_reference_struct" groupTag="GPUR">
+																	<block name="shader_gpu_state_reference_struct_block" maxCount="1" display="shader_gpu_state_reference_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<shader_gpu_state_reference_struct_fields size="14" sizeIdentifer="sizeof(s_shader_gpu_state_reference)" fieldCount="8">
+																				<fields>
+																					<field type="Struct" name="render states">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="texture stage states">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="render state parameters">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="texture stage parameters">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="textures">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="Vn Constants">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="Cn Constants">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</shader_gpu_state_reference_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="GPU default state">
+																<struct name="shader_gpu_state_reference_struct" groupTag="GPUR">
+																	<block name="shader_gpu_state_reference_struct_block" maxCount="1" display="shader_gpu_state_reference_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<shader_gpu_state_reference_struct_fields size="14" sizeIdentifer="sizeof(s_shader_gpu_state_reference)" fieldCount="8">
+																				<fields>
+																					<field type="Struct" name="render states">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="texture stage states">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="render state parameters">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="texture stage parameters">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="textures">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="Vn Constants">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Struct" name="Cn Constants">
+																						<struct name="tag_block_index_struct" groupTag="shtb">
+																							<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																								<versions>
+																									<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																										<fields>
+																											<field type="ShortInteger" name="block index data" />
+																											<field type="Terminator" />
+																										</fields>
+																									</tag_block_index_struct_fields>
+																								</versions>
+																							</block>
+																						</struct>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</shader_gpu_state_reference_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="TagReference" name="vertex shader">
+																<definition flags="0" groupTag="vrtx" />
+															</field>
+															<field type="Skip" name="" definition="8" />
+															<field type="Skip" name="" definition="8" />
+															<field type="Skip" name="" definition="4" />
+															<field type="Skip" name="" definition="4" />
+															<field type="Block" name="value externs">
+																<block name="extern_reference_block" maxCount="1024" display="extern_reference_block" flags="0" maxIdentifer="k_number_of_extern_references" version="1">
+																	<versions>
+																		<extern_reference_block_fields size="2" sizeIdentifer="sizeof(s_extern_reference)" fieldCount="3">
+																			<fields>
+																				<field type="CharInteger" name="parameter index" />
+																				<field type="CharInteger" name="extern index" />
+																				<field type="Terminator" />
+																			</fields>
+																		</extern_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="color externs">
+																<block name="extern_reference_block" maxCount="1024" display="extern_reference_block" flags="0" maxIdentifer="k_number_of_extern_references" version="1">
+																	<versions>
+																		<extern_reference_block_fields size="2" sizeIdentifer="sizeof(s_extern_reference)" fieldCount="3">
+																			<fields>
+																				<field type="CharInteger" name="parameter index" />
+																				<field type="CharInteger" name="extern index" />
+																				<field type="Terminator" />
+																			</fields>
+																		</extern_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="switch externs">
+																<block name="extern_reference_block" maxCount="1024" display="extern_reference_block" flags="0" maxIdentifer="k_number_of_extern_references" version="1">
+																	<versions>
+																		<extern_reference_block_fields size="2" sizeIdentifer="sizeof(s_extern_reference)" fieldCount="3">
+																			<fields>
+																				<field type="CharInteger" name="parameter index" />
+																				<field type="CharInteger" name="extern index" />
+																				<field type="Terminator" />
+																			</fields>
+																		</extern_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="ShortInteger" name="bitmap parameter count" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Skip" name="" definition="240" />
+															<field type="Block" name="pixel shader fragments">
+																<block name="pixel_shader_fragment_block" maxCount="1024" display="pixel_shader_fragment_block" flags="0" maxIdentifer="k_number_of_pixel_shader_fragments" version="1">
+																	<versions>
+																		<pixel_shader_fragment_block_fields size="3" sizeIdentifer="sizeof(s_pixel_shader_fragment)" fieldCount="3">
+																			<fields>
+																				<field type="CharInteger" name="switch parameter index" />
+																				<field type="Struct" name="permutations index">
+																					<struct name="tag_block_index_struct" groupTag="shtb">
+																						<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																							<versions>
+																								<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="block index data" />
+																										<field type="Terminator" />
+																									</fields>
+																								</tag_block_index_struct_fields>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Terminator" />
+																			</fields>
+																		</pixel_shader_fragment_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="pixel shader permutations">
+																<block name="pixel_shader_permutation_block" maxCount="1024" display="pixel_shader_permutation_block" flags="0" maxIdentifer="k_number_of_pixel_shader_permutations" version="1">
+																	<versions>
+																		<pixel_shader_permutation_block_fields size="16" sizeIdentifer="sizeof(s_pixel_shader_permutation)" fieldCount="7">
+																			<fields>
+																				<field type="ShortInteger" name="enum index" />
+																				<field type="WordFlags" name="flags">
+																					<definition count="1">
+																						<entry>has final combiner</entry>
+																					</definition>
+																				</field>
+																				<field type="Struct" name="constants">
+																					<struct name="tag_block_index_struct" groupTag="shtb">
+																						<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																							<versions>
+																								<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="block index data" />
+																										<field type="Terminator" />
+																									</fields>
+																								</tag_block_index_struct_fields>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Struct" name="combiners">
+																					<struct name="tag_block_index_struct" groupTag="shtb">
+																						<block name="tag_block_index_struct_block" maxCount="1" display="tag_block_index_struct" flags="0" maxIdentifer="1" version="1">
+																							<versions>
+																								<tag_block_index_struct_fields size="2" sizeIdentifer="sizeof(s_tag_block_index)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="block index data" />
+																										<field type="Terminator" />
+																									</fields>
+																								</tag_block_index_struct_fields>
+																							</versions>
+																						</block>
+																					</struct>
+																				</field>
+																				<field type="Skip" name="" definition="4" />
+																				<field type="Skip" name="" definition="4" />
+																				<field type="Terminator" />
+																			</fields>
+																		</pixel_shader_permutation_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="pixel shader combiners">
+																<block name="pixel_shader_combiner_block" maxCount="1024" display="pixel_shader_combiner_block" flags="0" maxIdentifer="k_number_of_pixel_shader_combiners" version="1">
+																	<versions>
+																		<pixel_shader_combiner_block_fields size="32" sizeIdentifer="sizeof(s_pixel_shader_combiner)" fieldCount="12">
+																			<fields>
+																				<field type="Pad" name="" definition="16" />
+																				<field type="ArgbColor" name="constant color0" />
+																				<field type="ArgbColor" name="constant color1" />
+																				<field type="CharInteger" name="color A register ptr index" />
+																				<field type="CharInteger" name="color B register ptr index" />
+																				<field type="CharInteger" name="color C register ptr index" />
+																				<field type="CharInteger" name="color D register ptr index" />
+																				<field type="CharInteger" name="alpha A register ptr index" />
+																				<field type="CharInteger" name="alpha B register ptr index" />
+																				<field type="CharInteger" name="alpha C register ptr index" />
+																				<field type="CharInteger" name="alpha D register ptr index" />
+																				<field type="Terminator" />
+																			</fields>
+																		</pixel_shader_combiner_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="pixel shader constants">
+																<block name="pixel_shader_constant_block" maxCount="1024" display="pixel_shader_constant_block" flags="0" maxIdentifer="k_number_of_pixel_shader_constants" version="1">
+																	<versions>
+																		<pixel_shader_constant_block_fields size="6" sizeIdentifer="sizeof(s_pixel_shader_constant)" fieldCount="7">
+																			<fields>
+																				<field type="CharEnum" name="parameter type">
+																					<definition count="4">
+																						<entry>Bitmap</entry>
+																						<entry>Value</entry>
+																						<entry>Color</entry>
+																						<entry>Switch</entry>
+																					</definition>
+																				</field>
+																				<field type="CharInteger" name="combiner index" />
+																				<field type="CharInteger" name="register index" />
+																				<field type="CharEnum" name="component mask">
+																					<definition count="5">
+																						<entry>x (value)</entry>
+																						<entry>y (value)</entry>
+																						<entry>z (value)</entry>
+																						<entry>w (value)</entry>
+																						<entry>xyz/rgb (color)</entry>
+																					</definition>
+																				</field>
+																				<field type="Pad" name="" definition="1" />
+																				<field type="Pad" name="" definition="1" />
+																				<field type="Terminator" />
+																			</fields>
+																		</pixel_shader_constant_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Skip" name="" definition="4" />
+															<field type="Skip" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</shader_pass_postprocess_implementation_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</shader_pass_postprocess_definition_new_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</shader_pass_block_fields>
+		</versions>
+	</block>
+</tagGroup>

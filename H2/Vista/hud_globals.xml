@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="hud_globals" groupTag="hudg" groupTagParent="????" version="1" flags="8" procPostprocess="True">
+	<block name="hud_globals_block" maxCount="1" display="hud_globals" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<hud_globals_block_fields size="1364" sizeIdentifer="sizeof(struct hud_globals_definition)" fieldCount="106">
+				<fields>
+					<field type="Explanation" name="Messaging parameters" definition="" />
+					<field type="Enum" name="anchor">
+						<definition count="6">
+							<entry>top left</entry>
+							<entry>top right</entry>
+							<entry>bottom left</entry>
+							<entry>bottom right</entry>
+							<entry>center</entry>
+							<entry>crosshair</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="32" />
+					<field type="Point2D" name="anchor offset" />
+					<field type="Real" name="width scale" />
+					<field type="Real" name="height scale" />
+					<field type="WordFlags" name="scaling flags">
+						<definition count="2">
+							<entry>don't scale offset</entry>
+							<entry>don't scale size</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="20" />
+					<field type="TagReference" name="obsolete1">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="TagReference" name="obsolete2">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Real" name="up time" />
+					<field type="Real" name="fade time" />
+					<field type="RealArgbColor" name="icon color" />
+					<field type="RealArgbColor" name="text color" />
+					<field type="Real" name="text spacing" />
+					<field type="TagReference" name="item message text">
+						<definition flags="0" groupTag="unic" />
+					</field>
+					<field type="TagReference" name="icon bitmap">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="TagReference" name="alternate icon text">
+						<definition flags="0" groupTag="unic" />
+					</field>
+					<field type="Block" name="button icons">
+						<block name="hud_button_icon_block" maxCount="18" display="hud_button_icon_block" flags="0" maxIdentifer="NUMBER_OF_GAMEPAD_BUTTONS+NUMBER_OF_GAMEPAD_STICKS" procFormat="True" version="1">
+							<versions>
+								<hud_button_icon_block_fields size="16" sizeIdentifer="sizeof(struct icon_hud_element_definition)" fieldCount="8">
+									<fields>
+										<field type="ShortInteger" name="sequence index" help="sequence index into the global hud icon bitmap" />
+										<field type="ShortInteger" name="width offset" help="extra spacing beyond bitmap width for text alignment" />
+										<field type="Point2D" name="offset from reference corner" />
+										<field type="ArgbColor" name="override icon color" />
+										<field type="CharInteger" name="frame rate [0,30]" />
+										<field type="ByteFlags" name="flags">
+											<definition count="3">
+												<entry>use text from string_list instead</entry>
+												<entry>override default color</entry>
+												<entry>width offset is absolute icon width</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="text index" />
+										<field type="Terminator" />
+									</fields>
+								</hud_button_icon_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="HUD HELP TEXT COLOR" definition="" />
+					<field type="ArgbColor" name="default color" />
+					<field type="ArgbColor" name="flashing color" />
+					<field type="Real" name="flash period" />
+					<field type="Real" name="flash delay" help="time between flashes" />
+					<field type="ShortInteger" name="number of flashes" />
+					<field type="WordFlags" name="flash flags">
+						<definition count="1">
+							<entry>reverse default/flashing colors</entry>
+						</definition>
+					</field>
+					<field type="Real" name="flash length" help="time of each flash" />
+					<field type="ArgbColor" name="disabled color" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Explanation" name="Other hud messaging data" definition="" />
+					<field type="TagReference" name="hud messages">
+						<definition flags="0" groupTag="hmt " />
+					</field>
+					<field type="Explanation" name="Objective colors" definition="" />
+					<field type="ArgbColor" name="default color" />
+					<field type="ArgbColor" name="flashing color" />
+					<field type="Real" name="flash period" />
+					<field type="Real" name="flash delay" help="time between flashes" />
+					<field type="ShortInteger" name="number of flashes" />
+					<field type="WordFlags" name="flash flags">
+						<definition count="1">
+							<entry>reverse default/flashing colors</entry>
+						</definition>
+					</field>
+					<field type="Real" name="flash length" help="time of each flash" />
+					<field type="ArgbColor" name="disabled color" />
+					<field type="ShortInteger" name="uptime ticks" />
+					<field type="ShortInteger" name="fade ticks" />
+					<field type="Explanation" name="Waypoint parameters" definition="The offset values are how much the waypoint rectangle border is offset from the safe camera bounds" />
+					<field type="Real" name="top offset" />
+					<field type="Real" name="bottom offset" />
+					<field type="Real" name="left offset" />
+					<field type="Real" name="right offset" />
+					<field type="Pad" name="" definition="32" />
+					<field type="TagReference" name="arrow bitmap">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Block" name="waypoint arrows">
+						<block name="hud_waypoint_arrow_block" maxCount="16" display="hud_waypoint_arrow_block" flags="0" maxIdentifer="MAXIMUM_NUMBER_OF_WAYPOINTS" procPostprocess="True" version="1">
+							<versions>
+								<hud_waypoint_arrow_block_fields size="104" sizeIdentifer="sizeof(struct hud_waypoint_arrow)" fieldCount="13">
+									<fields>
+										<field type="String" name="name" isBlockName="True" />
+										<field type="Pad" name="" definition="8" />
+										<field type="RgbColor" name="color" />
+										<field type="Real" name="opacity" />
+										<field type="Real" name="translucency" />
+										<field type="ShortInteger" name="on screen sequence index" />
+										<field type="ShortInteger" name="off screen sequence index" />
+										<field type="ShortInteger" name="occluded sequence index" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="16" />
+										<field type="LongFlags" name="flags">
+											<definition count="1">
+												<entry>don't rotate when pointing offscreen</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="24" />
+										<field type="Terminator" />
+									</fields>
+								</hud_waypoint_arrow_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Pad" name="" definition="80" />
+					<field type="Explanation" name="Multiplayer parameters" definition="" />
+					<field type="Real" name="hud scale in multiplayer" />
+					<field type="Pad" name="" definition="256" />
+					<field type="Explanation" name="Hud globals" definition="" />
+					<field type="Pad" name="" definition="16" />
+					<field type="Real" name="motion sensor range" />
+					<field type="Real" name="motion sensor velocity sensitivity" help="how fast something moves to show up on the motion sensor" />
+					<field type="Real" name="motion sensor scale [DON'T TOUCH EVER]" isReadonly="True" />
+					<field type="Rectangle2D" name="default chapter title bounds" />
+					<field type="Pad" name="" definition="44" />
+					<field type="Explanation" name="Hud damage indicators" definition="" />
+					<field type="ShortInteger" name="top offset" />
+					<field type="ShortInteger" name="bottom offset" />
+					<field type="ShortInteger" name="left offset" />
+					<field type="ShortInteger" name="right offset" />
+					<field type="Pad" name="" definition="32" />
+					<field type="TagReference" name="indicator bitmap">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="ShortInteger" name="sequence index" />
+					<field type="ShortInteger" name="multiplayer sequence index" />
+					<field type="ArgbColor" name="color" />
+					<field type="Pad" name="" definition="16" />
+					<field type="Explanation" name="Hud timer definitions" definition="" />
+					<field type="Explanation" name="Not much time left flash color" definition="" />
+					<field type="ArgbColor" name="default color" />
+					<field type="ArgbColor" name="flashing color" />
+					<field type="Real" name="flash period" />
+					<field type="Real" name="flash delay" help="time between flashes" />
+					<field type="ShortInteger" name="number of flashes" />
+					<field type="WordFlags" name="flash flags">
+						<definition count="1">
+							<entry>reverse default/flashing colors</entry>
+						</definition>
+					</field>
+					<field type="Real" name="flash length" help="time of each flash" />
+					<field type="ArgbColor" name="disabled color" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Explanation" name="Time out flash color" definition="" />
+					<field type="ArgbColor" name="default color" />
+					<field type="ArgbColor" name="flashing color" />
+					<field type="Real" name="flash period" />
+					<field type="Real" name="flash delay" help="time between flashes" />
+					<field type="ShortInteger" name="number of flashes" />
+					<field type="WordFlags" name="flash flags">
+						<definition count="1">
+							<entry>reverse default/flashing colors</entry>
+						</definition>
+					</field>
+					<field type="Real" name="flash length" help="time of each flash" />
+					<field type="ArgbColor" name="disabled color" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Pad" name="" definition="40" />
+					<field type="TagReference" name="carnage report bitmap">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Explanation" name="Hud crap that wouldn't fit anywhere else" definition="" />
+					<field type="ShortInteger" name="loading begin text" />
+					<field type="ShortInteger" name="loading end text" />
+					<field type="ShortInteger" name="checkpoint begin text" />
+					<field type="ShortInteger" name="checkpoint end text" />
+					<field type="TagReference" name="checkpoint sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Pad" name="" definition="96" />
+					<field type="Struct" name="new globals">
+						<struct name="global_new_hud_globals_struct" groupTag="nhgs">
+							<block name="global_new_hud_globals_struct_block" maxCount="1" display="global_new_hud_globals_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<global_new_hud_globals_struct_fields size="260" sizeIdentifer="sizeof(struct s_new_hud_globals)" fieldCount="8">
+										<fields>
+											<field type="TagReference" name="hud text">
+												<definition flags="0" groupTag="unic" />
+											</field>
+											<field type="Block" name="dashlights">
+												<block name="hud_dashlights_block" maxCount="9" display="hud_dashlights_block" flags="0" maxIdentifer="k_hud_dashlight_count" procFormat="True" version="1">
+													<versions>
+														<hud_dashlights_block_fields size="52" sizeIdentifer="sizeof(struct s_new_hud_dashlight_definition)" fieldCount="6">
+															<fields>
+																<field type="TagReference" name="bitmap">
+																	<definition flags="0" groupTag="bitm" />
+																</field>
+																<field type="TagReference" name="shader">
+																	<definition flags="0" groupTag="shad" />
+																</field>
+																<field type="ShortInteger" name="sequence index" />
+																<field type="WordFlags" name="flags">
+																	<definition count="1">
+																		<entry>don't scale when pulsing</entry>
+																	</definition>
+																</field>
+																<field type="TagReference" name="sound">
+																	<definition flags="4" groupTag="snd!" />
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</hud_dashlights_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="waypoint arrows">
+												<block name="hud_waypoint_arrow_block" maxCount="4" display="hud_waypoint_arrow_block" flags="0" maxIdentifer="k_hud_waypoint_arrow_type_count" procFormat="True" version="1">
+													<versions>
+														<hud_waypoint_arrow_block_fields size="60" sizeIdentifer="sizeof(struct s_new_hud_waypoint_arrow_definition)" fieldCount="8">
+															<fields>
+																<field type="TagReference" name="bitmap">
+																	<definition flags="0" groupTag="bitm" />
+																</field>
+																<field type="TagReference" name="shader">
+																	<definition flags="0" groupTag="shad" />
+																</field>
+																<field type="ShortInteger" name="sequence index" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Real" name="smallest size" />
+																<field type="Real" name="smallest distance" />
+																<field type="TagReference" name="border bitmap">
+																	<definition flags="0" groupTag="bitm" />
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</hud_waypoint_arrow_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="waypoints">
+												<block name="hud_waypoint_block" maxCount="8" display="hud_waypoint_block" flags="0" maxIdentifer="k_hud_waypoint_type_count" procFormat="True" version="1">
+													<versions>
+														<hud_waypoint_block_fields size="40" sizeIdentifer="sizeof(struct s_new_hud_waypoint_definition)" fieldCount="7">
+															<fields>
+																<field type="TagReference" name="bitmap">
+																	<definition flags="0" groupTag="bitm" />
+																</field>
+																<field type="TagReference" name="shader">
+																	<definition flags="0" groupTag="shad" />
+																</field>
+																<field type="ShortInteger" name="onscreen sequence index" />
+																<field type="ShortInteger" name="occluded sequence index" />
+																<field type="ShortInteger" name="offscreen sequence index" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Terminator" />
+															</fields>
+														</hud_waypoint_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="hud sounds">
+												<block name="new_hud_sound_block" maxCount="6" display="new_hud_sound_block" flags="0" maxIdentifer="k_maximum_hud_sounds" version="1">
+													<versions>
+														<new_hud_sound_block_fields size="40" sizeIdentifer="sizeof(struct new_hud_sound_element_definition)" fieldCount="5">
+															<fields>
+																<field type="TagReference" name="chief sound" isBlockName="True">
+																	<definition flags="0">
+																		<groupTags>
+																			<groupTag>snd!</groupTag>
+																			<groupTag>lsnd</groupTag>
+																		</groupTags>
+																	</definition>
+																</field>
+																<field type="LongFlags" name="latched to">
+																	<definition count="10">
+																		<entry>shield recharging</entry>
+																		<entry>shield damaged</entry>
+																		<entry>shield low</entry>
+																		<entry>shield empty</entry>
+																		<entry>health low</entry>
+																		<entry>health empty</entry>
+																		<entry>health minor damage</entry>
+																		<entry>health major damage</entry>
+																		<entry>rocket locking</entry>
+																		<entry>rocket locked</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="scale" />
+																<field type="TagReference" name="dervish sound">
+																	<definition flags="0">
+																		<groupTags>
+																			<groupTag>snd!</groupTag>
+																			<groupTag>lsnd</groupTag>
+																		</groupTags>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</new_hud_sound_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="player training data">
+												<block name="player_training_entry_data_block" maxCount="32" display="player_training_entry_data_block" flags="0" maxIdentifer="k_player_training_count" procFormat="True" version="1">
+													<versions>
+														<player_training_entry_data_block_fields size="28" sizeIdentifer="sizeof(struct s_player_training_entry_data)" fieldCount="11">
+															<fields>
+																<field type="StringId" name="display string" help="comes out of the HUD text globals" />
+																<field type="StringId" name="display string2" help="comes out of the HUD text globals, used for grouped prompt" />
+																<field type="StringId" name="display string3" help="comes out of the HUD text globals, used for ungrouped prompt" />
+																<field type="ShortInteger" name="max display time" help="how long the message can be on screen before being hidden" />
+																<field type="ShortInteger" name="display count" help="how many times a training message will get displayed (0-3 only!)" />
+																<field type="ShortInteger" name="dissapear delay" help="how long a displayed but untriggered message stays up" />
+																<field type="ShortInteger" name="redisplay delay" help="how long after display this message will stay hidden" />
+																<field type="Real" name="display delay (s)" help="how long the event can be triggered before it's displayed" />
+																<field type="WordFlags" name="flags">
+																	<definition count="1">
+																		<entry>not in multiplayer</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="2" />
+																<field type="Terminator" />
+															</fields>
+														</player_training_entry_data_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Struct" name="constants">
+												<struct name="global_new_hud_globals_constants_struct" groupTag="nhgs">
+													<block name="global_new_hud_globals_constants_struct_block" maxCount="1" display="global_new_hud_globals_constants_struct" flags="0" maxIdentifer="1" version="1">
+														<versions>
+															<global_new_hud_globals_constants_struct_fields size="184" sizeIdentifer="sizeof(struct s_new_hud_globals_constants)" fieldCount="14">
+																<fields>
+																	<field type="TagReference" name="primary message sound">
+																		<definition flags="0">
+																			<groupTags>
+																				<groupTag>snd!</groupTag>
+																				<groupTag>lsnd</groupTag>
+																			</groupTags>
+																		</definition>
+																	</field>
+																	<field type="TagReference" name="secondary message sound">
+																		<definition flags="0">
+																			<groupTags>
+																				<groupTag>snd!</groupTag>
+																				<groupTag>lsnd</groupTag>
+																			</groupTags>
+																		</definition>
+																	</field>
+																	<field type="StringId" name="boot griefer string" />
+																	<field type="StringId" name="cannot boot griefer string" />
+																	<field type="TagReference" name="training shader">
+																		<definition flags="0" groupTag="shad" />
+																	</field>
+																	<field type="TagReference" name="human training top right">
+																		<definition flags="0" groupTag="bitm" />
+																	</field>
+																	<field type="TagReference" name="human training top center">
+																		<definition flags="0" groupTag="bitm" />
+																	</field>
+																	<field type="TagReference" name="human training top left">
+																		<definition flags="0" groupTag="bitm" />
+																	</field>
+																	<field type="TagReference" name="human training middle">
+																		<definition flags="0" groupTag="bitm" />
+																	</field>
+																	<field type="TagReference" name="elite training top right">
+																		<definition flags="0" groupTag="bitm" />
+																	</field>
+																	<field type="TagReference" name="elite training top center">
+																		<definition flags="0" groupTag="bitm" />
+																	</field>
+																	<field type="TagReference" name="elite training top left">
+																		<definition flags="0" groupTag="bitm" />
+																	</field>
+																	<field type="TagReference" name="elite training middle">
+																		<definition flags="0" groupTag="bitm" />
+																	</field>
+																	<field type="Terminator" />
+																</fields>
+															</global_new_hud_globals_constants_struct_fields>
+														</versions>
+													</block>
+												</struct>
+											</field>
+											<field type="Terminator" />
+										</fields>
+									</global_new_hud_globals_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</hud_globals_block_fields>
+		</versions>
+	</block>
+</tagGroup>

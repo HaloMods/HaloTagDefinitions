@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="scenario_hs_source_file" groupTag="hsc*" groupTagParent="????" version="1" flags="56">
+	<block name="hs_source_files_block" maxCount="8" display="hs_source_files_block" flags="0" maxIdentifer="k_maximum_hs_source_files_per_scenario" version="1">
+		<versions>
+			<hs_source_files_block_fields size="52" sizeIdentifer="sizeof(struct hs_source_file)" fieldCount="3">
+				<fields>
+					<field type="String" name="name" isReadonly="True" />
+					<field type="Data" name="source" isReadonly="True">
+						<definition name="hs_source_data_definition" maxSize="262144" alignment="0" flags="2" maxIdentifer="k_maximum_hs_source_data_per_file" />
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</hs_source_files_block_fields>
+		</versions>
+	</block>
+</tagGroup>

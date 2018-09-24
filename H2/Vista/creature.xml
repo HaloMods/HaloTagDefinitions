@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="creature" groupTag="crea" groupTagParent="obje" version="1" flags="9" procPostprocess="True">
+	<block name="creature_block" maxCount="1" display="creature" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<creature_block_fields size="224" sizeIdentifer="sizeof(struct _creature_definition)" fieldCount="17">
+				<fields>
+					<field type="Explanation" name="$$$ CREATURE $$$" definition="" />
+					<field type="LongFlags" name="flags">
+						<definition count="7">
+							<entry>unused</entry>
+							<entry>infection form</entry>
+							<entry>immune to falling damage</entry>
+							<entry>rotate while airborne</entry>
+							<entry>zapped by shields</entry>
+							<entry>attach upon impact</entry>
+							<entry>not on motion sensor</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="default team">
+						<definition count="16">
+							<entry>default</entry>
+							<entry>player</entry>
+							<entry>human</entry>
+							<entry>covenant</entry>
+							<entry>flood</entry>
+							<entry>sentinel</entry>
+							<entry>heretic</entry>
+							<entry>prophet</entry>
+							<entry>unused8</entry>
+							<entry>unused9</entry>
+							<entry>unused10</entry>
+							<entry>unused11</entry>
+							<entry>unused12</entry>
+							<entry>unused13</entry>
+							<entry>unused14</entry>
+							<entry>unused15</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="motion sensor blip size">
+						<definition count="3">
+							<entry>medium</entry>
+							<entry>small</entry>
+							<entry>large</entry>
+						</definition>
+					</field>
+					<field type="Angle" name="turning velocity maximum" units="degrees per second" />
+					<field type="Angle" name="turning acceleration maximum" units="degrees per second squared" />
+					<field type="RealFraction" name="casual turning modifier" units="[0,1]" />
+					<field type="UselessPad" name="" definition="4" />
+					<field type="Real" name="autoaim width" units="world units" />
+					<field type="Struct" name="physics">
+						<struct name="character_physics_struct" groupTag="chpy" display="character physics">
+							<block name="character_physics_struct_block" maxCount="1" display="character_physics_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<character_physics_struct_fields size="160" sizeIdentifer="sizeof(s_character_physics_definition)" fieldCount="22">
+										<fields>
+											<field type="LongFlags" name="flags">
+												<definition count="7">
+													<entry>centered_at_origin</entry>
+													<entry>shape spherical</entry>
+													<entry>use player physics</entry>
+													<entry>climb any surface</entry>
+													<entry>flying</entry>
+													<entry>not physical</entry>
+													<entry>dead character collision group</entry>
+												</definition>
+											</field>
+											<field type="Real" name="height standing" />
+											<field type="Real" name="height crouching" />
+											<field type="Real" name="radius" />
+											<field type="Real" name="mass" />
+											<field type="StringId" name="living material name" help="collision material used when character is alive" attributeGroup="sted" hasStringEditor="true" />
+											<field type="StringId" name="dead material name" help="collision material used when character is dead" attributeGroup="sted" hasStringEditor="true" />
+											<field type="UselessPad" name="" definition="16" />
+											<field type="Pad" name="" definition="4" />
+											<field type="UselessPad" name="" definition="20" />
+											<field type="Block" name="dead sphere shapes">
+												<block name="spheres_block" maxCount="1024" display="spheres_block" flags="0" maxIdentifer="k_maximum_shapes_per_physics_model" version="1">
+													<versions>
+														<spheres_block_fields size="128" sizeIdentifer="sizeof(s_physics_model_sphere)" alignment="4" fieldCount="29">
+															<fields>
+																<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+																<field type="ShortBlockIndex1" name="material" isReadonly="True" definition="materials_block" />
+																<field type="WordFlags" name="flags">
+																	<definition count="1">
+																		<entry>unused</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="relative mass scale" />
+																<field type="RealFraction" name="friction" />
+																<field type="RealFraction" name="restitution" />
+																<field type="Real" name="volume " isReadonly="True" />
+																<field type="Real" name="mass" isReadonly="True" />
+																<field type="Skip" name="" definition="2" />
+																<field type="ShortBlockIndex1" name="phantom" isReadonly="True" definition="phantoms_block" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Real" name="radius" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation i" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation j" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation k" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="translation" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</spheres_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="pill shapes">
+												<block name="pills_block" maxCount="1024" display="pills_block" flags="0" maxIdentifer="k_maximum_shapes_per_physics_model" version="1">
+													<versions>
+														<pills_block_fields size="80" sizeIdentifer="sizeof(s_physics_model_pill)" alignment="4" fieldCount="20">
+															<fields>
+																<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+																<field type="ShortBlockIndex1" name="material" isReadonly="True" definition="materials_block" />
+																<field type="WordFlags" name="flags">
+																	<definition count="1">
+																		<entry>unused</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="relative mass scale" />
+																<field type="RealFraction" name="friction" />
+																<field type="RealFraction" name="restitution" />
+																<field type="Real" name="volume " isReadonly="True" />
+																<field type="Real" name="mass" isReadonly="True" />
+																<field type="Skip" name="" definition="2" />
+																<field type="ShortBlockIndex1" name="phantom" isReadonly="True" definition="phantoms_block" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Real" name="radius" isReadonly="True" />
+																<field type="RealVector3D" name="bottom" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="top" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</pills_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="sphere shapes">
+												<block name="spheres_block" maxCount="1024" display="spheres_block" flags="0" maxIdentifer="k_maximum_shapes_per_physics_model" version="1">
+													<versions>
+														<spheres_block_fields size="128" sizeIdentifer="sizeof(s_physics_model_sphere)" alignment="4" fieldCount="29">
+															<fields>
+																<field type="StringId" name="name" isBlockName="True" isReadonly="True" />
+																<field type="ShortBlockIndex1" name="material" isReadonly="True" definition="materials_block" />
+																<field type="WordFlags" name="flags">
+																	<definition count="1">
+																		<entry>unused</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="relative mass scale" />
+																<field type="RealFraction" name="friction" />
+																<field type="RealFraction" name="restitution" />
+																<field type="Real" name="volume " isReadonly="True" />
+																<field type="Real" name="mass" isReadonly="True" />
+																<field type="Skip" name="" definition="2" />
+																<field type="ShortBlockIndex1" name="phantom" isReadonly="True" definition="phantoms_block" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Real" name="radius" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation i" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation j" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="rotation k" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="RealVector3D" name="translation" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</spheres_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Explanation" name="ground" definition="" />
+											<field type="Struct" name="ground physics">
+												<struct name="character_physics_ground_struct" groupTag="chgr" display="character physics ground">
+													<block name="character_physics_ground_struct_block" maxCount="1" display="character_physics_ground_struct" flags="0" maxIdentifer="1" version="1">
+														<versions>
+															<character_physics_ground_struct_fields size="48" sizeIdentifer="sizeof(s_character_physics_ground_definition)" fieldCount="12">
+																<fields>
+																	<field type="Angle" name="maximum slope angle" units="degrees" />
+																	<field type="Angle" name="downhill falloff angle" units="degrees" />
+																	<field type="Angle" name="downhill cutoff angle" units="degrees" />
+																	<field type="Angle" name="uphill falloff angle" units="degrees" />
+																	<field type="Angle" name="uphill cutoff angle" units="degrees" />
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Real" name="downhill velocity scale" />
+																	<field type="Real" name="uphill velocity scale" />
+																	<field type="UselessPad" name="" definition="8" />
+																	<field type="Pad" name="" definition="20" />
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Terminator" />
+																</fields>
+															</character_physics_ground_struct_fields>
+														</versions>
+													</block>
+												</struct>
+											</field>
+											<field type="Explanation" name="flying" definition="" />
+											<field type="Struct" name="flying physics">
+												<struct name="character_physics_flying_struct" groupTag="chfl" display="character physics ground">
+													<block name="character_physics_flying_struct_block" maxCount="1" display="character_physics_flying_struct" flags="0" maxIdentifer="1" version="1">
+														<versions>
+															<character_physics_flying_struct_fields size="44" sizeIdentifer="sizeof(s_character_physics_flying_definition)" fieldCount="13">
+																<fields>
+																	<field type="Angle" name="bank angle" help="angle at which we bank left/right when sidestepping or turning while moving forwards" units="degrees" />
+																	<field type="Real" name="bank apply time" help="time it takes us to apply a bank" units="seconds" />
+																	<field type="Real" name="bank decay time" help="time it takes us to recover from a bank" units="seconds" />
+																	<field type="Real" name="pitch ratio" help="amount that we pitch up/down when moving up or down" />
+																	<field type="Real" name="max velocity" help="max velocity when not crouching" units="world units per second" />
+																	<field type="Real" name="max sidestep velocity" help="max sideways or up/down velocity when not crouching" units="world units per second" />
+																	<field type="Real" name="acceleration" units="world units per second squared" />
+																	<field type="Real" name="deceleration" units="world units per second squared" />
+																	<field type="Angle" name="angular velocity maximum" help="turn rate" units="degrees per second" />
+																	<field type="Angle" name="angular acceleration maximum" help="turn acceleration rate" units="degrees per second squared" />
+																	<field type="Real" name="crouch velocity modifier" help="how much slower we fly if crouching (zero = same speed)" units="[0,1]" />
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Terminator" />
+																</fields>
+															</character_physics_flying_struct_fields>
+														</versions>
+													</block>
+												</struct>
+											</field>
+											<field type="Explanation" name="dead" definition="" />
+											<field type="Struct" name="dead physics">
+												<struct name="character_physics_dead_struct" groupTag="chdd" display="character physics dead">
+													<block name="character_physics_dead_struct_block" maxCount="1" display="character_physics_dead_struct" flags="0" maxIdentifer="1" version="1">
+														<versions>
+															<character_physics_dead_struct_fields size="0" sizeIdentifer="k_character_physics_dead_size" fieldCount="2">
+																<fields>
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Terminator" />
+																</fields>
+															</character_physics_dead_struct_fields>
+														</versions>
+													</block>
+												</struct>
+											</field>
+											<field type="Explanation" name="sentinel" definition="" />
+											<field type="Struct" name="sentinel physics">
+												<struct name="character_physics_sentinel_struct" groupTag="chsn" display="character physics sentinel">
+													<block name="character_physics_sentinel_struct_block" maxCount="1" display="character_physics_sentinel_struct" flags="0" maxIdentifer="1" version="1">
+														<versions>
+															<character_physics_sentinel_struct_fields size="0" sizeIdentifer="k_character_physics_sentinel_size" fieldCount="2">
+																<fields>
+																	<field type="UselessPad" name="" definition="16" />
+																	<field type="Terminator" />
+																</fields>
+															</character_physics_sentinel_struct_fields>
+														</versions>
+													</block>
+												</struct>
+											</field>
+											<field type="Terminator" />
+										</fields>
+									</character_physics_struct_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="UselessPad" name="" definition="64" />
+					<field type="TagReference" name="impact damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="TagReference" name="impact shield damage" help="if not specified, uses 'impact damage'">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="UselessPad" name="" definition="32" />
+					<field type="Explanation" name="death and destruction" definition="" />
+					<field type="RealBounds" name="destroy after death time" help="if non-zero, the creature will destroy itself upon death after this much time" units="seconds" />
+					<field type="Terminator" />
+				</fields>
+			</creature_block_fields>
+		</versions>
+	</block>
+</tagGroup>

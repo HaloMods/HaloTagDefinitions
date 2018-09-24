@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="vehicle" groupTag="vehi" groupTagParent="unit" version="1" flags="9" procPostprocess="True">
+	<block name="vehicle_block" maxCount="1" display="vehicle" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<vehicle_block_fields size="332" sizeIdentifer="sizeof(struct _vehicle_definition)" fieldCount="54">
+				<fields>
+					<field type="Explanation" name="$$$ VEHICLE $$$" definition="" />
+					<field type="LongFlags" name="flags">
+						<definition count="22">
+							<entry>speed wakes physics</entry>
+							<entry>turn wakes physics</entry>
+							<entry>driver power wakes physics</entry>
+							<entry>gunner power wakes physics</entry>
+							<entry>control opposite speed sets brake</entry>
+							<entry>slide wakes physics</entry>
+							<entry>kills riders at terminal velocity</entry>
+							<entry>causes collision damage</entry>
+							<entry>ai weapon cannot rotate</entry>
+							<entry>ai does not require driver</entry>
+							<entry>ai unused</entry>
+							<entry>ai driver enable</entry>
+							<entry>ai driver flying</entry>
+							<entry>ai driver can-sidestep</entry>
+							<entry>ai driver hovering</entry>
+							<entry>vehicle steers directly</entry>
+							<entry>unused</entry>
+							<entry>has e-brake</entry>
+							<entry>noncombat vehicle</entry>
+							<entry>no friction w/driver</entry>
+							<entry>can trigger automatic opening doors</entry>
+							<entry>autoaim when teamless</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="type">
+						<definition count="7">
+							<entry>human tank</entry>
+							<entry>human jeep</entry>
+							<entry>human boat</entry>
+							<entry>human plane</entry>
+							<entry>alien scout</entry>
+							<entry>alien fighter</entry>
+							<entry>turret</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="control">
+						<definition count="3">
+							<entry>vehicle control normal</entry>
+							<entry>vehicle control unused</entry>
+							<entry>vehicle control tank</entry>
+						</definition>
+					</field>
+					<field type="Real" name="maximum forward speed" />
+					<field type="Real" name="maximum reverse speed" />
+					<field type="Real" name="speed acceleration" />
+					<field type="Real" name="speed deceleration" />
+					<field type="Real" name="maximum left turn" />
+					<field type="Real" name="maximum right turn (negative)" />
+					<field type="Real" name="wheel circumference" />
+					<field type="Real" name="turn rate" />
+					<field type="Real" name="blur speed" />
+					<field type="Enum" name="specific type" help="if your type corresponds to something in this list choose it">
+						<definition count="5">
+							<entry>none</entry>
+							<entry>ghost</entry>
+							<entry>wraith</entry>
+							<entry>spectre</entry>
+							<entry>sentinel enforcer</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="player training vehicle type">
+						<definition count="7">
+							<entry>none</entry>
+							<entry>warthog</entry>
+							<entry>warthog turret</entry>
+							<entry>ghost</entry>
+							<entry>banshee</entry>
+							<entry>tank</entry>
+							<entry>wraith</entry>
+						</definition>
+					</field>
+					<field type="StringId" name="flip message" />
+					<field type="Real" name="turn scale" />
+					<field type="Real" name="speed turn penalty power (0.5 .. 2)" />
+					<field type="Real" name="speed turn penalty (0 = none, 1 = can't turn at top speed)" />
+					<field type="Real" name="maximum left slide" />
+					<field type="Real" name="maximum right slide" />
+					<field type="Real" name="slide acceleration" />
+					<field type="Real" name="slide deceleration" />
+					<field type="Real" name="minimum flipping angular velocity" />
+					<field type="Real" name="maximum flipping angular velocity" />
+					<field type="Enum" name="vehicle size" help="The size determine what kind of seats in larger vehicles it may occupy (i.e. small or large cargo seats)">
+						<definition count="2">
+							<entry>small</entry>
+							<entry>large</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="UselessPad" name="" definition="20" />
+					<field type="Real" name="fixed gun yaw" />
+					<field type="Real" name="fixed gun pitch" />
+					<field type="Explanation" name="steering overdampening" definition="when the steering is off by more than the cusp angle&#xA;the steering will overcompensate more and more.  when it&#xA;is less, it overcompensates less and less.  the exponent&#xA;should be something in the neighborhood of 2.0&#xA;" />
+					<field type="Real" name="overdampen cusp angle" units="degrees" />
+					<field type="Real" name="overdampen exponent" />
+					<field type="Real" name="crouch transition time" units="seconds" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Explanation" name="engine" definition="" />
+					<field type="Real" name="engine moment" help="higher moments make engine spin up slower" />
+					<field type="Real" name="engine max angular velocity" help="higher moments make engine spin up slower" />
+					<field type="Block" name="gears">
+						<block name="gear_block" maxCount="16" display="gear_block" flags="0" maxIdentifer="k_vehicle_gear_count_max" procFormat="True" version="1">
+							<versions>
+								<gear_block_fields size="68" sizeIdentifer="sizeof(struct s_vehicle_gear)" fieldCount="12">
+									<fields>
+										<field type="Explanation" name="loaded torque" definition="" />
+										<field type="Struct" name="loaded torque curve">
+											<struct name="torque_curve_struct" groupTag="trcv" display="power characteristics of engine">
+												<block name="torque_curve_struct_block" maxCount="1" display="torque_curve_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<torque_curve_struct_fields size="24" sizeIdentifer="sizeof(s_toruqe_curve)" fieldCount="8">
+															<fields>
+																<field type="Real" name="min torque" />
+																<field type="Real" name="max torque" />
+																<field type="Real" name="peak torque scale" />
+																<field type="Real" name="past peak torque exponent" />
+																<field type="Real" name="torque at max angular velocity" help="generally 0 for loading torque and something less than max torque for cruising torque" />
+																<field type="Real" name="torque at 2x max angular velocity" />
+																<field type="UselessPad" name="" definition="8" />
+																<field type="Terminator" />
+															</fields>
+														</torque_curve_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Explanation" name="cruising torque" definition="" />
+										<field type="Struct" name="cruising torque curve">
+											<struct name="torque_curve_struct" groupTag="trcv" display="power characteristics of engine">
+												<block name="torque_curve_struct_block" maxCount="1" display="torque_curve_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<torque_curve_struct_fields size="24" sizeIdentifer="sizeof(s_toruqe_curve)" fieldCount="8">
+															<fields>
+																<field type="Real" name="min torque" />
+																<field type="Real" name="max torque" />
+																<field type="Real" name="peak torque scale" />
+																<field type="Real" name="past peak torque exponent" />
+																<field type="Real" name="torque at max angular velocity" help="generally 0 for loading torque and something less than max torque for cruising torque" />
+																<field type="Real" name="torque at 2x max angular velocity" />
+																<field type="UselessPad" name="" definition="8" />
+																<field type="Terminator" />
+															</fields>
+														</torque_curve_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Explanation" name="gearing" definition="" />
+										<field type="Real" name="min time to upshift" help="seconds" />
+										<field type="Real" name="engine up-shift scale" help="0-1" />
+										<field type="Real" name="gear ratio" />
+										<field type="Real" name="min time to downshift" help="seconds" />
+										<field type="Real" name="engine down-shift scale" help="0-1" />
+										<field type="UselessPad" name="" definition="12" />
+										<field type="Terminator" />
+									</fields>
+								</gear_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Real" name="flying torque scale" help="big vehicles need to scale this down.  0 defaults to 1, which is generally a good value.  This is used with alien fighter physics" />
+					<field type="Real" name="seat enterance acceleration scale" help="how much do we scale the force the biped the applies down on the seat when he enters. 0 == no acceleration" />
+					<field type="Real" name="seat exit accelersation scale" help="how much do we scale the force the biped the applies down on the seat when he exits. 0 == no acceleration" />
+					<field type="UselessPad" name="" definition="16" />
+					<field type="Real" name="air friction deceleration" help="human plane physics only. 0 is nothing.  1 is like thowing the engine to full reverse" />
+					<field type="Real" name="thrust scale" help="human plane physics only. 0 is default (1)" />
+					<field type="Explanation" name="sounds and effects" definition="" />
+					<field type="TagReference" name="suspension sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="TagReference" name="crash sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="TagReference" name="UNUSED" isReadonly="True">
+						<definition flags="0" groupTag="foot" />
+					</field>
+					<field type="TagReference" name="special effect">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="TagReference" name="unused effect">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="Explanation" name="physics" definition="" />
+					<field type="Struct" name="havok vehicle physics">
+						<struct name="havok_vehicle_physics_struct" groupTag="HVPH" display="havok vehicle physics">
+							<block name="havok_vehicle_physics_struct_block" maxCount="1" display="havok_vehicle_physics_struct" flags="0" maxIdentifer="1" version="1">
+								<versions>
+									<havok_vehicle_physics_fields size="96" sizeIdentifer="sizeof(s_havok_vehicle_physics_definition)" fieldCount="16">
+										<fields>
+											<field type="LongFlags" name="flags" isReadonly="True">
+												<definition count="1">
+													<entry>invalid</entry>
+												</definition>
+											</field>
+											<field type="Real" name="ground friction" help=" for friction based vehicles only" />
+											<field type="Real" name="ground depth" help=" for friction based vehicles only" />
+											<field type="Real" name="ground damp factor" help=" for friction based vehicles only" />
+											<field type="Real" name="ground moving friction" help=" for friction based vehicles only" />
+											<field type="Real" name="ground maximum slope 0" help="degrees 0-90" />
+											<field type="Real" name="ground maximum slope 1" help="degrees 0-90.  and greater than slope 0" />
+											<field type="Pad" name="" definition="16" />
+											<field type="Real" name="anti_gravity_bank_lift" help="lift per WU." />
+											<field type="Real" name="steering_bank_reaction_scale" help="how quickly we bank when we steer " />
+											<field type="Real" name="gravity scale" help="value of 0 defaults to 1.  .5 is half gravity" />
+											<field type="Real" name="radius" help="generated from the radius of the hkConvexShape for this vehicle" isReadonly="True" />
+											<field type="Block" name="anti gravity points">
+												<block name="anti_gravity_point_definition_block" maxCount="16" display="anti_gravity_point_definition_block" flags="0" maxIdentifer="k_maximum_anti_gravity_points_per_vehicle_physics_definition" version="1">
+													<versions>
+														<anti_gravity_point_definition_block_fields size="76" sizeIdentifer="sizeof(struct s_anti_gravity_point_definition)" fieldCount="19">
+															<fields>
+																<field type="StringId" name="marker name" isBlockName="True" />
+																<field type="LongFlags" name="flags">
+																	<definition count="1">
+																		<entry>gets damage from region</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="antigrav strength" />
+																<field type="Real" name="antigrav offset" />
+																<field type="Real" name="antigrav height" />
+																<field type="Real" name="antigrav damp factor" />
+																<field type="Real" name="antigrav normal k1" />
+																<field type="Real" name="antigrav normal k0" />
+																<field type="Real" name="radius" />
+																<field type="Pad" name="" definition="12" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Pad" name="" definition="2" />
+																<field type="StringId" name="damage source region name" />
+																<field type="Real" name="default state error" />
+																<field type="Real" name="minor damage error" />
+																<field type="Real" name="medium damage error" />
+																<field type="Real" name="major damage error" />
+																<field type="Real" name="destroyed state error" />
+																<field type="Terminator" />
+															</fields>
+														</anti_gravity_point_definition_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="friction points">
+												<block name="friction_point_definition_block" maxCount="16" display="friction_point_definition_block" flags="0" maxIdentifer="k_maximum_friction_points_per_vehicle_physics_definition" version="1">
+													<versions>
+														<friction_point_definition_block_fields size="76" sizeIdentifer="sizeof(struct s_friction_point_definition)" fieldCount="19">
+															<fields>
+																<field type="StringId" name="marker name" isBlockName="True" />
+																<field type="LongFlags" name="flags">
+																	<definition count="6">
+																		<entry>gets damage from region</entry>
+																		<entry>powered</entry>
+																		<entry>front turning</entry>
+																		<entry>rear turning</entry>
+																		<entry>attached to e-brake</entry>
+																		<entry>can be destroyed</entry>
+																	</definition>
+																</field>
+																<field type="Real" name="fraction of total mass" help="(0.0-1.0) fraction of total vehicle mass" />
+																<field type="Real" name="radius" />
+																<field type="Real" name="damaged radius" help="radius when the tire is blown off." />
+																<field type="Enum" name="friction type">
+																	<definition count="2">
+																		<entry>point</entry>
+																		<entry>forward</entry>
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="2" />
+																<field type="Real" name="moving friction velocity diff" />
+																<field type="Real" name="e-brake moving friction" />
+																<field type="Real" name="e-brake friction" />
+																<field type="Real" name="e-brake moving friction vel diff" />
+																<field type="Pad" name="" definition="20" />
+																<field type="StringId" name="collision global material name" attributeGroup="sted" hasStringEditor="true" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Explanation" name="friction point destruction data" definition="" />
+																<field type="Enum" name="model state destroyed" help="only need point can destroy flag set">
+																	<definition count="5">
+																		<entry>default</entry>
+																		<entry>minor damage</entry>
+																		<entry>medium damage</entry>
+																		<entry>major damage</entry>
+																		<entry>destroyed</entry>
+																	</definition>
+																</field>
+																<field type="StringId" name="region name" help="only need point can destroy flag set" />
+																<field type="Pad" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</friction_point_definition_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Block" name="shape phantom shape" isReadonly="True">
+												<block name="vehicle_phantom_shape_block" maxCount="1" display="vehicle_phantom_shape_block" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<vehicle_phantom_shape_block_fields size="672" sizeIdentifer="sizeof(s_vehicle_phantom_shape_definition)" alignment="4" fieldCount="33">
+															<fields>
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="Skip" name="" definition="4" />
+																<field type="LongInteger" name="child shapes size" isReadonly="True" />
+																<field type="LongInteger" name="child shapes capacity" isReadonly="True" />
+																<arrayStart definition="4" />
+																<field type="Enum" name="shape type" isReadonly="True">
+																	<definition count="16">
+																		<entry>sphere</entry>
+																		<entry>pill</entry>
+																		<entry>box</entry>
+																		<entry>triangle</entry>
+																		<entry>polyhedron</entry>
+																		<entry>multi sphere</entry>
+																		<entry>unused 0</entry>
+																		<entry>unused 1</entry>
+																		<entry>unused 2</entry>
+																		<entry>unused 3</entry>
+																		<entry>unused 4</entry>
+																		<entry>unused 5</entry>
+																		<entry>unused 6</entry>
+																		<entry>unused 7</entry>
+																		<entry>list</entry>
+																		<entry>mopp</entry>
+																	</definition>
+																</field>
+																<field type="ShortBlockIndex2" name="shape" isReadonly="True" definition="?D$&#x8;=???" />
+																<field type="LongInteger" name="collision filter" isReadonly="True" />
+																<arrayEnd />
+																<field type="LongInteger" name="multisphere count" isReadonly="True" />
+																<field type="LongFlags" name="flags">
+																	<definition count="2">
+																		<entry>has aabb phantom</entry>
+																		<entry />
+																	</definition>
+																</field>
+																<field type="Pad" name="" definition="8" />
+																<field type="Real" name="x0" />
+																<field type="Real" name="x1" />
+																<field type="Real" name="y0" />
+																<field type="Real" name="y1" />
+																<field type="Real" name="z0" />
+																<field type="Real" name="z1" />
+																<arrayStart definition="4" />
+																<field type="Skip" name="" definition="4" />
+																<field type="ShortInteger" name="size" isReadonly="True" />
+																<field type="ShortInteger" name="count" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<field type="LongInteger" name="num spheres" isReadonly="True" />
+																<arrayStart definition="8" />
+																<field type="RealVector3D" name="sphere" isReadonly="True" />
+																<field type="Skip" name="" definition="4" />
+																<arrayEnd />
+																<arrayEnd />
+																<field type="Terminator" />
+															</fields>
+														</vehicle_phantom_shape_block_fields>
+													</versions>
+												</block>
+											</field>
+											<field type="Terminator" />
+										</fields>
+									</havok_vehicle_physics_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</vehicle_block_fields>
+		</versions>
+	</block>
+</tagGroup>

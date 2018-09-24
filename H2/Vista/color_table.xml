@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="color_table" groupTag="colo" groupTagParent="????" version="1" flags="0">
+	<block name="color_table_block" maxCount="1" display="color_table" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<color_table_block_fields size="12" sizeIdentifer="sizeof(struct color_table)" fieldCount="2">
+				<fields>
+					<field type="Block" name="colors">
+						<block name="color_block" maxCount="512" display="color_block" flags="0" maxIdentifer="MAXIMUM_COLORS_PER_COLOR_TABLE_GROUP" version="1">
+							<versions>
+								<color_block_fields size="48" sizeIdentifer="sizeof(struct color_table_color)" fieldCount="3">
+									<fields>
+										<field type="String" name="name" isBlockName="True" />
+										<field type="RealArgbColor" name="color" />
+										<field type="Terminator" />
+									</fields>
+								</color_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</color_table_block_fields>
+		</versions>
+	</block>
+</tagGroup>

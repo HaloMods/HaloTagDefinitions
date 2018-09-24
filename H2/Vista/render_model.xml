@@ -1,0 +1,1760 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="render_model" groupTag="mode" groupTagParent="????" version="5" flags="9" procPostprocess="True" procPostprocessForSync="True">
+	<block name="render_model_block" maxCount="1" display="render_model" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<render_model_block_fields size="184" sizeIdentifer="sizeof(struct render_model_definition)" fieldCount="27">
+				<fields>
+					<field type="OldStringId" name="name" isReadonly="True" />
+					<field type="WordFlags" name="flags" isReadonly="True">
+						<definition count="4">
+							<entry>_render_model_force_third_person_bit</entry>
+							<entry>force carmack-reverse</entry>
+							<entry>force node maps</entry>
+							<entry>geometry postprocessed</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="4" />
+					<field type="Block" name="import info" isReadonly="True">
+						<block name="global_tag_import_info_block" maxCount="1" display="import info" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<global_tag_import_info_block_fields size="596" sizeIdentifer="sizeof(struct tag_import_info)" fieldCount="10">
+									<fields>
+										<field type="LongInteger" name="build" isReadonly="True" />
+										<field type="LongString" name="version" isReadonly="True" />
+										<field type="String" name="import date" isReadonly="True" />
+										<field type="String" name="culprit" isReadonly="True" />
+										<field type="Pad" name="" definition="96" />
+										<field type="String" name="import time" isReadonly="True" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Block" name="files" isReadonly="True">
+											<block name="tag_import_file_block" maxCount="1024" display="import file" flags="0" maxIdentifer="MAXIMUM_FILES_PER_TAG_IMPORT_INFO" version="1">
+												<versions>
+													<tag_import_file_block_fields size="540" sizeIdentifer="sizeof(struct tag_import_file)" fieldCount="9">
+														<fields>
+															<field type="LongString" name="path" isReadonly="True" />
+															<field type="String" name="modification date" isReadonly="True" />
+															<field type="Skip" name="" definition="8" />
+															<field type="Pad" name="" definition="88" />
+															<field type="LongInteger" name="checksum" units="crc32" isReadonly="True" />
+															<field type="LongInteger" name="size" units="bytes" isReadonly="True" />
+															<field type="Data" name="zipped data" isReadonly="True">
+																<definition name="tag_import_file_zipped_data_definition" maxSize="134217728" alignment="0" flags="5" maxIdentifer="MAXIMUM_TAG_IMPORT_FILE_ZIPPED_DATA_SIZE_IN_BYTES" />
+															</field>
+															<field type="Pad" name="" definition="128" />
+															<field type="Terminator" />
+														</fields>
+													</tag_import_file_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="128" />
+										<field type="Terminator" />
+									</fields>
+								</global_tag_import_info_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="compression info" isReadonly="True">
+						<block name="global_geometry_compression_info_block" maxCount="1" display="compression info" flags="0" maxIdentifer="1" version="1">
+							<versions>
+								<global_geometry_compression_info_block_fields size="56" sizeIdentifer="sizeof(struct geometry_compression_info)" fieldCount="8">
+									<fields>
+										<field type="RealBounds" name="Position Bounds x" isReadonly="True" />
+										<field type="RealBounds" name="Position Bounds y" isReadonly="True" />
+										<field type="RealBounds" name="Position Bounds z" isReadonly="True" />
+										<field type="RealBounds" name="Texcoord Bounds x" isReadonly="True" />
+										<field type="RealBounds" name="Texcoord Bounds y" isReadonly="True" />
+										<field type="RealBounds" name="Secondary Texcoord Bounds x" isReadonly="True" />
+										<field type="RealBounds" name="Secondary Texcoord Bounds y" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</global_geometry_compression_info_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="regions" isReadonly="True">
+						<block name="render_model_region_block" maxCount="16" display="region" flags="0" maxIdentifer="MAXIMUM_REGIONS_PER_MODEL" version="1">
+							<versions>
+								<render_model_region_block_fields size="20" sizeIdentifer="sizeof(struct render_model_region)" fieldCount="5">
+									<fields>
+										<field type="OldStringId" name="name" isBlockName="True" isReadonly="True" />
+										<field type="ShortInteger" name="node map offset (OLD)" isReadonly="True" />
+										<field type="ShortInteger" name="node map size (OLD)" isReadonly="True" />
+										<field type="Block" name="permutations" isReadonly="True">
+											<block name="render_model_permutation_block" maxCount="32" display="permutation" flags="0" maxIdentifer="MAXIMUM_PERMUTATIONS_PER_MODEL_REGION" version="1">
+												<versions>
+													<render_model_permutation_block_fields size="16" sizeIdentifer="sizeof(struct render_model_permutation)" fieldCount="8">
+														<fields>
+															<field type="OldStringId" name="name" isBlockName="True" isReadonly="True" />
+															<field type="ShortInteger" name="L1 section index" units="(super low)" isReadonly="True" />
+															<field type="ShortInteger" name="L2 section index" units="(low)" isReadonly="True" />
+															<field type="ShortInteger" name="L3 section index" units="(medium)" isReadonly="True" />
+															<field type="ShortInteger" name="L4 section index" units="(high)" isReadonly="True" />
+															<field type="ShortInteger" name="L5 section index" units="(super high)" isReadonly="True" />
+															<field type="ShortInteger" name="L6 section index" units="(hollywood)" isReadonly="True" />
+															<field type="Terminator" />
+														</fields>
+													</render_model_permutation_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</render_model_region_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="sections" isReadonly="True">
+						<block name="render_model_section_block" maxCount="255" display="render_model_section_block" flags="0" maxIdentifer="MAXIMUM_SECTIONS_PER_RENDER_MODEL" procPostprocess="True" procDispose="True" version="1">
+							<versions>
+								<render_model_section_block_fields size="104" sizeIdentifer="sizeof(struct render_model_section)" fieldCount="8">
+									<fields>
+										<field type="Enum" name="global_geometry_classification_enum_definition">
+											<definition count="5">
+												<entry>Worldspace</entry>
+												<entry>Rigid</entry>
+												<entry>Rigid Boned</entry>
+												<entry>Skinned</entry>
+												<entry>Unsupported (Reimport)</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Struct" name="section info" isReadonly="True">
+											<struct name="global_geometry_section_info_struct" groupTag="SINF">
+												<block name="global_geometry_section_info_struct_block" maxCount="1" display="global_geometry_section_info_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<global_geometry_section_info_struct_fields size="44" sizeIdentifer="sizeof(struct geometry_section_info)" fieldCount="21">
+															<fields>
+																<field type="Explanation" name="SECTION INFO" definition="" />
+																<field type="ShortInteger" name="Total Vertex Count" isReadonly="True" />
+																<field type="ShortInteger" name="Total Triangle Count" isReadonly="True" />
+																<field type="ShortInteger" name="Total Part Count" isReadonly="True" />
+																<field type="ShortInteger" name="Shadow-Casting Triangle Count" isReadonly="True" />
+																<field type="ShortInteger" name="Shadow-Casting Part Count" isReadonly="True" />
+																<field type="ShortInteger" name="Opaque Point Count" isReadonly="True" />
+																<field type="ShortInteger" name="Opaque Vertex Count" isReadonly="True" />
+																<field type="ShortInteger" name="Opaque Part Count" isReadonly="True" />
+																<field type="CharInteger" name="Opaque Max Nodes/Vertex" isReadonly="True" />
+																<field type="CharInteger" name="Transparent Max Nodes/Vertex" isReadonly="True" />
+																<field type="ShortInteger" name="Shadow-Casting Rigid Triangle Count" isReadonly="True" />
+																<field type="Enum" name="Geometry Classification" isReadonly="True">
+																	<definition count="5">
+																		<entry>Worldspace</entry>
+																		<entry>Rigid</entry>
+																		<entry>Rigid Boned</entry>
+																		<entry>Skinned</entry>
+																		<entry>Unsupported (Reimport)</entry>
+																	</definition>
+																</field>
+																<field type="WordFlags" name="Geometry Compression Flags" isReadonly="True">
+																	<definition count="3">
+																		<entry>Compressed Position</entry>
+																		<entry>Compressed Texcoord</entry>
+																		<entry>Compressed Secondary Texcoord</entry>
+																	</definition>
+																</field>
+																<field type="Block" name="">
+																	<block name="global_geometry_compression_info_block" maxCount="1" display="compression info" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<global_geometry_compression_info_block_fields size="56" sizeIdentifer="sizeof(struct geometry_compression_info)" fieldCount="8">
+																				<fields>
+																					<field type="RealBounds" name="Position Bounds x" isReadonly="True" />
+																					<field type="RealBounds" name="Position Bounds y" isReadonly="True" />
+																					<field type="RealBounds" name="Position Bounds z" isReadonly="True" />
+																					<field type="RealBounds" name="Texcoord Bounds x" isReadonly="True" />
+																					<field type="RealBounds" name="Texcoord Bounds y" isReadonly="True" />
+																					<field type="RealBounds" name="Secondary Texcoord Bounds x" isReadonly="True" />
+																					<field type="RealBounds" name="Secondary Texcoord Bounds y" isReadonly="True" />
+																					<field type="Terminator" />
+																				</fields>
+																			</global_geometry_compression_info_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="CharInteger" name="Hardware Node Count" isReadonly="True" />
+																<field type="CharInteger" name="Node Map Size" isReadonly="True" />
+																<field type="ShortInteger" name="Software Plane Count" isReadonly="True" />
+																<field type="ShortInteger" name="total subpart_cont" isReadonly="True" />
+																<field type="WordFlags" name="Section Lighting Flags" isReadonly="True">
+																	<definition count="4">
+																		<entry>has lm texcoords</entry>
+																		<entry>has lm inc. rad.</entry>
+																		<entry>Has lm Colors</entry>
+																		<entry>has lm prt</entry>
+																	</definition>
+																</field>
+																<field type="Terminator" />
+															</fields>
+														</global_geometry_section_info_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="ShortBlockIndex1" name="rigid node" isReadonly="True" definition="render_model_node_block" />
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>geometry postprocessed</entry>
+											</definition>
+										</field>
+										<field type="Block" name="section data" isReadonly="True">
+											<block name="render_model_section_data_block" maxCount="1" display="render_model_section_data_block" flags="0" maxIdentifer="1" version="2">
+												<versions>
+													<render_model_section_data_tag_field_old size="360" sizeIdentifer="sizeof(struct render_model_section_data_old)" fieldCount="17">
+														<fields>
+															<field type="Struct" name="section" isReadonly="True">
+																<struct name="global_geometry_section_struct" groupTag="SECT">
+																	<block name="global_geometry_section_struct_block" maxCount="1" display="global_geometry_section_struct" flags="0" maxIdentifer="1" version="2">
+																		<versions>
+																			<geometry_section_fieldset_old size="272" sizeOverride="244" sizeIdentifer="sizeof(struct geometry_section_old)" fieldCount="10">
+																				<fields>
+																					<field type="Block" name="Raw Vertices" isReadonly="True">
+																						<block name="global_geometry_section_raw_vertex_block" maxCount="32767" display="vertex" flags="0" maxIdentifer="MAXIMUM_VERTICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_raw_vertex_block_fields size="196" sizeIdentifer="sizeof(struct geometry_vertex)" fieldCount="25">
+																									<fields>
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (OLD)" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="Real" name="node_weight" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (NEW)" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="LongInteger" name="Use New Node Indices" isReadonly="True" />
+																										<field type="LongInteger" name="Adjusted Compound Node Index" isReadonly="True" />
+																										<field type="RealPoint2D" name="texcoord" isReadonly="True" />
+																										<field type="RealVector3D" name="Normal" isReadonly="True" />
+																										<field type="RealVector3D" name="Binormal" isReadonly="True" />
+																										<field type="RealVector3D" name="Tangent" isReadonly="True" />
+																										<field type="RealVector3D" name="Anisotropic Binormal" isReadonly="True" />
+																										<field type="RealPoint2D" name="Secondary texcoord" isReadonly="True" />
+																										<field type="RealRgbColor" name="Primary Lightmap Color" />
+																										<field type="RealPoint2D" name="Primary Lightmap texcoord" />
+																										<field type="RealVector3D" name="Primary Lightmap Incident Direction" />
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Pad" name="" definition="8" />
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_raw_vertex_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<arrayStart definition="3" />
+																					<field type="VertexBuffer" name="vertex buffer" isReadonly="True" />
+																					<arrayEnd />
+																					<field type="VertexBuffer" name="transparent position" isReadonly="True" />
+																					<field type="Block" name="Vertex Buffers" isReadonly="True">
+																						<block name="global_geometry_section_vertex_buffer_block" maxCount="512" display="vertex buffer" flags="0" maxIdentifer="MAXIMUM_VERTEX_BUFFERS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_vertex_buffer_block_fields size="32" sizeIdentifer="sizeof(struct rasterizer_vertex_buffer)" fieldCount="2">
+																									<fields>
+																										<field type="VertexBuffer" name="vertex buffer" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_vertex_buffer_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Strip Indices" isReadonly="True">
+																						<block name="global_geometry_section_strip_index_block" maxCount="65535" display="index" flags="0" maxIdentifer="MAXIMUM_STRIP_INDICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_strip_index_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_strip_index_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Parts" isReadonly="True">
+																						<block name="global_geometry_part_block" maxCount="255" display="part" flags="0" maxIdentifer="MAXIMUM_PARTS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_part_block_fields size="100" sizeIdentifer="sizeof(struct geometry_part_old)" fieldCount="29">
+																									<fields>
+																										<field type="Enum" name="Type" isReadonly="True">
+																											<definition count="6">
+																												<entry>Not Drawn</entry>
+																												<entry>Opaque Shadow Only</entry>
+																												<entry>Opaque Shadow-Casting</entry>
+																												<entry>Opaque Nonshadowing</entry>
+																												<entry>Transparent</entry>
+																												<entry>Lightmap Only</entry>
+																											</definition>
+																										</field>
+																										<field type="WordFlags" name="Flags" isReadonly="True">
+																											<definition count="5">
+																												<entry>Decalable</entry>
+																												<entry>New Part Types</entry>
+																												<entry>Dislikes Photons</entry>
+																												<entry>Override Triangle List</entry>
+																												<entry>ignored by lightmapper</entry>
+																											</definition>
+																										</field>
+																										<field type="ShortBlockIndex1" name="Material" isReadonly="True" definition="global_geometry_material_block" />
+																										<field type="Enum" name="Geometry Subclassification" isReadonly="True">
+																											<definition count="5">
+																												<entry>Default (Opaque)</entry>
+																												<entry>Faceted (Opaque)</entry>
+																												<entry>Simple (Transparent)</entry>
+																												<entry>Normal (Transparent)</entry>
+																												<entry>Tangent Space (Transparent)</entry>
+																											</definition>
+																										</field>
+																										<field type="ShortInteger" name="Strip Start Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Strip Length" isReadonly="True" />
+																										<field type="ShortInteger" name="First Strip Segment Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Strip Segment Count" isReadonly="True" />
+																										<field type="ShortInteger" name="First Vertex Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Vertex Count" isReadonly="True" />
+																										<field type="ShortInteger" name="First Triangle Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Triangle Count" isReadonly="True" />
+																										<field type="CharInteger" name="Max Nodes/Vertex" isReadonly="True" />
+																										<field type="CharInteger" name="Contributing Compound Node Count" isReadonly="True" />
+																										<field type="WordFlags" name="Vertex Usage Flags" isReadonly="True">
+																											<definition count="6">
+																												<entry>Position Software Transformed</entry>
+																												<entry>texcoord</entry>
+																												<entry>Normal</entry>
+																												<entry>Binormal/Tangent</entry>
+																												<entry>Anisotropic Binormal</entry>
+																												<entry>Secondary texcoord</entry>
+																											</definition>
+																										</field>
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Pad" name="" definition="1" />
+																										<field type="Pad" name="" definition="3" />
+																										<field type="Explanation" name="CENTROID" definition="" />
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="CharInteger" name="Node Index" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="3" />
+																										<field type="Real" name="Node Weight" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="Real" name="lod mipmap magic number" isReadonly="True" />
+																										<field type="Skip" name="" definition="24" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_part_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Pad" name="" definition="96" />
+																					<field type="Terminator" />
+																				</fields>
+																			</geometry_section_fieldset_old>
+																			<geometry_section_fieldset_new size="108" sizeIdentifer="sizeof(struct geometry_section)" fieldCount="10">
+																				<fields>
+																					<field type="Block" name="Parts" isReadonly="True">
+																						<block name="global_geometry_part_block_new" maxCount="255" display="part" flags="0" maxIdentifer="MAXIMUM_PARTS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_part_block_new_fields size="72" sizeIdentifer="sizeof(struct geometry_part)" fieldCount="20">
+																									<fields>
+																										<field type="Enum" name="Type" isReadonly="True">
+																											<definition count="6">
+																												<entry>Not Drawn</entry>
+																												<entry>Opaque Shadow Only</entry>
+																												<entry>Opaque Shadow-Casting</entry>
+																												<entry>Opaque Nonshadowing</entry>
+																												<entry>Transparent</entry>
+																												<entry>Lightmap Only</entry>
+																											</definition>
+																										</field>
+																										<field type="WordFlags" name="Flags" isReadonly="True">
+																											<definition count="5">
+																												<entry>Decalable</entry>
+																												<entry>New Part Types</entry>
+																												<entry>Dislikes Photons</entry>
+																												<entry>Override Triangle List</entry>
+																												<entry>ignored by lightmapper</entry>
+																											</definition>
+																										</field>
+																										<field type="ShortBlockIndex1" name="Material" isReadonly="True" definition="global_geometry_material_block" />
+																										<field type="ShortInteger" name="Strip Start Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Strip Length" isReadonly="True" />
+																										<field type="ShortInteger" name="First Subpart Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Subpart Count" isReadonly="True" />
+																										<field type="CharInteger" name="Max Nodes/Vertex" isReadonly="True" />
+																										<field type="CharInteger" name="Contributing Compound Node Count" isReadonly="True" />
+																										<field type="Explanation" name="CENTROID" definition="" />
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="CharInteger" name="Node Index" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="3" />
+																										<field type="Real" name="Node Weight" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="Real" name="lod mipmap magic number" isReadonly="True" />
+																										<field type="Skip" name="" definition="24" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_part_block_new_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Subparts" isReadonly="True">
+																						<block name="global_subparts_block" maxCount="32768" display="subparts" flags="0" maxIdentifer="MAXIMUM_SUBPARTS_PER_SECTION" version="1">
+																							<versions>
+																								<global_subparts_block_fields size="8" sizeIdentifer="sizeof(geometry_subpart)" fieldCount="5">
+																									<fields>
+																										<field type="ShortInteger" name="indices_start_index" isReadonly="True" />
+																										<field type="ShortInteger" name="indices_length" isReadonly="True" />
+																										<field type="ShortInteger" name="visibility_bounds_index" isReadonly="True" />
+																										<field type="ShortInteger" name="Part Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_subparts_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Visibility Bounds" isReadonly="True">
+																						<block name="global_visibility_bounds_block" maxCount="32768" display="visibility bounds" flags="0" maxIdentifer="MAXIMUM_SUBPARTS_PER_SECTION" version="1">
+																							<versions>
+																								<global_visibility_bounds_block_fields size="20" sizeIdentifer="sizeof(geometry_visibility)" fieldCount="7">
+																									<fields>
+																										<field type="Real" name="Position x" isReadonly="True" />
+																										<field type="Real" name="Position y" isReadonly="True" />
+																										<field type="Real" name="Position z" isReadonly="True" />
+																										<field type="Real" name="Radius" isReadonly="True" />
+																										<field type="CharInteger" name="Node 0" isReadonly="True" />
+																										<field type="Pad" name="" definition="3" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_visibility_bounds_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Raw Vertices" isReadonly="True">
+																						<block name="global_geometry_section_raw_vertex_block" maxCount="32767" display="vertex" flags="0" maxIdentifer="MAXIMUM_VERTICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_raw_vertex_block_fields size="196" sizeIdentifer="sizeof(struct geometry_vertex)" fieldCount="25">
+																									<fields>
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (OLD)" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="Real" name="node_weight" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (NEW)" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="LongInteger" name="Use New Node Indices" isReadonly="True" />
+																										<field type="LongInteger" name="Adjusted Compound Node Index" isReadonly="True" />
+																										<field type="RealPoint2D" name="texcoord" isReadonly="True" />
+																										<field type="RealVector3D" name="Normal" isReadonly="True" />
+																										<field type="RealVector3D" name="Binormal" isReadonly="True" />
+																										<field type="RealVector3D" name="Tangent" isReadonly="True" />
+																										<field type="RealVector3D" name="Anisotropic Binormal" isReadonly="True" />
+																										<field type="RealPoint2D" name="Secondary texcoord" isReadonly="True" />
+																										<field type="RealRgbColor" name="Primary Lightmap Color" />
+																										<field type="RealPoint2D" name="Primary Lightmap texcoord" />
+																										<field type="RealVector3D" name="Primary Lightmap Incident Direction" />
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Pad" name="" definition="8" />
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_raw_vertex_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Strip Indices" isReadonly="True">
+																						<block name="global_geometry_section_strip_index_block" maxCount="65535" display="index" flags="0" maxIdentifer="MAXIMUM_STRIP_INDICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_strip_index_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_strip_index_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Data" name="Visibility mopp Code" isReadonly="True">
+																						<definition name="global_section_mopp_code_data" maxSize="393216" alignment="4" flags="0" maxIdentifer="k_maximum_structure_bsp_cluster_visibility_mopp_size" requiresByteSwap="true" />
+																					</field>
+																					<field type="Block" name="mopp Reorder Table" isReadonly="True">
+																						<block name="global_geometry_section_strip_index_block" maxCount="65535" display="index" flags="0" maxIdentifer="MAXIMUM_STRIP_INDICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_strip_index_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_strip_index_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Vertex Buffers" isReadonly="True">
+																						<block name="global_geometry_section_vertex_buffer_block" maxCount="512" display="vertex buffer" flags="0" maxIdentifer="MAXIMUM_VERTEX_BUFFERS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_vertex_buffer_block_fields size="32" sizeIdentifer="sizeof(struct rasterizer_vertex_buffer)" fieldCount="2">
+																									<fields>
+																										<field type="VertexBuffer" name="vertex buffer" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_vertex_buffer_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Pad" name="" definition="4" />
+																					<field type="Terminator" />
+																				</fields>
+																			</geometry_section_fieldset_new>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="point data" isReadonly="True">
+																<struct name="global_geometry_point_data_struct" groupTag="PDAT">
+																	<block name="global_geometry_point_data_struct_block" maxCount="1" display="global_geometry_point_data_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<global_geometry_point_data_struct_fields size="56" sizeIdentifer="sizeof(struct geometry_point_data)" fieldCount="5">
+																				<fields>
+																					<field type="Block" name="Raw Points" isReadonly="True">
+																						<block name="global_geometry_raw_point_block" maxCount="32767" display="point" flags="0" maxIdentifer="MAXIMUM_VERTICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_raw_point_block_fields size="68" sizeIdentifer="sizeof(struct geometry_point)" fieldCount="13">
+																									<fields>
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (OLD)" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="Real" name="node_weight" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (NEW)" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="LongInteger" name="Use New Node Indices" isReadonly="True" />
+																										<field type="LongInteger" name="Adjusted Compound Node Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_raw_point_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Data" name="Runtime Point Data" isReadonly="True">
+																						<definition name="global_geometry_runtime_point_data_definition" maxSize="1048544" alignment="0" flags="0" maxIdentifer="MAXIMUM_BYTES_PER_GEOMETRY_RUNTIME_POINT_DATA" />
+																					</field>
+																					<field type="Block" name="Rigid Point Groups" isReadonly="True">
+																						<block name="global_geometry_rigid_point_group_block" maxCount="32767" display="rigid point group" flags="0" maxIdentifer="MAXIMUM_RIGID_POINT_GROUPS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_rigid_point_group_block_fields size="4" sizeIdentifer="sizeof(struct geometry_rigid_point_group)" fieldCount="4">
+																									<fields>
+																										<field type="CharInteger" name="Rigid Node Index" isReadonly="True" />
+																										<field type="CharInteger" name="Nodes/Point" isReadonly="True" />
+																										<field type="ShortInteger" name="Point Count" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_rigid_point_group_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Vertex-Point Indices" isReadonly="True">
+																						<block name="global_geometry_point_data_index_block" maxCount="32767" display="index" flags="0" maxIdentifer="MAXIMUM_VERTICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_point_data_index_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_point_data_index_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</global_geometry_point_data_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Block" name="node map" isReadonly="True">
+																<block name="render_model_node_map_block" maxCount="40" display="index" flags="0" maxIdentifer="MAXIMUM_NODES_PER_RENDER_MODEL_SECTION" version="1">
+																	<versions>
+																		<render_model_node_map_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																			<fields>
+																				<field type="CharInteger" name="node index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</render_model_node_map_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Explanation" name="ISQ INFO" definition="" />
+															<field type="Struct" name="isq info" isReadonly="True">
+																<struct name="global_geometry_isq_info_struct" groupTag="ISQI">
+																	<block name="global_geometry_isq_info_struct_block" maxCount="1" display="global_geometry_isq_info_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<global_geometry_isq_info_struct_fields size="92" sizeIdentifer="sizeof(struct geometry_isq_info)" fieldCount="8">
+																				<fields>
+																					<field type="WordFlags" name="Flags" isReadonly="True">
+																						<definition count="2">
+																							<entry>Compressed Planes</entry>
+																							<entry>Swizzled Planes</entry>
+																						</definition>
+																					</field>
+																					<field type="Pad" name="" definition="2" />
+																					<field type="Block" name="Raw Planes" isReadonly="True">
+																						<block name="global_geometry_plane_block" maxCount="65535" display="plane" flags="0" maxIdentifer="MAXIMUM_TRIANGLES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_plane_block_fields size="16" sizeIdentifer="sizeof(real_plane3d)" fieldCount="2">
+																									<fields>
+																										<field type="RealPlane3D" name="Plane" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_plane_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Data" name="Runtime Plane Data" isReadonly="True">
+																						<definition name="global_geometry_runtime_plane_data_definition" maxSize="2097120" alignment="4" flags="0" maxIdentifer="MAXIMUM_BYTES_PER_GEOMETRY_RUNTIME_ISQ_PLANE_DATA" />
+																					</field>
+																					<field type="Block" name="Rigid Plane Groups" isReadonly="True">
+																						<block name="global_geometry_rigid_plane_group_block" maxCount="65280" display="rigid plane group" flags="0" maxIdentifer="MAXIMUM_RIGID_PLANE_GROUPS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_rigid_plane_group_block_fields size="4" sizeIdentifer="sizeof(struct geometry_rigid_plane_group)" fieldCount="4">
+																									<fields>
+																										<field type="CharInteger" name="Rigid Node Index" isReadonly="True" />
+																										<field type="CharInteger" name="Part Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Triangle Count" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_rigid_plane_group_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Pad" name="" definition="32" />
+																					<field type="Block" name="Explicit Edges" isReadonly="True">
+																						<block name="global_geometry_explicit_edge_block" maxCount="65535" display="explicit edge" flags="0" maxIdentifer="MAXIMUM_EXPLICIT_EDGES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_explicit_edge_block_fields size="8" sizeIdentifer="sizeof(struct geometry_explicit_edge)" fieldCount="7">
+																									<fields>
+																										<arrayStart definition="2" />
+																										<field type="ShortInteger" name="Vertex Index" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="2" />
+																										<field type="ShortInteger" name="Triangle Index" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_explicit_edge_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</global_geometry_isq_info_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Block" name="forward shared edges" isReadonly="True">
+																<block name="render_model_forward_shared_edge_block" maxCount="16384" display="forward shared edge" flags="0" maxIdentifer="MAXIMUM_SHARED_EDGES_PER_GEOMETRY_SECTION" version="1">
+																	<versions>
+																		<render_model_forward_shared_edge_block_fields size="2" sizeIdentifer="sizeof(struct render_model_forward_shared_edge)" fieldCount="2">
+																			<fields>
+																				<field type="ShortInteger" name="triangle index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</render_model_forward_shared_edge_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="forward shared edge groups" isReadonly="True">
+																<block name="render_model_shared_edge_group_block" maxCount="512" display="shared edge group" flags="0" maxIdentifer="MAXIMUM_SHARED_EDGE_GROUPS_PER_GEOMETRY_SECTION" version="1">
+																	<versions>
+																		<render_model_shared_edge_group_block_fields size="8" sizeIdentifer="sizeof(struct render_model_shared_edge_group)" fieldCount="7">
+																			<fields>
+																				<field type="ShortInteger" name="first shared edge index" isReadonly="True" />
+																				<field type="ShortInteger" name="shared edge count" isReadonly="True" />
+																				<field type="Pad" name="" definition="1" />
+																				<field type="CharInteger" name="adjacent region index" isReadonly="True" />
+																				<field type="Pad" name="" definition="1" />
+																				<field type="CharInteger" name="section set index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</render_model_shared_edge_group_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="backward shared edges" isReadonly="True">
+																<block name="render_model_backward_shared_edge_block" maxCount="16384" display="backward shared edge" flags="0" maxIdentifer="MAXIMUM_SHARED_EDGES_PER_GEOMETRY_SECTION" version="1">
+																	<versions>
+																		<render_model_backward_shared_edge_block_fields size="6" sizeIdentifer="sizeof(struct render_model_backward_shared_edge)" fieldCount="5">
+																			<fields>
+																				<arrayStart definition="2" />
+																				<field type="ShortInteger" name="vertex index" isReadonly="True" />
+																				<arrayEnd />
+																				<field type="ShortInteger" name="triangle index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</render_model_backward_shared_edge_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="backward shared edge groups" isReadonly="True">
+																<block name="render_model_shared_edge_group_block" maxCount="512" display="shared edge group" flags="0" maxIdentifer="MAXIMUM_SHARED_EDGE_GROUPS_PER_GEOMETRY_SECTION" version="1">
+																	<versions>
+																		<render_model_shared_edge_group_block_fields size="8" sizeIdentifer="sizeof(struct render_model_shared_edge_group)" fieldCount="7">
+																			<fields>
+																				<field type="ShortInteger" name="first shared edge index" isReadonly="True" />
+																				<field type="ShortInteger" name="shared edge count" isReadonly="True" />
+																				<field type="Pad" name="" definition="1" />
+																				<field type="CharInteger" name="adjacent region index" isReadonly="True" />
+																				<field type="Pad" name="" definition="1" />
+																				<field type="CharInteger" name="section set index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</render_model_shared_edge_group_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Explanation" name="DSQ INFO" definition="" />
+															<field type="Block" name="raw vertices" isReadonly="True">
+																<block name="render_model_dsq_raw_vertex_block" maxCount="65536" display="vertex" flags="0" maxIdentifer="MAXIMUM_DSQ_VERTICES_PER_RENDER_MODEL_SECTION" version="1">
+																	<versions>
+																		<render_model_dsq_raw_vertex_block_fields size="32" sizeIdentifer="sizeof(struct render_model_dsq_vertex)" fieldCount="4">
+																			<fields>
+																				<field type="RealPoint3D" name="position" isReadonly="True" />
+																				<field type="RealPlane3D" name="plane" isReadonly="True" />
+																				<field type="LongInteger" name="node index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</render_model_dsq_raw_vertex_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="strip indices" isReadonly="True">
+																<block name="render_model_dsq_strip_index_block" maxCount="262144" display="index" flags="0" maxIdentifer="MAXIMUM_DSQ_STRIP_INDICES_PER_RENDER_MODEL_SECTION" version="1">
+																	<versions>
+																		<render_model_dsq_strip_index_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																			<fields>
+																				<field type="ShortInteger" name="vertex index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</render_model_dsq_strip_index_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="silhouette quads" isReadonly="True">
+																<block name="render_model_dsq_silhouette_quad_block" maxCount="65536" display="quad" flags="0" maxIdentifer="MAXIMUM_DSQ_SILHOUETTE_QUADS_PER_RENDER_MODEL_SECTION" version="1">
+																	<versions>
+																		<render_model_dsq_silhouette_quad_block_fields size="8" sizeIdentifer="sizeof(struct render_model_dsq_silhouette_quad)" fieldCount="4">
+																			<fields>
+																				<arrayStart definition="4" />
+																				<field type="ShortInteger" name="vertex index" isReadonly="True" />
+																				<arrayEnd />
+																				<field type="Terminator" />
+																			</fields>
+																		</render_model_dsq_silhouette_quad_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="ShortInteger" name="Carmack-silhouette quad count" isReadonly="True" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Pad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</render_model_section_data_tag_field_old>
+													<render_model_section_data_tag_field_new size="180" sizeIdentifer="sizeof(struct render_model_section_data)" fieldCount="5">
+														<fields>
+															<field type="Struct" name="section" isReadonly="True">
+																<struct name="global_geometry_section_struct" groupTag="SECT">
+																	<block name="global_geometry_section_struct_block" maxCount="1" display="global_geometry_section_struct" flags="0" maxIdentifer="1" version="2">
+																		<versions>
+																			<geometry_section_fieldset_old size="272" sizeOverride="244" sizeIdentifer="sizeof(struct geometry_section_old)" fieldCount="10">
+																				<fields>
+																					<field type="Block" name="Raw Vertices" isReadonly="True">
+																						<block name="global_geometry_section_raw_vertex_block" maxCount="32767" display="vertex" flags="0" maxIdentifer="MAXIMUM_VERTICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_raw_vertex_block_fields size="196" sizeIdentifer="sizeof(struct geometry_vertex)" fieldCount="25">
+																									<fields>
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (OLD)" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="Real" name="node_weight" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (NEW)" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="LongInteger" name="Use New Node Indices" isReadonly="True" />
+																										<field type="LongInteger" name="Adjusted Compound Node Index" isReadonly="True" />
+																										<field type="RealPoint2D" name="texcoord" isReadonly="True" />
+																										<field type="RealVector3D" name="Normal" isReadonly="True" />
+																										<field type="RealVector3D" name="Binormal" isReadonly="True" />
+																										<field type="RealVector3D" name="Tangent" isReadonly="True" />
+																										<field type="RealVector3D" name="Anisotropic Binormal" isReadonly="True" />
+																										<field type="RealPoint2D" name="Secondary texcoord" isReadonly="True" />
+																										<field type="RealRgbColor" name="Primary Lightmap Color" />
+																										<field type="RealPoint2D" name="Primary Lightmap texcoord" />
+																										<field type="RealVector3D" name="Primary Lightmap Incident Direction" />
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Pad" name="" definition="8" />
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_raw_vertex_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<arrayStart definition="3" />
+																					<field type="VertexBuffer" name="vertex buffer" isReadonly="True" />
+																					<arrayEnd />
+																					<field type="VertexBuffer" name="transparent position" isReadonly="True" />
+																					<field type="Block" name="Vertex Buffers" isReadonly="True">
+																						<block name="global_geometry_section_vertex_buffer_block" maxCount="512" display="vertex buffer" flags="0" maxIdentifer="MAXIMUM_VERTEX_BUFFERS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_vertex_buffer_block_fields size="32" sizeIdentifer="sizeof(struct rasterizer_vertex_buffer)" fieldCount="2">
+																									<fields>
+																										<field type="VertexBuffer" name="vertex buffer" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_vertex_buffer_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Strip Indices" isReadonly="True">
+																						<block name="global_geometry_section_strip_index_block" maxCount="65535" display="index" flags="0" maxIdentifer="MAXIMUM_STRIP_INDICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_strip_index_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_strip_index_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Parts" isReadonly="True">
+																						<block name="global_geometry_part_block" maxCount="255" display="part" flags="0" maxIdentifer="MAXIMUM_PARTS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_part_block_fields size="100" sizeIdentifer="sizeof(struct geometry_part_old)" fieldCount="29">
+																									<fields>
+																										<field type="Enum" name="Type" isReadonly="True">
+																											<definition count="6">
+																												<entry>Not Drawn</entry>
+																												<entry>Opaque Shadow Only</entry>
+																												<entry>Opaque Shadow-Casting</entry>
+																												<entry>Opaque Nonshadowing</entry>
+																												<entry>Transparent</entry>
+																												<entry>Lightmap Only</entry>
+																											</definition>
+																										</field>
+																										<field type="WordFlags" name="Flags" isReadonly="True">
+																											<definition count="5">
+																												<entry>Decalable</entry>
+																												<entry>New Part Types</entry>
+																												<entry>Dislikes Photons</entry>
+																												<entry>Override Triangle List</entry>
+																												<entry>ignored by lightmapper</entry>
+																											</definition>
+																										</field>
+																										<field type="ShortBlockIndex1" name="Material" isReadonly="True" definition="global_geometry_material_block" />
+																										<field type="Enum" name="Geometry Subclassification" isReadonly="True">
+																											<definition count="5">
+																												<entry>Default (Opaque)</entry>
+																												<entry>Faceted (Opaque)</entry>
+																												<entry>Simple (Transparent)</entry>
+																												<entry>Normal (Transparent)</entry>
+																												<entry>Tangent Space (Transparent)</entry>
+																											</definition>
+																										</field>
+																										<field type="ShortInteger" name="Strip Start Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Strip Length" isReadonly="True" />
+																										<field type="ShortInteger" name="First Strip Segment Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Strip Segment Count" isReadonly="True" />
+																										<field type="ShortInteger" name="First Vertex Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Vertex Count" isReadonly="True" />
+																										<field type="ShortInteger" name="First Triangle Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Triangle Count" isReadonly="True" />
+																										<field type="CharInteger" name="Max Nodes/Vertex" isReadonly="True" />
+																										<field type="CharInteger" name="Contributing Compound Node Count" isReadonly="True" />
+																										<field type="WordFlags" name="Vertex Usage Flags" isReadonly="True">
+																											<definition count="6">
+																												<entry>Position Software Transformed</entry>
+																												<entry>texcoord</entry>
+																												<entry>Normal</entry>
+																												<entry>Binormal/Tangent</entry>
+																												<entry>Anisotropic Binormal</entry>
+																												<entry>Secondary texcoord</entry>
+																											</definition>
+																										</field>
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Pad" name="" definition="1" />
+																										<field type="Pad" name="" definition="3" />
+																										<field type="Explanation" name="CENTROID" definition="" />
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="CharInteger" name="Node Index" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="3" />
+																										<field type="Real" name="Node Weight" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="Real" name="lod mipmap magic number" isReadonly="True" />
+																										<field type="Skip" name="" definition="24" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_part_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Pad" name="" definition="96" />
+																					<field type="Terminator" />
+																				</fields>
+																			</geometry_section_fieldset_old>
+																			<geometry_section_fieldset_new size="108" sizeIdentifer="sizeof(struct geometry_section)" fieldCount="10">
+																				<fields>
+																					<field type="Block" name="Parts" isReadonly="True">
+																						<block name="global_geometry_part_block_new" maxCount="255" display="part" flags="0" maxIdentifer="MAXIMUM_PARTS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_part_block_new_fields size="72" sizeIdentifer="sizeof(struct geometry_part)" fieldCount="20">
+																									<fields>
+																										<field type="Enum" name="Type" isReadonly="True">
+																											<definition count="6">
+																												<entry>Not Drawn</entry>
+																												<entry>Opaque Shadow Only</entry>
+																												<entry>Opaque Shadow-Casting</entry>
+																												<entry>Opaque Nonshadowing</entry>
+																												<entry>Transparent</entry>
+																												<entry>Lightmap Only</entry>
+																											</definition>
+																										</field>
+																										<field type="WordFlags" name="Flags" isReadonly="True">
+																											<definition count="5">
+																												<entry>Decalable</entry>
+																												<entry>New Part Types</entry>
+																												<entry>Dislikes Photons</entry>
+																												<entry>Override Triangle List</entry>
+																												<entry>ignored by lightmapper</entry>
+																											</definition>
+																										</field>
+																										<field type="ShortBlockIndex1" name="Material" isReadonly="True" definition="global_geometry_material_block" />
+																										<field type="ShortInteger" name="Strip Start Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Strip Length" isReadonly="True" />
+																										<field type="ShortInteger" name="First Subpart Index" isReadonly="True" />
+																										<field type="ShortInteger" name="Subpart Count" isReadonly="True" />
+																										<field type="CharInteger" name="Max Nodes/Vertex" isReadonly="True" />
+																										<field type="CharInteger" name="Contributing Compound Node Count" isReadonly="True" />
+																										<field type="Explanation" name="CENTROID" definition="" />
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="CharInteger" name="Node Index" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="3" />
+																										<field type="Real" name="Node Weight" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="Real" name="lod mipmap magic number" isReadonly="True" />
+																										<field type="Skip" name="" definition="24" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_part_block_new_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Subparts" isReadonly="True">
+																						<block name="global_subparts_block" maxCount="32768" display="subparts" flags="0" maxIdentifer="MAXIMUM_SUBPARTS_PER_SECTION" version="1">
+																							<versions>
+																								<global_subparts_block_fields size="8" sizeIdentifer="sizeof(geometry_subpart)" fieldCount="5">
+																									<fields>
+																										<field type="ShortInteger" name="indices_start_index" isReadonly="True" />
+																										<field type="ShortInteger" name="indices_length" isReadonly="True" />
+																										<field type="ShortInteger" name="visibility_bounds_index" isReadonly="True" />
+																										<field type="ShortInteger" name="Part Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_subparts_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Visibility Bounds" isReadonly="True">
+																						<block name="global_visibility_bounds_block" maxCount="32768" display="visibility bounds" flags="0" maxIdentifer="MAXIMUM_SUBPARTS_PER_SECTION" version="1">
+																							<versions>
+																								<global_visibility_bounds_block_fields size="20" sizeIdentifer="sizeof(geometry_visibility)" fieldCount="7">
+																									<fields>
+																										<field type="Real" name="Position x" isReadonly="True" />
+																										<field type="Real" name="Position y" isReadonly="True" />
+																										<field type="Real" name="Position z" isReadonly="True" />
+																										<field type="Real" name="Radius" isReadonly="True" />
+																										<field type="CharInteger" name="Node 0" isReadonly="True" />
+																										<field type="Pad" name="" definition="3" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_visibility_bounds_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Raw Vertices" isReadonly="True">
+																						<block name="global_geometry_section_raw_vertex_block" maxCount="32767" display="vertex" flags="0" maxIdentifer="MAXIMUM_VERTICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_raw_vertex_block_fields size="196" sizeIdentifer="sizeof(struct geometry_vertex)" fieldCount="25">
+																									<fields>
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (OLD)" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="Real" name="node_weight" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (NEW)" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="LongInteger" name="Use New Node Indices" isReadonly="True" />
+																										<field type="LongInteger" name="Adjusted Compound Node Index" isReadonly="True" />
+																										<field type="RealPoint2D" name="texcoord" isReadonly="True" />
+																										<field type="RealVector3D" name="Normal" isReadonly="True" />
+																										<field type="RealVector3D" name="Binormal" isReadonly="True" />
+																										<field type="RealVector3D" name="Tangent" isReadonly="True" />
+																										<field type="RealVector3D" name="Anisotropic Binormal" isReadonly="True" />
+																										<field type="RealPoint2D" name="Secondary texcoord" isReadonly="True" />
+																										<field type="RealRgbColor" name="Primary Lightmap Color" />
+																										<field type="RealPoint2D" name="Primary Lightmap texcoord" />
+																										<field type="RealVector3D" name="Primary Lightmap Incident Direction" />
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Pad" name="" definition="8" />
+																										<field type="Pad" name="" definition="12" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_raw_vertex_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Strip Indices" isReadonly="True">
+																						<block name="global_geometry_section_strip_index_block" maxCount="65535" display="index" flags="0" maxIdentifer="MAXIMUM_STRIP_INDICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_strip_index_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_strip_index_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Data" name="Visibility mopp Code" isReadonly="True">
+																						<definition name="global_section_mopp_code_data" maxSize="393216" alignment="4" flags="0" maxIdentifer="k_maximum_structure_bsp_cluster_visibility_mopp_size" requiresByteSwap="true" />
+																					</field>
+																					<field type="Block" name="mopp Reorder Table" isReadonly="True">
+																						<block name="global_geometry_section_strip_index_block" maxCount="65535" display="index" flags="0" maxIdentifer="MAXIMUM_STRIP_INDICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_strip_index_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_strip_index_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Vertex Buffers" isReadonly="True">
+																						<block name="global_geometry_section_vertex_buffer_block" maxCount="512" display="vertex buffer" flags="0" maxIdentifer="MAXIMUM_VERTEX_BUFFERS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_section_vertex_buffer_block_fields size="32" sizeIdentifer="sizeof(struct rasterizer_vertex_buffer)" fieldCount="2">
+																									<fields>
+																										<field type="VertexBuffer" name="vertex buffer" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_section_vertex_buffer_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Pad" name="" definition="4" />
+																					<field type="Terminator" />
+																				</fields>
+																			</geometry_section_fieldset_new>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Struct" name="point data" isReadonly="True">
+																<struct name="global_geometry_point_data_struct" groupTag="PDAT">
+																	<block name="global_geometry_point_data_struct_block" maxCount="1" display="global_geometry_point_data_struct" flags="0" maxIdentifer="1" version="1">
+																		<versions>
+																			<global_geometry_point_data_struct_fields size="56" sizeIdentifer="sizeof(struct geometry_point_data)" fieldCount="5">
+																				<fields>
+																					<field type="Block" name="Raw Points" isReadonly="True">
+																						<block name="global_geometry_raw_point_block" maxCount="32767" display="point" flags="0" maxIdentifer="MAXIMUM_VERTICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_raw_point_block_fields size="68" sizeIdentifer="sizeof(struct geometry_point)" fieldCount="13">
+																									<fields>
+																										<field type="RealPoint3D" name="Position" isReadonly="True" />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (OLD)" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="Real" name="node_weight" isReadonly="True" />
+																										<arrayEnd />
+																										<arrayStart definition="4" />
+																										<field type="LongInteger" name="Node Index (NEW)" isReadonly="True" />
+																										<arrayEnd />
+																										<field type="LongInteger" name="Use New Node Indices" isReadonly="True" />
+																										<field type="LongInteger" name="Adjusted Compound Node Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_raw_point_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Data" name="Runtime Point Data" isReadonly="True">
+																						<definition name="global_geometry_runtime_point_data_definition" maxSize="1048544" alignment="0" flags="0" maxIdentifer="MAXIMUM_BYTES_PER_GEOMETRY_RUNTIME_POINT_DATA" />
+																					</field>
+																					<field type="Block" name="Rigid Point Groups" isReadonly="True">
+																						<block name="global_geometry_rigid_point_group_block" maxCount="32767" display="rigid point group" flags="0" maxIdentifer="MAXIMUM_RIGID_POINT_GROUPS_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_rigid_point_group_block_fields size="4" sizeIdentifer="sizeof(struct geometry_rigid_point_group)" fieldCount="4">
+																									<fields>
+																										<field type="CharInteger" name="Rigid Node Index" isReadonly="True" />
+																										<field type="CharInteger" name="Nodes/Point" isReadonly="True" />
+																										<field type="ShortInteger" name="Point Count" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_rigid_point_group_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Block" name="Vertex-Point Indices" isReadonly="True">
+																						<block name="global_geometry_point_data_index_block" maxCount="32767" display="index" flags="0" maxIdentifer="MAXIMUM_VERTICES_PER_GEOMETRY_SECTION" version="1">
+																							<versions>
+																								<global_geometry_point_data_index_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																									<fields>
+																										<field type="ShortInteger" name="Index" isReadonly="True" />
+																										<field type="Terminator" />
+																									</fields>
+																								</global_geometry_point_data_index_block_fields>
+																							</versions>
+																						</block>
+																					</field>
+																					<field type="Terminator" />
+																				</fields>
+																			</global_geometry_point_data_struct_fields>
+																		</versions>
+																	</block>
+																</struct>
+															</field>
+															<field type="Block" name="node map" isReadonly="True">
+																<block name="render_model_node_map_block" maxCount="40" display="index" flags="0" maxIdentifer="MAXIMUM_NODES_PER_RENDER_MODEL_SECTION" version="1">
+																	<versions>
+																		<render_model_node_map_block_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+																			<fields>
+																				<field type="CharInteger" name="node index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</render_model_node_map_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Pad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</render_model_section_data_tag_field_new>
+												</versions>
+											</block>
+										</field>
+										<field type="Struct" name="geometry block info" isReadonly="True">
+											<struct name="global_geometry_block_info_struct" groupTag="BLOK">
+												<block name="global_geometry_block_info_struct_block" maxCount="1" display="global_geometry_block_info_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<global_geometry_block_info_struct_fields size="40" sizeIdentifer="sizeof(struct geometry_block_info)" fieldCount="11">
+															<fields>
+																<field type="Explanation" name="BLOCK INFO" definition="" />
+																<field type="LongInteger" name="Block Offset" isReadonly="True" />
+																<field type="LongInteger" name="Block Size" isReadonly="True" />
+																<field type="LongInteger" name="Section Data Size" isReadonly="True" />
+																<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																<field type="Block" name="Resources" isReadonly="True">
+																	<block name="global_geometry_block_resource_block" maxCount="1024" display="block resources" flags="0" maxIdentifer="MAXIMUM_RESOURCES_PER_GEOMETRY_BLOCK" version="1">
+																		<versions>
+																			<global_geometry_block_resource_block_fields size="16" sizeIdentifer="sizeof(struct geometry_block_resource)" fieldCount="7">
+																				<fields>
+																					<field type="CharEnum" name="Type" isReadonly="True">
+																						<definition count="3">
+																							<entry>Tag Block</entry>
+																							<entry>Tag Data</entry>
+																							<entry>Vertex Buffer</entry>
+																						</definition>
+																					</field>
+																					<field type="Pad" name="" definition="3" />
+																					<field type="ShortInteger" name="Primary Locator" isReadonly="True" />
+																					<field type="ShortInteger" name="Secondary Locator" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Offset" isReadonly="True" />
+																					<field type="Terminator" />
+																				</fields>
+																			</global_geometry_block_resource_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Pad" name="" definition="4" />
+																<field type="ShortInteger" name="Owner Tag Section Offset" isReadonly="True" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Pad" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</global_geometry_block_info_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</render_model_section_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="invalid section pair bits" isReadonly="True">
+						<block name="render_model_invalid_section_pairs_block" maxCount="1013" display="bitvector" flags="0" maxIdentifer="((((MAXIMUM_SECTIONS_PER_RENDER_MODEL*(MAXIMUM_SECTIONS_PER_RENDER_MODEL - 1)/2)+(LONG_BITS-1))&gt;&gt;LONG_BITS_BITS))" version="1">
+							<versions>
+								<render_model_invalid_section_pairs_block_fields size="4" sizeIdentifer="sizeof(dword)" fieldCount="2">
+									<fields>
+										<field type="LongInteger" name="bits" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</render_model_invalid_section_pairs_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="section groups" isReadonly="True">
+						<block name="render_model_section_group_block" maxCount="6" display="section group" flags="0" maxIdentifer="NUMBER_OF_GEOMETRY_DETAIL_LEVELS" version="1">
+							<versions>
+								<render_model_section_group_block_fields size="16" sizeIdentifer="sizeof(struct render_model_section_group)" fieldCount="4">
+									<fields>
+										<field type="WordFlags" name="detail levels" isReadonly="True">
+											<definition count="6">
+												<entry>L1 (super low)</entry>
+												<entry>L2 (low)</entry>
+												<entry>L3 (medium)</entry>
+												<entry>L4 (high)</entry>
+												<entry>L5 (super high)</entry>
+												<entry>L6 (hollywood)</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Block" name="compound nodes" isReadonly="True">
+											<block name="render_model_compound_node_block" maxCount="255" display="compound node" flags="0" maxIdentifer="MAXIMUM_NODES_PER_MODEL" version="1">
+												<versions>
+													<render_model_compound_node_block_fields size="16" sizeIdentifer="sizeof(struct render_model_compound_node)" fieldCount="7">
+														<fields>
+															<arrayStart definition="4" />
+															<field type="CharInteger" name="node index" isReadonly="True" />
+															<arrayEnd />
+															<arrayStart definition="3" />
+															<field type="Real" name="node weight" isReadonly="True" />
+															<arrayEnd />
+															<field type="Terminator" />
+														</fields>
+													</render_model_compound_node_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</render_model_section_group_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="CharInteger" name="L1 section group index" units="(super low)" isReadonly="True" />
+					<field type="CharInteger" name="L2 section group index" units="(low)" isReadonly="True" />
+					<field type="CharInteger" name="L3 section group index" units="(medium)" isReadonly="True" />
+					<field type="CharInteger" name="L4 section group index" units="(high)" isReadonly="True" />
+					<field type="CharInteger" name="L5 section group index" units="(super high)" isReadonly="True" />
+					<field type="CharInteger" name="L6 section group index" units="(hollywood)" isReadonly="True" />
+					<field type="Pad" name="" definition="2" />
+					<field type="LongInteger" name="node list checksum" isReadonly="True" />
+					<field type="Block" name="nodes" isReadonly="True">
+						<block name="render_model_node_block" maxCount="255" display="node" flags="0" maxIdentifer="MAXIMUM_NODES_PER_MODEL" version="1">
+							<versions>
+								<render_model_node_block_fields size="96" sizeIdentifer="sizeof(struct render_model_node)" fieldCount="14">
+									<fields>
+										<field type="OldStringId" name="name" isBlockName="True" isReadonly="True" />
+										<field type="ShortBlockIndex1" name="parent node" isReadonly="True" definition="render_model_node_block" />
+										<field type="ShortBlockIndex1" name="first child node" isReadonly="True" definition="render_model_node_block" />
+										<field type="ShortBlockIndex1" name="next sibling node" isReadonly="True" definition="render_model_node_block" />
+										<field type="ShortInteger" name="import node index" isReadonly="True" />
+										<field type="RealPoint3D" name="default translation" isReadonly="True" />
+										<field type="RealQuaternion" name="default rotation" isReadonly="True" />
+										<field type="RealVector3D" name="inverse forward" isReadonly="True" />
+										<field type="RealVector3D" name="inverse left" isReadonly="True" />
+										<field type="RealVector3D" name="inverse up" isReadonly="True" />
+										<field type="RealPoint3D" name="inverse position" isReadonly="True" />
+										<field type="Real" name="inverse scale" isReadonly="True" />
+										<field type="Real" name="distance from parent" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</render_model_node_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="node map (OLD)" isReadonly="True">
+						<block name="render_model_node_map_block_OLD" maxCount="640" display="index" flags="0" maxIdentifer="MAXIMUM_NODES_PER_RENDER_MODEL_SECTION*MAXIMUM_REGIONS_PER_MODEL" version="1">
+							<versions>
+								<render_model_node_map_block_OLD_fields size="1" sizeIdentifer="sizeof(byte)" fieldCount="2">
+									<fields>
+										<field type="CharInteger" name="node index" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</render_model_node_map_block_OLD_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="marker groups" isReadonly="True">
+						<block name="render_model_marker_group_block" maxCount="4096" display="marker group" flags="0" maxIdentifer="MAXIMUM_MARKER_GROUPS_PER_RENDER_MODEL" procPostprocess="True" version="1">
+							<versions>
+								<render_model_marker_group_block_fields size="16" sizeIdentifer="sizeof(struct render_model_marker_group)" fieldCount="3">
+									<fields>
+										<field type="OldStringId" name="name" isBlockName="True" isReadonly="True" />
+										<field type="Block" name="markers" isReadonly="True">
+											<block name="render_model_marker_block" maxCount="256" display="marker" flags="0" maxIdentifer="MAXIMUM_MARKERS_PER_RENDER_MODEL_MARKER_GROUP" version="1">
+												<versions>
+													<render_model_marker_block_fields size="36" sizeIdentifer="sizeof(struct render_model_marker)" fieldCount="8">
+														<fields>
+															<field type="CharInteger" name="region index" isReadonly="True" />
+															<field type="CharInteger" name="permutation index" isReadonly="True" />
+															<field type="CharInteger" name="node index" isReadonly="True" />
+															<field type="Pad" name="" definition="1" />
+															<field type="RealPoint3D" name="translation" isReadonly="True" />
+															<field type="RealQuaternion" name="rotation" isReadonly="True" />
+															<field type="Real" name="scale" />
+															<field type="Terminator" />
+														</fields>
+													</render_model_marker_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</render_model_marker_group_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="materials" isReadonly="True">
+						<block name="global_geometry_material_block" maxCount="1024" display="material" flags="0" maxIdentifer="MAXIMUM_MATERIALS_PER_GEOMETRY" version="1">
+							<versions>
+								<global_geometry_material_block_fields size="52" sizeIdentifer="sizeof(struct geometry_material)" fieldCount="7">
+									<fields>
+										<field type="TagReference" name="Old Shader" isReadonly="True">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="TagReference" name="Shader" isBlockName="True" isReadonly="True">
+											<definition flags="0" groupTag="shad" />
+										</field>
+										<field type="Block" name="Properties" isReadonly="True">
+											<block name="global_geometry_material_property_block" maxCount="16" display="material property" flags="0" maxIdentifer="MAXIMUM_PROPERTIES_PER_MATERIAL" version="1">
+												<versions>
+													<global_geometry_material_property_block_fields size="8" sizeIdentifer="sizeof(struct geometry_material_property)" fieldCount="4">
+														<fields>
+															<field type="Enum" name="Type" isReadonly="True">
+																<definition count="4">
+																	<entry>Lightmap Resolution</entry>
+																	<entry>Lightmap Power</entry>
+																	<entry>Lightmap Half Life</entry>
+																	<entry>Lightmap Diffuse Scale</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="Int Value" isReadonly="True" />
+															<field type="Real" name="Real Value" isReadonly="True" />
+															<field type="Terminator" />
+														</fields>
+													</global_geometry_material_property_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="4" />
+										<field type="CharInteger" name="Breakable Surface Index" isReadonly="True" />
+										<field type="Pad" name="" definition="3" />
+										<field type="Terminator" />
+									</fields>
+								</global_geometry_material_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="errors" isReadonly="True">
+						<block name="global_error_report_categories_block" maxCount="64" display="error report category" flags="0" maxIdentifer="MAXIMUM_ERROR_REPORT_CATEGORIES" version="1">
+							<versions>
+								<global_error_report_categories_block_fields size="680" sizeIdentifer="sizeof(struct error_report_category)" fieldCount="8">
+									<fields>
+										<field type="LongString" name="Name" isBlockName="True" isReadonly="True" />
+										<field type="Enum" name="Report Type" isReadonly="True">
+											<definition count="4">
+												<entry>Silent</entry>
+												<entry>Comment</entry>
+												<entry>Warning</entry>
+												<entry>Error</entry>
+											</definition>
+										</field>
+										<field type="WordFlags" name="Flags" isReadonly="True">
+											<definition count="5">
+												<entry>Rendered</entry>
+												<entry>Tangent Space</entry>
+												<entry>Noncritical</entry>
+												<entry>Lightmap Light</entry>
+												<entry>Report key is valid.</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Pad" name="" definition="404" />
+										<field type="Block" name="Reports" isReadonly="True">
+											<block name="error_reports_block" maxCount="1024" display="error report" flags="0" maxIdentifer="MAXIMUM_REPORTS_PER_ERROR_REPORT_CATEGORY" version="1">
+												<versions>
+													<error_reports_block_fields size="644" sizeIdentifer="sizeof(struct error_report)" fieldCount="20">
+														<fields>
+															<field type="Enum" name="Type" isReadonly="True">
+																<definition count="4">
+																	<entry>Silent</entry>
+																	<entry>Comment</entry>
+																	<entry>Warning</entry>
+																	<entry>Error</entry>
+																</definition>
+															</field>
+															<field type="WordFlags" name="Flags" isReadonly="True">
+																<definition count="5">
+																	<entry>Rendered</entry>
+																	<entry>Tangent Space</entry>
+																	<entry>Noncritical</entry>
+																	<entry>Lightmap Light</entry>
+																	<entry>Report key is valid.</entry>
+																</definition>
+															</field>
+															<field type="Data" name="Text" isReadonly="True">
+																<definition name="error_report_string_data" maxSize="8192" alignment="0" flags="2" maxIdentifer="MAXIMUM_ERROR_REPORT_STRING_LENGTH+1" />
+															</field>
+															<field type="String" name="Source Filename" isReadonly="True" />
+															<field type="LongInteger" name="Source Line Number" isReadonly="True" />
+															<field type="Block" name="Vertices" isReadonly="True">
+																<block name="error_report_vertices_block" maxCount="1024" display="error report vertex" flags="0" maxIdentifer="MAXIMUM_VERTICES_PER_ERROR_REPORT" version="1">
+																	<versions>
+																		<error_report_vertices_block_fields size="52" sizeIdentifer="sizeof(struct error_report_vertex)" fieldCount="10">
+																			<fields>
+																				<field type="RealPoint3D" name="Position" isReadonly="True" />
+																				<arrayStart definition="4" />
+																				<field type="CharInteger" name="Node Index" isReadonly="True" />
+																				<arrayEnd />
+																				<arrayStart definition="4" />
+																				<field type="Real" name="Node Weight" isReadonly="True" />
+																				<arrayEnd />
+																				<field type="RealArgbColor" name="Color" isReadonly="True" />
+																				<field type="Real" name="Screen Size" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</error_report_vertices_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="Vectors" isReadonly="True">
+																<block name="error_report_vectors_block" maxCount="1024" display="error report vector" flags="0" maxIdentifer="MAXIMUM_VECTORS_PER_ERROR_REPORT" version="1">
+																	<versions>
+																		<error_report_vectors_block_fields size="64" sizeIdentifer="sizeof(struct error_report_vector)" fieldCount="11">
+																			<fields>
+																				<field type="RealPoint3D" name="Position" isReadonly="True" />
+																				<arrayStart definition="4" />
+																				<field type="CharInteger" name="Node Index" isReadonly="True" />
+																				<arrayEnd />
+																				<arrayStart definition="4" />
+																				<field type="Real" name="Node Weight" isReadonly="True" />
+																				<arrayEnd />
+																				<field type="RealArgbColor" name="Color" isReadonly="True" />
+																				<field type="RealVector3D" name="Normal" isReadonly="True" />
+																				<field type="Real" name="Screen Length" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</error_report_vectors_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="Lines" isReadonly="True">
+																<block name="error_report_lines_block" maxCount="1024" display="error report line" flags="0" maxIdentifer="MAXIMUM_LINES_PER_ERROR_REPORT" version="1">
+																	<versions>
+																		<error_report_lines_block_fields size="80" sizeIdentifer="sizeof(struct error_report_line)" fieldCount="11">
+																			<fields>
+																				<arrayStart definition="2" />
+																				<field type="RealPoint3D" name="Position" isReadonly="True" />
+																				<arrayStart definition="4" />
+																				<field type="CharInteger" name="Node Index" isReadonly="True" />
+																				<arrayEnd />
+																				<arrayStart definition="4" />
+																				<field type="Real" name="Node Weight" isReadonly="True" />
+																				<arrayEnd />
+																				<arrayEnd />
+																				<field type="RealArgbColor" name="Color" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</error_report_lines_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="Triangles" isReadonly="True">
+																<block name="error_report_triangles_block" maxCount="1024" display="error report triangle" flags="0" maxIdentifer="MAXIMUM_TRIANGLES_PER_ERROR_REPORT" version="1">
+																	<versions>
+																		<error_report_triangles_block_fields size="112" sizeIdentifer="sizeof(struct error_report_triangle)" fieldCount="11">
+																			<fields>
+																				<arrayStart definition="3" />
+																				<field type="RealPoint3D" name="Position" isReadonly="True" />
+																				<arrayStart definition="4" />
+																				<field type="CharInteger" name="Node Index" isReadonly="True" />
+																				<arrayEnd />
+																				<arrayStart definition="4" />
+																				<field type="Real" name="Node Weight" isReadonly="True" />
+																				<arrayEnd />
+																				<arrayEnd />
+																				<field type="RealArgbColor" name="Color" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</error_report_triangles_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="Quads" isReadonly="True">
+																<block name="error_report_quads_block" maxCount="1024" display="error report quad" flags="0" maxIdentifer="MAXIMUM_QUADS_PER_ERROR_REPORT" version="1">
+																	<versions>
+																		<error_report_quads_block_fields size="144" sizeIdentifer="sizeof(struct error_report_quad)" fieldCount="11">
+																			<fields>
+																				<arrayStart definition="4" />
+																				<field type="RealPoint3D" name="Position" isReadonly="True" />
+																				<arrayStart definition="4" />
+																				<field type="CharInteger" name="Node Index" isReadonly="True" />
+																				<arrayEnd />
+																				<arrayStart definition="4" />
+																				<field type="Real" name="Node Weight" isReadonly="True" />
+																				<arrayEnd />
+																				<arrayEnd />
+																				<field type="RealArgbColor" name="Color" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</error_report_quads_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="Comments" isReadonly="True">
+																<block name="error_report_comments_block" maxCount="1024" display="error report comment" flags="0" maxIdentifer="MAXIMUM_COMMENTS_PER_ERROR_REPORT" version="1">
+																	<versions>
+																		<error_report_comments_block_fields size="68" sizeIdentifer="sizeof(struct error_report_comment)" fieldCount="10">
+																			<fields>
+																				<field type="Data" name="Text" isReadonly="True">
+																					<definition name="error_report_string_data" maxSize="8192" alignment="0" flags="2" maxIdentifer="MAXIMUM_ERROR_REPORT_STRING_LENGTH+1" />
+																				</field>
+																				<field type="RealPoint3D" name="Position" isReadonly="True" />
+																				<arrayStart definition="4" />
+																				<field type="CharInteger" name="Node Index" isReadonly="True" />
+																				<arrayEnd />
+																				<arrayStart definition="4" />
+																				<field type="Real" name="Node Weight" isReadonly="True" />
+																				<arrayEnd />
+																				<field type="RealArgbColor" name="Color" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</error_report_comments_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Pad" name="" definition="380" />
+															<field type="LongInteger" name="Report Key" isReadonly="True" />
+															<field type="LongInteger" name="Node Index" isReadonly="True" />
+															<field type="RealBounds" name="Bounds x" isReadonly="True" />
+															<field type="RealBounds" name="Bounds y" isReadonly="True" />
+															<field type="RealBounds" name="Bounds z" isReadonly="True" />
+															<field type="RealArgbColor" name="Color" isReadonly="True" />
+															<field type="Pad" name="" definition="84" />
+															<field type="Terminator" />
+														</fields>
+													</error_reports_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</global_error_report_categories_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Real" name="don't draw over camera cosine angle" help="dont draw fp model when camera &gt; this angle cosine (-1,1) Sugg. -0.2. 0 disables." />
+					<field type="Block" name="PRT info">
+						<block name="prt_info_block" maxCount="1" display="prt_info_block" flags="0" maxIdentifer="1" procDispose="True" version="1">
+							<versions>
+								<prt_info_block_fields size="108" sizeIdentifer="sizeof(struct prt_info)" fieldCount="15">
+									<fields>
+										<field type="ShortInteger" name="SH Order" isReadonly="True" />
+										<field type="ShortInteger" name="num of clusters" isReadonly="True" />
+										<field type="ShortInteger" name="pca vectors per cluster" isReadonly="True" />
+										<field type="ShortInteger" name="number of rays" isReadonly="True" />
+										<field type="ShortInteger" name="number of bounces" isReadonly="True" />
+										<field type="ShortInteger" name="mat index for sbsfc scattering" isReadonly="True" />
+										<field type="Real" name="length scale" isReadonly="True" />
+										<field type="ShortInteger" name="number of lods in model" isReadonly="True" />
+										<field type="Pad" name="" definition="2" />
+										<field type="Block" name="lod info" isReadonly="True">
+											<block name="prt_lod_info_block" maxCount="6" display="prt lod info" flags="0" maxIdentifer="NUMBER_OF_GEOMETRY_DETAIL_LEVELS" version="1">
+												<versions>
+													<prt_lod_info_block_fields size="16" sizeIdentifer="sizeof(struct prt_lod_info)" fieldCount="3">
+														<fields>
+															<field type="LongInteger" name="cluster offset" isReadonly="True" />
+															<field type="Block" name="section info" isReadonly="True">
+																<block name="prt_section_info_block" maxCount="255" display="prt section info" flags="0" maxIdentifer="MAXIMUM_SECTIONS_PER_RENDER_MODEL" version="1">
+																	<versions>
+																		<prt_section_info_block_fields size="8" sizeIdentifer="sizeof(struct prt_section_info)" fieldCount="3">
+																			<fields>
+																				<field type="LongInteger" name="section index" isReadonly="True" />
+																				<field type="LongInteger" name="pca data offset" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</prt_section_info_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</prt_lod_info_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="cluster basis" isReadonly="True">
+											<block name="prt_cluster_basis_block" maxCount="34560" display="cluster basis" flags="0" maxIdentifer="k_max_cluster_data_size" version="1">
+												<versions>
+													<prt_cluster_basis_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+														<fields>
+															<field type="Real" name="basis data" />
+															<field type="Terminator" />
+														</fields>
+													</prt_cluster_basis_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="raw_pca_data" isReadonly="True">
+											<block name="prt_raw_pca_data_block" maxCount="150405120" display="raw pca data" flags="0" maxIdentifer="k_max_pca_per_vertex_data_size" version="1">
+												<versions>
+													<prt_raw_pca_data_block_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+														<fields>
+															<field type="Real" name="raw pca data" />
+															<field type="Terminator" />
+														</fields>
+													</prt_raw_pca_data_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Block" name="vertex buffers" isReadonly="True">
+											<block name="prt_vertex_buffers_block" maxCount="255" display="vertex buffers" flags="0" maxIdentifer="MAXIMUM_SECTIONS_PER_RENDER_MODEL" version="1">
+												<versions>
+													<prt_vertex_buffers_block_fields size="32" sizeIdentifer="sizeof(rasterizer_vertex_buffer)" fieldCount="2">
+														<fields>
+															<field type="VertexBuffer" name="vertex buffer" isReadonly="True" />
+															<field type="Terminator" />
+														</fields>
+													</prt_vertex_buffers_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Struct" name="geometry block info" isReadonly="True">
+											<struct name="global_geometry_block_info_struct" groupTag="BLOK">
+												<block name="global_geometry_block_info_struct_block" maxCount="1" display="global_geometry_block_info_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<global_geometry_block_info_struct_fields size="40" sizeIdentifer="sizeof(struct geometry_block_info)" fieldCount="11">
+															<fields>
+																<field type="Explanation" name="BLOCK INFO" definition="" />
+																<field type="LongInteger" name="Block Offset" isReadonly="True" />
+																<field type="LongInteger" name="Block Size" isReadonly="True" />
+																<field type="LongInteger" name="Section Data Size" isReadonly="True" />
+																<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																<field type="Block" name="Resources" isReadonly="True">
+																	<block name="global_geometry_block_resource_block" maxCount="1024" display="block resources" flags="0" maxIdentifer="MAXIMUM_RESOURCES_PER_GEOMETRY_BLOCK" version="1">
+																		<versions>
+																			<global_geometry_block_resource_block_fields size="16" sizeIdentifer="sizeof(struct geometry_block_resource)" fieldCount="7">
+																				<fields>
+																					<field type="CharEnum" name="Type" isReadonly="True">
+																						<definition count="3">
+																							<entry>Tag Block</entry>
+																							<entry>Tag Data</entry>
+																							<entry>Vertex Buffer</entry>
+																						</definition>
+																					</field>
+																					<field type="Pad" name="" definition="3" />
+																					<field type="ShortInteger" name="Primary Locator" isReadonly="True" />
+																					<field type="ShortInteger" name="Secondary Locator" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Offset" isReadonly="True" />
+																					<field type="Terminator" />
+																				</fields>
+																			</global_geometry_block_resource_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Pad" name="" definition="4" />
+																<field type="ShortInteger" name="Owner Tag Section Offset" isReadonly="True" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Pad" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</global_geometry_block_info_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</prt_info_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="section render leaves">
+						<block name="section_render_leaves_block" maxCount="255" display="section_render_leaves_block" flags="0" maxIdentifer="MAXIMUM_SECTIONS_PER_RENDER_MODEL" version="1">
+							<versions>
+								<section_render_leaves_block_fields size="12" sizeIdentifer="sizeof(struct section_render_leaves)" fieldCount="2">
+									<fields>
+										<field type="Block" name="node render leaves" isReadonly="True">
+											<block name="node_render_leaves_block" maxCount="64" display="node_render_leaves_block" flags="0" maxIdentifer="MAXIMUM_BSPS_PER_COLLISION_REGION" version="1">
+												<versions>
+													<node_render_leaves_block_fields size="24" sizeIdentifer="sizeof(struct node_render_leaves)" fieldCount="3">
+														<fields>
+															<field type="Block" name="collision leaves" isReadonly="True">
+																<block name="bsp_leaf_block" maxCount="65536" display="bsp_leaf_block" flags="0" maxIdentifer="MAXIMUM_LEAVES_PER_BSP3D" version="1">
+																	<versions>
+																		<bsp_leaf_block_fields size="8" sizeIdentifer="sizeof(struct structure_leaf)" fieldCount="4">
+																			<fields>
+																				<field type="ShortInteger" name="cluster" isReadonly="True" />
+																				<field type="ShortInteger" name="surface reference count" isReadonly="True" />
+																				<field type="LongInteger" name="first surface reference index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</bsp_leaf_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="surface references" isReadonly="True">
+																<block name="bsp_surface_reference_block" maxCount="262144" display="bsp_surface_reference_block" flags="0" maxIdentifer="MAXIMUM_SURFACE_REFERENCES_PER_STRUCTURE" version="1">
+																	<versions>
+																		<bsp_surface_reference_block_fields size="8" sizeIdentifer="sizeof(struct structure_surface_reference)" fieldCount="4">
+																			<fields>
+																				<field type="ShortInteger" name="strip index" isReadonly="True" />
+																				<field type="ShortInteger" name="lightmap triangle index" isReadonly="True" />
+																				<field type="LongInteger" name="bsp node index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</bsp_surface_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Terminator" />
+														</fields>
+													</node_render_leaves_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</section_render_leaves_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</render_model_block_fields>
+		</versions>
+	</block>
+</tagGroup>

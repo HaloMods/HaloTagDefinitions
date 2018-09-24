@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="sound_classes" groupTag="sncl" groupTagParent="????" version="1" flags="8" procPostprocess="True">
+	<block name="sound_classes_block" maxCount="1" display="sound_classes" flags="0" maxIdentifer="1" version="2">
+		<versions>
+			<sound_class_fields size="12" sizeIdentifer="sizeof(s_sound_classes_definition)" fieldCount="2">
+				<fields>
+					<field type="Block" name="sound classes">
+						<block name="sound_class_block" maxCount="54" display="sound_class_block" flags="0" maxIdentifer="NUMBER_OF_SOUND_CLASSES" procFormat="True" version="1">
+							<versions>
+								<sound_class_block_fields size="92" sizeIdentifer="sizeof(sound_class_definition)" fieldCount="27">
+									<fields>
+										<field type="ShortInteger" name="max sounds per tag [1,16]" help="maximum number of sounds playing per individual sound tag" />
+										<field type="ShortInteger" name="max sounds per object [1,16]" help="maximum number of sounds of this type playing on an object" />
+										<field type="LongInteger" name="preemption time" help="replaces other instances after this many milliseconds" units="ms" />
+										<field type="WordFlags" name="internal flags" isReadonly="True">
+											<definition count="8">
+												<entry>valid</entry>
+												<entry>is speech</entry>
+												<entry>scripted</entry>
+												<entry>stops with object</entry>
+												<entry>unused</entry>
+												<entry>valid doppler factor</entry>
+												<entry>valid obstruction factor</entry>
+												<entry>multilingual</entry>
+											</definition>
+										</field>
+										<field type="WordFlags" name="flags">
+											<definition count="13">
+												<entry>plays during pause</entry>
+												<entry>dry stereo mix</entry>
+												<entry>no object obstruction</entry>
+												<entry>use center speaker unspatialized</entry>
+												<entry>send (mono) to lfe</entry>
+												<entry>deterministic</entry>
+												<entry>use huge transmission</entry>
+												<entry>always use speakers</entry>
+												<entry>don't strip from main menu</entry>
+												<entry>ignore stereo headroom</entry>
+												<entry>loop fade out is linear</entry>
+												<entry>stop when object dies</entry>
+												<entry>allow cache file editing</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="priority" isReadonly="True" />
+										<field type="Enum" name="cache miss mode" isReadonly="True">
+											<definition count="2">
+												<entry>discard</entry>
+												<entry>postpone</entry>
+											</definition>
+										</field>
+										<field type="Real" name="reverb gain" help="how much reverb applies to this sound class" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="override speaker gain" units="dB" attributeGroup="+dB+" />
+										<field type="RealBounds" name="distance bounds" />
+										<field type="Custom" name="Update gain bounds" attributeGroup="edit" definition="&#x0;I??" />
+										<field type="RealBounds" name="gain bounds" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="cutscene ducking" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="cutscene ducking fade in time" units="seconds" />
+										<field type="Real" name="cutscene ducking sustain time" help="how long this lasts after the cutscene ends" units="seconds" />
+										<field type="Real" name="cutscene ducking fade out time" units="seconds" />
+										<field type="Real" name="scripted dialog ducking" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="scripted dialog ducking fade in time" units="seconds" />
+										<field type="Real" name="scripted dialog ducking sustain time" help="how long this lasts after the scripted dialog ends" units="seconds" />
+										<field type="Real" name="scripted dialog ducking fade out time" units="seconds" />
+										<field type="Real" name="doppler factor" />
+										<field type="CharEnum" name="stereo playback type">
+											<definition count="2">
+												<entry>first person</entry>
+												<entry>ambient</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="3" />
+										<field type="Real" name="transmission multiplier" />
+										<field type="Real" name="obstruction max bend" />
+										<field type="Real" name="occlusion max bend" />
+										<field type="Terminator" />
+									</fields>
+								</sound_class_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</sound_class_fields>
+			<sound_class_fields size="12" sizeIdentifer="sizeof(s_sound_classes_definition)" fieldCount="2">
+				<fields>
+					<field type="Block" name="sound classes">
+						<block name="sound_class_block" maxCount="54" display="sound_class_block" flags="0" maxIdentifer="NUMBER_OF_SOUND_CLASSES" procFormat="True" version="1">
+							<versions>
+								<sound_class_block_fields size="92" sizeIdentifer="sizeof(sound_class_definition)" fieldCount="27">
+									<fields>
+										<field type="ShortInteger" name="max sounds per tag [1,16]" help="maximum number of sounds playing per individual sound tag" />
+										<field type="ShortInteger" name="max sounds per object [1,16]" help="maximum number of sounds of this type playing on an object" />
+										<field type="LongInteger" name="preemption time" help="replaces other instances after this many milliseconds" units="ms" />
+										<field type="WordFlags" name="internal flags" isReadonly="True">
+											<definition count="8">
+												<entry>valid</entry>
+												<entry>is speech</entry>
+												<entry>scripted</entry>
+												<entry>stops with object</entry>
+												<entry>unused</entry>
+												<entry>valid doppler factor</entry>
+												<entry>valid obstruction factor</entry>
+												<entry>multilingual</entry>
+											</definition>
+										</field>
+										<field type="WordFlags" name="flags">
+											<definition count="13">
+												<entry>plays during pause</entry>
+												<entry>dry stereo mix</entry>
+												<entry>no object obstruction</entry>
+												<entry>use center speaker unspatialized</entry>
+												<entry>send (mono) to lfe</entry>
+												<entry>deterministic</entry>
+												<entry>use huge transmission</entry>
+												<entry>always use speakers</entry>
+												<entry>don't strip from main menu</entry>
+												<entry>ignore stereo headroom</entry>
+												<entry>loop fade out is linear</entry>
+												<entry>stop when object dies</entry>
+												<entry>allow cache file editing</entry>
+											</definition>
+										</field>
+										<field type="ShortInteger" name="priority" isReadonly="True" />
+										<field type="Enum" name="cache miss mode" isReadonly="True">
+											<definition count="2">
+												<entry>discard</entry>
+												<entry>postpone</entry>
+											</definition>
+										</field>
+										<field type="Real" name="reverb gain" help="how much reverb applies to this sound class" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="override speaker gain" units="dB" attributeGroup="+dB+" />
+										<field type="RealBounds" name="distance bounds" />
+										<field type="Custom" name="Update gain bounds" attributeGroup="edit" definition="&#x0;I??" />
+										<field type="RealBounds" name="gain bounds" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="cutscene ducking" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="cutscene ducking fade in time" units="seconds" />
+										<field type="Real" name="cutscene ducking sustain time" help="how long this lasts after the cutscene ends" units="seconds" />
+										<field type="Real" name="cutscene ducking fade out time" units="seconds" />
+										<field type="Real" name="scripted dialog ducking" units="dB" attributeGroup="+dB+" />
+										<field type="Real" name="scripted dialog ducking fade in time" units="seconds" />
+										<field type="Real" name="scripted dialog ducking sustain time" help="how long this lasts after the scripted dialog ends" units="seconds" />
+										<field type="Real" name="scripted dialog ducking fade out time" units="seconds" />
+										<field type="Real" name="doppler factor" />
+										<field type="CharEnum" name="stereo playback type">
+											<definition count="2">
+												<entry>first person</entry>
+												<entry>ambient</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="3" />
+										<field type="Real" name="transmission multiplier" />
+										<field type="Real" name="obstruction max bend" />
+										<field type="Real" name="occlusion max bend" />
+										<field type="Terminator" />
+									</fields>
+								</sound_class_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</sound_class_fields>
+		</versions>
+	</block>
+</tagGroup>

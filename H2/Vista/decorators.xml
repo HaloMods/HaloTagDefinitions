@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="decorators" groupTag="DECP" groupTagParent="????" version="1" flags="0">
+	<block name="decorators_block" maxCount="1" display="decorators" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<decorator_cache_definition_fields size="64" sizeIdentifer="sizeof(c_decorator_placement_definition)" fieldCount="7">
+				<fields>
+					<field type="RealPoint3D" name="Grid Origin" />
+					<field type="LongInteger" name="Cell Count per Dimension" />
+					<field type="Block" name="Cache Blocks">
+						<block name="decorator_cache_block_block" maxCount="4096" display="decorator_cache_block_block" flags="0" maxIdentifer="c_decorator_placement_definition::k_maximum_cache_block_count" procPostprocess="True" procDispose="True" version="1">
+							<versions>
+								<decorator_cache_block_block_fields size="60" sizeIdentifer="sizeof(c_decorator_cache_block)" fieldCount="5">
+									<fields>
+										<field type="Struct" name="Geometry Block Info" isReadonly="True">
+											<struct name="global_geometry_block_info_struct" groupTag="BLOK">
+												<block name="global_geometry_block_info_struct_block" maxCount="1" display="global_geometry_block_info_struct" flags="0" maxIdentifer="1" version="1">
+													<versions>
+														<global_geometry_block_info_struct_fields size="40" sizeIdentifer="sizeof(struct geometry_block_info)" fieldCount="11">
+															<fields>
+																<field type="Explanation" name="BLOCK INFO" definition="" />
+																<field type="LongInteger" name="Block Offset" isReadonly="True" />
+																<field type="LongInteger" name="Block Size" isReadonly="True" />
+																<field type="LongInteger" name="Section Data Size" isReadonly="True" />
+																<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																<field type="Block" name="Resources" isReadonly="True">
+																	<block name="global_geometry_block_resource_block" maxCount="1024" display="block resources" flags="0" maxIdentifer="MAXIMUM_RESOURCES_PER_GEOMETRY_BLOCK" version="1">
+																		<versions>
+																			<global_geometry_block_resource_block_fields size="16" sizeIdentifer="sizeof(struct geometry_block_resource)" fieldCount="7">
+																				<fields>
+																					<field type="CharEnum" name="Type" isReadonly="True">
+																						<definition count="3">
+																							<entry>Tag Block</entry>
+																							<entry>Tag Data</entry>
+																							<entry>Vertex Buffer</entry>
+																						</definition>
+																					</field>
+																					<field type="Pad" name="" definition="3" />
+																					<field type="ShortInteger" name="Primary Locator" isReadonly="True" />
+																					<field type="ShortInteger" name="Secondary Locator" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Size" isReadonly="True" />
+																					<field type="LongInteger" name="Resource Data Offset" isReadonly="True" />
+																					<field type="Terminator" />
+																				</fields>
+																			</global_geometry_block_resource_block_fields>
+																		</versions>
+																	</block>
+																</field>
+																<field type="Pad" name="" definition="4" />
+																<field type="ShortInteger" name="Owner Tag Section Offset" isReadonly="True" />
+																<field type="Pad" name="" definition="2" />
+																<field type="Pad" name="" definition="4" />
+																<field type="Terminator" />
+															</fields>
+														</global_geometry_block_info_struct_fields>
+													</versions>
+												</block>
+											</struct>
+										</field>
+										<field type="Block" name="Cache Block Data" isReadonly="True">
+											<block name="decorator_cache_block_data_block" maxCount="1" display="decorator_cache_block_data_block" flags="0" maxIdentifer="1" version="2">
+												<versions>
+													<decorator_cache_block_data_v1 size="76" sizeIdentifer="sizeof(s_decorator_cache_block_data_v1)" fieldCount="4">
+														<fields>
+															<field type="Block" name="Placements">
+																<block name="decorator_placement_block" maxCount="32768" display="decorator_placement_block" flags="0" maxIdentifer="32*k_kilo" version="1">
+																	<versions>
+																		<decorator_placement_block_fields size="24" sizeIdentifer="sizeof(s_decorator_placement)" fieldCount="7">
+																			<fields>
+																				<field type="LongInteger" name="Internal Data 1" />
+																				<field type="LongInteger" name="Compressed Position" />
+																				<field type="RgbColor" name="Tint Color" />
+																				<field type="RgbColor" name="Lightmap Color" />
+																				<field type="LongInteger" name="Compressed Light Direction" />
+																				<field type="LongInteger" name="Compressed Light 2 Direction" />
+																				<field type="Terminator" />
+																			</fields>
+																		</decorator_placement_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="VertexBuffer" name="decal vertex buffer" />
+															<field type="VertexBuffer" name="sprite vertex buffer" />
+															<field type="Terminator" />
+														</fields>
+													</decorator_cache_block_data_v1>
+													<decorator_cache_block_data_v2 size="156" sizeIdentifer="sizeof(struct s_decorator_cache_block_data)" fieldCount="10">
+														<fields>
+															<field type="Block" name="Placements" isReadonly="True">
+																<block name="decorator_placement_block" maxCount="32768" display="decorator_placement_block" flags="0" maxIdentifer="32*k_kilo" version="1">
+																	<versions>
+																		<decorator_placement_block_fields size="24" sizeIdentifer="sizeof(s_decorator_placement)" fieldCount="7">
+																			<fields>
+																				<field type="LongInteger" name="Internal Data 1" />
+																				<field type="LongInteger" name="Compressed Position" />
+																				<field type="RgbColor" name="Tint Color" />
+																				<field type="RgbColor" name="Lightmap Color" />
+																				<field type="LongInteger" name="Compressed Light Direction" />
+																				<field type="LongInteger" name="Compressed Light 2 Direction" />
+																				<field type="Terminator" />
+																			</fields>
+																		</decorator_placement_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="Decal Vertices" isReadonly="True">
+																<block name="decal_vertices_block" maxCount="65536" display="decal_vertices_block" flags="0" maxIdentifer="64*k_kilo" version="1">
+																	<versions>
+																		<decal_vertices_block_fields size="32" sizeIdentifer="sizeof(rasterizer_vertex_decorator_decal)" fieldCount="5">
+																			<fields>
+																				<field type="RealPoint3D" name="Position" isReadonly="True" />
+																				<field type="RealPoint2D" name="texcoord 0" isReadonly="True" />
+																				<field type="RealPoint2D" name="texcoord 1" isReadonly="True" />
+																				<field type="RgbColor" name="Color" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</decal_vertices_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="Decal Indices" isReadonly="True">
+																<block name="indices_block" maxCount="65536" display="indices_block" flags="0" maxIdentifer="64*k_kilo" version="1">
+																	<versions>
+																		<indices_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																			<fields>
+																				<field type="ShortInteger" name="Index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</indices_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="VertexBuffer" name="decal vertex buffer" isReadonly="True" />
+															<field type="Pad" name="" definition="16" />
+															<field type="Block" name="Sprite Vertices" isReadonly="True">
+																<block name="sprite_vertices_block" maxCount="65536" display="sprite_vertices_block" flags="0" maxIdentifer="64*k_kilo" version="1">
+																	<versions>
+																		<sprite_vertices_block_fields size="48" sizeIdentifer="sizeof(rasterizer_vertex_decorator_sprite)" fieldCount="6">
+																			<fields>
+																				<field type="RealPoint3D" name="Position" isReadonly="True" />
+																				<field type="RealVector3D" name="Offset" isReadonly="True" />
+																				<field type="RealVector3D" name="Axis" isReadonly="True" />
+																				<field type="RealPoint2D" name="texcoord" isReadonly="True" />
+																				<field type="RgbColor" name="Color" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</sprite_vertices_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="Sprite Indices" isReadonly="True">
+																<block name="indices_block" maxCount="65536" display="indices_block" flags="0" maxIdentifer="64*k_kilo" version="1">
+																	<versions>
+																		<indices_block_fields size="2" sizeIdentifer="sizeof(word)" fieldCount="2">
+																			<fields>
+																				<field type="ShortInteger" name="Index" isReadonly="True" />
+																				<field type="Terminator" />
+																			</fields>
+																		</indices_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="VertexBuffer" name="sprite vertex buffer" isReadonly="True" />
+															<field type="Pad" name="" definition="16" />
+															<field type="Terminator" />
+														</fields>
+													</decorator_cache_block_data_v2>
+												</versions>
+											</block>
+										</field>
+										<field type="Pad" name="" definition="4" />
+										<field type="Pad" name="" definition="4" />
+										<field type="Terminator" />
+									</fields>
+								</decorator_cache_block_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Groups">
+						<block name="decorator_group_block" maxCount="131072" display="decorator_group_block" flags="0" maxIdentifer="c_decorator_placement_definition::k_maximum_group_count" version="1">
+							<versions>
+								<decorator_group_block_fields size="24" sizeIdentifer="sizeof(s_decorator_group)" fieldCount="14">
+									<fields>
+										<field type="CharBlockIndex1" name="Decorator Set" isReadonly="True" definition="scenario_decorator_set_palette_entry_block" />
+										<field type="CharEnum" name="Decorator Type">
+											<definition count="6">
+												<entry>model</entry>
+												<entry>floating decal</entry>
+												<entry>projected decal</entry>
+												<entry>screen facing quad</entry>
+												<entry>axis rotating quad</entry>
+												<entry>cross quad</entry>
+											</definition>
+										</field>
+										<field type="CharInteger" name="Shader Index" isReadonly="True" />
+										<field type="CharInteger" name="Compressed Radius" isReadonly="True" />
+										<field type="ShortInteger" name="Cluster" isReadonly="True" />
+										<field type="ShortBlockIndex1" name="Cache Block" isReadonly="True" definition="decorator_cache_block_block" />
+										<field type="ShortInteger" name="Decorator Start Index" isReadonly="True" />
+										<field type="ShortInteger" name="Decorator Count" isReadonly="True" />
+										<field type="ShortInteger" name="Vertex Start Offset" isReadonly="True" />
+										<field type="ShortInteger" name="Vertex Count" isReadonly="True" />
+										<field type="ShortInteger" name="Index Start Offset" isReadonly="True" />
+										<field type="ShortInteger" name="Index Count" isReadonly="True" />
+										<field type="LongInteger" name="Compressed Bounding Center" isReadonly="True" />
+										<field type="Terminator" />
+									</fields>
+								</decorator_group_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Cells">
+						<block name="decorator_cell_collection_block" maxCount="65535" display="decorator_cell_collection_block" flags="0" maxIdentifer="c_decorator_placement_definition::k_maximum_cell_collection_count" version="1">
+							<versions>
+								<decorator_cell_collection_block_fields size="24" sizeIdentifer="sizeof(c_decorator_cell_collection)" fieldCount="7">
+									<fields>
+										<arrayStart definition="8" />
+										<field type="ShortInteger" name="Child Index" />
+										<arrayEnd />
+										<field type="ShortBlockIndex1" name="Cache Block Index" definition="decorator_cache_block_block" />
+										<field type="ShortInteger" name="Group Count" />
+										<field type="LongInteger" name="Group Start Index" />
+										<field type="Terminator" />
+									</fields>
+								</decorator_cell_collection_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Block" name="Decals">
+						<block name="decorator_projected_decal_block" maxCount="32768" display="decorator_projected_decal_block" flags="0" maxIdentifer="c_decorator_placement_definition::k_maximum_projected_decal_count" version="1">
+							<versions>
+								<decorator_projected_decal_block_fields size="64" sizeIdentifer="sizeof(s_decorator_projected_decal)" fieldCount="10">
+									<fields>
+										<field type="CharBlockIndex1" name="Decorator Set" definition="scenario_decorator_set_palette_entry_block" />
+										<field type="CharInteger" name="Decorator Class" />
+										<field type="CharInteger" name="Decorator Permutation" />
+										<field type="CharInteger" name="Sprite Index" />
+										<field type="RealPoint3D" name="Position" />
+										<field type="RealVector3D" name="Left" />
+										<field type="RealVector3D" name="Up" />
+										<field type="RealVector3D" name="Extents" />
+										<field type="RealPoint3D" name="Previous Position" />
+										<field type="Terminator" />
+									</fields>
+								</decorator_projected_decal_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</decorator_cache_definition_fields>
+		</versions>
+	</block>
+</tagGroup>

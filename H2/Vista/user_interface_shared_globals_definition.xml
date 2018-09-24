@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="user_interface_shared_globals_definition" groupTag="wigl" groupTagParent="????" version="1" flags="8">
+	<block name="user_interface_shared_globals_definition_block" maxCount="1" display="user_interface_shared_globals_definition" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<user_interface_shared_globals_definition_block_fields size="652" sizeIdentifer="sizeof(s_user_interface_shared_globals)" fieldCount="86">
+				<fields>
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Pad" name="" definition="16" />
+					<field type="Pad" name="" definition="8" />
+					<field type="Pad" name="" definition="8" />
+					<field type="Pad" name="" definition="16" />
+					<field type="Pad" name="" definition="8" />
+					<field type="Pad" name="" definition="8" />
+					<field type="Explanation" name="UI Rendering Globals" definition="miscellaneous rendering globals, more below..." />
+					<field type="Real" name="overlayed screen alpha mod" />
+					<field type="ShortInteger" name="inc. text update period" units="milliseconds" />
+					<field type="ShortInteger" name="inc. text block character" units="ASCII code" />
+					<field type="Real" name="callout text scale" />
+					<field type="RealArgbColor" name="progress bar color" />
+					<field type="Real" name="near clip plane distance" units="objects closer than this are not drawn" />
+					<field type="Real" name="projection plane distance" units="distance at which objects are rendered when z=0 (normal size)" />
+					<field type="Real" name="far clip plane distance" units="objects farther than this are not drawn" />
+					<field type="Explanation" name="Overlayed UI Color" definition="This is the color of the overlayed ui effect; the alpha component is the maximum opacity" />
+					<field type="RealArgbColor" name="overlayed interface color" />
+					<field type="Pad" name="" definition="12" />
+					<field type="Explanation" name="Displayed Errors" definition="For each error condition displayed in the UI, set the title and description string ids here" />
+					<field type="Block" name="errors">
+						<block name="ui_error_category_block" maxCount="100" display="ui_error_category_block" flags="0" maxIdentifer="k_maximum_error_category_count" version="1">
+							<versions>
+								<ui_error_category_block_fields size="52" sizeIdentifer="sizeof(s_ui_error_category)" fieldCount="11">
+									<fields>
+										<field type="StringId" name="category name" isBlockName="True" />
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>use large dialog</entry>
+											</definition>
+										</field>
+										<field type="CharEnum" name="default button">
+											<definition count="3">
+												<entry>no default</entry>
+												<entry>default ok</entry>
+												<entry>default cancel</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="1" />
+										<field type="TagReference" name="string tag">
+											<definition flags="0" groupTag="unic" />
+										</field>
+										<field type="StringId" name="default title" />
+										<field type="StringId" name="default message" />
+										<field type="StringId" name="default ok" />
+										<field type="StringId" name="default cancel" />
+										<field type="Block" name="error block">
+											<block name="ui_error_block" maxCount="100" display="ui_error_block" flags="0" maxIdentifer="k_ui_maximum_error_per_category_count" version="1">
+												<versions>
+													<ui_error_block_fields size="24" sizeIdentifer="sizeof(s_ui_error)" fieldCount="9">
+														<fields>
+															<field type="LongEnum" name="error">
+																<definition count="254">
+																	<entry>error_unknown</entry>
+																	<entry>error_generic</entry>
+																	<entry>error_generic_networking</entry>
+																	<entry>error_system_link_generic_join_failure</entry>
+																	<entry>error_system_link_no_network_connection</entry>
+																	<entry>error_system_link_connection_lost</entry>
+																	<entry>error_network_game_oos</entry>
+																	<entry>error_xbox_live_sign_out_confirmation</entry>
+																	<entry>error_confirm_revert_to_last_save</entry>
+																	<entry>error_confirm_quit_without_save</entry>
+																	<entry>error_confirm_delete_player_profile</entry>
+																	<entry>error_confirm_delete_variant_file</entry>
+																	<entry>error_player_profile_creation_failed</entry>
+																	<entry>error_variant_profile_creation_failed</entry>
+																	<entry>error_playlist_creation_failed</entry>
+																	<entry>error_core_file_load_failed</entry>
+																	<entry>error_mu_removed_during_player_profile_save</entry>
+																	<entry>error_mu_removed_during_variant_save</entry>
+																	<entry>error_mu_removed_during_playlist_save</entry>
+																	<entry>error_message_saving_to_mu</entry>
+																	<entry>error_message_saving_file</entry>
+																	<entry>error_message_creating_player_profile</entry>
+																	<entry>error_message_creating_variant_profile</entry>
+																	<entry>error_message_saving_checkpoint</entry>
+																	<entry>error_failed_to_load_player_profile</entry>
+																	<entry>error_failed_to_load_variant</entry>
+																	<entry>error_failed_to_load_playlist</entry>
+																	<entry>error_failed_to_load_save_game</entry>
+																	<entry>error_controller1_removed</entry>
+																	<entry>error_controller2_removed</entry>
+																	<entry>error_controller3_removed</entry>
+																	<entry>error_controller4_removed</entry>
+																	<entry>error_need_more_free_blocks_to_save</entry>
+																	<entry>error_maximum_saved_game_files_already_exist</entry>
+																	<entry>error_dirty_disk</entry>
+																	<entry>error_xblive_cannot_access_service</entry>
+																	<entry>error_xblive_title_update_required</entry>
+																	<entry>error_xblive_servers_too_busy</entry>
+																	<entry>error_xblive_duplicate_logon</entry>
+																	<entry>error_xblive_account_management_required</entry>
+																	<entry>error_warning_xblive_recommended_messages_available</entry>
+																	<entry>error_xblive_invalid_match_session</entry>
+																	<entry>error_warning_xblive_poor_network_performance</entry>
+																	<entry>error_not_enough_open_slots_to_join_match_session</entry>
+																	<entry>error_xblive_corrupt_download_content</entry>
+																	<entry>error_confirm_xblive_corrupt_saved_game_file_removal</entry>
+																	<entry>error_xblive_invalid_user_account</entry>
+																	<entry>error_confirm_boot_clan_member</entry>
+																	<entry>error_confirm_controller_sign_out</entry>
+																	<entry>error_beta_xblive_service_qos_report</entry>
+																	<entry>error_beta_feature_disabled</entry>
+																	<entry>error_beta_network_connection_required</entry>
+																	<entry>error_confirm_friend_removal</entry>
+																	<entry>error_confirm_boot_to_dash</entry>
+																	<entry>error_confirm_launch_xdemos</entry>
+																	<entry>error_confirm_exit_game_session</entry>
+																	<entry>error_xblive_connection_to_xbox_live_lost</entry>
+																	<entry>error_xblive_message_send_failure</entry>
+																	<entry>error_network_link_lost</entry>
+																	<entry>error_network_link_required</entry>
+																	<entry>error_xblive_invalid_passcode</entry>
+																	<entry>error_join_aborted</entry>
+																	<entry>error_join_session_not_found</entry>
+																	<entry>error_join_qos_failure</entry>
+																	<entry>error_join_data_decode_failure</entry>
+																	<entry>error_join_game_full</entry>
+																	<entry>error_join_game_closed</entry>
+																	<entry>error_join_version_mismatch</entry>
+																	<entry>error_join_failed_unknown_reason</entry>
+																	<entry>error_join_failed_friend_in_matchmade_game</entry>
+																	<entry>error_player_profile_name_must_be_unique</entry>
+																	<entry>error_variant_name_must_be_unique</entry>
+																	<entry>error_playlist_name_must_be_unique</entry>
+																	<entry>error_saved_film_name_must_be_unique</entry>
+																	<entry>error_no_free_slots_player_profile</entry>
+																	<entry>error_no_free_slots_variant</entry>
+																	<entry>error_no_free_slots_playlist</entry>
+																	<entry>error_no_free_slots_saved_film</entry>
+																	<entry>error_need_more_space_for_player_profile</entry>
+																	<entry>error_need_more_space_for_variant</entry>
+																	<entry>error_need_more_space_for_playlist</entry>
+																	<entry>error_need_more_space_for_saved_film</entry>
+																	<entry>error_cannot_set_privileges_on_member_whose_data_not_known</entry>
+																	<entry>error_cant_delete_default_profile</entry>
+																	<entry>error_cant_delete_default_variant</entry>
+																	<entry>error_cant_delete_default_playlist</entry>
+																	<entry>error_cant_delete_default_saved_film</entry>
+																	<entry>error_cant_delete_profile_in_use</entry>
+																	<entry>error_player_profile_name_must_have_alphanumeric_characters</entry>
+																	<entry>error_variant_name_must_have_alphanumeric_characters</entry>
+																	<entry>error_playlist_name_must_have_alphanumeric_characters</entry>
+																	<entry>error_saved_film_name_must_have_alphanumeric_characters</entry>
+																	<entry>error_teams_not_a_member</entry>
+																	<entry>error_teams_insufficient_privileges</entry>
+																	<entry>error_teams_server_busy</entry>
+																	<entry>error_teams_team_full</entry>
+																	<entry>error_teams_member_pending</entry>
+																	<entry>error_teams_too_many_requests</entry>
+																	<entry>error_teams_user_already_exists</entry>
+																	<entry>error_teams_user_not_found</entry>
+																	<entry>error_teams_user_teams_full</entry>
+																	<entry>error_teams_no_task</entry>
+																	<entry>error_teams_too_many_teams</entry>
+																	<entry>error_teams_team_already_exists</entry>
+																	<entry>error_teams_team_not_found</entry>
+																	<entry>error_teams_name_contains_bad_words</entry>
+																	<entry>error_teams_description_contains_bad_words</entry>
+																	<entry>error_teams_motto_contains_bad_words</entry>
+																	<entry>error_teams_url_contains_bad_words</entry>
+																	<entry>error_teams_no_admin</entry>
+																	<entry>error_teams_cannot_set_privileges_on_member_whose_data_not_known</entry>
+																	<entry>error_live_unknown</entry>
+																	<entry>error confirm_delete_profile</entry>
+																	<entry>error confirm_delete_playlist</entry>
+																	<entry>error confirm_delete_saved_film</entry>
+																	<entry>error confirm_live_sign_out</entry>
+																	<entry>error confirm_confirm_friend_removal</entry>
+																	<entry>error confirm_promotion_to_superuser</entry>
+																	<entry>error warn_no_more_clan_superusers</entry>
+																	<entry>error confirm_corrupt_profile</entry>
+																	<entry>error confirm_xbox_live_sign_out</entry>
+																	<entry>error confirm_corrupt_game_variant</entry>
+																	<entry>error confirm_leave_clan</entry>
+																	<entry>error confirm_corrupt_playlist</entry>
+																	<entry>error_cant_join_gameinvite_without_signon</entry>
+																	<entry>error confirm_proceed_to_crossgame_invite</entry>
+																	<entry>error confirm_decline_crossgame_invite</entry>
+																	<entry>error warn_insert_cd_for_crossgame_invite</entry>
+																	<entry>error need more space for saved game</entry>
+																	<entry>error saved game cannot be loaded</entry>
+																	<entry>error confirm controller signout with guests</entry>
+																	<entry>error warning party closed</entry>
+																	<entry>error warning party required</entry>
+																	<entry>error warning party full</entry>
+																	<entry>error warning player in mm game</entry>
+																	<entry>error xblive failed to sign in</entry>
+																	<entry>error cant sign out master with guests</entry>
+																	<entry>error obsolete dot command</entry>
+																	<entry>error not unlocked</entry>
+																	<entry>confirm leave lobby</entry>
+																	<entry>error confirm party leader leave matchmaking</entry>
+																	<entry>error confirm single box leave matchmaking</entry>
+																	<entry>error invalid clan name</entry>
+																	<entry>error player list full</entry>
+																	<entry>error blocked by player</entry>
+																	<entry>error friend pending</entry>
+																	<entry>error too many requests</entry>
+																	<entry>error player already in list</entry>
+																	<entry>error gamertag not found</entry>
+																	<entry>error cannot message self</entry>
+																	<entry>error warning last overlord cant leave clan</entry>
+																	<entry>error confirm boot player</entry>
+																	<entry>error confirm party member leave pcr</entry>
+																	<entry>error cannot sign in during countdown</entry>
+																	<entry>error xbl invalid user</entry>
+																	<entry>error xbl user not authorized</entry>
+																	<entry>OBSOLETE</entry>
+																	<entry>OBSOLETE2</entry>
+																	<entry>error xbl banned xbox</entry>
+																	<entry>error xbl banned user</entry>
+																	<entry>error xbl banned title</entry>
+																	<entry>error confirm exit game session leader</entry>
+																	<entry>error message objectionable content</entry>
+																	<entry>error confirm enter downloader</entry>
+																	<entry>error confirm block user</entry>
+																	<entry>error confirm negative feedback</entry>
+																	<entry>error confirm change clan member level</entry>
+																	<entry>error blank gamertag</entry>
+																	<entry>confirm save &amp; quit game</entry>
+																	<entry>error cant join during matchmaking</entry>
+																	<entry>error confirm restart level</entry>
+																	<entry>matchmaking failure generic</entry>
+																	<entry>matchmaking failure missing content</entry>
+																	<entry>matchmaking failure aborted</entry>
+																	<entry>matchmaking failure membership changed</entry>
+																	<entry>confirm end game session</entry>
+																	<entry>confirm exit game session only player</entry>
+																	<entry>confirm exit game session xbox live ranked leader</entry>
+																	<entry>confirm exit game session xbox live ranked</entry>
+																	<entry>confirm exit game session xbox live leader</entry>
+																	<entry>confirm exit game session xbox live only player</entry>
+																	<entry>confirm exit game session xbox live</entry>
+																	<entry>recipient's list full</entry>
+																	<entry>confirm quit campaign (no save)</entry>
+																	<entry>xblive connection to xbox live lost save and quit</entry>
+																	<entry>booted from session</entry>
+																	<entry>confirm_exit_game_session_xbox_live_guest</entry>
+																	<entry>confirm_exit_game_session_xbox_live_ranked_only_player</entry>
+																	<entry>confirm_exit_game_session_xbox_live_unranked_only_player</entry>
+																	<entry>confirm_exit_game_session_xbox_live_unranked_leader</entry>
+																	<entry>confirm_exit_game_session_xbox_live_unranked</entry>
+																	<entry>cant join friend while in matchmade game</entry>
+																	<entry>map load failure</entry>
+																	<entry>error_achievements_interrupted</entry>
+																	<entry>confirm_lose_progress</entry>
+																	<entry>error_beta_achievements_disabled</entry>
+																	<entry>error_cannot_connect_versions_wrong</entry>
+																	<entry>confirm_booted_from_session</entry>
+																	<entry>confirm_boot_player_from_squad</entry>
+																	<entry>confirm_leave_system_link_lobby</entry>
+																	<entry>confirm_party_member_leave_matchmaking</entry>
+																	<entry>confirm_quit_single_player</entry>
+																	<entry>error_controller_removed</entry>
+																	<entry>error_download_in_progress</entry>
+																	<entry>error_download_fail</entry>
+																	<entry>error_failed_to_load_map</entry>
+																	<entry>error_feature_requires_gold</entry>
+																	<entry>error_keyboard_mapping</entry>
+																	<entry>error_keyboard_removed</entry>
+																	<entry>error_live_game_unavailable</entry>
+																	<entry>error_map_missing</entry>
+																	<entry>error_matchmaking_failed_generic</entry>
+																	<entry>error_matchmaking_failed_missing_content</entry>
+																	<entry>error_mouse_removed</entry>
+																	<entry>error_party_not_all_on_live</entry>
+																	<entry>error_party_subnet_not_shared</entry>
+																	<entry>error_required_game_update</entry>
+																	<entry>error_saved_game_cannot_be_saved</entry>
+																	<entry>error_sound_microphone_not_supported</entry>
+																	<entry>error_system_link_direct_IP</entry>
+																	<entry>error_text_chat_muted</entry>
+																	<entry>error_text_chat_parental_controls</entry>
+																	<entry>error_update_start</entry>
+																	<entry>error_update_fail</entry>
+																	<entry>error_update_fail_blocks</entry>
+																	<entry>error_update_exists</entry>
+																	<entry>error_insert_original</entry>
+																	<entry>error_update_fail_network_lost</entry>
+																	<entry>error_update_mp_out_of_sync</entry>
+																	<entry>error_update_must_upgrade</entry>
+																	<entry>error_voice_gold_required</entry>
+																	<entry>error_voice_parental_controls</entry>
+																	<entry>error_warning_xblive_poor_network_perofrmance</entry>
+																	<entry>error_you_missing_map</entry>
+																	<entry>error_someone_missing_map</entry>
+																	<entry>error_tnp_no_source</entry>
+																	<entry>error_tnp_disk_read</entry>
+																	<entry>error_tnp_no_engine_running</entry>
+																	<entry>error_tnp_signature_verification</entry>
+																	<entry>error_tnp_drive_removed</entry>
+																	<entry>error_tnp_disk_full</entry>
+																	<entry>error_tnp_permissions</entry>
+																	<entry>error_tnp_unknown</entry>
+																	<entry>continue_install</entry>
+																	<entry>cancel_install</entry>
+																	<entry>error_confirm_upsell_gold</entry>
+																	<entry>error_add_to_favorites</entry>
+																	<entry>error_remove_from_favorites</entry>
+																	<entry>error_updating_favorites</entry>
+																	<entry>choose existing checkpoint location</entry>
+																	<entry>choose new checkpoint location (checkpoints exist on live and local)</entry>
+																	<entry>choose new checkpoint location (checkpoints exist on live)</entry>
+																	<entry>choose new checkpoint location (checkpoints exist locally)</entry>
+																	<entry>xxx</entry>
+																</definition>
+															</field>
+															<field type="WordFlags" name="flags">
+																<definition count="1">
+																	<entry>use large dialog</entry>
+																</definition>
+															</field>
+															<field type="CharEnum" name="default button">
+																<definition count="3">
+																	<entry>no default</entry>
+																	<entry>default ok</entry>
+																	<entry>default cancel</entry>
+																</definition>
+															</field>
+															<field type="Pad" name="" definition="1" />
+															<field type="StringId" name="title" />
+															<field type="StringId" name="message" />
+															<field type="StringId" name="ok" />
+															<field type="StringId" name="cancel" />
+															<field type="Terminator" />
+														</fields>
+													</ui_error_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</ui_error_category_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="Cursor Sound" definition="This is the sound that plays as you tab through items" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Selection Sound" definition="This is the sound that plays when an item is selected" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Error Sound" definition="This is the sound that plays to alert the user that something went wrong" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Advancing Sound" definition="This is the sound that plays when advancing to a new screen" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Retreating Sound" definition="This is the sound that plays when retreating to a previous screen" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Initial Login Sound" definition="This is the sound that plays when advancing past the initial login screen" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="VKBD Cursor Sound" definition="This is the sound that plays when cursoring in the vkeyboard" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="VKBD Character Insertion Sound" definition="This is the sound that plays when selecting buttons in the vkeyboard" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Online Notification Sound" definition="This is the sound that plays when you receive an online notification" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Tabbed View Pane Tabbing Sound" definition="This is the sound that plays when tabbing thru views in a tabbed view pane (eg, online menu)" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Pregame Countdown Timer Sound" definition="This is the sound that plays as the countdown timer progresses" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="TagReference" name="">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Matchmaking Advance Sound" definition="This is the sound that plays as matchmaking enters the final stage" />
+					<field type="TagReference" name="sound tag">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="TagReference" name="">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="TagReference" name="">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="TagReference" name="">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="Explanation" name="Global Bitmaps" definition="Sprite sequences for global ui bitmaps, as follows:&#xA;1) vkeyboard cursor&#xA;" />
+					<field type="TagReference" name="global bitmaps tag">
+						<definition flags="0" groupTag="bitm" />
+					</field>
+					<field type="Explanation" name="Global Text Strings" definition="Global UI Text goes here" />
+					<field type="TagReference" name="unicode string list tag">
+						<definition flags="0" groupTag="unic" />
+					</field>
+					<field type="Explanation" name="Screen Animations" definition="Animations used by screen definitions for transitions and ambient animating" />
+					<field type="Block" name="screen animations">
+						<block name="animation_reference_block" maxCount="64" display="animation_reference_block" flags="0" maxIdentifer="k_maximum_number_of_widget_animations_per_screen" version="1">
+							<versions>
+								<animation_reference_block_fields size="56" sizeIdentifer="sizeof(s_animation_reference)" fieldCount="18">
+									<fields>
+										<field type="LongFlags" name="flags">
+											<definition count="1">
+												<entry>unused</entry>
+											</definition>
+										</field>
+										<field type="Explanation" name="Primary Intro Transition" definition="Defines the primary intro transitional animation" />
+										<field type="LongInteger" name="animation period" units="milliseconds" />
+										<field type="Block" name="keyframes">
+											<block name="screen_animation_keyframe_reference_block" maxCount="64" display="screen_animation_keyframe_reference_block" flags="0" maxIdentifer="k_maximum_number_of_animation_keyframe_blocks" version="1">
+												<versions>
+													<screen_animation_keyframe_reference_block_fields size="20" sizeIdentifer="sizeof(s_animation_keyframe_reference)" fieldCount="4">
+														<fields>
+															<field type="Pad" name="" definition="4" />
+															<field type="Real" name="alpha" />
+															<field type="RealPoint3D" name="position" />
+															<field type="Terminator" />
+														</fields>
+													</screen_animation_keyframe_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="UselessPad" name="" definition="4" />
+										<field type="UselessPad" name="" definition="12" />
+										<field type="Explanation" name="Primary Outro Transition" definition="Defines the primary outro transitional animation" />
+										<field type="LongInteger" name="animation period" units="milliseconds" />
+										<field type="Block" name="keyframes">
+											<block name="screen_animation_keyframe_reference_block" maxCount="64" display="screen_animation_keyframe_reference_block" flags="0" maxIdentifer="k_maximum_number_of_animation_keyframe_blocks" version="1">
+												<versions>
+													<screen_animation_keyframe_reference_block_fields size="20" sizeIdentifer="sizeof(s_animation_keyframe_reference)" fieldCount="4">
+														<fields>
+															<field type="Pad" name="" definition="4" />
+															<field type="Real" name="alpha" />
+															<field type="RealPoint3D" name="position" />
+															<field type="Terminator" />
+														</fields>
+													</screen_animation_keyframe_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="UselessPad" name="" definition="4" />
+										<field type="UselessPad" name="" definition="12" />
+										<field type="Explanation" name="Ambient Animation" definition="Defines the ambient animation" />
+										<field type="LongInteger" name="animation period" units="milliseconds" />
+										<field type="Enum" name="ambient animation looping style">
+											<definition count="4">
+												<entry>NONE</entry>
+												<entry>reverse loop</entry>
+												<entry>loop</entry>
+												<entry>don't loop</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Block" name="keyframes">
+											<block name="screen_animation_keyframe_reference_block" maxCount="64" display="screen_animation_keyframe_reference_block" flags="0" maxIdentifer="k_maximum_number_of_animation_keyframe_blocks" version="1">
+												<versions>
+													<screen_animation_keyframe_reference_block_fields size="20" sizeIdentifer="sizeof(s_animation_keyframe_reference)" fieldCount="4">
+														<fields>
+															<field type="Pad" name="" definition="4" />
+															<field type="Real" name="alpha" />
+															<field type="RealPoint3D" name="position" />
+															<field type="Terminator" />
+														</fields>
+													</screen_animation_keyframe_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="UselessPad" name="" definition="16" />
+										<field type="Terminator" />
+									</fields>
+								</animation_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="Polygonal Shape Groups" definition="Define the various groups of shape-objects for use on any ui screens here" />
+					<field type="Block" name="shape groups">
+						<block name="shape_group_reference_block" maxCount="64" display="shape_group_reference_block" flags="0" maxIdentifer="k_maximum_number_of_shapes_per_group" version="1">
+							<versions>
+								<shape_group_reference_block_fields size="36" sizeIdentifer="sizeof(struct s_shape_group_reference)" fieldCount="7">
+									<fields>
+										<field type="Explanation" name="Unused Debug Geometry Shapes" definition="This is the old way" />
+										<field type="Block" name="shapes">
+											<block name="shape_block_reference_block" maxCount="32" display="shape_block_reference_block" flags="0" maxIdentifer="k_maximum_number_of_shape_blocks" version="1">
+												<versions>
+													<shape_block_reference_block_fields size="52" sizeIdentifer="sizeof(s_shape_block_reference)" fieldCount="8">
+														<fields>
+															<field type="LongFlags" name="flags">
+																<definition count="1">
+																	<entry>unused</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="RealArgbColor" name="color" />
+															<field type="Block" name="points">
+																<block name="point_block_reference_block" maxCount="16" display="point_block_reference_block" flags="0" maxIdentifer="k_maximum_points_per_shape" version="1">
+																	<versions>
+																		<point_block_reference_block_fields size="4" sizeIdentifer="sizeof(s_point_block_reference)" fieldCount="2">
+																			<fields>
+																				<field type="Point2D" name="coordinates" />
+																				<field type="Terminator" />
+																			</fields>
+																		</point_block_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="ShortInteger" name="render depth bias" />
+															<field type="Pad" name="" definition="14" />
+															<field type="Terminator" />
+														</fields>
+													</shape_block_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="Model-Light Groups" definition="Specify commonly used model/light groups here" />
+										<field type="Block" name="model scene blocks">
+											<block name="ui_model_scene_reference_block" maxCount="32" display="ui_model_scene_reference_block" flags="0" maxIdentifer="k_maximum_object_scenes_per_screen" version="1">
+												<versions>
+													<ui_model_scene_reference_block_fields size="84" sizeIdentifer="sizeof(s_ui_model_scene_reference)" fieldCount="17">
+														<fields>
+															<field type="Explanation" name="NOTE on coordinate systems" definition="Halo y-axis=ui z-axis, and Halo z-axis=ui y-axis.&#xA;As a convention, let's always place objects in the ui scenario such that&#xA;they are facing in the '-y' direction, and the camera such that is is&#xA;facing the '+y' direction. This way the ui animation for models (which&#xA;gets applied to the camera) will always be consisitent." />
+															<field type="LongFlags" name="flags">
+																<definition count="1">
+																	<entry>unused</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="ShortInteger" name="render depth bias" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Block" name="objects">
+																<block name="ui_object_reference_block" maxCount="32" display="ui_object_reference_block" flags="0" maxIdentifer="k_maximum_objects_per_ui_scene" version="1">
+																	<versions>
+																		<ui_object_reference_block_fields size="32" sizeIdentifer="sizeof(s_ui_object_reference)" fieldCount="2">
+																			<fields>
+																				<field type="String" name="name" />
+																				<field type="Terminator" />
+																			</fields>
+																		</ui_object_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="Block" name="lights">
+																<block name="ui_light_reference_block" maxCount="8" display="ui_light_reference_block" flags="0" maxIdentifer="k_maximum_lights_per_ui_scene" version="1">
+																	<versions>
+																		<ui_light_reference_block_fields size="32" sizeIdentifer="sizeof(s_ui_light_reference)" fieldCount="2">
+																			<fields>
+																				<field type="String" name="name" />
+																				<field type="Terminator" />
+																			</fields>
+																		</ui_light_reference_block_fields>
+																	</versions>
+																</block>
+															</field>
+															<field type="RealVector3D" name="animation scale factor" />
+															<field type="RealPoint3D" name="camera position" />
+															<field type="UselessPad" name="" definition="24" />
+															<field type="Real" name="fov degress" />
+															<field type="Rectangle2D" name="ui viewport" />
+															<field type="StringId" name="UNUSED intro anim" />
+															<field type="StringId" name="UNUSED outro anim" />
+															<field type="StringId" name="UNUSED ambient anim" />
+															<field type="Terminator" />
+														</fields>
+													</ui_model_scene_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Explanation" name="Bitmaps" definition="Specify more flavor bitmaps here" />
+										<field type="Block" name="bitmap blocks">
+											<block name="bitmap_block_reference_block" maxCount="64" display="bitmap_block_reference_block" flags="0" maxIdentifer="k_maximum_number_of_bitmap_blocks" version="1">
+												<versions>
+													<bitmap_block_reference_block_fields size="64" sizeIdentifer="sizeof(s_bitmap_block_reference)" fieldCount="20">
+														<fields>
+															<field type="LongFlags" name="flags">
+																<definition count="3">
+																	<entry>ignore for list skin size calculation</entry>
+																	<entry>swap on relative list position</entry>
+																	<entry>render as progress bar</entry>
+																</definition>
+															</field>
+															<field type="Enum" name="animation index">
+																<definition count="65">
+																	<entry>NONE</entry>
+																	<entry>00</entry>
+																	<entry>01</entry>
+																	<entry>02</entry>
+																	<entry>03</entry>
+																	<entry>04</entry>
+																	<entry>05</entry>
+																	<entry>06</entry>
+																	<entry>07</entry>
+																	<entry>08</entry>
+																	<entry>09</entry>
+																	<entry>10</entry>
+																	<entry>11</entry>
+																	<entry>12</entry>
+																	<entry>13</entry>
+																	<entry>14</entry>
+																	<entry>15</entry>
+																	<entry>16</entry>
+																	<entry>17</entry>
+																	<entry>18</entry>
+																	<entry>19</entry>
+																	<entry>20</entry>
+																	<entry>21</entry>
+																	<entry>22</entry>
+																	<entry>23</entry>
+																	<entry>24</entry>
+																	<entry>25</entry>
+																	<entry>26</entry>
+																	<entry>27</entry>
+																	<entry>28</entry>
+																	<entry>29</entry>
+																	<entry>30</entry>
+																	<entry>31</entry>
+																	<entry>32</entry>
+																	<entry>33</entry>
+																	<entry>34</entry>
+																	<entry>35</entry>
+																	<entry>36</entry>
+																	<entry>37</entry>
+																	<entry>38</entry>
+																	<entry>39</entry>
+																	<entry>40</entry>
+																	<entry>41</entry>
+																	<entry>42</entry>
+																	<entry>43</entry>
+																	<entry>44</entry>
+																	<entry>45</entry>
+																	<entry>46</entry>
+																	<entry>47</entry>
+																	<entry>48</entry>
+																	<entry>49</entry>
+																	<entry>50</entry>
+																	<entry>51</entry>
+																	<entry>52</entry>
+																	<entry>53</entry>
+																	<entry>54</entry>
+																	<entry>55</entry>
+																	<entry>56</entry>
+																	<entry>57</entry>
+																	<entry>58</entry>
+																	<entry>59</entry>
+																	<entry>60</entry>
+																	<entry>61</entry>
+																	<entry>62</entry>
+																	<entry>63</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="intro animation delay milliseconds" />
+															<field type="Enum" name="bitmap blend method">
+																<definition count="3">
+																	<entry>standard</entry>
+																	<entry>multiply</entry>
+																	<entry>UNUSED</entry>
+																</definition>
+															</field>
+															<field type="ShortInteger" name="initial sprite frame" />
+															<field type="Point2D" name="top-left" />
+															<field type="Real" name="horiz texture wraps/second" />
+															<field type="Real" name="vert texture wraps/second" />
+															<field type="TagReference" name="bitmap tag">
+																<definition flags="0" groupTag="bitm" />
+															</field>
+															<field type="ShortInteger" name="render depth bias" />
+															<field type="Pad" name="" definition="2" />
+															<field type="Real" name="sprite animation speed fps" />
+															<field type="Point2D" name="progress bottom-left" />
+															<field type="StringId" name="string identifier" />
+															<field type="UselessPad" name="" definition="12" />
+															<field type="UselessPad" name="" definition="12" />
+															<field type="RealVector2D" name="progress scale" />
+															<field type="UselessPad" name="" definition="4" />
+															<field type="UselessPad" name="" definition="4" />
+															<field type="Terminator" />
+														</fields>
+													</bitmap_block_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</shape_group_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="Persistant Background Animations" definition="These are the animations used by elements that live in the persistant background" />
+					<field type="Block" name="animations">
+						<block name="persistent_background_animation_block" maxCount="100" display="persistent_background_animation_block" flags="0" maxIdentifer="k_maximum_number_of_persisant_animations" version="1">
+							<versions>
+								<persistent_background_animation_block_fields size="20" sizeIdentifer="sizeof(s_persistant_animation_reference)" fieldCount="4">
+									<fields>
+										<field type="Pad" name="" definition="4" />
+										<field type="LongInteger" name="animation period" units="milliseconds" />
+										<field type="Block" name="interpolated keyframes">
+											<block name="background_animation_keyframe_reference_block" maxCount="64" display="background_animation_keyframe_reference_block" flags="0" maxIdentifer="k_maximum_number_of_animation_keyframe_blocks" version="1">
+												<versions>
+													<background_animation_keyframe_reference_block_fields size="20" sizeIdentifer="sizeof(s_animation_keyframe_reference)" fieldCount="4">
+														<fields>
+															<field type="LongInteger" name="start transition index" />
+															<field type="Real" name="alpha" />
+															<field type="RealPoint3D" name="position" />
+															<field type="Terminator" />
+														</fields>
+													</background_animation_keyframe_reference_block_fields>
+												</versions>
+											</block>
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</persistent_background_animation_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="List Skins" definition="These define the visual appearances (skins) available for UI lists&#xA;They are expected to be entered in the following order:&#xA;0) default&#xA;1) squad lobby player list&#xA;2) settings list&#xA;3) playlist entry list&#xA;4) variants list&#xA;5) game browser list&#xA;6) online player menu&#xA;7) game setup menu&#xA;8) playlist contents display&#xA;9) profile picker&#xA;10) mp map list&#xA;11) main menu&#xA;" />
+					<field type="Block" name="list item skins">
+						<block name="list_skin_reference_block" maxCount="32" display="list_skin_reference_block" flags="0" maxIdentifer="k_maximum_number_of_list_item_skins" version="1">
+							<versions>
+								<list_skin_reference_block_fields size="16" sizeIdentifer="sizeof(s_user_interface_list_skin_reference)" fieldCount="2">
+									<fields>
+										<field type="TagReference" name="list item skins">
+											<definition flags="0" groupTag="skin" />
+										</field>
+										<field type="Terminator" />
+									</fields>
+								</list_skin_reference_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="Additional UI Strings" definition="These are for specific purposes as noted" />
+					<field type="TagReference" name="button key type strings">
+						<definition flags="0" groupTag="unic" />
+					</field>
+					<field type="TagReference" name="game type strings">
+						<definition flags="0" groupTag="unic" />
+					</field>
+					<field type="TagReference" name="">
+						<definition flags="0" groupTag="????" />
+					</field>
+					<field type="Explanation" name="Skill to rank mapping table" definition="" />
+					<field type="Block" name="skill mappings">
+						<block name="skill_to_rank_mapping_block" maxCount="65535" display="skill_to_rank_mapping_block" flags="0" maxIdentifer="UNSIGNED_SHORT_MAX" procFormat="True" version="1">
+							<versions>
+								<skill_to_rank_mapping_block_fields size="4" sizeIdentifer="sizeof(s_skill_to_rank_mapping)" fieldCount="2">
+									<fields>
+										<field type="ShortIntegerBounds" name="skill bounds" />
+										<field type="Terminator" />
+									</fields>
+								</skill_to_rank_mapping_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="WINDOW PARAMETERS" definition="Various settings for different sized UI windows" />
+					<field type="Enum" name="full screen header text font">
+						<definition count="12">
+							<entry>terminal</entry>
+							<entry>body text</entry>
+							<entry>title</entry>
+							<entry>super large font</entry>
+							<entry>large body text</entry>
+							<entry>split screen hud message</entry>
+							<entry>full screen hud message</entry>
+							<entry>english body text</entry>
+							<entry>HUD number text</entry>
+							<entry>subtitle font</entry>
+							<entry>main menu font</entry>
+							<entry>text chat font</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="large dialog header text font">
+						<definition count="12">
+							<entry>terminal</entry>
+							<entry>body text</entry>
+							<entry>title</entry>
+							<entry>super large font</entry>
+							<entry>large body text</entry>
+							<entry>split screen hud message</entry>
+							<entry>full screen hud message</entry>
+							<entry>english body text</entry>
+							<entry>HUD number text</entry>
+							<entry>subtitle font</entry>
+							<entry>main menu font</entry>
+							<entry>text chat font</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="half dialog header text font">
+						<definition count="12">
+							<entry>terminal</entry>
+							<entry>body text</entry>
+							<entry>title</entry>
+							<entry>super large font</entry>
+							<entry>large body text</entry>
+							<entry>split screen hud message</entry>
+							<entry>full screen hud message</entry>
+							<entry>english body text</entry>
+							<entry>HUD number text</entry>
+							<entry>subtitle font</entry>
+							<entry>main menu font</entry>
+							<entry>text chat font</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="qtr dialog header text font">
+						<definition count="12">
+							<entry>terminal</entry>
+							<entry>body text</entry>
+							<entry>title</entry>
+							<entry>super large font</entry>
+							<entry>large body text</entry>
+							<entry>split screen hud message</entry>
+							<entry>full screen hud message</entry>
+							<entry>english body text</entry>
+							<entry>HUD number text</entry>
+							<entry>subtitle font</entry>
+							<entry>main menu font</entry>
+							<entry>text chat font</entry>
+						</definition>
+					</field>
+					<field type="RealArgbColor" name="default text color" />
+					<field type="Rectangle2D" name="full screen header text bounds" />
+					<field type="Rectangle2D" name="full screen button key text bounds" />
+					<field type="Rectangle2D" name="large dialog header text bounds" />
+					<field type="Rectangle2D" name="large dialog button key text bounds" />
+					<field type="Rectangle2D" name="half dialog header text bounds" />
+					<field type="Rectangle2D" name="half dialog button key text bounds" />
+					<field type="Rectangle2D" name="qtr dialog header text bounds" />
+					<field type="Rectangle2D" name="qtr dialog button key text bounds" />
+					<field type="Explanation" name="Main menu music" definition="Looping sound that plays while the main menu is active" />
+					<field type="TagReference" name="main menu music">
+						<definition flags="4" groupTag="lsnd" />
+					</field>
+					<field type="LongInteger" name="music fade time" units="milliseconds" />
+					<field type="Terminator" />
+				</fields>
+			</user_interface_shared_globals_definition_block_fields>
+		</versions>
+	</block>
+</tagGroup>

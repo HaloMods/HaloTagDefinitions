@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="vehicle_collection" groupTag="vehc" groupTagParent="????" version="0" flags="9">
+	<block name="vehicle_collection_block" maxCount="1" display="vehicle_collection" flags="0" maxIdentifer="1" version="1">
+		<versions>
+			<vehicle_collection_block_fields size="16" sizeIdentifer="sizeof(struct vehicle_collection_definition)" fieldCount="4">
+				<fields>
+					<field type="Block" name="vehicle permutations">
+						<block name="vehicle_permutation" maxCount="32" display="vehicle_permutation" flags="0" maxIdentifer="32" version="1">
+							<versions>
+								<vehicle_permutation_fields size="24" sizeIdentifer="sizeof(struct vehicle_permutation_definition)" fieldCount="4">
+									<fields>
+										<field type="Real" name="weight" help="relatively how likely this vehicle will be chosen" />
+										<field type="TagReference" name="vehicle" help="which vehicle to " isBlockName="True">
+											<definition flags="0" groupTag="vehi" />
+										</field>
+										<field type="StringId" name="variant name" />
+										<field type="Terminator" />
+									</fields>
+								</vehicle_permutation_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="ShortInteger" name="spawn time (in seconds, 0 = default)" />
+					<field type="Pad" name="" definition="2" />
+					<field type="Terminator" />
+				</fields>
+			</vehicle_collection_block_fields>
+		</versions>
+	</block>
+</tagGroup>

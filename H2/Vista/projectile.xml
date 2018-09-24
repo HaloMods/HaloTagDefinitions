@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<tagGroup name="projectile" groupTag="proj" groupTagParent="obje" version="5" flags="9">
+	<block name="projectile_block" maxCount="1" display="projectile" flags="0" maxIdentifer="1" procPostprocess="True" version="2">
+		<versions>
+			<projectile_fields_v1 size="240" sizeIdentifer="sizeof(_projectile_definition_v1)" fieldCount="38">
+				<fields>
+					<field type="Explanation" name="$$$ PROJECTILE $$$" definition="" />
+					<field type="LongFlags" name="flags">
+						<definition count="11">
+							<entry>oriented along velocity</entry>
+							<entry>AI must use ballistic aiming</entry>
+							<entry>detonation max time if attached</entry>
+							<entry>has super combining explosion</entry>
+							<entry>damage scales based on distance</entry>
+							<entry>travels instantaneously</entry>
+							<entry>steering adjusts orientation</entry>
+							<entry>don't noise up steering</entry>
+							<entry>can track behind itself</entry>
+							<entry>ROBOTRON STEERING!</entry>
+							<entry>faster when owned by player</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="detonation timer starts">
+						<definition count="4">
+							<entry>immediately</entry>
+							<entry>after first bounce</entry>
+							<entry>when at rest</entry>
+							<entry>after first bounce off any surface</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="impact noise">
+						<definition count="5">
+							<entry>silent</entry>
+							<entry>medium</entry>
+							<entry>loud</entry>
+							<entry>shout</entry>
+							<entry>quiet</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="old obsolete A in">
+						<definition count="6">
+							<entry>none</entry>
+							<entry>range remaining</entry>
+							<entry>time remaining</entry>
+							<entry>tracer</entry>
+							<entry>acceleration_range</entry>
+							<entry>projectile_attach</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="old obsolete B in">
+						<definition count="6">
+							<entry>none</entry>
+							<entry>range remaining</entry>
+							<entry>time remaining</entry>
+							<entry>tracer</entry>
+							<entry>acceleration_range</entry>
+							<entry>projectile_attach</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="old obsolete C in">
+						<definition count="6">
+							<entry>none</entry>
+							<entry>range remaining</entry>
+							<entry>time remaining</entry>
+							<entry>tracer</entry>
+							<entry>acceleration_range</entry>
+							<entry>projectile_attach</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="old obsolete D in">
+						<definition count="6">
+							<entry>none</entry>
+							<entry>range remaining</entry>
+							<entry>time remaining</entry>
+							<entry>tracer</entry>
+							<entry>acceleration_range</entry>
+							<entry>projectile_attach</entry>
+						</definition>
+					</field>
+					<field type="TagReference" name="super detonation">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="Real" name="AI perception radius" units="world units" />
+					<field type="Real" name="collision radius" units="world units" />
+					<field type="Explanation" name="detonation" definition="" />
+					<field type="Real" name="arming time" help="won't detonate before this time elapses" units="seconds" />
+					<field type="Real" name="danger radius" units="world units" />
+					<field type="TagReference" name="effect">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="RealBounds" name="timer" help="detonation countdown (zero is untimed)" units="seconds" />
+					<field type="Real" name="minimum velocity" help="detonates when slowed below this velocity" units="world units per second" />
+					<field type="Real" name="maximum range" help="detonates after travelling this distance" units="world units" />
+					<field type="Explanation" name="physics" definition="" />
+					<field type="Real" name="air gravity scale" help="the proportion of normal gravity applied to the projectile when in air." />
+					<field type="RealBounds" name="air damage range" help="the range over which damage is scaled when the projectile is in air." units="world units" />
+					<field type="Real" name="water gravity scale" help="the proportion of normal gravity applied to the projectile when in water." />
+					<field type="RealBounds" name="water damage range" help="the range over which damage is scaled when the projectile is in water." units="world units" />
+					<field type="Real" name="initial velocity" help="bullet's velocity when inflicting maximum damage" units="world units per second" />
+					<field type="Real" name="final velocity" help="bullet's velocity when inflicting minimum damage" units="world units per second" />
+					<field type="Angle" name="guided angular velocity" units="degrees per second" />
+					<field type="Enum" name="detonation noise">
+						<definition count="5">
+							<entry>silent</entry>
+							<entry>medium</entry>
+							<entry>loud</entry>
+							<entry>shout</entry>
+							<entry>quiet</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="2" />
+					<field type="TagReference" name="detonation started">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="TagReference" name="flyby sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="TagReference" name="attached detonation damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="TagReference" name="impact damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="Pad" name="" definition="12" />
+					<field type="Block" name="material responses" attributeGroup="sort">
+						<block name="projectile_material_response_block" maxCount="200" display="projectile_material_response_block" flags="0" maxIdentifer="k_maximum_material_responses" procFormat="True" version="1">
+							<versions>
+								<projectile_material_response_block_fields size="112" sizeIdentifer="sizeof(s_projectile_material_response_definition)" fieldCount="29">
+									<fields>
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>cannot be overpenetrated</entry>
+											</definition>
+										</field>
+										<field type="Explanation" name="default result" definition="(if the potential result, below, fails to happen)" />
+										<field type="Enum" name="response">
+											<definition count="7">
+												<entry>impact (detonate)</entry>
+												<entry>fizzle</entry>
+												<entry>overpenetrate</entry>
+												<entry>attach</entry>
+												<entry>bounce</entry>
+												<entry>bounce (dud)</entry>
+												<entry>fizzle (ricochet)</entry>
+											</definition>
+										</field>
+										<field type="TagReference" name="DO NOT USE (OLD effect)">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="StringId" name="material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="Skip" name="" definition="4" />
+										<field type="UselessPad" name="" definition="8" />
+										<field type="Explanation" name="potential result" definition="" />
+										<field type="Enum" name="response">
+											<definition count="7">
+												<entry>impact (detonate)</entry>
+												<entry>fizzle</entry>
+												<entry>overpenetrate</entry>
+												<entry>attach</entry>
+												<entry>bounce</entry>
+												<entry>bounce (dud)</entry>
+												<entry>fizzle (ricochet)</entry>
+											</definition>
+										</field>
+										<field type="WordFlags" name="flags">
+											<definition count="2">
+												<entry>only against units</entry>
+												<entry>never against units</entry>
+											</definition>
+										</field>
+										<field type="RealFraction" name="chance fraction" units="[0,1]" />
+										<field type="AngleBounds" name="between" units="degrees" />
+										<field type="RealBounds" name="and" units="world units per second" />
+										<field type="TagReference" name="DO NOT USE (OLD effect)">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="UselessPad" name="" definition="16" />
+										<field type="Explanation" name="misc" definition="" />
+										<field type="Enum" name="scale effects by">
+											<definition count="2">
+												<entry>damage</entry>
+												<entry>angle</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Angle" name="angular noise" help="the angle of incidence is randomly perturbed by at most this amount to simulate irregularity." units="degrees" />
+										<field type="Real" name="velocity noise" help="the velocity is randomly perturbed by at most this amount to simulate irregularity." units="world units per second" />
+										<field type="TagReference" name="DO NOT USE (OLD detonation effect)">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="UselessPad" name="" definition="24" />
+										<field type="Explanation" name="penetration" definition="" />
+										<field type="Real" name="initial friction" help="the fraction of the projectile's velocity lost on penetration" />
+										<field type="Real" name="maximum distance" help="the maximum distance the projectile can travel through on object of this material" />
+										<field type="Explanation" name="reflection" definition="" />
+										<field type="Real" name="parallel friction" help="the fraction of the projectile's velocity parallel to the surface lost on impact" />
+										<field type="Real" name="perpendicular friction" help="the fraction of the projectile's velocity perpendicular to the surface lost on impact" />
+										<field type="Terminator" />
+									</fields>
+								</projectile_material_response_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Explanation" name="New/unsorted fields" definition="" />
+					<field type="TagReference" name="impact effect">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="TagReference" name="detonation damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</projectile_fields_v1>
+			<projectile_fields_v2 size="348" sizeIdentifer="sizeof(_projectile_definition)" fieldCount="52">
+				<fields>
+					<field type="Explanation" name="$$$ PROJECTILE $$$" definition="" />
+					<field type="LongFlags" name="flags">
+						<definition count="11">
+							<entry>oriented along velocity</entry>
+							<entry>AI must use ballistic aiming</entry>
+							<entry>detonation max time if attached</entry>
+							<entry>has super combining explosion</entry>
+							<entry>damage scales based on distance</entry>
+							<entry>travels instantaneously</entry>
+							<entry>steering adjusts orientation</entry>
+							<entry>don't noise up steering</entry>
+							<entry>can track behind itself</entry>
+							<entry>ROBOTRON STEERING!</entry>
+							<entry>faster when owned by player</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="detonation timer starts">
+						<definition count="4">
+							<entry>immediately</entry>
+							<entry>after first bounce</entry>
+							<entry>when at rest</entry>
+							<entry>after first bounce off any surface</entry>
+						</definition>
+					</field>
+					<field type="Enum" name="impact noise">
+						<definition count="5">
+							<entry>silent</entry>
+							<entry>medium</entry>
+							<entry>loud</entry>
+							<entry>shout</entry>
+							<entry>quiet</entry>
+						</definition>
+					</field>
+					<field type="UselessPad" name="" definition="8" />
+					<field type="Real" name="AI perception radius" units="world units" />
+					<field type="Real" name="collision radius" units="world units" />
+					<field type="Explanation" name="detonation" definition="" />
+					<field type="Real" name="arming time" help="won't detonate before this time elapses" units="seconds" />
+					<field type="Real" name="danger radius" units="world units" />
+					<field type="RealBounds" name="timer" help="detonation countdown (zero is untimed)" units="seconds" />
+					<field type="Real" name="minimum velocity" help="detonates when slowed below this velocity" units="world units per second" />
+					<field type="Real" name="maximum range" help="detonates after travelling this distance" units="world units" />
+					<field type="Enum" name="detonation noise">
+						<definition count="5">
+							<entry>silent</entry>
+							<entry>medium</entry>
+							<entry>loud</entry>
+							<entry>shout</entry>
+							<entry>quiet</entry>
+						</definition>
+					</field>
+					<field type="ShortInteger" name="super det. projectile count" />
+					<field type="TagReference" name="detonation started">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="TagReference" name="detonation effect (airborne)">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="TagReference" name="detonation effect (ground)">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="TagReference" name="detonation damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="TagReference" name="attached detonation damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="TagReference" name="super detonation">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="Struct" name="your momma!">
+						<struct name="super_detonation_damage_struct" groupTag="sd2s" display="breakfast">
+							<block name="super_detonation_damage_struct_block" maxCount="1" display="super_detonation_damage_struct" flags="0" maxIdentifer="1" version="2">
+								<versions>
+									<super_detonation_damage_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+										<fields>
+											<field type="Terminator" />
+										</fields>
+									</super_detonation_damage_fields_v1>
+									<super_detonation_damage_fields size="16" sizeIdentifer="sizeof(struct tag_reference)" fieldCount="2">
+										<fields>
+											<field type="TagReference" name="super detonation damage">
+												<definition flags="0" groupTag="jpt!" />
+											</field>
+											<field type="Terminator" />
+										</fields>
+									</super_detonation_damage_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="TagReference" name="detonation sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="CharEnum" name="damage reporting type">
+						<definition count="42">
+							<entry>teh guardians!!1!!1!</entry>
+							<entry>falling damage</entry>
+							<entry>generic collision damage</entry>
+							<entry>generic melee damage</entry>
+							<entry>generic explosion</entry>
+							<entry>magnum pistol</entry>
+							<entry>plasma pistol</entry>
+							<entry>needler</entry>
+							<entry>smg</entry>
+							<entry>plasma rifle</entry>
+							<entry>battle rifle</entry>
+							<entry>carbine</entry>
+							<entry>shotgun</entry>
+							<entry>sniper rifle</entry>
+							<entry>beam rifle</entry>
+							<entry>rocket launcher</entry>
+							<entry>flak cannon</entry>
+							<entry>brute shot</entry>
+							<entry>disintegrator</entry>
+							<entry>brute plasma rifle</entry>
+							<entry>energy sword</entry>
+							<entry>frag grenade</entry>
+							<entry>plasma grenade</entry>
+							<entry>flag melee damage</entry>
+							<entry>bomb melee damage</entry>
+							<entry>bomb explosion damage</entry>
+							<entry>ball melee damage</entry>
+							<entry>human turret</entry>
+							<entry>plasma turret</entry>
+							<entry>banshee</entry>
+							<entry>ghost</entry>
+							<entry>mongoose</entry>
+							<entry>scorpion</entry>
+							<entry>spectre driver</entry>
+							<entry>spectre gunner</entry>
+							<entry>warthog driver</entry>
+							<entry>warthog gunner</entry>
+							<entry>wraith</entry>
+							<entry>tank</entry>
+							<entry>sentinel beam</entry>
+							<entry>sentinel rpg</entry>
+							<entry>teleporter</entry>
+						</definition>
+					</field>
+					<field type="Pad" name="" definition="3" />
+					<field type="TagReference" name="super attached detonation damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="UselessPad" name="" definition="40" />
+					<field type="Real" name="material effect radius" help="radius within we will generate material effects" />
+					<field type="Explanation" name="flyby/impact" definition="" />
+					<field type="TagReference" name="flyby sound">
+						<definition flags="4" groupTag="snd!" />
+					</field>
+					<field type="TagReference" name="impact effect">
+						<definition flags="0" groupTag="effe" />
+					</field>
+					<field type="TagReference" name="impact damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="Explanation" name="boarding fields" definition="" />
+					<field type="Real" name="boarding detonation time" />
+					<field type="TagReference" name="boarding detonation damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="TagReference" name="boarding attached detonation damage">
+						<definition flags="0" groupTag="jpt!" />
+					</field>
+					<field type="UselessPad" name="" definition="28" />
+					<field type="Explanation" name="physics" definition="" />
+					<field type="Real" name="air gravity scale" help="the proportion of normal gravity applied to the projectile when in air." />
+					<field type="RealBounds" name="air damage range" help="the range over which damage is scaled when the projectile is in air." units="world units" />
+					<field type="Real" name="water gravity scale" help="the proportion of normal gravity applied to the projectile when in water." />
+					<field type="RealBounds" name="water damage range" help="the range over which damage is scaled when the projectile is in water." units="world units" />
+					<field type="Real" name="initial velocity" help="bullet's velocity when inflicting maximum damage" units="world units per second" />
+					<field type="Real" name="final velocity" help="bullet's velocity when inflicting minimum damage" units="world units per second" />
+					<field type="Struct" name="blah">
+						<struct name="angular_velocity_lower_bound_struct" groupTag="avlb" display="breakfast">
+							<block name="angular_velocity_lower_bound_struct_block" maxCount="1" display="angular_velocity_lower_bound_struct" flags="0" maxIdentifer="1" version="2">
+								<versions>
+									<angular_velocity_lower_bound_fields_v1 size="0" sizeIdentifer="0" fieldCount="1">
+										<fields>
+											<field type="Terminator" />
+										</fields>
+									</angular_velocity_lower_bound_fields_v1>
+									<angular_velocity_lower_bound_fields size="4" sizeIdentifer="sizeof(real)" fieldCount="2">
+										<fields>
+											<field type="Angle" name="guided angular velocity (lower)" units="degrees per second" />
+											<field type="Terminator" />
+										</fields>
+									</angular_velocity_lower_bound_fields>
+								</versions>
+							</block>
+						</struct>
+					</field>
+					<field type="Angle" name="guided angular velocity (upper)" units="degrees per second" />
+					<field type="RealBounds" name="acceleration range" help="what distance range the projectile goes from initial velocity to final velocity" units="world units" />
+					<field type="Pad" name="" definition="4" />
+					<field type="RealFraction" name="targeted leading fraction" />
+					<field type="UselessPad" name="" definition="48" />
+					<field type="Block" name="material responses" attributeGroup="sort">
+						<block name="projectile_material_response_block" maxCount="200" display="projectile_material_response_block" flags="0" maxIdentifer="k_maximum_material_responses" procFormat="True" version="1">
+							<versions>
+								<projectile_material_response_block_fields size="112" sizeIdentifer="sizeof(s_projectile_material_response_definition)" fieldCount="29">
+									<fields>
+										<field type="WordFlags" name="flags">
+											<definition count="1">
+												<entry>cannot be overpenetrated</entry>
+											</definition>
+										</field>
+										<field type="Explanation" name="default result" definition="(if the potential result, below, fails to happen)" />
+										<field type="Enum" name="response">
+											<definition count="7">
+												<entry>impact (detonate)</entry>
+												<entry>fizzle</entry>
+												<entry>overpenetrate</entry>
+												<entry>attach</entry>
+												<entry>bounce</entry>
+												<entry>bounce (dud)</entry>
+												<entry>fizzle (ricochet)</entry>
+											</definition>
+										</field>
+										<field type="TagReference" name="DO NOT USE (OLD effect)">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="StringId" name="material name" attributeGroup="sted" hasStringEditor="true" />
+										<field type="Skip" name="" definition="4" />
+										<field type="UselessPad" name="" definition="8" />
+										<field type="Explanation" name="potential result" definition="" />
+										<field type="Enum" name="response">
+											<definition count="7">
+												<entry>impact (detonate)</entry>
+												<entry>fizzle</entry>
+												<entry>overpenetrate</entry>
+												<entry>attach</entry>
+												<entry>bounce</entry>
+												<entry>bounce (dud)</entry>
+												<entry>fizzle (ricochet)</entry>
+											</definition>
+										</field>
+										<field type="WordFlags" name="flags">
+											<definition count="2">
+												<entry>only against units</entry>
+												<entry>never against units</entry>
+											</definition>
+										</field>
+										<field type="RealFraction" name="chance fraction" units="[0,1]" />
+										<field type="AngleBounds" name="between" units="degrees" />
+										<field type="RealBounds" name="and" units="world units per second" />
+										<field type="TagReference" name="DO NOT USE (OLD effect)">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="UselessPad" name="" definition="16" />
+										<field type="Explanation" name="misc" definition="" />
+										<field type="Enum" name="scale effects by">
+											<definition count="2">
+												<entry>damage</entry>
+												<entry>angle</entry>
+											</definition>
+										</field>
+										<field type="Pad" name="" definition="2" />
+										<field type="Angle" name="angular noise" help="the angle of incidence is randomly perturbed by at most this amount to simulate irregularity." units="degrees" />
+										<field type="Real" name="velocity noise" help="the velocity is randomly perturbed by at most this amount to simulate irregularity." units="world units per second" />
+										<field type="TagReference" name="DO NOT USE (OLD detonation effect)">
+											<definition flags="0" groupTag="effe" />
+										</field>
+										<field type="UselessPad" name="" definition="24" />
+										<field type="Explanation" name="penetration" definition="" />
+										<field type="Real" name="initial friction" help="the fraction of the projectile's velocity lost on penetration" />
+										<field type="Real" name="maximum distance" help="the maximum distance the projectile can travel through on object of this material" />
+										<field type="Explanation" name="reflection" definition="" />
+										<field type="Real" name="parallel friction" help="the fraction of the projectile's velocity parallel to the surface lost on impact" />
+										<field type="Real" name="perpendicular friction" help="the fraction of the projectile's velocity perpendicular to the surface lost on impact" />
+										<field type="Terminator" />
+									</fields>
+								</projectile_material_response_block_fields>
+							</versions>
+						</block>
+					</field>
+					<field type="Terminator" />
+				</fields>
+			</projectile_fields_v2>
+		</versions>
+	</block>
+</tagGroup>
